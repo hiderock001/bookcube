@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/datepicker.js"></script>
+</head>
+<body>
+<div class="frame">
+	<h3>나의 작품 > 글쓰기</h3>
+	<div class="tab">
+		<div class="my-active ipt">
+			<p class="s-title">회차 정보 입력</p>
+			<form action='' method=''>
+				<fieldset>
+					<legend>회차 정보 입력</legend>
+					<table>
+						<caption>나의 작품 연재 정보</caption>
+						<colgroup>
+							<col width="17%" />
+							<col width="83%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label>회차<label></th>
+								<td><input type="text" name='' /> 화 <span> *숫자만 입력 가능</span></td>
+							</tr>
+							<tr>
+								<th><label>소회차 제목<label></th>
+								<td><input type="text" name='' /></td>
+							</tr>
+							<tr>
+								<th><label>구매가격<label></th>
+								<td><input type="text" name='' /> 원</td>
+							</tr>
+							<tr>
+								<th><label>연재 반영일시<label></th>
+								<td>
+									<input type="text" name='' class='date'/>
+									<input type="text" name='' class="hour" /> 시 <span> *시간은 00시~23시까지 입력 가능합니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="ps-box">
+						<ul>
+							<li>- 이전에 등록한 회차가 있을 경우, 앞서 등록한 회차정보가 자동 입력됩니다.</li>
+							<li>- 가격정보는 0원 ~ 최대 5,000원까지 입력 가능합니다. <em>(대여 불가 시 구매 가격과 동일한 가격 정보를 입력합니다.)</em></li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<input type="button" name='' value="등록" />
+						<a href="#" class="btn">목록보기</a>
+					</div>
+					<script>
+						$(function() {
+							$(".date").each(function(){
+								$(this).datepicker({
+									position:"bottom",
+									futureOnly:true
+								});	
+							});
+						});
+					</script>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

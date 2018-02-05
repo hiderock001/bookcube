@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://bookimg.bookcube.com/200/1504/150402022.jpg">
+<meta property="og:url" content="http://dev.bookcube.com/detail.asp?book_num=150402022&um=">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<style type="text/css">
+.bottom{padding:0 14px 0 17px;width:340px;background:#424242;height:26px;line-height:26px;}
+.bottom:after{content:"";display:block;clear:both;}	
+.bottom label{float:left;color:#c8c8c8;font-size:11px;}
+.bottom input[type="checkbox"]{float:right;margin-top:6px;width:13px;height:13px;border:1px solid #000;}
+</style>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script type="text/javascript">
+$(function() {
+	$(function() {
+		$("#nopopup").click(function() {
+			if ($("#nopopup").is(":checked")) {
+				$.cookie("nopopup", "Y", {expire: 1});
+			}
+					
+			self.close();
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div>
+	<img src="/images/main/workPop.jpg" alt="" />
+</div>
+<div class="bottom">
+	<label for="nopopup">오늘 이 창을 열지 않습니다.</label>
+	<input type="checkbox" name="" id="nopopup"  />
+</div>
+</body>

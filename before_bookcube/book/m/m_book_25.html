@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<ul class="tab-menu coupon">
+			<li><a href="#">북큐브 쿠폰 등록</a></li>
+			<li><a href="#" class="on">키프트 카드 등록</a></li>
+		</ul>
+		<form>
+			<fieldset>
+				<legend>북큐브 쿠폰 및 기프트 카드 등록</legend>
+				<div class="gift-img">
+					<p>기프트 카드 사용법</p>
+				</div>
+				<div class="coupon-ipt">
+					<p>기프트 카드 뒷면에 인쇄된 12자리<br />등록번호(숫자, 알파벳 조합)를 입력해 주세요.</p>
+					<input type="text" name="" id="" placeholder="기프트 등록번호를 입력해 주세요" />
+					<input type="submit" name="" id="" value="확인" />
+				</div>
+			</fieldset>
+		</form>
+		<div class="gift-ps">
+			<p>주의사항</p>
+			<ol>
+				<li>기프트 카드 등록이 완료되면 소지하고 계시는 기프트 카드 앞면에 표시된 금액만큼 기프트 카드 계정에 충전이 됩니다.</li>
+				<li>기프트 카드 뒷면의 사용 유효기간이 지나면 기프트 카드 등록이 불가함은 물론 기프트 카드를 통해 이미 충전하신 금액도 소멸됩니다.</li>
+				<li>이미 입력한 적이 있는 기프트 카드 번호는 다시 사용할 수 없습니다.</li>
+				<li>1인당(한 ID당) 등록할 수 있는 기프트 카드의 갯수는  기프트 카드 뒷면의 이용안내를 참고해 주십시오.</li>
+				<li>그 외에 주요한 사항들은 기프트 카드 뒷면에 표기된 내용을 참고해 주십시오.</li>
+				<li>기프트 카드 이용과 관련 문의하실 사항은 1:1게시판 또는 1588-1925로 문의해 주시기 바랍니다.</li>
+			</ol>
+		</div>
+	</section>
+	<footer>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

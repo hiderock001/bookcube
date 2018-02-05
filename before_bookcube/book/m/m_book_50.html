@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<h3 class="title">선물하기 이용안내</h3>
+		<div class="title-bar">
+			<p>1.전자책 선물하기</p>
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 1.</span>도서 상세 페이지</p>
+			<ol>
+				<li><span>①</span>선물하기 버튼을 터치하면 STEP3. 선물 결제 페이지로 이동합니다.(단권 도서에 한함)</li>
+			</ol>
+			<em><span>※</span> 일부 도서는 상세페이지 내 "선물하기" 버튼이 없으며, 이는 선물하기 서비스가 제공되지 않습니다.</em>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step1-1.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 2.</span>시리즈 목록 중 선물 도서 선택</p>
+			<ol>
+				<li><span>①</span>시리즈 도서 중 선물 발송을 원하는 권호의 체크 박스를 터치합니다.</li>
+				<li><span>②</span>선물 발송을 원하는 도서를 체크한 뒤 버튼 터치시 결제 페이지로 이동합니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step1-2.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 3.</span>결제하기</p>
+			<ol>
+				<li><span>①</span>보유한 북캐시 금액 내에서 사용하고자 하는 금액을 입력합니다.결제 시 해당 금액만큼 차감됩니다.</li>
+				<li><span>②</span>보유한 적립금 금액 내에서 사용하고자 하는 금액을 입력합니다.결제 시 해당 금액만큼 차감됩니다.</li>
+				<li><span>③</span>보유한 북큐브 상품권 금액 내에서 사용하고자 하는 금액을 입력합니다.결제 시 해당 금액만큼 차감됩니다.</li>
+				<li><span>④</span>쿠폰/북캐시/적립금/북큐브 상품권에서 차감된 금액을 제외한 나머지 금액에 대하여 결제할 수단을 선택 할 수 있습니다.</li>
+				<li><span>⑤</span>버튼 터치 시 결제하기가 진행됩니다.</li>
+				<li><span>⑥</span>결제 완료 후 선물 발송하기 버튼 터치 시 보낸선물함 > 선물 정보 입력 페이지로 이동합니다.	</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step1-3.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 4.</span>선물 정보 입력</p>
+			<ol>
+				<li><span>①</span>결제한 회원의 이름이 자동 입력되며, 한글 10자, 영문 및 숫자 20자 내로 수정 입력 가능합니다.</li>
+				<li><span>②</span>선물 받는 분의 이름을 한글 10자, 영문 및 숫자 20자 내로 입력 가능합니다.</li>
+				<li><span>③</span>선물 보낼 방법을 선택합니다.</li>
+				<li><span>④</span>선물 받는 분에게 보낼 메시지 정보를 입력합니다.</li>
+				<li><span>⑤</span>선택한 수단(카카오톡/이메일)으로 선물 쿠폰번호를 포함한 선물 메시지가 발송되며, 보낸 선물함 페이지로 이동합니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step1-4.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 5.</span>보낸 선물함</p>
+			<ol>
+				<li><span>①</span>보낸 선물의 수령 여부 및 상태를 보여줍니다.
+					<ul>
+						<li><span>- 수령 미완료 : </span> 받는 사람이 선물 쿠폰을 등록 하지 않은 상태</li>
+						<li><span>- 수령 완료 : </span> 받는 사람이 선물 쿠폰을 등록한 상태</li>
+						<li><span>- 기간 만료 취소 : </span> 선물하기 결제 후 14일 이내 받는 사람이 선물 쿠폰을 등록하지 않아 자동 결제 취소된 상태 휴대폰, 계좌이체 결제 금액은 결제한 회원의 아이디 계정에 북캐시로 전환 신용카드, 문화상품권, 적립금, 북큐브 상품권 결제 금액은 결제취소 처리</li>
+					</ul>
+				</li>
+				<li><span>②</span>수령 미완료 상태일 경우, 도서명 터시 치 선물 받는 사람의 정보를 재입력 할 수 있습니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step1-5.jpg" />
+		</div>
+		<div class="title-bar">
+			<p>2.전자책 선물 수령</p>
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 1.</span>선물 카카오 메시지 / 이메일 확인</p>
+			<ol>
+				<li><span>①</span>선물 보낸 사람 및 메시지 내용을 확인 후 선물 확인하기 또는 상품 수령하기 버튼을 터치합니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step2-1.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 2.</span>선물 목록 확인 및 선물 수령하기</p>
+			<ol>
+				<li><span>①</span>선물 받은 도서 목록 및 선물 수령 기간을 확인합니다.</li>
+				<li><span>②</span>터치 시 북큐브 로그인 페이지로 이동되며, 로그인 시 쿠폰 등록 페이지가 노출됩니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step2-2.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 3.</span>선물 쿠폰 등록(선물 수령)</p>
+			<ol>
+				<li><span>①</span>선물 이메일 또는 카카오톡에 포함된 선물 쿠폰 번호 12자리를 입력 후 확인 버튼을 클릭합니다.</li>
+			</ol>
+			<em><span>※</span> 본인의 아이디 계정에 선물하기는 불가합니다.</em>
+			<em><span>※</span> 이미 보유한 전자책에 대하여 중복 수령이 가능합니다.</em>
+			<em><span>※</span> 10년 소장 / 대여 전자책은 선물 수령 시점을 기준으로 일정 시간 동안 이용 가능합니다.</em>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step2-3.jpg" />
+		</div>
+		<div class="gift-step">
+			<p><span>STEP 4.</span>선물 수령 도서 다운로드</p>
+			<ol>
+				<li><span>①</span>내 서재 탭에서 수령 받은 도서를 터치하여 다운로드 합니다. 내 서재에서 도서 확인이 되지 않을 경우, 다시 내려 받기를 통해 내서재 담기 후 이용 해 주시기 바랍니다.</li>
+			</ol>
+		</div>
+		<div class="gift-img">
+			<img src="/book/images/m_book/bnr/step2-4.jpg" />
+		</div>
+		<!--
+		<div class="gift-ps">
+			<p>주의사항</p>
+			<ol>
+				<li>기프트 카드 등록이 완료되면 소지하고 계시는 기프트 카드 앞면에 표시된 금액만큼 기프트 카드 계정에 충전이 됩니다.</li>
+				<li>기프트 카드 뒷면의 사용 유효기간이 지나면 기프트 카드 등록이 불가함은 물론 기프트 카드를 통해 이미 충전하신 금액도 소멸됩니다.</li>
+				<li>이미 입력한 적이 있는 기프트 카드 번호는 다시 사용할 수 없습니다.</li>
+				<li>1인당(한 ID당) 등록할 수 있는 기프트 카드의 갯수는  기프트 카드 뒷면의 이용안내를 참고해 주십시오.</li>
+				<li>그 외에 주요한 사항들은 기프트 카드 뒷면에 표기된 내용을 참고해 주십시오.</li>
+				<li>기프트 카드 이용과 관련 문의하실 사항은 1:1게시판 또는 1588-1925로 문의해 주시기 바랍니다.</li>
+			</ol>
+		</div>
+		-->
+	</section>
+	<footer>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

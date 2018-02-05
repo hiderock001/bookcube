@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li class="lnb_on"><a href="#"><img src="images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li class="bold"><a href="#">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="images/main/bookcube_logo.png" alt="bookcube" /></a></h1>
+					<div class="h_search_box">
+						<form>
+							<fieldset>
+								<legend class="hide">북큐브 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="images/main/select_arrow.jpg" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li>전체</li>
+											<li>제목</li>
+											<li>저자</li>
+											<li>출판사</li>
+											<li>책정보</li>
+											<li>정액가능</li>
+											<li>대여가능</li>
+											<li>10년소장</li>
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" id="" class="search_input" value="" />
+								</div>
+								<input type="submit" name="" id="" class="select_submit"  />
+								<a href="#"><img src="images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="mainGnb_wrap">
+				<div class="mainGnb_inner">
+					<h2 class="hide">메인메뉴</h2>
+					<p class="all_category"><img src="images/main/all_category.jpg" alt="전체 카테고리" /></p>
+					<div class="allCate_view">
+						<div class="allCate_box">
+							<p class="allCate_title">일반도서</p>
+							<ul class="allCate_list">
+								<li class="all_red"><a href="#">리얼장르</a></li>
+								<li class="all_red"><a href="#">관능로맨스</a></li>
+								<li class="all_red"><a href="#">오디오북</a></li>
+								<li><a href="#">로맨스</a></li>
+								<li><a href="#">판타지/무협</a></li>
+								<li><a href="#">문학</a></li>
+								<li><a href="#">자기계발</a></li>
+								<li><a href="#">경제/경영</a></li>
+								<li><a href="#">외국어/언어</a></li>
+								<li><a href="#">역사/문화</a></li>
+								<li><a href="#">인문</a></li>
+								<li><a href="#">인물</a></li>
+								<li><a href="#">사회</a></li>
+								<li><a href="#">만화</a></li>
+								<li><a href="#">잡지</a></li>
+								<li><a href="#">컴퓨터/인터넷</a></li>
+								<li><a href="#">자연과 과학</a></li>
+								<li><a href="#">건강/스포츠/취미</a></li>
+								<li><a href="#">종교</a></li>
+								<li><a href="#">여행</a></li>
+								<li><a href="#">가정/생활/요리</a></li>
+								<li><a href="#">유아</a></li>
+								<li><a href="#">어린이</a></li>
+								<li><a href="#">청소년</a></li>
+								<li><a href="#">예술/대중문화</a></li>
+								<li><a href="#">교재</a></li>
+								<li><a href="#">성인</a></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<p class="allCate_title ma_top">커뮤니티/테마관</p>
+							<ul class="allCate_list">
+								<li class="all_blue"><a href="#">정액관</a></li>
+								<li class="all_green"><a href="#">대여관</a></li>
+								<li class="all_purple"><a href="#">스토리큐브</a></li>
+								<li class="all_green2"><a href="#">독점선출간</a></li>
+								<li></li>
+							</ul>
+							<img src="images/main/all_close.png"  alt="카테고리 뷰 페이지 닫기"  class="all_close" />
+						</div>
+					</div>
+					<ul class="gnb_list">
+						<li><a href="#"><img src="images/main/general_on.jpg" alt="일반도서" /></a></li> 
+						<li><a href="#"><img src="images/main/romance.jpg" alt="로맨스" /></a></li>
+						<li><a href="#"><img src="images/main/fantasy.jpg" alt="무협/판타지" /></a></li>
+						<li><a href="#"><img src="images/main/toon.jpg" alt="만화" /></a></li>
+						<li><a href="#"><img src="images/main/real.jpg" alt="리얼장르" /></a></li>
+					</ul>
+					<ul class="sub_list">
+						<li><a href="#"><img src="images/main/sub_best.jpg" alt="베스트" /></a></li>
+						<li><a href="#"><img src="images/main/sub_new.jpg" alt="신간" /></a></li>
+						<li><a href="#"><img src="images/main/sub_free.jpg" alt="무료" /></a></li>
+						<li><a href="#"><img src="images/main/sub_event.jpg" alt="이벤트" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- main_contents START!! -->
+	<div class="main_contents fantasy">
+		<div class="main_recommend">
+			<div class="recommend_inner">
+				<div class="today_recommend"><img src="images/main/today_recommend_fan.png" alt="오늘의 비급" /></div>	
+				<div class="today_book">
+					<ul class="tBook_list">
+						<li><img src="images/main/tBook1.jpg" alt="" class="tBook_img" />
+							<div class="tBook_op"></div> <!-- 투명 박스 -->
+							<div class="tBook_text">
+								<a href="#">나는 살아야 한다. 엄마니깐, 아내니까, 딸이니까, 그리고 나니깐 올레!!</a>
+							</div>
+							<p class="today_title">대전망 대전망 대전망</p>
+							<p class="today_anchor">크리스티아누 호날두</p>
+							<img src="images/main/free.png" alt="free" class="today_icon" />
+						</li>
+						<li><img src="images/main/tBook2.jpg" alt="" />
+							<div class="tBook_op"></div> <!-- 투명 박스 -->
+							<div class="tBook_text">
+								<a href="#">나는 살아야 한다. 엄마니깐, 아내니까, 딸이니까, 그리고 나니깐 올레!!</a>
+							</div>
+							<p class="today_title">고양이 테이블</p>
+							<p class="today_anchor">크리스티아누 호날두</p>
+							<img src="images/main/new.png" alt="new" class="today_icon" />
+						</li>
+						<li><img src="images/main/tBook3.jpg" alt="" />
+							<div class="tBook_op"></div> <!-- 투명 박스 -->
+							<div class="tBook_text">
+								<a href="#">나는 살아야 한다. 엄마니깐, 아내니까, 딸이니까, 그리고 나니깐 올레!!</a>
+							</div>
+							<p class="today_title">다락방의 꽃들</p>
+							<p class="today_anchor">크리스티아누 호날두</p>
+							<img src="images/main/sale.png" alt="sale" class="today_icon" />
+						</li>
+						<li><img src="images/main/tBook4.jpg" alt="" />
+							<div class="tBook_op"></div> <!-- 투명 박스 -->
+							<div class="tBook_text">
+								<a href="#">나는 살아야 한다. 엄마니깐, 아내니까, 딸이니까, 그리고 나니깐 올레!!</a>
+							</div>
+							<p class="today_title">불편불만 영문법</p>
+							<p class="today_anchor">크리스티아누 호날두</p>
+							<img src="images/main/free.png" alt="free" class="today_icon" />
+						</li>
+						<li><img src="images/main/tBook3.jpg" alt="" />
+							<div class="tBook_op"></div> <!-- 투명 박스 -->
+							<div class="tBook_text">
+								<a href="#">나는 살아야 한다. 엄마니깐, 아내니까, 딸이니까, 그리고 나니깐 올레!!</a>
+							</div>
+							<p class="today_title">대전망 대전망 대전망</p>
+							<p class="today_anchor">크리스티아누 호날두</p>
+							<img src="images/main/best.png" alt="best" class="today_icon" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main_inner">
+
+
+
+
+
+
+		<!---------------------------------------키워드 추가 ----------------------------------------> 
+			<div class="keyword_box">
+				<h3 class="hide">키워드 선택</h3>
+				<ul class="keyword_list">
+					<li><a href="#">키워드</a></li>
+					<li><a href="#">프리미엄연재</a></li>
+					<li><a href="#">대여관</a></li>
+					<li><a href="#">정액관</a></li>
+				</ul>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="event_box">
+				<h3><img src="images/main/event_title.png" alt="이벤트" /></h3>
+				<div class="event_slide">
+					<div class="e_slide">
+						<ul class="event">
+							<li class="event_page"><a href="#"><img src="images/main/event1.jpg" alt="" /></a></li>
+							<li class="event_page"><a href="#"><img src="images/main/event2.jpg" alt="" /></a></li>
+							<li class="event_page"><a href="#"><img src="images/main/event3.jpg" alt="" /></a></li>
+							<li class="event_page"><a href="#"><img src="images/main/event4.jpg" alt="" /></a></li>
+							<li class="event_page"><a href="#"><img src="images/main/event5.jpg" alt="" /></a></li>
+							<li class="event_page"><a href="#"><img src="images/main/event6.jpg" alt="" /></a></li>
+						</ul>
+					</div>
+					<img src="images/main/prev_btn.png" alt=""  class="prev_btn" /></a>
+					<img src="images/main/next_btn.png" alt=""  class="next_btn" /></a>
+				</div>
+				<p class="event_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+			</div>
+			<div class="monopoly_wrap">
+				<h3><img src="images/main/book_title.png" alt="북큐브 독점선출간" /></h3>
+				<div class="monopoly1">
+					<div class="mono_left">
+						<a href="#"><img src="images/main/monopolyThum.jpg" alt="북큐브 독점선출간 썸네일"  /></a>
+						<div class="mono_text">
+							<p class="mono_title"><a href="#">[리얼로맨스] 신사의 은밀한 취향(웹오디오드라마+이미지팩포함)&nbsp;(전2권/완료)</a></p>	
+							<p class="mono_detail">저자 : 티모시 페리스<br />출판사 : 갤리온</p>
+							<p class="mono_price">구매 : <span>3,000원</span> | 적립금 : 105원<span>(3%)</span><br />10년 소장 : <del>3,000원</del> <span>1,500원</span> | 적립금 :  175원<span>(5%)</span></p>
+						</div>
+					</div>
+					<div class="mono_right">
+						<h4>책 소개</h4>
+						<p>말랐든 뚱뚱하든, 운동을 좋아하든 싫어하든 누구나 한달에 4시간이면 원하는 몸을 만들 수 있다! 세계적인 베스트셀러 ［4시간］의 저자 티모시 페리스가 20여 년간 자신의 몸에 직접 실험하고, 일반인 남겨 194명이 검증한 혁명적 건강서. 최소의 노력으로 최대의 성과를 얻어 내는 원칙을 정리한 이 책은 기존의 건강 상식을 완전히 뒤집으며 미국에서 큰 화제를 모았다. 출간 즉시 50만부가 판매되었고 전 세계 24개국에 출간되었다.</p>
+					</div>
+				</div>
+				<p class="mono_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+			</div>
+			<div class="best_wrap">
+				<div class="best_category">
+					<h3><img src="images/main/best_title.png" alt="베스트" /></h3>
+					<ul class="best_cate">
+						<li class="best_on">전체</li>
+						<li>문학</li>
+						<li>자기계발</li>
+						<li>역사문화</li>
+						<li>인문사회</li>
+						<li>경제경영</li>
+					</ul>	
+				</div>
+				<div class="best_box">
+					<div class="best_view">
+						<ul class="best_list">
+							<li>
+								<p class="b_num1 rank"><img src="images/main/b_num1.jpg" alt="1" /></p>
+								<div class="thumBox">
+									<a href="#"><img src="images/main/best_1.jpg" alt="" class="best_1" /></a>
+									<p class="best_title"><a href="#">오늘 내가 살아갈 이유<br />위지안</a></p>
+									<p class="best_text">많은 이들이 온전히 자신을 위한 삶을 살지 못한 채 나이 들어가고 있다. 가족을 위해 전력 질주하며 40대가 지나고 50대에 이른 어느날</p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num2.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">난설헌</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num3.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">덕혜옹주</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num4.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">섬머타임</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num5.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">[스테디]정글만리1</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num6.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">갈림길</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num7.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">전쟁터에서 고군분투하는..</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num8.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">당신이 하는 말을 다스..</a></p>
+								</div>
+							</li>
+							<li>
+								<p class="b_num2 rank"><img src="images/main/b_num9.jpg" alt="2" /></p>
+								<div class="thumBox2">
+									<a href="#"><img src="images/main/best_2.jpg" alt=""  /></a>
+									<p class="best_title"><a href="#">[묶음]허영만의 캠핑 시리..</a></p>
+								</div>
+							</li>
+						</ul>
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="best_view">2
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="best_view">3
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="best_view">4
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="best_view">5
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="best_view">6
+						<p class="best_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+				</div>
+			</div> <!-- 베스트 end -->
+			<div class="tbZone_wrap">
+				<div class="tbZone_menu_box">
+					<ul class="tbZone_list">
+						<li class="on"><img src="images/main/theme_on.png" alt="테마관" /></li>
+						<li><img src="images/main/brand.png" alt="브랜드관" /></li>
+					</ul>
+				</div>
+				<div class="tbZone_view">
+					<div class="tb_theme">
+						<ul class="tb_list">
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li class="no_ma"><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+						</ul>
+						<p class="tb_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+					<div class="tb_brand">
+						<ul class="tb_list">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li class="no_ma"><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+							<li><a href="#"><img src="images/main/tb_banner.jpg" alt="" /></a></li>
+						</ul>
+						<p class="tb_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+				</div>
+			</div> <!-- 테마관, 브랜드관 end -->
+			<div class="content_wrap">
+				<h3><img src="images/main/md_title.png" alt="MD 추천" /></h3>
+				<div class="content_box">
+					<ul class="con_list">
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">나설헌</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="mono_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+			</div>
+			<div class="content_wrap">
+				<h3><img src="images/main/new_title.png" alt="새로나온 책 " /></h3>
+				<div class="content_box">
+					<ul class="con_list">
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">나설헌</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="mono_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+			</div>
+			<div class="content_wrap">
+				<h3><img src="images/main/free_title.png" alt="무료 전자책" /></h3>
+				<div class="content_box">
+					<ul class="con_list">
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">나설헌</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+						<li>
+							<a href="#"><img src="images/main/thum.jpg" alt="MD추천 썸네일" /></a>
+							<div class="c_detailText">
+								<p class="c_detailTitle"><a href="#">이제는 정말 나를 위해서만...</a></p>	
+								<p class="c_author">유인경</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="mono_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+			</div>
+			<div class="main_bottom">
+				<div class="mb_left">
+					<div class="mb_lTop">
+						<ul>
+							<li><a href="http://www.bookcube.com/ticket.asp?page=coupon"><img src="images/main/bList1.jpg" alt="쿠폰등록" /></a></li>
+							<li><a href="http://www.bookcube.com/ticket.asp?page=giftcard"><img src="images/main/bList2.jpg" alt="상품권등록" /></a></li>
+							<li><a href="http://www.bookcube.com/appDown.asp"><img src="images/main/bList3.jpg" alt="앱 다운로드" /></a></li>
+							<li><a href="http://www.bookcube.com/customer.asp?page=my1vs1 "><img src="images/main/bList4.jpg" alt="1:1 문의" /></a></li>
+						</ul>
+					</div>
+					<div class="mb_lBottom">
+						<ul class="notice_list">
+							<li><a href="#">[공지] SNS 공유 시 무료 도서 지급 기준 변경 안내 변경 안내변경 안내변경 안내변경 안내</a></li>
+							<li><a href="#">[공지] 로그인 5회 오류 시 접속제한 적용 관련 공지</a></li>
+						</ul>
+						<p class="notice_more"><a href="#"><strong>더보기</strong><img src="images/main/more_arrow.jpg" alt="더보기" /></a></p>
+					</div>
+				</div>
+				<div class="mb_right">
+					<img src="images/main/customer_call.jpg" alt="고객센터 전화상담 1588-1925" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+				<a href="#" target="_blank"><img src="images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="images/main/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

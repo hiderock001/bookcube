@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="title" content="e북포털 북큐브">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+<meta property="og:url" content="http://www.bookcube.com/book/m/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/images/icon/m.bookcube.png" />
+<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+<link rel="stylesheet" type="text/css" href="/js/lib/swipe/swiper.css" />
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/lib/requirejs.min.js"></script>
+<script>
+	requirejs.config({
+		baseUrl : "/js",
+		paths : {
+			"jquery" : "lib/jquery-1.11.0.min",
+			"swiper" : "lib/swipe/swiper-2.1.min"
+		},
+		shim : {
+			"cookie" : ["jquery"],
+			"swiper" : ["jquery"]
+		}
+	});
+
+	require(["m.bookcube"]);
+</script>
+<style type="text/css">
+.isloading-overlay{position:relative;text-align:center;}
+.isloading-overlay .isloading-wrapper{background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:10%;z-index:9000;}
+.icon-refresh{background-position:-240px -24px;}
+</style>
+</head>
+<body>
+ 	<header>
+		<div class="header-top">
+			<div class="top-left">
+				<ul>
+					<li><a href="javascript:;">MY PAGE</a></li>
+					<li class="alarm"><a href="#">알리미<span class="alarm-new">새로운 알리미</span></a></li>
+				</ul>
+			</div>
+			<h1><a href="#">북큐브</a></h1>
+			<div class="top-right">
+				<ul>
+					<li><a href="javascript:;">검색</a></li>
+					<li><a href="#">내서재</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-middle">
+			<h2 class="hide">장르</h2>
+			<ul>
+				<li><div><a href="#">서점</a><em>line</em></div></li>
+				<li><div><a href="#">웹소설</a></div></li>
+				<li><div><a href="#">웹툰</a></div></li>
+			</ul>
+		</div>
+		<div class="overlay"></div>
+		<div class="search">
+			<h2 class="hide">북큐브 작품 검색</h2>
+			<form>
+				<fieldset>
+					<legend>검색</legend>
+					<div class="search-inner">
+						<div>
+							<div>
+								<span></span>
+								<input type="text" name='' placeholder='제목, 작가명, 출판사명' />
+							</div>
+							<input type="submit" name='' />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="sideBar">
+			<h2 class="hide">사이드 메뉴</h2>
+			<div class="bar-top">
+				<a href="javascript:;">close</a>
+				<div>
+					<!-- 로그인 아이콘 
+						로그아웃 상태는 a 태그에 클래스가 없습니다.
+						로그인 상태 - bookcube, twitter, facebook, kakao, naver
+					-->
+					<a href="javascript:;" class="bookcube">로그인 아이콘</a>
+					<p>로그인하세요</p>
+					<div>
+						<a href="javascript:;">로그아웃</a>
+					</div>
+				</div>
+			</div>
+			<div class="bar-middle">
+				<ul>
+					<li><a href="#"><p>마이페이지</p></a></li>
+					<li><a href="#"><p>책바구니</p></a></li>
+					<li><a href="#"><p>선호작</p></a></li>
+				</ul>
+			</div>
+			<div class="bar-bottom">
+				<ul>
+					<li><a href="#">북캐시 충전</a></li>
+					<li><a href="#">이벤트</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+				<div>
+					<p>북큐브앱을 설치하시고 편리한 이용과 더 많은 혜택을 누리세요.</p>
+					<a href="#">북큐브앱 설치하기</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function(){
+				var fixHeader = $("header").height();
+				$("header").wrapInner("<div class='h-wrap'></div>");
+				$("header,.h-wrap").css("height",fixHeader);
+				$(window).scroll(function(){
+					var top = $(window).scrollTop();
+					$(".h-wrap").css("position","fixed");	
+					if(top === 0){
+						$(".h-wrap").css("position","static");	
+					}
+				});
+				$(".overlay, .bar-top > a").on("click",function(){
+					window.location.hash = "";
+					$("body").removeClass("on");
+				});
+
+				$(window).on("hashchange",function(){
+					var m= window.location.hash;
+					if(m != "#open"){
+						$(".overlay, .search").hide();
+						$(".sideBar").removeClass("on");
+						$("body").removeClass("on");
+					}
+				});
+				$(".top-left ul li:first a").on("click",function(){
+					window.location.hash = "open";
+					var sh = screen.height;
+					$(".overlay").show();
+					$("body").css("height",sh)
+					$("body,.sideBar").addClass("on");
+				});
+
+				$(".top-right ul li:first a").on("click",function(){
+					$(".overlay, .search").show();
+					$("body").addClass("on");
+					$(".search-inner input[type='text']").focus();
+				});
+
+				$(".overlay, .search div span").on("click",function(){
+					$(".overlay,.search").hide();
+					$("body").removeClass("on");
+					$(".search-inner input[type='text']").val("");
+				});
+			});
+		</script>
+	</header>
+	<section>
+		<div class="field">
+			<p><a href="#">분야</a></p>
+			<ul>
+				<li><a href="#">일반</a></li>
+				<li><a href="#">로맨스</a></li>
+				<li><a href="#" class="on">BL</a></li>
+				<li><a href="#">판/무</a></li>
+				<li><a href="#">만화</a></li>
+			</ul>
+		</div>
+		<div class="swiper-container main-roll">
+			<h3 class="hide">오늘의 추천</h3>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="box">
+						<div class="box-inner">
+							<a href="#">
+								<span class="rm_br"><img src="http://bookimg.bookcube.com/150/1702/170204331.jpg" alt="도서 이미지 - [BL] 각인"></span>
+								<span class="adult"><em>19</em></span>
+							</a>
+							<span class="light"></span>
+						</div>
+						<span class="label"><em>40%<span>적립</span></em></span>
+					</div>
+					<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="box">
+						<div class="box-inner">
+							<a href="#">
+								<span class="rm_br"><img src="http://bookimg.bookcube.com/150/1707/170703896.jpg" alt="도서 이미지 - [BL] 봉알산..."></span>
+								<span class="adult"><em>19</em></span>
+							</a>
+							<span class="light"></span>
+						</div>
+						<span class="label"><em>40%<span>적립</span></em></span>
+					</div>
+					<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="box">
+						<div class="box-inner">
+							<a href="#">
+								<span class="rm_br"><img src="http://bookimg.bookcube.com/150/1707/170704997.jpg" alt="도서 이미지 - [BL] 진짜 ..."></span>
+								<span class="adult"><em>19</em></span>
+							</a>
+							<span class="light"></span>
+						</div>
+						<span class="label"><em>40%<span>적립</span></em></span>
+					</div>
+					<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="box">
+						<div class="box-inner">
+							<a href="#">
+								<span class="rm_br"><img src="http://bookimg.bookcube.com/150/1610/161002779.jpg" alt="도서 이미지 - [BL] 우리는..."></span>
+								<span class="adult"><em>19</em></span>
+							</a>
+							<span class="light"></span>
+						</div>
+						<span class="label"><em>40%<span>적립</span></em></span>
+					</div>
+					<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="box">
+						<div class="box-inner">
+							<a href="#">
+								<span class="rm_br"><img src="http://bookimg.bookcube.com/150/1707/170703915.jpg" alt="도서 이미지 - [BL] 제물이..."></span>
+								<span class="adult"><em>19</em></span>
+							</a>
+							<span class="light"></span>
+						</div>
+						<span class="label"><em>40%<span>적립</span></em></span>
+					</div>
+					<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="quick bl">
+			<h3 class="hide">퀵메뉴</h3>
+			<ul>
+				<li><a href="#">캐시충전</a></li>
+				<li><a href="#">키워드검색</a></li>
+				<li><a href="#">북큐브독점</a></li>
+				<li><a href="#">출간예정작</a></li>
+				<li><a href="#">비비빅</a></li>
+			</ul>
+		</div>
+		<h3 class="title"><em>이벤트</em><span></span></h3>
+		<div class="swiper-container event">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="#"><img src="/book/images/m_book/e-banner.png" alt="도서 이미지 - 역대 최강의 검..."></a>
+					<span class="light"></span>
+				</div>
+				<div class="swiper-slide">
+					<a href="#"><img src="/book/images/m_book/e-banner1.png" alt="도서 이미지 - 역대 최강의 검..."></a>
+					<span class="light"></span>
+				</div>
+				<div class="swiper-slide">
+					<a href="#"><img src="/book/images/m_book/e-banner2.png" alt="도서 이미지 - 역대 최강의 검..."></a>
+					<span class="light"></span>
+				</div>
+				<div class="swiper-slide">
+					<a href="#"><img src="/book/images/m_book/e-banner3.png" alt="도서 이미지 - 역대 최강의 검..."></a>
+					<span class="light"></span>
+				</div>
+				<div class="swiper-slide">
+					<a href="#"><img src="/book/images/m_book/e-banner1.png" alt="도서 이미지 - 역대 최강의 검..."></a>
+					<span class="light"></span>
+				</div>
+			</div>
+		</div>
+		<div class="fix-banner">
+			<h3 class="hide">적립금 티 배너</h3>
+			<p><a href="#">적립금 2,000원 + 쿠폰 즉시 지급</a></p>
+		</div>
+
+		<h3 class="title"><em>베스트</em><span></span></h3>
+		<div class="swiper-container best">
+			<div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 777px; height: 448px;">
+				<div class="swiper-slide swiper-slide-visible swiper-slide-active">
+					<div class="rankingTitle">
+						<h4>일간 TOP 5</h4>
+						<a href="#">더보기</a>
+					</div>
+					<ul class="rankingSub">
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3090">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3090.jpg" alt="비천신마">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>1. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank5"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3004">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3004.jpg" alt="칼에 취한 밤을 걷다">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>2. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank4"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3111">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3111.jpg" alt="회귀행">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>3. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank3"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se2845">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se2845.jpg" alt="환생천마">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>4. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank2"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1524">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1524.jpg" alt="남창목가(南昌睦家)">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>5. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div><!-- 1개 끝 -->
+				<div class="swiper-slide swiper-slide-visible">
+					<div class="rankingTitle">
+						<h4>신작 TOP 5</h4>
+						<a href="#">더보기</a>
+					</div>
+					<ul class="rankingSub">
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3004">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3004.jpg" alt="칼에 취한 밤을 걷다">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>1. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank5"></span>
+										<em class="star-vote">(14,005명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3090">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3090.jpg" alt="비천신마">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>2. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank4"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se3001">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se3001.jpg" alt="쟁선계 (개정판)">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>3. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank3"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se2952">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se2952.jpg" alt="비장 혈수라">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>4. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank2"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se2978">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se2978.jpg" alt="검왕창천 (개정판)">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>5. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div><!-- 2개끝 -->
+				<div class="swiper-slide">
+					<div class="rankingTitle">
+						<h4>선호작 TOP 5</h4>
+						<a href="#">더보기</a>
+					</div>
+					<ul class="rankingSub">
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1216">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1216.jpg" alt="군림천하(君臨天下)">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>1. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank3"></span>
+										<em class="star-vote"></em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1358">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1358.jpg" alt="천강기협전">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>2. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1110">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1110.jpg" alt="고검환정록 (에필로그 추가)">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>3. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1255">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1255.jpg" alt="무위투쟁록">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>4. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="/novel/m/detail.asp?serial_num=se1371">
+								<div class="rankingThum">
+									<span class="im_br">
+										<img src="http://serialimg.bookcube.com/94/se1371.jpg" alt="천마군림 1, 2부">
+									</span>
+								</div>
+								<div class="rankingInfo">
+									<h5>5. 꽃같은 짐승</h5>
+									<p>쑥쑥이</p>
+									<p>
+										<span class="list-star rank1"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-wrapper">
+			<h3 class="title"><em>신간</em><span></span></h3>
+			<div class="swiper-container md">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="e-banner">
+			<h3 class="hide">이벤트 배너</h3>
+			<ul>
+				<li><a href="#"><img src="/book/images/m_book/e-banner.png" alt="" ></a></li>
+				<li><a href="#"><img src="/book/images/m_book/e-banner1.png" alt=""></a></li>
+				<li><a href="#"><img src="/book/images/m_book/e-banner2.png" alt=""></a></li>
+				<li><a href="#"><img src="/book/images/m_book/e-banner3.png" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="md-wrapper">
+			<h3 class="title"><em>이건 추천해야 해!</em></h3>
+			<div class="swiper-container md">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="md-wrapper">
+			<h3 class="title"><em>ONLY 코믹큐브 BL 웹툰</em></h3>
+			<div class="swiper-container md">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="md-wrapper">
+			<h3 class="title"><em>테마관</em><span></span></h3>
+			<div class="swiper-container theme-brand">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/6096/e6096_mobile_banner.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/6086/e6086_mobile_banner.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/6091/e6091_mobile_banner.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/6069/e6069_mobile_banner.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="md-wrapper">
+			<h3 class="title"><em>브래드관</em><span></span></h3>
+			<div class="swiper-container theme-brand">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/3059/e3059_mobile_banner.png" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/1366/e1366_mobile_banner.png" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/3063/e3063_mobile_banner.png" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><span class="im_br"><img src="http://up.bookcube.com/bookcube/upload/event/3066/e3066_mobile_banner.png" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="md-wrapper">
+			<h3 class="title"><em>무료</em><span></span></h3>
+			<div class="swiper-container md">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+							<p>쑥쑥이</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="box">
+							<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+							<span class="light"></span>
+						</div>
+						<div class="book-name">
+							<p>꽃같은 짐승</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="notice-box">
+			<p class="notice">[공지]</p>
+			<div class="notice-view">
+				<ul class="notice-list">
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore-box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">책바구니</a></p></li>
+				<li><p><a href="#">고객센터</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div><img src="/book/images/m_book/clean.png" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<!--
+	<div class="banner png">
+		<div class="banner-link">
+			<a href="http://www.bookcube.com/book/m/event_detail.asp?event_num=4257&amp;event_class=mf"><img src="http://up.bookcube.com/bookcube/upload/event/4334/ts4334_mobile_banner.png"></a>
+			<span>닫기</span>
+		</div>
+	</div>
+	-->
+	<script>
+		require(['jquery','swiper'],function($){
+
+			$(".swiper-container").each(function(){
+				$(this).swiper({slidesPerView: 'auto'});
+			});
+
+			//공지사항
+				var list = $(".notice-list");
+				$(".notice-text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice-list:not(:animated)").css("margin-top"))+29+"px"
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice-text:last").prependTo(list);
+					});
+				},3000);
+
+		});
+
+
+
+	</script>
+</body>
+</html>

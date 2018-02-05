@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="category-nav">
+				<div class="category-nav-inner">
+					<p>HOME > 마이페이지</p>
+				</div>
+			</div>
+			<div class="contents-wrap">
+				<div class="mypage">
+					<div class="mypage-top">
+						<div class="detail-inner">
+							<h3>마이페이지</h3>
+							<div class="mypage-box-top">
+								<ul>
+									<li>
+										<span class="bookcube">로그인정보</span> <!-- bookcube,kakaotalk,naver,twitter,facebook,payco-->
+										<p>honggilgong88</p>
+										<a href="#" class="btn">회원정보</a>
+									</li>
+									<li>
+										<p>북캐시</p>
+										<p>533,473원</p>
+										<div class="mysel">
+											<a href="#" class="v-btn">내역보기 &gt;</a>
+											<a href="#">충전하기 &gt;</a>
+										</div>
+										<div class="mpop bookcash">
+											<div class="mpop-inner">
+												<h4>북캐시 상세내역</h4>
+												<p>나의 북캐시 : <span>1,000원</span></p>
+												<ul>
+													<li>- 북캐시 결제 후 7일 이내에 유료 서비스나 콘텐츠를 구매하지 않은 경우 환불 가능</li>
+													<li>- 북캐시 환불 시에는 북캐시 결제 시 추가적으로 제공된 적립금 차감 및 환불 수수료 공제</li>
+												</ul>
+												<!--<p class="no">충전 내역이 없습니다.</p>-->
+												<table>
+													<caption>북캐시 상세내역</caption>
+													<colgroup>
+														<col width="20%" />
+														<col width="40%" />
+														<col width="20%" />
+														<col width="20%" />
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>날짜</th>
+															<th>구분</th>
+															<th>금액</th>
+															<th>잔액</th>
+														</tr>
+														<tr>
+															<td>2017.04.25</td>
+															<td>주문</td>
+															<td>-200</td>
+															<td>1000</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문</td>
+															<td>-900</td>
+															<td>1,200</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문</td>
+															<td>-1,800</td>
+															<td>2100</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문</td>
+															<td>-1,800</td>
+															<td>3,900</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문</td>
+															<td>-1,800</td>
+															<td>5,700</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="paging">
+													<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+													<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+													<a href="#" class="fir on">1</a> 
+													<a href="#">2</a> 
+													<a href="#">3</a> 
+													<a href="#">4</a> 
+													<a href="#">5</a> 
+													<a href="#">6</a> 
+													<a href="#">7</a> 
+													<a href="#">8</a> 
+													<a href="#">9</a> 
+													<a href="#">10</a> 
+													<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+													<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+												</div>
+												<a href="javascript:;" class="mpop-close">close</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<p>적립금</p>
+										<p>2,800원</p>
+										<div class="mysel">
+											<a href="#" class="v-btn">내역보기 &gt;</a>
+										</div>
+										<div class="mpop saved">
+											<div class="mpop-inner">
+												<h4>적립금 상세내역</h4>
+												<p>나의 적립금 : <span>1,000원</span></p>
+												<p>7일 이내 소멸 예정 적립금 : <span>2,100원</span></p>
+												<ul>
+													<li>- 승인일로부터 7일 이내에 주문취소 하였으나 소멸기간이 만료된 경우 적립금이 소멸</li>
+													<li>- 사용한 적립금 구매 후 7일 이내 주문 취소한 경우, 소멸 기간이 남은 적립금에 한하여 복원</li>
+												</ul>
+												<!--<p class="no">적립 내역이 없습니다.</p>-->
+												<table>
+													<caption>적립금 상세내역</caption>
+													<colgroup>
+														<col width="20%" />
+														<col width="40%" />
+														<col width="20%" />
+														<col width="20%" />
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>날짜</th>
+															<th>구분</th>
+															<th>금액</th>
+															<th>유효기간</th>
+														</tr>
+														<tr>
+															<td>2017.04.25</td>
+															<td>적립금지급</td>
+															<td>10</td>
+															<td>2018-09-18</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문취소</td>
+															<td>-36</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>적립금지급</td>
+															<td>27</td>
+															<td>2018-09-17</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>주문</td>
+															<td>-900</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>적립금지급</td>
+															<td>54</td>
+															<td>20158-09-17</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="paging">
+													<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+													<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+													<a href="#" class="fir on">1</a> 
+													<a href="#">2</a> 
+													<a href="#">3</a> 
+													<a href="#">4</a> 
+													<a href="#">5</a> 
+													<a href="#">6</a> 
+													<a href="#">7</a> 
+													<a href="#">8</a> 
+													<a href="#">9</a> 
+													<a href="#">10</a> 
+													<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+													<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+												</div>
+												<a href="javascript:;" class="mpop-close">close</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<p>쿠폰/상품권</p>
+										<p>28장</p>
+										<div class="mysel">
+											<a href="#" class="v-btn">내역보기 &gt;</a>
+											<a href="#">등록하기 &gt;</a>
+										</div>
+										<div class="mpop coupon">
+											<div class="mpop-inner">
+												<h4>쿠폰/상품권 상세내역</h4>
+												<p>나의 쿠폰/상품권 : <span>17장</span></p>
+												<ul>
+													<li>- 결제 시 하나의 쿠폰만 사용 가능합니다. (쿠폰 중복 사용 불가)</li>
+													<li>- 쿠폰 할인액(율), 쿠폰 적용금액을 확인해 주시기 바랍니다.</li>
+													<li>- 도서 정가제 시행에 따라 구매에 적용되는 쿠폰은 정가 대비 10% 이상 할인이 불가합니다.</li>
+													<li>- 사용기간이 만료된 쿠폰은 목록에서 자동 삭제 됩니다.</li>
+												</ul>
+												<!--<p class="no">사용 가능한 쿠폰/상품권이 없습니다.</p>-->
+												<table>
+													<caption>쿠폰/상품권 상세내역</caption>
+													<colgroup>
+														<col width="20%" />
+														<col width="20%" />
+														<col width="40%" />
+														<col width="20%" />
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>쿠폰명</th>
+															<th>할인액(율)</th>
+															<th>내용</th>
+															<th>사용기간</th>
+														</tr>
+														<tr>
+															<td>10% 할인쿠폰</td>
+															<td>10%</td>
+															<td>
+																<p>적용 분야 : <em>서점, 웹소설, 웹툰</em></p>
+																<p>카테고리적용분야 : <em>전체</em></p>
+																<p>서비스유형 : <em>조건없음</em></p>
+																<p>쿠폰 적용 금액 : <em>10원이상</em></p>
+															</td>
+															<td>2018-09-18<br />00:00:00</td>
+														</tr>
+														<tr>
+															<td>10% 할인쿠폰</td>
+															<td>10%</td>
+															<td>
+																<p>적용 분야 : <em>서점, 웹소설, 웹툰</em></p>
+																<p>카테고리적용분야 : <em>전체</em></p>
+																<p>서비스유형 : <em>조건없음</em></p>
+																<p>쿠폰 적용 금액 : <em>10원이상</em></p>
+															</td>
+															<td>2018-09-18<br />00:00:00</td>
+														</tr>
+														<tr>
+															<td>10% 할인쿠폰</td>
+															<td>10%</td>
+															<td>
+																<p>적용 분야 : <em>서점, 웹소설, 웹툰</em></p>
+																<p>카테고리적용분야 : <em>전체</em></p>
+																<p>서비스유형 : <em>조건없음</em></p>
+																<p>쿠폰 적용 금액 : <em>10원이상</em></p>
+															</td>
+															<td>2018-09-18<br />00:00:00</td>
+														</tr>
+														<tr>
+															<td>10% 할인쿠폰</td>
+															<td>10%</td>
+															<td>
+																<p>적용 분야 : <em>서점, 웹소설, 웹툰</em></p>
+																<p>카테고리적용분야 : <em>전체</em></p>
+																<p>서비스유형 : <em>조건없음</em></p>
+																<p>쿠폰 적용 금액 : <em>10원이상</em></p>
+															</td>
+															<td>2018-09-18<br />00:00:00</td>
+														</tr>
+														<tr>
+															<td>10% 할인쿠폰</td>
+															<td>10%</td>
+															<td>
+																<p>적용 분야 : <em>서점, 웹소설, 웹툰</em></p>
+																<p>카테고리적용분야 : <em>전체</em></p>
+																<p>서비스유형 : <em>조건없음</em></p>
+																<p>쿠폰 적용 금액 : <em>10원이상</em></p>
+															</td>
+															<td>2018-09-18<br />00:00:00</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="paging">
+													<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+													<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+													<a href="#" class="fir on">1</a> 
+													<a href="#">2</a> 
+													<a href="#">3</a> 
+													<a href="#">4</a> 
+													<a href="#">5</a> 
+													<a href="#">6</a> 
+													<a href="#">7</a> 
+													<a href="#">8</a> 
+													<a href="#">9</a> 
+													<a href="#">10</a> 
+													<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+													<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+												</div>
+												<a href="javascript:;" class="mpop-close">close</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<p>무료이용권</p>
+										<p>120장</p>
+										<div class="mysel">
+											<a href="#" class="v-btn">내역보기 &gt;</a>
+										</div>
+										<div class="mpop free">
+											<div class="mpop-inner">
+												<h4>무료이용권 상세내역</h4>
+												<p>나의 무료이용권 : <span>120장</span></p>
+												<!--<p class="no">사용 가능한 무료이용권이 없습니다.</p>-->
+												<table>
+													<caption>적립금 상세내역</caption>
+													<colgroup>
+														<col width="20%" />
+														<col width="40%" />
+														<col width="20%" />
+														<col width="20%" />
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>날짜</th>
+															<th>제목</th>
+															<th>수량</th>
+															<th>유효기간</th>
+														</tr>
+														<tr>
+															<td>2017.04.25</td>
+															<td>[연재]군림천하</td>
+															<td>20장</td>
+															<td>2018-09-18</td>
+														</tr>
+														<tr>
+															<td>2017.04.25</td>
+															<td>[연재]군림천하</td>
+															<td>20장</td>
+															<td>2018-09-18</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>[연재]군림천하</td>
+															<td>27장</td>
+															<td>2018-09-17</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>[연재]군림천하</td>
+															<td>27장</td>
+															<td>2018-09-17</td>
+														</tr>
+														<tr>
+															<td>2017.03.25</td>
+															<td>[연재]군림천하</td>
+															<td>27장</td>
+															<td>2018-09-17</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="paging">
+													<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+													<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+													<a href="#" class="fir on">1</a> 
+													<a href="#">2</a> 
+													<a href="#">3</a> 
+													<a href="#">4</a> 
+													<a href="#">5</a> 
+													<a href="#">6</a> 
+													<a href="#">7</a> 
+													<a href="#">8</a> 
+													<a href="#">9</a> 
+													<a href="#">10</a> 
+													<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+													<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+												</div>
+												<a href="javascript:;" class="mpop-close">close</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<script>
+								$(function(){
+									$(".v-btn").on("click",function(){
+										$(".mpop").fadeOut();
+										$(this).parent().next().fadeIn();	
+										return false;
+									});	
+									$(".mpop-close").on("click",function(){
+										$(this).parent().parent().fadeOut();
+										return false;
+									});
+								});
+							</script>
+							<div class="mypage-box-bottom">
+								<div>
+									<ul>
+										<li>
+											<h4>구매관리</h4>
+											<ul>
+												<li><a href="#">구매목록</a></li>
+												<li><a href="#">책바구니</a></li>
+												<li><a href="#">주문내역</a></li>
+											</ul>
+										</li>
+										<li>
+											<h4>나의 활동</h4>
+											<ul>
+												<li><a href="#" class="on">나의작품</a></li>
+												<li><a href="#">서평/댓글</a></li>
+												<li><a href="#">선호작/선호작가</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div>
+									<ul>
+										<li>
+											<p>선물함</p>
+											<div>
+												<a href="#">내역보기 &gt;</a>
+												<a href="#">등록하기 &gt;</a>
+											</div>
+										</li>
+										<li>
+											<p>장르정액권 : 29일 20시간 남음</p>
+										</li>
+										<li>
+											<p><a href="#">만화정액권 구매하기 &gt;</a></p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mypage-bottom">
+						<h3>나의 작품</h3>
+						<div class="tab">
+							<div class="my-active">
+								<p class="s-title">공지 쓰기</p>
+								<div class="my-collection">
+									<div>
+										<div class="figure">
+											<a href="javascript:;">
+												<span class="rm_br">
+													<img src="/images/thum/detail01.jpg" alt="내 아이를 위한 칼 비테 교육법">
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+									</div>
+									<div>
+										<p class="genre">판타지</p>
+										<p class="book-name">가까운 미래에[연재중]</p>
+										<div class="book-info">
+											<p>매주 <span>월,화</span> 연재<em>|</em>최근 반영일 <span>2016.02.14</span></p>
+											<div class="bookIcon">
+												<p><span class="hit">조회수 <em>1,128</em></span><span class="prefer">선호작 <em>382</em></span><span class="reply">댓글 <em>382</em></span></p>
+											</div>
+										</div>
+									</div>
+									<a href="#" class="my-notice btn">공지쓰기</a>
+								</div>
+								<table class="collect-tbl notice">
+									<caption>나의 작품 공지사항</caption>
+									<colgroup>
+										<col width="70%" />
+										<col width="15%" />
+										<col width="15%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>제목</th>
+											<th>작성일</th>
+											<th>수정/삭제</th>
+										</tr>
+									</tbody>
+								</table>
+								<p class="no">등록된 공지가 없습니다.</p>	
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+	
+			});	
+		</script>
+	</div>	
+</body>
+</html>

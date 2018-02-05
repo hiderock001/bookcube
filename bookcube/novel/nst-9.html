@@ -1,0 +1,1350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=904">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/novel/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/nStory.css" />
+<script src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+<script src="/novel/js/lib/jquery.jcarousel.min.js"></script>
+<script src="/novel/js/lib/requirejs.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header-top">
+			<div class="header-top-inner">
+				<div class="h-top">
+					<form action='' method='' onsubmit="return false" autocomplete="off">
+						<fieldset>
+							<legend>검색</legend>
+							<h1 class="logo"><a href="#">북큐브서점</a></h1>
+							<div class="search">
+								<input type='text' name='' />
+								<input type='button' name='' />
+							</div>
+							<ul class="my-lnb">
+								<li><a href="#">로그아웃</a></li>
+								<li><a href="#" class="mypop on">MY</a></li>
+								<li><a href="#">책바구니</a></li>
+								<li class="alarm"><a href="#">알리미</a></li>
+							</ul>
+						</fieldset>
+					</form>
+					<div class="my_layer_box">
+						<div class="my-wrap">
+							<span class="my-dot"></span>
+							<div class="my-inner">
+								<div class="my-top">
+									<h3>마이페이지</h3>
+									<a href="javascript:;" class="btn">로그아웃</a>
+								</div>
+								<ul>
+									<li>
+										<p>북캐시</p>
+										<p>2,800원</p>
+									</li>
+									<li>
+										<p>적립금</p>
+										<p>533,473원</p>
+									</li>
+									<li>
+										<p>쿠폰/상품권</p>
+										<p>28장</p>
+									</li>
+									<li>
+										<p>무료이용권</p>
+										<p>120장</p>
+									</li>
+								</ul>
+								<div class="my-bottom">
+									<a href="#" class="effect-btn">마이페이지 바로가기</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="fastSearch">
+						<div class="fastRight">
+							<ul class="fastUl">
+								<li>
+									<a href="http://www.naver.com" class="">
+										<div class="fsThum">
+											<span class="im_br">
+												<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+											</span>
+										</div>
+										<div class="fsInfo">
+											<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+											<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+										</div>
+									</a>
+								</li>
+								
+								<li>
+									<a href="http://www.daum.net">
+										<div class="fsThum">
+											<span class="im_br">
+												<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+											</span>
+										</div>
+										<div class="fsInfo">
+											<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+											</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+										</div>
+									</a>
+								</li>
+								
+								<li>
+									<a href="http://bookcube.com" class="">
+										<div class="fsThum">
+											<span class="im_br">
+												<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+											</span>
+										</div>
+										<div class="fsInfo">
+											<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+											<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="auto-complete">
+							<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+							<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+						</div>
+					</div>
+					<script>
+						$(function(){
+							// 총알검색창 display 조정
+							$(".search input").on("focus",function(){
+								var input = $(this);
+								var display = function(){
+								var len = input.val().length;
+									if(len > 0){
+										$(".fastSearch").css("display","block");
+									$(".selectList").hide();
+									}else{
+										$(".fastSearch").css("display","none");	
+									}
+								}
+								 input.on('input paste change click', function() {
+									setTimeout(display, 0);
+								});
+							});
+
+							// 검색창 닫기	
+							$("body").click(function(){
+								$(".fastSearch").fadeOut(100);
+							});
+							$(".fastSearch").on("click",function(event){
+								event.stopPropagation();
+							});
+
+							//키보드 기능 추가
+							
+							function keyup(e){
+								var i = 0;
+								var frsFlag = true;
+								var ie11Flag = false;
+								
+								$(".search input").on("keyup",function(e){
+									var a  = $(".fastUl li a");
+									var aLen = $(".fastUl li a").length -1;
+									var address = $(".fastUl li a.on").attr("href");
+									var valText = $(a).find(".fsTitle").text();
+									var agent = navigator.userAgent.toLowerCase();
+									if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+										ie11Flag = true;
+									}
+									if(e.keyCode == 40){
+										if(i>aLen){
+											i = 0;	
+										}
+										if(ie11Flag){
+											if( e.keyCode == 40 && frsFlag){
+												var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+												jQuery(this).trigger(ev);
+												frsFlag = false;
+												return;
+											}
+										}
+										i++;
+										$(a).removeClass("on");
+										$(a).eq(i-1).addClass("on");
+					
+									//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+										
+									}else if(e.keyCode == 38){
+										i--;
+										if(i<1){
+											i=aLen+1;
+										}
+										if(ie11Flag){
+											if( e.keyCode == 38 && frsFlag){
+												var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+												jQuery(this).trigger(ev);
+												frsFlag = false;
+												return;
+											}
+										}
+										$(a).removeClass("on");
+										$(a).eq(i-1).addClass("on");
+									//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+									}else if(e.keyCode == 13){
+										if($(a).hasClass("on")){
+											location.href=address;
+										}else{
+											frmSearchSubmit();
+										}		
+									}else if(e.keyCode == 39){
+										return
+									}else{
+										$(a).removeClass("on");
+										i=0;
+									}		
+								});	
+							}
+							
+							setTimeout(keyup,0);
+
+							$(".auto-complete a").on("click",function(){
+								if($(this).hasClass("off")){
+									$(this).removeClass("off");
+									$(this).text("자동완성 끄기");
+									$(".fastRight").show();
+									$(".auto-complete p:first").hide();
+								}else{
+									$(this).addClass("off");
+									$(this).text("자동완성 켜기");
+									$(".fastRight").hide();
+									$(".auto-complete p").show();
+								}								
+							});
+						});
+					</script>
+				</div> 
+				<div class="h-top-bottom">
+					<h2 class="hide">메인메뉴</h2>
+					<ul class="gnb">
+						<li><a href="#">서점</a></li>
+						<li><a href="#" class="on">웹소설</a></li>
+						<li><a href="#">웹툰</a></li>
+					</ul>
+					<ul class="lnb">
+						<li><a href="#">캐시충전</a>
+						<li><a href="#">고객센터</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="header-bottom-inner">
+				<h2 class="hide">메인메뉴</h2>
+				<p class="main_category"><a href="javascript:;"><img src="/images/page/main_category.jpg" alt="전체카테고리" /></a></p>
+				<ul>
+					<li><a href="#"><img src="/images/novel/gnb1.jpg" alt="bl" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb2.jpg" alt="로맨스" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb3_on.jpg" alt="무협" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb4.jpg" alt="판타지" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb5.jpg" alt="무료" /></a></li>
+				</ul>
+				<a href="#" class="sunho"><img src="/novel/images/novel/sunho.jpg" alt="나의 선호작" /></a>
+				<div class="all-category">
+					<div class="caseBox-wrap">
+						<div class="caseBox">
+							<ul class="cate-title">
+								<li><p><a href="#">BL<span></span></a></p>
+									<ul>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=10">판타지</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=11">무협</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=12">현대</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=13">차원이동</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=14">SF</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=15">공포/미스터리</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=16">시대물</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=17">회귀</a></li>
+										<li><a href="/novel/categorylist.asp?page=bl&subclass_num=18">평행세계</a></li>
+									</ul>
+									<ul class="season-cate">
+										<li><a href="#">시즌제<span>NEW</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="caseBox">
+							<ul class="cate-title">
+								<li><p><a href="#">로맨스<span></span></a></p>
+									<ul>
+										<li><a href="/novel/categorylist.asp?page=romance&subclass_num=10">현대물</a></li>
+										<li><a href="/novel/categorylist.asp?page=romance&subclass_num=11">로맨스판타지</a></li>
+										<li><a href="/novel/categorylist.asp?page=romance&subclass_num=12">시대물</a></li>
+										<li><a href="/novel/categorylist.asp?page=romance&subclass_num=13">리얼로맨스</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="caseBox">
+							<ul class="cate-title">
+								<li><p><a href="#">무협<span></span></a></p>
+									<ul>
+										<li><a href="/novel/categorylist.asp?page=muhyup&subclass_num=10">무협</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="caseBox">
+							<ul class="cate-title">
+								<li><p><a href="#">판타지<span></span></a></p>
+									<ul>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=10">판타지</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=11">현대판타지</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=12">퓨전</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=13">스포츠</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=14">현대물</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=15">라이트노벨</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=16">게임</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=17">전쟁/역사</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=18">SF</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=19">공포</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=20">추리</a></li>
+										<li><a href="/novel/categorylist.asp?page=fantasy&subclass_num=21">패러디</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cate-btn-wrap">
+						<p><a href="#"><span>BL</span>독점 선연재</a></p>
+						<p><a href="#"><span>로맨스</span>독점 선연재</a></p>
+						<p><a href="#"><span>무협</span>독점 선연재</a></p>
+						<p><a href="#"><span>판타지</span>독점 선연재</a></p>
+						<p><a href="#"><span>스토리큐브</span>테마관</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="contentsWrap">
+		<div class="contents muhyup">
+			<h3 class="hide">메인 MD</h3>
+			<div class="le_wrap pc">
+				<ul>
+					<li class="pos1">
+						<div>
+							<a href="#">
+								<img src="/novel/images/adult/adult-1.jpg" alt="" /><span class="adult">성인</span>
+								<div>
+									<p>폭군</p>
+									<p>박민하</p>
+								</div>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<img src="/novel/images/adult/adult-1.jpg" alt="" /><span class="adult">성인</span>
+								<div>
+									<p>판사님은 외출 중</p>
+									<p>케이/팡이</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="pos2">
+						<div><a href="#"><img src="/novel/images/novel/2.jpg" alt="" /><span class="adult">성인</span></a></div>
+						<div><a href="#"><img src="/novel/images/novel/2.jpg" alt="" /><span class="adult">성인</span></a></div>
+					</li>
+					<li class="pos3">
+						<a href="#"><img src="/novel/images/adult/adult-2.jpg" alt="" />
+							<span class="adult">성인</span>
+							<div>
+								<p>판사님은 외출 중</p>
+								<p>케이/팡이</p>
+							</div>
+						</a>
+					</li>
+					<li class="pos4"><a href="#"><img src="/novel/images/novel/1.jpg" alt="" /><span class="adult">성인</span></a></li>
+					<li class="pos5">
+						<a href="#">
+							<img src="http://webtoonimg.bookcube.com/270/170213.jpg" alt="" />
+							<span class="adult">성인</span>
+							<div>
+								<p>판사님은 외출 중</p>
+								<p>케이/팡이</p>
+							</div>
+						</a>
+					</li>
+					<li class="pos6"><a href="#"><img src="/novel/images/novel/1.jpg" alt="" /><span class="adult">성인</span></a></li>
+					<li class="pos7">
+						<a href="#">
+							<img src="/novel/images/adult/adult-3.jpg" alt="" />
+							<span class="adult">성인</span>
+							<div>
+								<p>판사님은 외출 중</p>
+								<p>케이/팡이</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h3 class="hide">독점 선연재</h3>
+			<div class="dokjeom">
+				<div class="dok_left"><img src="/images/novel/moo_dokjeom.jpg" alt="독점 선연재-스토리큐브를 통해 가장 먼저 업데이트 되는 연재를 만나보세요!" /></div>
+				<div class="dok_right">
+					<div class="dokjeom_info">
+						<div class="dokjeom_book">
+							<h4><a href="#">고검환정록</a></h4>
+							<p>저자명 : <span>쑥쑥이</span><em>|</em>카테고리 : <span>무협</span></p>
+							<p><span class="firstSpan">매주</span>월, 화, 수, 목, 금, 토, 일 <span>연재</span><em>|</em><span>총</span>20화</p>
+						</div>
+						<div class="dokjeom_intro">
+							<h5>연재소개</h5>
+							<p>단 한마디가 안긴 두려움으로 인해, 더 이상 난 현실과 이상을 구별하지 못하게 되어 버렸다. 황폐한 삶 속에서 점점 시들어 가던 어느 날, 낯선 남자가 자신을 만날...</p>
+						</div>
+					</div>
+					<div class="dokjeom_img">
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_mono.jpg" alt="" />
+							</span>
+						</a>
+						<a href="#" class="dokjeom_more">더보기</a>
+					</div>
+				</div>
+			</div>
+			<div class="floatTitle">
+				<h3 class="dayTitle">요일별 연재</h3>
+				<ul>
+					<li><a href="#" class="on">베스트</a></li>
+					<li><a href="#">업데이트 순</a></li>
+					<li><a href="#">선호작 순</a></li>
+				</ul>
+			</div>
+			<ul class="dayList">
+				<li>
+					<span>월</span>
+					<a href="#">더보기</a>
+				</li>
+				<li>
+					<span class="tuesday">화</span>
+					<a href="#">더보기</a>
+				</li>
+				<li>
+					<span class="wednesday">수</span>
+					<a href="#">더보기</a>
+				</li>
+				<li>
+					<span class="thursday on">목</span>
+					<a href="#">더보기</a>
+				</li>
+				<li>
+					<span class="friday">금</span>
+					<a href="#">더보기</a>
+				</li>
+				<li class="daylast">
+					<span class="weekend">주말</span>
+					<a href="#">더보기</a>
+				</li>
+			</ul>
+			<ul class="dayList_book">
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+						<span class="nStoryNew">NEW</span>
+						<span class="nStoryUp">UP</span>
+						<span class="nStoryAdult">성인</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+						<span class="nStoryNew">NEW</span>
+						<span class="nStoryUp">UP</span>
+						<span class="nStoryAdult">성인</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li class="liLast">
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+				<li class="liLast">
+					<a href="#">
+						<span class="im_br">
+							<img src="/images/novel/thum_daylist.jpg" alt="" />
+						</span>
+					</a>
+					<p>이제는 정말 나를 위해서만</p>
+					<p class="dayInfo">유인경<br /><span>무협</span></p>
+				</li>
+			</ul>
+			<div class="md-section-a">
+				<h3 class="nanumTitle">놓치면 후회하는 화제의 연재!<em>|</em><span>MD 강력 추천 꿀잼 연재</span></h3>
+				<div class="mdRoll jcarousel-wrapper">
+					<div class="jcarousel1 js_jcarousel">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+									<span class="nStoryNew">NEW</span>
+									<span class="nStoryUp">UP</span>
+									<span class="nStoryAdult">성인</span>
+								</a>
+								<p>이제는 정말 111111111111</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 222222222222222</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 3333333333333</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 4444444444444444</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 55555555555555</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 66666666666</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+						</ul>
+						<a href="#" class="prev jcarousel-prev">이전</a>
+						<a href="#" class="next jcarousel-next">다음</a>
+					</div>
+				</div>
+			</div>
+			<h3 class="rankingTitle">TOP 랭킹</h3>
+			<div class="ranking">
+				<div>
+					<div class="dayTop"><span><a href="#">더보기</a></span></div>
+					<ul>
+						<li class="ranking1">
+							<span class="rankingBg">top1</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)쌍비쌍비쌍비</p>
+								<p class="rankingGenre">무협무협후몋부며훕</p>
+								<p class="rankingPub">총 250화 연재연재연재</p>
+							</div>
+						</li>
+						<li class="ranking2">
+							<span class="rankingBg">2</span>	
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking3">
+							<span class="rankingBg">3</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking4">
+							<span class="rankingBg">4</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking5">
+							<span class="rankingBg">5</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="newTop"><span><a href="#">더보기</a></span></div>
+					<ul>
+						<li class="ranking1">
+							<span class="rankingBg">top1</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+								<p class="rankingPub">총 250화 연재</p>
+							</div>
+						</li>
+						<li class="ranking2">
+							<span class="rankingBg">2</span>	
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking3">
+							<span class="rankingBg">3</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking4">
+							<span class="rankingBg">4</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking5">
+							<span class="rankingBg">5</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="sunhoTop"><span><a href="#">더보기</a></span></div>
+					<ul>
+						<li class="ranking1">
+							<span class="rankingBg">top1</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+								<p class="rankingPub">총 250화 연재</p>
+							</div>
+						</li>
+						<li class="ranking2">
+							<span class="rankingBg">2</span>	
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking3">
+							<span class="rankingBg">3</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking4">
+							<span class="rankingBg">4</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+						<li class="ranking5">
+							<span class="rankingBg">5</span>
+							<a href="#">
+								<span class="im_br">
+									<img src="/images/novel/rankingThum.jpg" alt="이제는 정말 나를 위해서만" />
+								</span>
+							</a>
+							<div>
+								<p>달빛은 흐르고 검은 웃는다</p>
+								<p class="rankingAuthor">연쌍비(燕雙飛)</p>
+								<p class="rankingGenre">무협</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<h3 class="customTitle">쑥쑥이<span>님을 위한 맞춤형 추천 연재</span></h3>
+			<div class="customBox">
+				<ul class="dayList_book">
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li class="liLast">
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+				</ul>	
+			</div>
+			<h3 class="themeTitle">테마관</h3>
+			<div class="theme">
+				<ul>
+					<li class="no_ma"><a href="#"><img src="/images/novel/theme1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="/images/novel/theme2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="/images/novel/theme3.jpg" alt="" /></a></li>
+					<li class="no_ma"><a href="#"><img src="/images/novel/theme1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="/images/novel/theme2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="/images/novel/theme3.jpg" alt="" /></a></li>
+				</ul>
+				<a href="#" class="more">더보기</a>
+			</div>
+			<div class="md-section-b">
+				<h3 class="nanumTitle">놓치면 후회하는 화제의 연재!<em>|</em><span>MD 강력 추천 꿀잼 연재</span></h3>
+				<div class="mdRoll jcarousel-wrapper">
+					<div class="jcarousel1 js_jcarousel">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 111111111111</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 222222222222222</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 3333333333333</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 44444444444444</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 55555555555555</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 66666666666</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 77777777777</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>	
+						</ul>
+						<a href="#" class="prev jcarousel-prev">이전</a>
+						<a href="#" class="next jcarousel-next">다음</a>
+					</div>
+				</div>
+				<h3 class="nanumTitle">놓치면 후회하는 화제의 연재!<em>|</em><span>MD 강력 추천 꿀잼 연재</span></h3>
+				<div class="mdRoll jcarousel-wrapper">
+					<div class="jcarousel1 js_jcarousel">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 111111111111</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 222222222222222</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 3333333333333</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 44444444444444</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 555555555555</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 66666666666</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 77777777777</p>
+								<p class="dayInfo">유인경<br /><span>무협</span></p>
+							</li>	
+						</ul>
+						<a href="#" class="prev jcarousel-prev">이전</a>
+						<a href="#" class="next jcarousel-next">다음</a>
+					</div>
+				</div>
+			</div>
+			<h3 class="eventTitle">이벤트</h3>
+			<div class="event_box">
+				<div class="event_slide">
+					<div class="e_slide">
+						<ul class="event">
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2301"><img src="http://up.bookcube.com/bookcube/upload/event/2301/e2301_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2289"><img src="http://up.bookcube.com/bookcube/upload/event/2289/e2289_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2284"><img src="http://up.bookcube.com/bookcube/upload/event/2284/e2284_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2253"><img src="http://up.bookcube.com/bookcube/upload/event/2253/e2253_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2252"><img src="http://up.bookcube.com/bookcube/upload/event/2252/e2252_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2248"><img src="http://up.bookcube.com/bookcube/upload/event/2248/e2248_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2247"><img src="http://up.bookcube.com/bookcube/upload/event/2247/e2247_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/customer.asp?page=pc"><img src="http://up.bookcube.com/bookcube/upload/event/2209/e2209_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2144"><img src="http://up.bookcube.com/bookcube/upload/event/2144/e2144_pc_banner.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					<span class="prev_btn">이전</span>
+					<span class="next_btn">다음</span>
+				</div>
+				<a href="#" class="more">더보기</a>
+			</div>
+			<h3 class="completeTitle">완결연재</h3>
+			<div class="completeBook">
+				<ul class="dayList_book">
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+							<span class="nStoryNew">NEW</span>
+							<span class="nStoryUp">UP</span>
+							<span class="nStoryAdult">성인</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+							<span class="nStoryNew">NEW</span>
+							<span class="nStoryUp">UP</span>
+							<span class="nStoryAdult">성인</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+					<li class="liLast">
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경<br /><span>무협</span></p>
+					</li>
+				</ul>
+			</div>
+
+
+			<h3 class="nanumTitle">BL 웹툰 베스트</h3>
+			<div class="toonBook">
+				<ul>
+					<li>
+						<a href="#">
+							<div class="rmdImg">
+								<span class="im_br">
+									<img src="http://webtoonimg.bookcube.com/270/160153.jpg" alt="" />
+								</span>
+							</div>
+							<div class="rmdInfo">
+								<p>이제는 정말 1111111111111111111</p>
+								<p class="dayInfo">유인경</p>	
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rmdImg">
+								<span class="im_br">
+									<img src="http://webtoonimg.bookcube.com/270/160153.jpg" alt="" />
+								</span>
+							</div>
+							<div class="rmdInfo">
+								<p>이제는 정말 1111111111111111111</p>
+								<p class="dayInfo">유인경</p>	
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rmdImg">
+								<span class="im_br">
+									<img src="http://webtoonimg.bookcube.com/270/160153.jpg" alt="" />
+								</span>
+							</div>
+							<div class="rmdInfo">
+								<p>이제는 정말 1111111111111111111</p>
+								<p class="dayInfo">유인경</p>	
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rmdImg">
+								<span class="im_br">
+									<img src="http://webtoonimg.bookcube.com/270/160153.jpg" alt="" />
+								</span>
+							</div>
+							<div class="rmdInfo">
+								<p>이제는 정말 1111111111111111111</p>
+								<p class="dayInfo">유인경</p>	
+							</div>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="more">더보기</a>
+			</div>
+
+			<h3 class="nanumTitle">BL 코믹스 베스트<em>|</em><span>하하하하하</span></h3>
+			<div class="comicBook">
+				<ul>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경</p>
+					</li>	
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경</p>
+					</li>	
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경</p>
+					</li>	
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경</p>
+					</li>	
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/images/novel/thum_daylist.jpg" alt="" />
+							</span>
+						</a>
+						<p>이제는 정말 나를 위해서만</p>
+						<p class="dayInfo">유인경</p>
+					</li>	
+				</ul>
+				<a href="#" class="more">더보기</a>
+			</div>
+		</div>
+	</div>
+	<!-- contents end -->
+	<div class="mainBottom">
+		<div class="mainBottom_inner">
+			<div class="cs">
+				<div class="csLeft">
+					<div>
+						<ul class="csList">
+							<li><a href="#"><img src="/images/page/cs1.png" alt="쿠폰등록" class="csLine" /></a></li>
+							<li><a href="#"><img src="/images/page/cs2.png" alt="상품권등록" class="csLine" /></a></li>
+							<li><a href="#"><img src="/images/page/cs3.png" alt="앱 다운로드" /></a></li>
+							<li><a href="#"><img src="/images/page/cs4.png" alt="기기 관리" /></a></li>
+						</ul>
+					</div>
+					<div class="csBoard">
+						<ul>
+							<li><a href="#">[공지]SNS 공유 시 무료도서 지급기준 변경 안내</a></li>
+							<li><a href="#">[공지]로그인 5회 오류 시 접속제한 적용 관련 공지</a></li>
+						</ul>
+						<a href="#">더보기</a>
+					</div>
+				</div>
+				<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+			</div>
+			<img src="/images/page/mainBottom_img.jpg" alt="20만권의 전자책, 웹소설 그리고 프리미엄 웹툰!! PC와 모바일에서 동시에 즐기세요." class="mainBottom_banner" usemap="#mainBottom_banner" />
+			<map name="mainBottom_banner">
+				<area shape="rect" coords="3,128,140,173" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" target="_blank" alt="google play" />
+				<area shape="rect" coords="154,128,291,173" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" target="_blank" alt="app store" />
+			</map>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h3 class="f_logo">북큐브네트웍스</h3>
+				<a href="#" target="_blank"><img src="/novel/images/page/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="/novel/images/page/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb large">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+	<script>
+			$(function(){
+				var page_section = $(".js_page_section").data("page");
+				if(page_section == "bl" || page_section == "romance"){
+					$(".js_jcarousel").find("li").eq(-1).addClass("last");
+				}
+
+				$(".js_jcarousel").jcarousel();
+				$(".js_jcarousel").each(function(){
+					if($(this).jcarousel("items").length <= 5){
+						$(this).find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+					}
+				});
+				$('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$('.jcarousel-next').on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+
+
+				// 검색창 닫기	
+				$("body").click(function(){
+					$(".all-category").fadeOut(100);
+				});
+				$(".all-category,.main_category a").on("click",function(event){
+					event.stopPropagation();
+				});
+
+
+
+				// 전체카테고리
+				$(".main_category a").on("click",function(){
+					$(".all-category").toggle();
+				});
+		
+
+		    });
+		
+	</script>
+</body>
+</html>

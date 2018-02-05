@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost/comm_21_frame.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="./nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="./reset.css">
+<link type="text/css" rel="stylesheet" href="./main.css">
+<link type="text/css" rel="stylesheet" href="./slick.css">
+<script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<script type="text/javascript" src="./slick.min.js.다운로드"></script>
+<script type="text/javascript" src="./cni-slider.min.js.다운로드"></script>
+<script type="text/javascript" src="./slimScroll.js.다운로드"></script>
+<script type="text/javascript" src="./datepicker.js.다운로드"></script>
+</head>
+<body style="">
+<div class="frame">
+	<h3>나의 작품 &gt; EPUB 파일 수정</h3>
+	<div class="tab">
+		<div class="my-active ipt">
+			<p class="s-title epub-input-title">회차 epub 파일 등록</p>
+			<form action="http://localhost/comm_21_frame.html" method="">
+				<fieldset>
+					<legend>회차 epub 파일 등록</legend>
+					<table>
+						<caption>회차 epub 파일 등록 폼</caption>
+						<colgroup>
+							<col width="17%">
+							<col width="83%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label>파일첨부</label></th>
+								<td class="file_name">
+									<div>
+										<p><input type="text" name="" readonly="readonly" id="fileName" class="file_name"></p>
+										<p class="file-btn">찾아보기<input type="file" name="" value="찾아보기"></p>
+									</div>
+									<span>epub 확장자만 첨부 가능합니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+			</form>
+			<div class="btn-box">
+				<input type="button" name="" value="확인">
+				<a href="http://localhost/comm_21_frame.html#" class="btn">목록보기</a>
+			</div>
+			<script>
+				$(function() {
+					// 첨부 파일 확장자 검사 
+					$("input[type='file']").on("change", function() {	
+						var ext = $(this).val().split('.').pop().toLowerCase();
+						var text = $(this).val();
+						if($.inArray(ext, ['epub']) == -1) {
+							window.alert('epub 확장자 파일만 첨부 가능합니다.');
+							$(".file_name").val("");
+							resetFormElement($(this));
+						}else{
+							$(".file_name").val(text);
+						}
+					});
+					// 첨부파일 실패시 첨부파일 form 리셋
+					function resetFormElement(e) {
+						e.wrap('<form>').closest('form').get(0).reset(); 
+						e.unwrap(); 
+					}
+
+				});
+
+			</script>
+		</div>
+	</div>
+</div>
+
+</body></html>

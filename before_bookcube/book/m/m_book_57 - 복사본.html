@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header class="common">
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="h-title">마이페이지</h2>
+		</div>
+	</header>
+	<section>
+		<div class="tbe">
+			<h3 class="sub-title">MY 웹툰/코믹스</h3>
+			<div class="adult_li">
+				<ul>
+					<li>코믹큐브의 모든 웹툰 서비스는 10년 소장으로 서비스 됩니다.</li>
+					<li>10년 소장이란? 10년소장은 구매한 웹툰을 10년간 소장하는 장기대여 서비스 입니다.</li>
+					<li>〈기다리면 무료〉서비스 되고 있는 웹툰의 무료 회차는 구매 웹툰 목록에 포함 되지 않습니다.</li>
+					<li>성인 작품은 코믹큐브 main 페이지 오른쪽 상단의 성인 작품 노출 모드를 19 on으로 전환하여 이용 부탁드립니다.</li>
+				</ul>
+			</div>
+			<div class="my-present">
+				<div class="tab-menu m-toon-piece">
+					<ul>
+						<li><a href="#" class="on">나의 구매작품</a></li>
+						<li><a href="#">나의 선호작품</a></li>
+					</ul>
+				</div>
+				<div class="mysearch">
+					<p>
+						<a href="#" class="on">웹툰</a><em>|</em><a href="#" class="">코믹스</a>
+					</p>
+					<input type="text" name="searchword" value="">
+					<input type="submit" name="searchBtn" id="" value="검색">
+				</div>
+				<p class="no">구매한 작품이 없습니다.</p>
+				<ul class="comic_list webtoon">
+					<li>
+						<a href="#">
+							<div class="thumbox">
+								<span class="im_br">
+									<img src="http://webtoonimg.bookcube.com/270/150030.jpg" alt="나나와 카오루">
+								</span>
+							</div>
+							<div class="comicText">
+								<p class="thumTitle">까락: 벌교 주먹쟁이</p>
+								<p>서강용</p>
+								<p>금</p>
+								<p>최근 본 회차 : 1화</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!-- Paging -->
+				<div class="paging">
+					<a href="#" class="prev"><img src="/book/images/m_book/p_prev.png" alt="이전" /></a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#" class="next"><img src="/book/images/m_book/p_next.png" alt="다음" /></a>
+					<p>1 / 15</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="common">
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

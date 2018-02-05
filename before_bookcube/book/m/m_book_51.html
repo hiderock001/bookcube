@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header class="common">
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="h-title">회원가입</h2>
+		</div>
+	</header>
+	<section class="common">		
+		<div class="join-wrap">
+			<h3>인증 회원가입</h3>
+			<div class="join-certify-btn">
+				<a href="#">휴대폰 인증</a>
+				<a href="#">아이핀 인증</a>
+			</div>
+			<ul class="certify-ps">
+				<li><span>-</span> 중복가입 및 개인정보도용을 막시 위해 본인인증을 진행하고 있습니다.<li>
+				<li><span>-</span> 인증 시 입력정보는 인증기관에서 직접 수집하며, 인증이외의 용도로 이용/저장하지 않습니다.<li>
+				<li><span>-</span> 본인인증 시 성인인증도 함께 처리됩니다.<li>
+			</ul>
+		</div>
+	</section>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

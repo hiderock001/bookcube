@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>북큐브 작업 리스트</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+*{margin:0;padding:0}
+body{font-family:malgun gothic}
+ul.list{width:90%;margin:0 auto;border-bottom:1px solid #ccc}
+ul.list li{border-top:1px solid #ccc;overflow:hidden;font-size:13px;line-height:33px}
+ul.list li:hover{background-color:#f0f0f0}
+ul.list li a:hover{color:orange}
+ul.list li span{display:inline-block;float:left}
+ul.list li span{width:33.3%;text-indent:20px}
+ul.list li a{color:green;text-decoration:none}
+ul.list li a:visited{color:gray}
+ul.list li.title span{font-size:14px;font-weight:bold;background-color:#000;color:#fff;text-align:center;text-indent:-130px}
+h1{padding:30px 0 10px 50px;font-size:25px;font-family:malgun gothic}
+.copyrignt{width:100%;border-top:1px solid #eee;margin-top:100px;padding-top:30px;color:#888;font-size:11px;text-align:center;line-height:20px}
+.copyrignt a{color:#888}
+h2{font-size:12px;margin-bottom:10px}
+.top_list ul{margin-left:20px}
+.top_list li{font-size:12px;color:#666;line-height:18px;margin-left:20px}
+.top_list{padding:10px;margin:20px 0 30px 50px}
+.red{color:red}
+</style>
+</head>
+<body>
+<h1>BOOKCUBE HTML 리스트</h1>
+<div class="top_list">
+	<h2>&lt; 브라우져 호환성 작업시 우선 순위 안내 &gt;</h2>
+	<ol>
+	<li>explore9, 10 : 디자인과 거의 동일하게 고려</li>
+	<li>explore8 / crome / firefox / safari : 1~5px 정도의 약간의 차이</li>
+	<li>explore7 화면이 많이 틀어 지지 않는 정도</li>
+	<li>explore6 이하 버젼은 최근 추세에 따라 고려하지 않음.</li>
+	</ol>
+
+</div>
+<ul class="list">
+	<li class="title"><span>파일명</span><span>링크</span><span>비고</span></li>
+	<li><span>00_북큐브_메인(독점연재)</span><span><a href="html/index_tab4.html">index_tab4.html</a></span><span>&nbsp;</span></li>
+	<li><span>00_북큐브_메인</span><span><a href="html/index.html">index.html</a></span><span>&nbsp;</span></li>
+	<li><span>00_북큐브_메인 :: 총알검색어</span><span><a href="html/index_speed_search.html">index_speed_search.html</a></span><span>위의 index.html에 작업되어있으나 보이지 않게 처리되어있어, 디자인확인용 페이지입니다.</span></li>
+	<li><span>01_북큐브_장르문학_리스트</span><span><a href="html/01_list_genre_literary.html">01_list_genre_literary.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_장르문학_리스트(썸네일)</span><span><a href="html/02_list_genre_literary_thumbnail.html">02_list_genre_literary_thumbnail.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_베스트_리스트</span><span><a href="html/03_list_best.html">03_list_best.html</a></span><span>&nbsp;</span></li>
+	<li><span>04_북큐브_신간_리스트</span><span><a href="html/04_list_new.html">04_list_new.html</a></span><span>&nbsp;</span></li>
+	<li><span>05_북큐브_무료_리스트</span><span><a href="html/05_list_free.html">05_list_free.html</a></span><span>&nbsp;</span></li>
+	<li><span>06_북큐브_자유이용관_리스트</span><span><a href="html/06_list_free_center.html">06_list_free_center.html</a></span><span>&nbsp;</span></li>
+	<li><span>07_북큐브_추천_리스트</span><span><a href="html/07_list_push.html">07_list_push.html</a></span><span>&nbsp;</span></li>
+	<li><span>08_북큐브_검색페이지(통합검색)</span><span><a href="html/08_search_all.html">08_search_all.html</a></span><span>&nbsp;</span></li>
+	<li><span>09_북큐브_검색페이지(독점연재)</span><span><a href="html/09_searh_exclusive_series.html">09_searh_exclusive_series.html</a></span><span>&nbsp;</span></li>
+	<li><span>10_북큐브_검색페이지(전자책)</span><span><a href="html/10_search_ebook.html">10_search_ebook.html</a></span><span>&nbsp;</span></li>
+	<li><span>11_북큐브_검색페이지(상세검색)</span><span><a href="html/10_search_ebook.html">10_search_ebook.html</a></span><span>위의 파일과 상동</span></li>
+	<li><span>12_북큐브_도서상세페이지(구매_시리즈탭)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>11~18번은 한 파일 (16번 제외)</span></li>
+	<li><span>13_북큐브_도서상세페이지(구매_책소개탭)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>&#39;&#39;</span></li>
+	<li><span>14_북큐브_도서상세페이지(구매_목차탭)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>&#39;&#39;</span></li>
+	<li><span>15_북큐브_도서상세페이지(구매_저자소개탭)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>&#39;&#39;</span></li>
+	<li><span>16_북큐브_도서상세페이지(구매_서평탭)_서평없음</span><span><a href="html/12_book_detail_info_page_no_review.html">12_book_detail_info_page_no_review.html</a></span><span>서평없을 때 페이지</span></li>
+	<li><span>17_북큐브_도서상세페이지(구매_서평쓰기_리스트)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>&#39;&#39;</span></li>
+	<li><span>18_북큐브_도서상세페이지(구매_서평쓰기_펼침)</span><span><a href="html/12_book_detail_info_page.html">12_book_detail_info_page.html</a></span><span>&#39;&#39;</span></li>
+
+	<li><span>19_북큐브_도서상세페이지(대여_대여+자유가능_자유미구매시)</span><span><a href="html/19_book_detail_info_rent_01.html">19_book_detail_info_rent_01.html</a></span><span>&nbsp;</span></li>
+	<li><span>20_북큐브_도서상세페이지(대여_대여가능+자유불가)</span><span><a href="html/20_book_detail_info_rent_02.html">20_book_detail_info_rent_02.html</a></span><span>&nbsp;</span></li>
+	<li><span>21_북큐브_도서상세페이지(대여_단권_자유미구매시)</span><span><a href="html/21_book_detail_info_rent_03.html">21_book_detail_info_rent_03.html</a></span><span>&nbsp;</span></li>
+	<li><span>22_북큐브_도서상세페이지(대여_단권_자유구매)</span><span><a href="html/22_book_detail_info_rent_04.html">22_book_detail_info_rent_04.html</a></span><span>&nbsp;</span></li>
+	<li><span>23_북큐브_도서상세페이지(대여_대여+자유가능+자유구매)</span><span><a href="html/23_book_detail_info_rent_05.html">23_book_detail_info_rent_05.html</a></span><span>&nbsp;</span></li>
+	<li><span>24_북큐브_도서상세페이지(대여_대여불가+자유가능+자유미구매시)</span><span><a href="html/24_book_detail_info_rent_06.html">24_book_detail_info_rent_06.html</a></span><span>&nbsp;</span></li>
+	<li><span>25_북큐브_도서상세페이지(대여_대여불가+자유가능+자유구매)</span><span><a href="html/25_book_detail_info_rent_07.html">25_book_detail_info_rent_07.html</a></span><span>&nbsp;</span></li>
+	<li><span>26_북큐브_도서상세페이지(대여_무료_비로그인시)</span><span><a href="html/26_book_detail_info_rent_08.html">26_book_detail_info_rent_08.html</a></span><span>&nbsp;</span></li>
+	<li><span>27_북큐브_도서상세페이지(대여_무료_로그인시)</span><span><a href="html/27_book_detail_info_rent_09.html">27_book_detail_info_rent_09.html</a></span><span>&nbsp;</span></li>
+	<li><span>28_북큐브_도서상세페이지(무료)</span><span><a href="html/28_book_detail_info_rent_10.html">28_book_detail_info_rent_10.html</a></span><span>&nbsp;</span></li>
+	
+<!-- 마이페이지 -->
+	<li style="border-top:3px solid #ccc"><span><del>29_북큐브_마이페이지(전자책다운로드_전체)</del></span><span><a href="html/29_mypage_tab1_01.html"><del>29_mypage_tab1_01.html</del></a></span><span class="red">전체 페이지 삭제</span></li>
+	<li><span>30_북큐브_마이페이지(전자책다운로드_구매)</span><span><a href="html/30_mypage_tab1_02.html">30_mypage_tab1_02.html</a></span><span class="red">수정완료</span></li>
+	<li><span>31_북큐브_마이페이지(전자책다운로드_대여/자유)</span><span><a href="html/31_mypage_tab1_03.html">31_mypage_tab1_03.html</a></span><span class="red">수정완료</span></li>
+	<li><span>32_북큐브_마이페이지(전자책다운로드_연재)</span><span><a href="html/32_mypage_tab1_04.html">32_mypage_tab1_04.html</a></span><span class="red">수정완료</span></li>
+	<li><span>33_북큐브_마이페이지(전자책다운로드_연재_상세게시판)</span><span><a href="html/33_mypage_tab1_04_detail_board.html">33_mypage_tab1_04_detail_board.html</a></span><span class="red">수정완료</span></li>
+	<li><span>34_북큐브_마이페이지(전자책다운로드_검색결과)</span><span><a href="html/34_mypage_tab1_search_result.html">34_mypage_tab1_search_result.html</a></span><span class="red">수정완료</span></li>
+	<li><span>35_북큐브_마이페이지(주문내역)</span><span><a href="html/35_mypage_tab2_order_list.html">35_mypage_tab2_order_list.html</a></span><span>리스트중 상단 4개만 레이어 데이타가 있음..</span></li>
+	<li><span>36_북큐브_마이페이지(북캐시적립금상품권)</span><span><a href="html/36_mypage_tab3_bookcash_01.html">36_mypage_tab3_bookcash_01.html</a></span><span>&nbsp;</span></li>
+	<li><span>37_북큐브_마이페이지(북캐시적립금상품권_적립내역)</span><span><a href="html/37_mypage_tab3_bookcash_02.html">37_mypage_tab3_bookcash_02.html</a></span><span>&nbsp;</span></li>
+	<li><span>38_북큐브_마이페이지(책바구니)</span><span><a href="html/38_mypage_tab4_bookbasket.html">38_mypage_tab4_bookbasket.html</a></span><span>&nbsp;</span></li>
+	<li><span>39_북큐브_결제하기</span><span><a href="html/39_mypage_payment.html">39_mypage_payment.html</a></span><span>&nbsp;</span></li>
+	<li><span>40_북큐브_결제완료</span><span><a 
+	href="html/40_mypage_payment_complete.html">40_mypage_payment_complete.html</a></span><span>&nbsp;</span></li>
+	<li><span>41_북큐브_마이페이지(회원정보)</span><span><a href="html/41_mypage_member_info.html">41_mypage_member_info.html</a></span><span>&nbsp;</span></li>
+	<li><span>42_북큐브_마이페이지(회원정보_회원탈퇴)</span><span><a href="html/42_mypage_member_leave.html">42_mypage_member_leave.html</a></span><span>&nbsp;</span></li>
+	<li><span>43_북큐브_마이페이지(등록기기관리)</span><span><a href="html/43_mypage_device_manager.html">43_mypage_device_manager.html</a></span><span>&nbsp;</span></li>
+
+<!-- 독점연재 -->
+	<li style="border-top:3px solid #ccc"><span>44_북큐브_독점연재(요일별_리스트)</span><span><a href="html/44_monopoly_day_list.html">44_monopoly_day_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>45_북큐브_독점연재(베스트_리스트)</span><span><a href="html/45_monopoly_best_list.html">45_monopoly_best_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>46_북큐브_독점연재(장르별_리스트)</span><span><a href="html/46_monopoly_genre_list.html">46_monopoly_genre_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>47_북큐브_독점연재(작가별_리스트)</span><span><a href="html/47_monopoly_author_list.html">47_monopoly_author_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>48_북큐브_독점연재(신작완결_리스트)</span><span><a href="html/48_monopoly_new_completed_list.html">48_monopoly_new_completed_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>49_북큐브_독점연재(나의선호작_리스트)</span><span><a href="html/49_monopoly_my_list.html">49_monopoly_my_list.html</a></span><span>&nbsp;</span></li>
+	<li><span>50_북큐브_독점연재상세페이지(전체회차보기_리스트)</span><span><a href="html/50_monopoly_detail_series_all.html">50_monopoly_detail_series_all.html</a></span><span>50~53번은 한 파일</span></li>
+	<li><span>51_북큐브_독점연재상세페이지(전체회차보기_리스트_결제팝업)</span><span><a href="html/50_monopoly_detail_series_all.html">50_monopoly_detail_series_all.html</a></span><span>현재는 여백을 누르면 닫히는데, X 버튼 눌러도 닫히게 구현해주세요.. ^^;</span></li>
+	<li><span>52_북큐브_독점연재상세페이지(연재소개)</span><span><a href="html/50_monopoly_detail_series_all.html">50_monopoly_detail_series_all.html</a></span><span>&quot;</span></li>
+	<li><span>53_북큐브_독점연재상세페이지(댓글)</span><span><a href="html/50_monopoly_detail_series_all.html">50_monopoly_detail_series_all.html</a></span><span>&quot;</span></li>
+	
+<!-- 북캐시 결제 -->	
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_결제하기(북캐시충전)</span><span><a href="html/bookcash_00_payment.html">bookcash_00_payment.html</a></span><span>&nbsp;</span></li>
+	<li><span>01_북큐브_결제하기(북캐시충전_결제완료)</span><span><a href="html/bookcash_01_payment_ok.html">bookcash_01_payment_ok.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_결제하기(자유이용권)</span><span><a href="html/bookcash_02_payment_free_ticket.html">bookcash_02_payment_free_ticket.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_결제하기(자유이용권_결제하기)</span><span><a href="html/bookcash_03_payment_free_ticket_ok.html">bookcash_03_payment_free_ticket_ok.html</a></span><span>&nbsp;</span></li>
+
+<!-- 회원가입 -->
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_회원가입(약관안내실명확인)</span><span><a href="html/member_00_register_step1.html">member_00_register_step1.html</a></span><span>&nbsp;</span></li>
+	<li><span>01_북큐브_회원가입(정보입력)</span><span><a href="html/member_01_register_step2.html">member_01_register_step2.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_회원가입(가입완료및앱다운로드)</span><span><a href="html/member_02_register_step3.html">member_02_register_step3.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_로그인</span><span><a href="html/member_03_login.html">member_03_login.html</a></span><span>&nbsp;</span></li>
+	<li><span>04_북큐브_아이디비번찾기</span><span><a href="html/member_04_find_idpw.html">member_04_find_idpw.html</a></span><span>&nbsp;</span></li>
+	<li><span>05_북큐브_아이디비번찾기(아이디찾기_완료)</span><span><a href="html/member_05_find_idpw_ok.html">member_05_find_idpw_ok.html</a></span><span>&nbsp;</span></li>
+	<li><span>06_북큐브_아이디비번찾기(아이디찾기_실패)</span><span><a href="html/member_06_find_idpw_fails.html">member_06_find_idpw_fails.html</a></span><span>&nbsp;</span></li>
+	<li><span>07_북큐브_아이디비번찾기(비번찾기_완료)</span><span><a href="html/member_07_find_idpw_complete.html">member_07_find_idpw_complete.html</a></span><span>&nbsp;</span></li>
+	<li><span>08_북큐브_아이디비번찾기(비번찾기_실패1)</span><span><a href="html/member_08_find_idpw_fails_01.html">member_08_find_idpw_fails_01.html</a></span><span>&nbsp;</span></li>
+	<li><span>09_북큐브_아이디비번찾기(비번찾기_실패2)</span><span><a href="html/member_09_find_idpw_fails_02.html">member_09_find_idpw_fails_02.html</a></span><span>&nbsp;</span></li>
+	<li><span>10_북큐브_아이디비번찾기(비번찾기_실패3)</span><span><a href="html/member_10_find_idpw_fails_03.html">member_10_find_idpw_fails_03.html</a></span><span>&nbsp;</span></li>
+
+<!-- 이벤트 -->
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_이벤트(진행중)</span><span><a href="html/event_00_on_event.html">event_00_on_event.html</a></span><span>&nbsp;</span></li>
+	<li><span>01_북큐브_이벤트(진행중_페이지)</span><span><a href="html/event_01_on_event_main.html">event_01_on_event_main.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_이벤트(지난)</span><span><a href="html/event_02_over_event.html">event_02_over_event.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_이벤트(지난_당첨자발표)</span><span><a href="html/event_03_event.html">event_03_event.html</a></span><span>&nbsp;</span></li>
+
+<!-- 고객센터 -->
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_고객센터(메인)</span><span><a href="html/customer_00_main.html">customer_00_main.html</a></span><span>&nbsp;</span></li>
+	<li><span>01_북큐브_고객센터(검색)</span><span><a href="html/customer_01_search.html">customer_01_search.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_고객센터(1-1문의)</span><span><a href="html/customer_02_direct_contact.html">customer_02_direct_contact.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_고객센터(1-1문의_글쓰기)</span><span><a href="html/customer_03_direct_contact_write.html">customer_03_direct_contact_write.html</a></span><span>&nbsp;</span></li>
+	<li><span>04_북큐브_고객센터(1-1문의_글보기_내용&amp;답변)</span><span><a href="html/customer_04_direct_contact_view.html">customer_04_direct_contact_view.html</a></span><span>&nbsp;</span></li>
+	<li><span>05_북큐브_고객센터(1-1문의_글수정)</span><span><a href="html/customer_05_direct_contact_modify.html">customer_05_direct_contact_modify.html</a></span><span>&nbsp;</span></li>
+	<li><span>06_북큐브_고객센터(FAQ best 10</span><span><a href="html/customer_06_tab1_faq_best_10.html">customer_06_tab1_faq_best_10.html</a></span><span>06~15 파일은 화면참고용 파일 <br />&nbsp;&nbsp;&nbsp;:: 실재 개발에서는 customer_00_main.html 만 보면 될 것 같습니다.</span></li>
+	<li><span>07_북큐브_고객센터(a_s)</span><span><a href="html/customer_07_tab2_as.html">customer_07_tab2_as.html</a></span><span>&nbsp;</span></li>
+	<li><span>08_북큐브_고객센터(pc)</span><span><a href="html/customer_08_tab3_pc.html">customer_08_tab3_pc.html</a></span><span>&nbsp;</span></li>
+	<li><span>09_북큐브_고객센터(IOS)</span><span><a href="html/customer_09_tab4_ios.html">customer_09_tab4_ios.html</a></span><span>&nbsp;</span></li>
+	<li><span>10_북큐브_고객센터(안드로이드</span><span><a href="html/customer_10_tab5_android.html">customer_10_tab5_android.html</a></span><span>&nbsp;</span></li>
+	<li><span>11_북큐브_고객센터(결제)</span><span><a href="html/customer_11_tab6_pay.html">customer_11_tab6_pay.html</a></span><span>&nbsp;</span></li>
+	<li><span>12_북큐브_고객센터(다운로드 오류)</span><span><a href="html/customer_12_tab7_download_err.html">customer_12_tab7_download_err.html</a></span><span>&nbsp;</span></li>
+	<li><span>13_북큐브_고객센터(북플레이어)</span><span><a href="html/customer_13_tab8_book_player.html">customer_13_tab8_book_player.html</a></span><span>&nbsp;</span></li>
+	<li><span>14_북큐브_고객센터(815_612 단말기)</span><span><a href="html/customer_14_tab9_815_612.html">customer_14_tab9_815_612.html</a></span><span>&nbsp;</span></li>
+	<li><span>15_북큐브_고객센터(도서관전자책)</span><span><a href="html/customer_15_tab10_ebook.html">customer_15_tab10_ebook.html</a></span><span>&nbsp;</span></li>
+	<li><span>16_북큐브_고객센터(공지사항)</span><span><a href="html/customer_16_notice.html">customer_16_notice.html</a></span><span>&nbsp;</span></li>
+	<li><span>17_북큐브_고객센터(공지사항_내용보기)</span><span><a href="html/customer_17_notice_view.html">customer_17_notice_view.html</a></span><span>&nbsp;</span></li>
+
+<!-- 이용안내 -->
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_이용안내(PC이용안내_전자책구매)</span><span><a href="html/guide_00_pc.html">guide_00_pc.html</a></span><span>00~04 한파일</span></li>
+	<li><span>01_북큐브_이용안내(PC이용안내_전자책대여)</span><span><a href="html/guide_00_pc.html">guide_00_pc.html</a></span><span>&quot;</span></li>
+	<li><span>02_북큐브_이용안내(PC이용안내_자유이용권이용)</span><span><a href="html/guide_00_pc.html">guide_00_pc.html</a></span><span>&quot;</span></li>
+	<li><span>03_북큐브_이용안내(PC이용안내_연재구매)</span><span><a href="html/guide_00_pc.html">guide_00_pc.html</a></span><span>&quot;</span></li>
+	<li><span>04_북큐브_이용안내(PC이용안내_북플레이어다운)</span><span><a href="html/guide_00_pc.html">guide_00_pc.html</a></span><span>&quot;</span></li>
+	<li><span>05_북큐브_이용안내(모바일이용안내_안드로이드기기)_</span><span><a href="html/guide_05_mobile.html">guide_05_mobile.html</a></span><span>05~07 한파일</span></li>
+	<li><span>06_북큐브_이용안내(모바일이용안내_IOS기기)</span><span><a href="html/guide_05_mobile.html">guide_05_mobile.html</a></span><span>&quot;</span></li>
+	<li><span>07_북큐브_이용안내(모바일이용안내_전자책대여)</span><span><a href="html/guide_05_mobile.html">guide_05_mobile.html</a></span><span>&quot;</span></li>
+	<li><span>08_북큐브_이용안내(단말기이용안내_pc인터넷연결)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>08~13 한파일 작업</span></li>
+	<li><span>09_북큐브_이용안내(단말기이용안내_전자책서점)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>&quot;</span></li>
+	<li><span>10_북큐브_이용안내(단말기이용안내_전자책도서관)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>&quot;</span></li>
+	<li><span>11_북큐브_이용안내(단말기이용안내_북플레이어)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>&quot;</span></li>
+	<li><span>12_북큐브_이용안내(단말기이용안내_기타환경설정)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>&quot;</span></li>
+	<li><span>13_북큐브_이용안내(단말기이용안내_프로그램다운로드)</span><span><a href="html/guide_08_terminal.html">guide_08_terminal.html</a></span><span>&quot;</span></li>
+
+<!-- 추가파일 -->
+	<li style="border-top:3px solid #ccc"><span>00_북큐브_회원가입(정보입력_동이름검색)_130606</span><span><a href="html/member_01_register_step2_popup.html">member_01_register_step2_popup.html</a></span><span>안보이는 부분이 파일내에 주석처리 되어 있습니다. 필요한 부분을 가리거나 보이게 해서 개발하시면 됩니다.</span></li>
+	<li><span>01_북큐브_회원가입(정보입력_아이디_닉네임중복)</span><span><a href="html/member_01_register_step2_popup.html">member_01_register_step2_popup.html</a></span><span>위의 파일에 함께 작업되어 있음.</span></li>
+	<li><span>00_북큐브_제휴문의</span><span><a href="html/partner_01.html">partner_01.html</a></span><span>&nbsp;</span></li>
+	<li><span>00_북큐브_회사소개(Overview)</span><span><a href="html/bookcube_01_overview.html">bookcube_01_overview.html</a></span><span>&nbsp;</span></li>
+	<li><span>01_북큐브_회사소개(business)</span><span><a href="html/bookcube_02_business.html">bookcube_02_business.html</a></span><span>&nbsp;</span></li>
+	<li><span>02_북큐브_회사소개(History&Vision)</span><span><a href="html/bookcube_03_history.html">bookcube_03_history.html</a></span><span>&nbsp;</span></li>
+	<li><span>03_북큐브_회사소개(Map)</span><span><a href="html/bookcube_04_map.html">bookcube_04_map.html</a></span><span>&nbsp;</span></li>
+	<li><span>04_북큐브_회사소개(채용공고)</span><span><a href="html/bookcube_05_recruit.html">bookcube_05_recruit.html</a></span><span>&nbsp;</span></li>
+	<li><span>05_북큐브_회사소개(채용공고_글보기)</span><span><a href="html/bookcube_06_recruit_view.html">bookcube_06_recruit_view.html</a></span><span>&nbsp;</span></li>
+</ul>
+
+<ul style="width:600px;margin:40px 0 0 100px">
+	<li> <a href="http://validator.w3.org/" title="W3C Markup Validation Service" target="_blank">- W3C Markup Validation Service</a></li>
+	<li> <a href="http://jigsaw.w3.org/css-validator/" title="CSS Validation Service" target="_blank">- CSS Validation Service</a></li>
+<!--	<li> <a href="kado_report.html" target="_blank">웹접근성 자동점검 보고서</a></li> -->
+</ul>
+
+<p class="copyrignt">
+	PUBLISHING By Hellen Byun | email: <a href="mailto:hellen.byun@gmail.com">hellen.byun@gmail.com</a><br />
+	COPYRIGHT &copy; 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED </p>
+</body>
+</html>

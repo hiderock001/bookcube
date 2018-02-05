@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#" class="on">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="header-bottom-inner">
+					<div class="h-bottom-left">
+						<p class="all-category"><a href="#"><img src="/images/main/all-category.png" alt='전체카테고리' /></a></p>
+						<ul class="snb-left">
+							<li><a href="#" class="on">일반도서</a></li>
+							<li><a href="#">로맨스</a></li>
+							<li><a href="#">BL</a></li>
+							<li><a href="#">무협/판타지</a></li>
+							<li><a href="#">만화</a></li>
+						</ul>
+					</div>
+					<div class="h-bottom-right">
+						<ul class="snb-right">
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">신간</a></li>
+							<li><a href="#">무료</a></li>
+							<li><a href="#">이벤트</a></li>
+						</ul>
+					</div>
+					<div class="m-category">
+						<div class="category-inner">
+							<div>
+								<p>장르도서</p>
+								<ul class="">
+									<li><a href="#">로맨스</a></li>	
+									<li><a href="#">BL</a></li>	
+									<li><a href="#">무협/판타지</a></li>	
+									<li><a href="#">만화</a></li>	
+									<li><a href="#">리얼장르</a></li>		
+								</ul>
+							</div>
+							<div>
+								<p>일반도서</p>
+								<ul class="">
+									<li><a href="#">오디오북</a></li>	
+									<li><a href="#">문학</a></li>	
+									<li><a href="#">자기계발</a></li>	
+									<li><a href="#">경제/경영</a></li>	
+									<li><a href="#">외국어/언어</a></li>
+									<li><a href="#">역사/문학</a></li>	
+									<li><a href="#">인문</a></li>	
+									<li><a href="#">인물</a></li>	
+									<li><a href="#">사회</a></li>	
+									<li><a href="#">잡지</a></li>
+									<li><a href="#">컴퓨터/인터넷</a></li>	
+									<li><a href="#">자연과 과학</a></li>	
+									<li><a href="#">건강/스포츠/취미</a></li>	
+									<li><a href="#">종교</a></li>	
+									<li><a href="#">여행</a></li>
+									<li><a href="#">가정/생활/요리</a></li>	
+									<li><a href="#">유아</a></li>	
+									<li><a href="#">어린이</a></li>	
+									<li><a href="#">청소년</a></li>	
+									<li><a href="#">예술/대중문화</a></li>
+								</ul>
+							</div>
+							<div>
+								<p>테마관</p>
+								<ul class="">
+									<li><a href="#">독점선출간관</a></li>	
+									<li><a href="#">장르대여관</a></li>	
+									<li><a href="#">만화대여관</a></li>	
+									<li><a href="#">장르정액관</a></li>	
+									<li><a href="#">만화정액관</a></li>		
+								</ul>
+							</div>
+							<a href="javascript:;" class="category-close">close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="category-nav">
+				<div class="category-nav-inner">
+					<p>HOME > <a href="#">문학</a> > <a href="#">에세이/산문</a></p>
+				</div>
+			</div>
+			<div class="contents-wrap">
+				<div class="detail-wrap">
+					<div class="detail-title">
+						<div class="detail-title-inner">
+							<h3>내 아이를 위한 인문학 교육법</h3>
+							<p>어느 괴짜 과학자의 화성판 어드벤처 생존기<em>|</em>앤디 위어 장편소설</p>
+						</div>
+					</div>
+					<div class="detail-inner">
+						<div class="detail-book">
+							<div class="book-thum">
+								<div class="figure">
+									<div class="thum-box">
+										<span class="rm_br">
+											<img src="/images/thum/detail01.jpg" alt='내 아이를 위한 인문학 교육법'>
+										</span>
+										<span class="light"></span>
+									</div>
+								</div>
+								<div class="early-btn">
+									<a href="#" class="btn">미리보기</a>
+									<a href="#" class="btn">미리듣기</a>
+								</div>
+							</div>
+							<div class="book-info">
+								<div class="all-volume">
+									<p><span>레오</span> 저</p>
+									<p>도서출판 북큐브네트웍스<em>|</em>2017.10.18<em>|</em>총 <span>4</span>권<em class="end-result end">완결</em></p><!-- 완결 미완결 end 클래스 유무 차이 -->
+								</div>
+								<div class="book-side">
+									<div>
+										<span class="list-star rank5"></span>
+										<p class="rank-user">(<span>1,405</span>명)</p>
+										<p class="review-user">서평(<span>21.0K</span>)</p>
+										<p class="share">공유<a href="#" class="facebook">페이스북</a><a href="#" class="twitter">트위터</a></p>
+									</div>
+								</div>
+								<div class="cash-info">
+									<table>
+										<caption>시리즈 가격정보</caption>
+										<colgroup>
+											<col width="163px" />
+											<col width="*" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>장르정액권</th>
+												<td>
+													이용 가능
+													<a href="#" class="btn">장르정액권 구매 &gt;</a>
+												</td>
+											</tr>
+											<tr>
+												<th>구매</th>
+												<td><span>5,670원<em>(10%↓)</em></span><em class="save">3% 적립</em></td>
+											</tr>
+											<tr>
+												<th>10년소장<span class="tenrent-dot"></span></th>
+												<td><span>5,670원<em>(10%↓)</em></span><em class="save">100% 적립</em></td>
+											</tr>
+											<tr>
+												<th>대여</th>
+												<td>7일<em>|</em><span>5,670원<em>(10%↓)</em></span></td>
+											</tr>
+											<tr>
+												<th>출간정보</th>
+												<td>2017.02.03<em>|</em>EPUB<em>|</em>4.5MB</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="tenrent-wrap">
+										<div class="tenrent-inner">
+											<h4>10년소장 안내</h4>
+											<p>10년소장는 장기대여 상품으로 구매 상품과는 달리 다양한 프로모션 및 폭넓은 할인 혜택 제공이 가능합니다.</p>
+											<p>프로모션이 없는 경우 구매 상품과 가격이 동일하지만 프로모션이 진행되게 되면 큰 폭의 할인 및 적립이 제공됩니다.</p>
+											<a href="javascript:;">close</a>
+										</div>
+									</div>
+									<script>
+										$(".tenrent-dot").on("click",function(){
+											$(".tenrent-wrap").fadeIn();	
+										});
+										$(".tenrent-inner a").on("click",function(){
+											$(".tenrent-wrap").fadeOut();	
+										});
+									</script>
+								</div>
+								<p class="support-device"><span>지원 단말기</span> :  IOS 8.0 이상, Android 4.0 이상, 전용단말기, PC Windows OS 지원<em>듣기(TTS) 지원(모바일에서만 이용 가능)</em></p>
+								<div class="detail-btn">
+									<a href="#" class="d-basket"><span>책바구니</span></a>
+									<a href="javascript:;" class="d-gift"><span>선물하기</span></a>
+									<a href="#" class="effect-btn">구매</a>
+									<a href="#" class="effect-btn">10년소장</a>
+									<a href="#" class="effect-btn">대여</a>
+									<div class="d-gift-wrap">
+										<div class="d-gift-inner">
+											<h4>도서 선물하기</h4>
+											<div class="d-gift-sort">
+												<a href="javascript:;" class="on">구매</a>
+												<a href="javascript:;">10년소장</a>
+												<a href="javascript:;">대여</a>
+											</div>
+											<div class="gift-sort">
+												<div>
+													<div class="checkbox">
+														<label>
+															<input type="checkbox" value="">
+															<span><i></i></span>
+														</label>
+													</div>
+													<div class="k-array">
+														<input type="radio" name="" id="" checked="checked">
+														<label for="" class="radio"><span class="radio_on"><em>1권부터 정렬</em></span></label>
+														<input type="radio" name="" id="">
+														<label for="" class="radio"><span class="radio_off"><em>신간부터 정렬</em></span></label>
+													</div>
+												</div>
+												<div>
+													<p>총 0화 0원</p>
+													<a href="#" class="btn">선택결제</a>
+												</div>	
+											</div>
+											<div class="gift-list-wrap">
+												<div class="gift-list">
+													<table>
+														<caption>도서 선물하기 리스트</caption>
+														<colgroup>
+															<col width="60px" />
+															<col width="*" />
+															<col width="81px" />
+														</colgroup>
+														<tbody>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="checkbox">
+																		<label>
+																			<input type="checkbox" value="">
+																			<span><i></i></span>
+																		</label>
+																	</div>
+																</td>
+																<td>삼국지 풍운을 삼키다1</td>
+																<td>2,300원</td>
+															</tr>
+														</tbody>
+													</table>
+													<script type="text/javascript">
+														$(function(){
+															$('.gift-list').slimScroll({position: 'right',height: 'auto',alwaysVisible: true,color : "#f26532",size : "8px"});
+															$(".d-gift").on("click",function(){
+																$(".d-gift-wrap").fadeIn();	
+															});
+															$(".d-gift-close").on("click",function(){
+																$(".d-gift-wrap").fadeOut();	
+															});
+														});
+													</script>
+												</div>
+											</div>
+											<a href="javascript:;" class="d-gift-close">close</a>
+										</div>
+									</div>
+								</div>
+								<div class="d-event">
+									<ul>
+										<li><a href="#">(~10/31) 하이〈칼날 끝에 시린 눈빛, 그 남자〉 출간기념 출간기념출간기념출간기념</a></li>
+										<li><a href="#">(~10/31) 하이〈칼날 끝에 시린 눈빛, 그 남자〉 출간기념</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="authorNotice">
+							<div class="auLeft">
+								<h3>책 공지</h3>
+							</div>
+							<div class="auRight">
+								<dl>
+									<dt><a href="javascript:;">[공지] 군림천하를 기다려주신 분들께 감사인사를 드립니다. 연재가 많이 늦어진 점, 대단히 죄송합니..</a><em>2017-10-30</em></dt>
+									<dd class="fir">[공지] 군림천하를 기다려주신 분들께 감사인사를 드립니다. 연재가 많이 늦어진 점, 대단히 죄송합니다. 앞으로는 휴재 없이 연재가 진행 될 예정이오니 많은 관심 부탁 드립니다. 감사합니다.</dd>
+									<dt><a href="javascript:;">[공지] 작가님으로부터 334, 335화 수정본이 입수되어 교체하였습니다. 이미 구매하신 분은 재다..</a><em>2017-06-01</em></dt>
+									<dd>[공지] 작가님으로부터 334, 335화 수정본이 입수되어 교체하였습니다. 이미 구매하신 분은 재다운로드하시면 이용 가능합니다. 감사합니다.</dd>
+								</dl>
+							</div>				
+						</div>
+						<script>
+							$(function(){
+								$(".auRight dt a").on("click",function(){
+									if($(this).hasClass("on")){
+										$(this).removeClass("on");
+										$(".auRight dd").hide();
+										$(this).parent().next().hide();
+									}else{
+										$(".auRight dt a").removeClass("on");
+										$(this).addClass("on");	
+										$(".auRight dd").hide();
+										$(this).parent().next().show();
+									}
+								});	
+							});
+						</script>
+
+						<div class="book-keyword">
+							<h3>이 책의 키워드</h3>
+							<ul>
+								<li>호러공포</li>
+								<li>스릴러액션</li>
+								<li>국내드라마</li>
+								<li>감동</li>
+								<li>추리미스테리</li>
+							</ul>
+							<a href="#">내게 맞는 일반서 찾기 &gt;</a>
+						</div>
+					</div>
+					<div class="detail-tab">
+						<div class="detail-nav">
+							<div class="detail-nav-inner">
+								<ul class="scroll-tab">
+									<li class="on"><a href="javascript:;">책소개</a><span></span></li>
+									<li><a href="javascript:;">목차</a><span></span></li>
+									<li><a href="javascript:;">연관시리즈<span>(1,230)</span></a><span></span></li>
+									<li><a href="javascript:;">저자소개</a><span></span></li>
+									<li><a href="javascript:;">서평<span>(1,230)</span></a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="detail-inner">
+						<div class="d-tab book-intro">
+							<h3>책소개</h3>
+							<div>
+								북장의 전장에서 전리품을 수거하며 살아온 소년, 고금의 기연을 쟁취하다. 그로부터 오 년 후, <br />
+								이름 없는 산골마을에 나타난 청년은 새로운 이름으로, 새로운 삶을 찾는데….
+							</div>
+						</div>
+						<div class="d-tab book-intro second-page">
+							<h3>목차</h3>
+							<div>
+								프롤로그<br />
+								1 설렘을 품고 괌으로 <br />
+								2 관심이 아니야, 그저 호기심이지 <br />
+								3 가당치도 않은 설렘<br />
+								4 집주인과 세입자, 갑과 을의 관계일 뿐 <br />
+								5 자꾸만 신경 쓰여 <br />
+								6 묘한 설렘 <br />
+								7 설레지만 아직은 좋은 이웃<br />
+								8 확인해야겠어 이 감정이 무엇인지 
+							</div>
+						</div>
+						<div class="d-tab between">
+							<div>
+								<h3>이 책의 연관시리즈<em>|</em><span>세계문학전집</span></h3>
+								<ul>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+								</ul>
+								<div class="d-more">
+									<a href="#">더보기(25권)</a>
+								</div>
+							</div>
+							<div>
+								<h3>이 책의 연관시리즈<em>|</em><span>판타지작가전</span></h3>
+								<ul>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+									<li><a href="#">삼국지 풍운을 삼키다 1</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="d-tab author-intro">
+							<h3>저자소개</h3>
+							<div class="author-intro-text">
+								북장의 전장에서 전리품을 수거하며 살아온 소년, 고금의 기연을 쟁취하다. 그로부터 오 년 후, <br />
+								이름 없는 산골마을에 나타난 청년은 새로운 이름으로, 새로운 삶을 찾는데….
+							</div>
+							<h3>작가의 출간작</h3>
+							<div class="publish-book">
+								<div class="pub-select">
+									<a href="#" class="on">한국문학 편집국<span></span></a>
+									<a href="#">풍몽룡<span></span></a>
+									<a href="#">설민석<span></span></a>
+								</div>
+								<div class="pub-list">
+									<div class="k-array">
+										<input type="radio" name="" id="" checked="checked">
+										<label for="" class="radio"><span class="radio_on"><em>인기순</em></span></label>
+										<input type="radio" name="" id="">
+										<label for="" class="radio"><span class="radio_off"><em>최신순</em></span></label>
+									</div>
+									<a href="#" class="btn">선호작가 추가</a>
+								</div>
+								<div class="md">
+									<ul class="mds">
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">사소 하고도 특별한</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/200/1708/170800343.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">착한 스프는 전화를 받지 않는다</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/200/1708/170803912.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">나를 사랑하지 못하는 나에게</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/200/1709/170905713.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">근데 영화 한편 씹어먹어 봤니?</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/200/1710/171001021.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">가만히 끌어안다</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+										<li>
+											<div class="figure">
+												<a href="#">
+													<span class="rm_br">
+														<img src="http://bookimg.bookcube.com/200/1512/151207830.jpg" />	
+													</span>
+													<span class="light"></span>
+												</a>
+											</div>
+											<div class="hot-info">
+												<p class="hot-title">가만히 끌어안다</p>
+												<p>황이라 저</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="d-tab review">
+							<h3>서평(<span>1,249</span>)</h3>
+							<div class="review-text-area">
+								<p class="star-gogo">
+									<input type="radio" name="star" class="star-1" id="star-1" value="1">
+									<label class="star-1" for="star-1">1</label>
+									<input type="radio" name="star" class="star-2" id="star-2" value="2">
+									<label class="star-2" for="star-2">2</label>
+									<input type="radio" name="star" class="star-3" id="star-3" value="3">
+									<label class="star-3" for="star-3">3</label>
+									<input type="radio" name="star" class="star-4" id="star-4" value="4">
+									<label class="star-4" for="star-4">4</label>
+									<input type="radio" name="star" class="star-5" id="star-5" value="5">
+									<label class="star-5" for="star-5">5</label>
+									<input type="radio" name="star" class="star-6" id="star-6" value="6">
+									<label class="star-6" for="star-6">5</label>
+									<input type="radio" name="star" class="star-7" id="star-7" value="7">
+									<label class="star-7" for="star-7">5</label>
+									<input type="radio" name="star" class="star-8" id="star-8" value="8">
+									<label class="star-8" for="star-8">5</label>
+									<input type="radio" name="star" class="star-9" id="star-9" value="9">
+									<label class="star-9" for="star-9">5</label>
+									<input type="radio" name="star" class="star-10" id="star-10" value="10">
+									<label class="star-10" for="star-10">5</label>
+									<span></span>
+								</p>
+								<p class="star-vote">내가 준 평점(9.0)</p>
+								<a href="javascript:;" class="my-review">내가 쓴 서평보기</a>
+								<div class="review-text">
+									<div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="">
+												<span><i></i></span>
+											</label>
+											<p>스포일러가 포함되어 있습니다.</p>
+										</div>
+										<div class="text-btn">
+											<a href="#" class="btn">등록</a>
+											<a href="#" class="btn">취소</a>
+										</div>
+									</div>
+									<textarea>서평을 작성해 주세요.</textarea>
+								</div>
+							</div>
+							<script>
+								$(function(){
+									$(".my-review").on("click",function(){
+										$(".review-text:not(:animated)").animate({
+											height: "toggle"
+										});	
+									});	
+								});
+							</script>
+							<div class="tab">
+								<ul class="tab-list">
+									<li><a href="#" class="on">전체</a></li>
+									<li><a href="#">구매자</a></li>
+								</ul>
+								<div class="review-score-box">
+									<div class="k-array">
+										<input type="radio" name="" id="" checked="checked">
+										<label for="" class="radio"><span class="radio_on"><em>좋아요순</em></span></label>
+										<input type="radio" name="" id="">
+										<label for="" class="radio"><span class="radio_off"><em>최신순</em></span></label>
+									</div>
+									<div class="review-score">
+										<span class="list-star rank4"></span>
+										<p class="score">9.5</p>
+										<p class="rank-user">(<span>1,405</span>명)</p>
+									</div>
+								</div>
+								<div id="comment">
+									<!--<p class="no">회원님께서 첫 서평의 주인공이 되어주세요.</p>-->
+									<div class="comment">
+										<p class="comment-vote bookcube"><i>별숲</i><span>(구매자)</span><em>|</em><span class="date">2017.07.06</span><em>|</em><span class="list-star rank4"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+										<div class="comment-content">
+											<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+										</div>
+										<div class="comment-btn">
+											<div>
+												<a href="javascript:;" class="heart-btn">좋아요</a>
+												<a href="#">댓글</a>
+											</div>
+										</div>
+									</div>
+									<div class="comment">
+										<p class="comment-vote facebook"><i>별숲</i><span>(구매자)</span><em>|</em><span class="date">2017.07.06</span><em>|</em><span class="list-star rank4"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+										<div class="comment-content">
+											<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요.짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요.짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요.짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요.짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. </span>
+											<div class="blur">
+												<div>
+													<p>스포일러가 있어요!</p>
+													<a href="javascript:;">그래도 볼래요 &gt;</a>
+												</div>
+											</div>
+											<script>
+												$(".comment-content .blur").each(function(){
+													var height = $(this).parent().height();
+													$(this).css("height",height);
+												});
+												$(".comment-content .blur a").on("click",function(){
+													$(this).parent().parent().fadeOut(300);
+												});
+										</script>
+										</div>
+										<div class="comment-btn">
+											<div>
+												<a href="javascript:;" class="heart-btn">좋아요</a>
+												<a href="#">댓글</a>
+											</div>
+										</div>
+									</div>
+									<div class="comment">
+										<p class="comment-vote naver"><i>별숲</i><span>(구매자)</span><em>|</em><span class="date">2017.07.06</span><em>|</em><span class="list-star rank4"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+										<div class="comment-content">
+											<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+										</div>
+										<div class="comment-btn">
+											<div>
+												<a href="javascript:;" class="heart-btn">좋아요</a>
+												<a href="#">댓글</a>
+											</div>
+										</div>
+									</div>
+									<div class="comment-write reply-write">
+										<textarea name=""></textarea>
+										<p>
+											<span><em>0</em>/500자</span>
+											<button name="" class="">취소</button>
+											<button name="" class="">등록</button>
+										</p>
+									</div>
+									<div class="comment">
+										<div class="reply-comment">
+											<p class="comment-vote kakaotalk"><i>별숲</i><em>|</em><span class="date">2017.07.06</span></p>
+											<div class="comment-content">
+												<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+											</div>
+											<div class="comment-btn">
+												<div>
+													<button name="" class="">수정</button>
+													<button name="" class="">삭제</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="comment">
+										<div class="reply-comment">
+											<p class="comment-vote naver"><i>별숲</i><em>|</em><span class="date">2017.07.06</span></p>
+											<div class="comment-content">
+												<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+											</div>
+										</div>
+									</div>
+									<div class="comment">
+										<p class="comment-vote payco"><i>별숲</i><span>(구매자)</span><em>|</em><span class="date">2017.07.06</span><em>|</em><span class="list-star rank4"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+										<div class="comment-content">
+											<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+										</div>
+										<div class="comment-btn">
+											<div>
+												<a href="javascript:;" class="heart-btn">좋아요</a>
+												<a href="#">댓글</a>
+											</div>
+										</div>
+									</div>
+									<div class="d-more">
+										<a href="#">20개 더보기</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="md">
+							<div class="md-title">
+								<h3 class="coTitle">이 분야의 베스트</h3>
+								<a href="#" class="more">더보기</a>
+							</div>
+							<ul>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">사소 하고도 특별한</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1708/170800343.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">착한 스프는 전화를 받지 않는다</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1708/170803912.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">나를 사랑하지 못하는 나에게</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1709/170905713.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">근데 영화 한편 씹어먹어 봤니?</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1710/171001021.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">가만히 끌어안다</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					
+						<div class="md">
+							<div class="md-title">
+								<h3 class="coTitle">이번 주 주인공은 나야나!</h3>
+							</div>
+							<ul class="mds">
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">사소 하고도 특별한</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1708/170800343.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">착한 스프는 전화를 받지 않는다</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1708/170803912.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">나를 사랑하지 못하는 나에게</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1709/170905713.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">근데 영화 한편 씹어먹어 봤니?</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1710/171001021.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">가만히 끌어안다</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+								<li>
+									<div class="figure">
+										<a href="#">
+											<span class="rm_br">
+												<img src="http://bookimg.bookcube.com/200/1512/151207830.jpg" />	
+											</span>
+											<span class="light"></span>
+										</a>
+									</div>
+									<div class="hot-info">
+										<p class="hot-title">가만히 끌어안다</p>
+										<p>황이라 저</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="e-book-ps">
+							<h3>ebook 이용안내</h3>
+							<ul>
+								<li>구매 후 배송이 필요 없이 다운로드를 통해 이용 가능한 전자책 상품입니다.</li>
+								<li>전자책 1회 구매로 PC, 스마트폰, 태블릿PC, eBook 전용 단말기 등에서 이용하실 수 있습니다.<br />(도서 특성에 따라 이용 가능한 기기의 제한이 있을 수 있습니다.)</li>
+								<li>책파일 내 판권정보 정가와 북큐브 사이트 정가 표시가 다를 수 있으며, 실제 정가는 사이트에 표시된 정가를 기준으로 합니다.</li>
+								<li>적립금 지급은 적립금 및 북큐브 상품권으로 결제한 금액을 뺀 나머지가 적립금으로 지급됩니다.<br />(적립금 유효기간은 마이페이지>북캐시/적립금/상품권>적립금 적립내역에서 확인 가능합니다.)</li>
+								<li>저작권 보호를 위해 인쇄/출력 기능은 지원하지 않습니다.</li>
+								<li>구매하신 전자책은 “마이페이지 > 구매목록” 또는 “북큐브 내서재 프로그램 > 구매목록”에서 다운로드할 수 있습니다.</li>
+								<li>스마트폰, 태블릿PC의 경우 북큐브 어플리케이션을 설치하여 이용할 수 있습니다. (모바일 페이지 바로가기)</li>
+								<li>PC에서는 PC용 내서재 프로그램을 통해 도서를 이용하실 수 있습니다.</li>
+								<li>PC에서의 다운로드는 서로 다른 3대의 PC에서 횟수 제한 없이 이용하실 수 있습니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+		<!-- 서평 좋아요 누를시 나오는 애니메이션 -->
+		<div class="ani">
+			<div class="heart-wrapper">  
+				<div class="heart">
+					<div class="tl"></div>    
+					<div class="tr"></div>    
+					<div class="bl"></div>    
+					<div class="br"></div>  
+				</div>  
+				<div class="ring"></div>  
+				<div class="circles"></div>
+			</div>
+		</div>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+
+
+
+				//상세페이지 스크롤 이벤트
+				var fix = {};
+				fix = {
+					init : function(){
+						this.scroll();
+						this.animate();
+					},
+					el :{
+						payFix : $(".fix-series"), // 시리즈 리스트 위 가격 정보
+						payFixWrap : $(".fix-series-wrap"), // 시리즈 리스트 위 가격 정보 높이값 고정해주는 박스
+						tab : $(".detail-nav"),
+						seriesTab : $(".d-series-tab"), 
+						tabLen : $(".scroll-tab li").length,
+						tabLi : $(".scroll-tab li"),
+						fixHeight : $(".detail-nav").outerHeight()
+					},
+					top : {
+						// top 객체에 각 탭의 갯수 만큼 key,value 생성과 각종 위치값 들어갑니다.
+					},
+					scroll : function(){
+							var _that = this;
+							var step = 0;
+							$(window).scroll(function(){
+								var scrollTop = $(window).scrollTop();
+								for(var i = 1; i<=_that.el.tabLen;i++){
+									_that.top["tab"+i] = $(".d-tab").eq(i-1).offset().top - _that.el.fixHeight;
+								}
+
+								if(_that.top.tab1 <= scrollTop){
+									_that.el.tab.css({"position":"fixed","left":0,"top":0});
+								}else{
+									_that.el.tab.css("position","static");
+								}
+
+								if(_that.el.tabLen > 5){ // 탭이 5개보다 크면 시리즈 리스트가 있음.
+									_that.top["fix"] = _that.el.payFixWrap.offset().top - _that.el.fixHeight;
+									_that.top["seriesTab"] = _that.el.seriesTab.offset().top - _that.el.fixHeight;
+									if(_that.top.fix <=scrollTop){
+										_that.el.payFix.css({"position":"fixed","left":"0","top":_that.el.fixHeight,"border-bottom":"1px solid #f4f4f4","box-shadow":"0 2px 8px 2px rgba(0,0,0,.2)"}).addClass("on");
+										_that.el.payFix.find("div:first").css({"width":"880px","margin":"0 auto"});
+									}else{
+										_that.el.payFix.css({"position":"static","border-bottom":"none","margin-left":"0","box-shadow":"none"}).removeClass("on");
+									}
+
+									if(_that.top.tab3 + (_that.top.tab4 - _that.top.tab3) - 10 <=scrollTop){
+										_that.el.payFix.fadeOut(300);
+									}else{
+										_that.el.payFix.fadeIn(300);
+									}
+
+									
+								}
+
+								for(var len = 1; len <=_that.el.tabLen; len++){
+									if(eval("_that.top.tab"+len)<=scrollTop+1){
+										_that.el.tabLi.removeClass("on");
+										_that.el.tabLi.eq(len-1).addClass("on");
+									}else{
+										_that.el.tabLi.eq(len-1).removeClass("on");
+									}
+								}
+								if(eval("_that.top.tab"+1)>=scrollTop+1){
+									_that.el.tabLi.eq(0).addClass("on");
+								}
+							});
+					},
+					animate : function(){
+							var _that = this;
+							_that.el.tabLi.find("a").on("click",function(){
+								var scrollTop = $(window).scrollTop();
+								var idx = $(this).parent().index()+1;
+								for(var i = 1; i<=_that.el.tabLen;i++){
+									_that.top["tab"+i] = $(".d-tab").eq(i-1).offset().top - _that.el.fixHeight;
+								}
+								$('html, body').animate({scrollTop: eval("_that.top.tab"+idx)}, 0);
+							});
+					}
+				};
+
+				fix.init();
+
+				//서평 좋아요 클릭 하트 애니메이션 고고!
+				$(".heart-btn").on("click",function(){
+					if($(this).hasClass("on")){
+						$(this).removeClass("on");
+					}else{
+						$(".ani").show();
+						$(this).addClass("on");
+						$(".heart-wrapper").addClass("active").delay(800).queue(function(){
+							$(this).removeClass("active").dequeue();	
+							$(".ani").hide();
+						});	
+					}
+					return false;
+				});
+
+
+
+				
+				$(".comment-write.reply-write textarea").each(function(){
+					var maxcount = 500;
+					$(this).on("click",function(){
+						var input = $(this);
+						var update = function(){
+							var count = input.val().length;
+							var li_len = 0;
+							var push = 0;
+							for (i = 0; i < count; i++) {
+								push++;
+								if (push <= maxcount) {
+									li_len = i + 1;
+								}
+							}
+							if(count > maxcount){
+								alert("500글자가 초과되었습니다.\r\n\n초과된 부분은 자동으로 삭제됩니다.");
+								var str2 = input.val().substr(0, li_len);
+								input.val(str2);
+								$(".comment-write p span em").text("500");
+							}
+							input.keyup(function(){
+								var content = input.val().length;	
+								input.next().find("span em").text(content);
+							});
+						}
+						input.bind('input keyup keydown paste change', function() {
+							setTimeout(update, 0)
+						});
+					});	
+				});
+
+					
+			});	
+		</script>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<style type="text/css">
+body{background:#ddd;}
+a{text-decoration:none;}
+.publishing{width:1000px;margin:50px auto;}
+.publishing table{width:100%;border-top:1px solid #999;border-left:1px solid #999;}
+.publishing table th{height:40px;border-bottom:1px solid #999;border-right:1px solid #999;color:#333;background:#8a9cae;}
+.publishing table td{padding-left:30px;height:34px;border-bottom:1px solid #999;border-right:1px solid #999;}
+.publishing table td a{color:#333;display:block;}
+.publishing table td:hover{background:#23251d;}
+.publishing table td:hover a{color:#fff;}
+</style>
+</head>
+<body>
+	<div class="publishing">
+		<table class="pub_table" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<th>1차 업데이트</th>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_01.html" target="_blank">메인-일반(메인은 독점선출간 유무와 키워드박스쪽 버튼때문에 4개를 넣었습니다)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_02.html" target="_blank">메인-로맨스</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_03.html" target="_blank">메인-판무</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_04.html" target="_blank">메인-만화</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_05.html" target="_blank">카테고리</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_06.html" target="_blank">키워드관</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_07.html" target="_blank">베스트</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_09.html" target="_blank">대여관</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_10.html" target="_blank">정액관</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_11.html" target="_blank">카테고리별 도서 리스트</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_12.html" target="_blank">검색페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_13.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_15.html" target="_blank">마이페이지-북캐시내역</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_16.html" target="_blank">마이페이지-북캐시내역이 없는경우</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_17.html" target="_blank">마이페이지-적립금</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_18.html" target="_blank">마이페이지-쿠폰내역</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_19.html" target="_blank">마이페이지-주문내역 확인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_20.html" target="_blank">마이페이지-다시 내려받기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_21.html" target="_blank">마이페이지-선물함</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_48.html" target="_blank">선물함</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_49.html" target="_blank">선물이 도착(section 클래스 present)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_22.html" target="_blank">마이페이지-책바구니</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_23.html" target="_blank">마이페이지-나의서평</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_24.html" target="_blank">쿠폰등록</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_25.html" target="_blank">기프트카드등록</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_26.html" target="_blank">1:1문의-나의질문과 답변</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_27.html" target="_blank">1:1문의-고객의견 등록하기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_28.html" target="_blank">장르정액권구매</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_29.html" target="_blank">만화정액권구매</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_30.html" target="_blank">북캐시충전</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_detail_default.html" target="_blank">상세페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_detail_series.html" target="_blank">상세페이지-시리즈</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_detail_order_rent.html" target="_blank">상세페이지-구매,대여</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_join.html" target="_blank">인증 회원가입</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_payment.html" target="_blank">결제하기-서점</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_payment_2.html" target="_blank">결제하기-웹소설</a></td>
+				</tr>
+				<tr>
+					<th>2차 업데이트</th>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_14.html" target="_blank">회원정보수정-본인인증X</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_14_2.html" target="_blank">회원정보수정-본인인증 한 상태</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_31.html" target="_blank">공통페이지-이용안내</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_32.html" target="_blank">공통페이지-공지사항</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_33.html" target="_blank">공지사항-뷰페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_34.html" target="_blank">알리미</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_35.html" target="_blank">회원가입</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_36.html" target="_blank">인증 회원가입 완료</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_37.html" target="_blank">간편 회원가입</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_38.html" target="_blank">간편 회원가입 완료</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_39.html" target="_blank">로그인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_40.html" target="_blank">아이디 찾기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_41.html" target="_blank">아이디 찾기 결과</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_42.html" target="_blank">비밀번호 찾기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_43.html" target="_blank">비밀번호 찾기 결과</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_44.html" target="_blank">선물함 - 선물하기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_45.html" target="_blank">이벤트 뷰페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_46.html" target="_blank">결제 완료 페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_47.html" target="_blank">선물하기 결제 완료 페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/theme-list.html" target="_blank">테마관 리스트</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/theme-detail.html" target="_blank">테마관 상세</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/event-list.html" target="_blank">이벤트 리스트</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/event-detail.html" target="_blank">이벤트 상세</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_adult.html" target="_blank">성인인증 페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_error.html" target="_blank">에러페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/adult_certify.html" target="_blank">성인 인증 안내</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_51.html" target="_blank">인증 회원 가입 - 휴대폰,아이핀</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_52.html" target="_blank">시리즈 선물하기</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_13_2.html" target="_blank">마이페이지-웹툰탭(구매웹툰 생김)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_53.html" target="_blank">큐브 관리</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_54.html" target="_blank">나의 선호작품 - 웹툰(ul에 webtoon, comic 클래스 차이)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_55.html" target="_blank">나의 선호작품 - 코믹스(ul에 webtoon, comic 클래스 차이)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_56.html" target="_blank">나의 구매작품 - 코믹스(ul에 webtoon, comic 클래스 차이)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_57.html" target="_blank">나의 구매작품 - 웹툰(ul에 webtoon, comic 클래스 차이)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_58.html" target="_blank">기간행운쿠키</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_59.html" target="_blank">누적행운쿠키</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_60.html" target="_blank">행운쿠키내역</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_61.html" target="_blank">나의 구매 작품 클릭 후</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html1.bookcube.com/book/m/m_book_62.html" target="_blank">독점선출간</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

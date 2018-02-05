@@ -1,0 +1,290 @@
+<!--#include virtual=/novel/common/codepage.asp-->
+<!--#include virtual=/_common/dbcon.asp-->
+<!--#include virtual=/_common/cookies.asp-->
+<!--#include virtual=/_common/config.asp-->
+<!--#include virtual=/_common/functions.asp-->
+<%
+Call fnSetCookie("last_s", "storycube", "/", 365)
+
+page = Request("page")
+If Len(page) = 0 Or page = "" Then
+	page = "bl"
+	If Len(stcb_p) > 0 Then page = stcb_p
+End If
+Call fnSetCookie("stcb_p", page, "/", 365)
+'===========================================
+'현재 요일 정보 - 일:1, 월:2 ~ 토:7
+'===========================================
+week_day_num = weekday(Now)
+weekend_day_num = week_day_num
+If weekend_day_num <> "7" And weekend_day_num <> "1" Then weekend_day_num = "7"
+'===========================================
+'독점 선연재 이미지
+'===========================================
+If page = "fantasy" Then dokjeom_img_name = "fan_dokjeom.jpg"
+If page = "muhyup" Then dokjeom_img_name = "moo_dokjeom.jpg"
+If page = "bl" Then dokjeom_img_name = "bl_dokjeom.jpg"
+If page = "romance" Then dokjeom_img_name = "romance_dokjeom.jpg"
+%>
+<!--#include virtual=/novel/doctype.asp-->
+<body>
+<!-- [ HEADER ] -->
+<!--#include virtual=/novel/header.asp-->
+
+<!-- [ CONTENTS START ] -->
+<%
+If page = "muhyup" Or page = "fantasy" Then
+	%><!--#include virtual=/novel/main/inc_fan_mu_main.asp--><%
+ElseIf page = "bl" Or page = "romance" Then
+	%><!--#include virtual=/novel/main/inc_bl_romance_main.asp--><%
+ElseIf page = "free" Then
+	%><!--#include virtual=/novel/main/inc_free_main.asp--><%
+End If
+%>
+<!-- [ CONTENTS END ] -->
+<div class="mainBottom">
+	<div class="mainBottom_inner">
+		<div class="cs">
+			<div class="csLeft">
+				<div>
+					<ul class="csList">
+						<li><a href="<%=httpUrl%>/ticket.asp?page=coupon"><img src="/images/page/cs1.png" alt="쿠폰등록" class="csLine" /></a></li>
+						<li><a href="<%=httpUrl%>/ticket.asp?page=giftcard"><img src="/images/page/cs2.png" alt="상품권등록" class="csLine" /></a></li>
+						<li><a href="<%=httpUrl%>/appDown.asp"><img src="/images/page/cs3.png" alt="앱 다운로드" /></a></li>
+						<li><a href="<%=httpUrl%>/device.asp"><img src="/images/page/cs4.png" alt="기기 관리" /></a></li>
+					</ul>
+				</div>
+				<div class="csBoard">
+					<ul>
+						<li><a href="#">[공지]SNS 공유 시 무료도서 지급기준 변경 안내</a></li>
+						<li><a href="#">[공지]로그인 5회 오류 시 접속제한 적용 관련 공지</a></li>
+					</ul>
+					<a href="#">더보기</a>
+				</div>
+			</div>
+			<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+		</div>
+		<img src="/images/page/mainBottom_img.jpg" alt="20만권의 전자책, 웹소설 그리고 프리미엄 웹툰!! PC와 모바일에서 동시에 즐기세요." class="mainBottom_banner" usemap="#mainBottom_banner" />
+		<map name="mainBottom_banner">
+			<area shape="rect" coords="3,128,140,173" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" target="_blank" alt="google play" />
+			<area shape="rect" coords="154,128,291,173" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" target="_blank" alt="app store" />
+		</map>
+	</div>
+</div>
+
+<!-- [ FOOTER ] -->
+<!--#include virtual=/novel/footer.asp-->
+	
+<script>
+	require(["mainroll"]);
+	require(["weeklist"]);
+	require(["teaser"]);
+
+	
+	
+	require(["jquery"], function($){
+
+		var page = $(".js_page_section").data("page");
+
+		if(page == "free"){
+			$(function(){
+				//오늘의 추천(무료)			
+				$.post("/novel/common/data/_free_main_new.asp", {page : page}, function(data){					
+					$(".stNew").html(data);
+					//무료 신작연재
+					var list = $(".stNew");
+					var st = $(".stNewSlide");
+					if(st.length >= 3){
+						roll();
+					}else if(st.length == 2){
+						fade();
+					}	
+				}, "html");
+			});
+			
+			function fade(){
+				var num = 0;
+				$(".stNewSlide:not(:first)").hide();
+				$(".stNew").css("position","relative");
+				$(".stNewSlide").css("position","absolute").css("left","0").css("top","0");
+				setInterval(function(){
+					num++;
+					$(".stNewSlide").fadeOut(1000);
+					$(".stNewSlide").eq(num).fadeIn(1000);
+					if(num >= $(".stNewSlide").length-1){
+						num = -1;
+					}else if(num < 0){
+						num = $(".stNewSlide").length-1;
+						
+					}
+				},3000);
+			}
+			function roll(){
+				var list = $(".stNew");
+				$(".stNewSlide:last").prependTo(list);
+				$(list).css("margin-top","-80px");
+				setInterval(function(){
+					$(list).animate({
+						   marginTop:parseInt($(".stNew:not(:animated)").css("margin-top"))-80+"px" 
+					},1000,"linear",function(){
+						   $(list).css("margin-top","-80px");
+						   $(".stNewSlide:first").appendTo(list);
+					});
+				},3000);
+			}
+		
+		}else{
+			$(function(){
+				
+				//독점 선연재
+				$.post("/novel/common/data/_dokjeom.asp", {page : page}, function(data){
+					$(".main_dokjeon").html(data);
+				}, "html");
+
+				// 테마
+				$.post("/novel/common/data/_main_theme.asp", {page : page}, function(data){					
+					$(".theme").html(data);
+				}, "html");
+				
+				//완결연재
+				$.post("/novel/common/data/_complete_list.asp", {page : page}, function(data){					
+					$(".completeBookBox").html(data);
+				}, "html");
+				
+				//베스트 전자책
+				$.post("/novel/common/data/_best_ebook.asp", {page : page}, function(data){					
+					$(".bestBookBox").html(data);
+				}, "html");
+
+			});
+		}
+	});	
+
+	//top 랭킹
+	require(["jquery"], function($){
+		$(function(){
+			var page = $(".js_page_section").data("page");
+
+			$.post("/novel/common/data/_top_ranking.asp", {page : page}, function(data){					
+				if (page == "bl" || page == "romance"){
+					$(".r_ranking").html(data);
+				}else if (page == "fantasy" || page == "muhyup"){						
+					$(".ranking").html(data);
+				}else if (page =="free"){
+					$(".free_ranking").html(data);
+				}					
+			}, "html");
+
+		});
+	});
+
+	//md-b
+	require(["jquery", "jcarousel"], function($){
+		$(function(){
+			function jcarBindRmd(target){
+				var $target = $(target), $jcarousel = $target.find(".js_jcarousel"), $prev = $target.find(".jcarousel-prev"), $next = $target.find(".jcarousel-next");
+				if($jcarousel.parent().hasClass("rmdRoll")){
+					$jcarousel.find("li:eq(-1)").addClass("last");
+				}
+				$jcarousel.jcarousel();
+				if($jcarousel.jcarousel("items").length <= $jcarousel.parent().hasClass("rmdRoll") ? 4 : 5){
+					$jcarousel.find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+				}
+				$prev.on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$next.on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+			}
+
+			function jcarBindMd(target){
+				var $target = $(target), $jcarousel = $target.find(".js_jcarousel"), $prev = $target.find(".jcarousel-prev"), $next = $target.find(".jcarousel-next");
+				if($jcarousel.parent().hasClass("mdRoll")){
+					$jcarousel.find("li:eq(-1)").addClass("last");
+				}
+				$jcarousel.jcarousel();
+				if($jcarousel.jcarousel("items").length <= $jcarousel.parent().hasClass("mdRoll") ? 4 : 5){
+					$jcarousel.find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+				}
+				$prev.on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$next.on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+			}
+
+			var page = $(".js_page_section").data("page");
+
+			if(page == "free"){
+				$.get("/novel/common/data/_member_serial_main_md.asp", function(data){					
+					$(".md-section-b").html(data);
+					jcarBindRmd(".md-section-b");
+				}, "html");
+
+				// 웹툰, 코믹스 상단 MD 랜덤
+				$.get("/novel/common/data/_main_toon_md.asp", function(data){
+					$(".js_toon_md").html(data);
+					jcarBindRmd(".js_toon_md");
+				}, "html");
+				// 분야별 베스트 전자책 랜덤
+
+				// 분야 베스트 전자책
+				$.get("/novel/common/data/_best_ebook.asp", {page : page}, function(data){
+					$(".best_ebook").html(data);
+				}, "html");
+			}else{
+				$.post("/novel/common/data/_serial_main_md.asp", {page : page, pos : false}, function(data){					
+					$(".md-section-a").html(data);
+					jcarBindRmd(".md-section-a");
+				}, "html");
+				$.post("/novel/common/data/_serial_main_md.asp", {page : page, pos : true}, function(data){					
+					$(".md-section-b").html(data);
+					jcarBindRmd(".md-section-b");
+				}, "html");	
+				//웹툰/코믹스 베스트
+				$.post("/novel/common/data/_main_best_toon.asp", { page : page }, function(data){
+					$(".best_toon").html(data);	
+					jcarBindMd(".best_toon");
+				}, "html");
+			}			
+		});
+	});
+
+	// 이벤트 베너
+	require(["jquery"], function($){
+		$(function(){
+			var page = $(".js_page_section").data("page");
+
+			$.post("/novel/common/data/_event_banner_list.asp", {page : page}, function(data){					
+				$(".event_slide").html(data);
+			}, "html");
+
+		});
+	});
+	
+	//공지사항
+	require(["jquery"], function($){
+		$(function(){
+			var page = $(".js_page_section").data("page");
+
+			$.post("/novel/common/data/_main_notice.asp", {page : page}, function(data){					
+				$(".csBoard").html(data);
+			}, "html");
+		});
+	});	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/toon/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/toon/css/m_toon.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/mobile/css/popBanner.css?v=141118" />
+	<script type="text/javascript" src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/novel/js/lib/swipe/swiper-2.1.min.js"></script>
+	<script type="text/javascript" src="/novel/js/lib/slick.min.js"></script> 
+</head>
+<body>
+	<header>
+		<div class="header-top">
+			<div class="top-left">
+				<ul>
+					<li><a href="javascript:;">MY PAGE</a></li>
+					<li class="alarm"><a href="#">알리미<span class="alarm-new">새로운 알리미</span></a></li>
+				</ul>
+			</div>
+			<h1><a href="#">북큐브</a></h1>
+			<div class="top-right">
+				<ul>
+					<li><a href="javascript:;">검색</a></li>
+					<li><a href="#">내서재</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-middle">
+			<h2 class="hide">장르</h2>
+			<ul>
+				<li><div><a href="#">서점</a></div></li>
+				<li><div><a href="#">웹소설</a></div></li>
+				<li><div><a href="#">웹툰</a><em>line</em></div></li>
+			</ul>
+		</div>
+		<div class="overlay"></div>
+		<div class="search">
+			<h2 class="hide">북큐브 작품 검색</h2>
+			<form>
+				<fieldset>
+					<legend>검색</legend>
+					<div class="search-inner">
+						<div>
+							<div>
+								<span></span>
+								<input type="text" name='' placeholder='제목, 작가명, 출판사명' />
+							</div>
+							<input type="submit" name='' />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="sideBar">
+			<h2 class="hide">사이드 메뉴</h2>
+			<div class="bar-top">
+				<a href="javascript:;">close</a>
+				<div>
+					<a href="javascript:;" class="bookcube">로그인 아이콘</a>
+					<p>로그인하세요</p>
+					<div>
+						<a href="javascript:;">로그아웃</a>
+					</div>
+				</div>
+			</div>
+			<div class="bar-middle">
+				<ul>
+					<li><a href="#"><p>마이페이지</p></a></li>
+					<li><a href="#"><p>책바구니</p></a></li>
+					<li><a href="#"><p>선호작</p></a></li>
+				</ul>
+			</div>
+			<div class="bar-bottom">
+				<ul>
+					<li><a href="#">북캐시 충전</a></li>
+					<li><a href="#">이벤트</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+				<div>
+					<p>북큐브앱을 설치하시고 편리한 이용과 더 많은 혜택을 누리세요.</p>
+					<a href="#">북큐브앱 설치하기</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function($){
+				var fixHeader = $("header").height();
+				$("header").wrapInner("<div class='h-wrap'></div>");
+				$("header,.h-wrap").css("height",fixHeader);
+				$(window).scroll(function(){
+					var top = $(window).scrollTop();
+					$(".h-wrap").css("position","fixed");	
+					if(top === 0){
+						$(".h-wrap").css("position","static");	
+					}
+				});
+				$(".overlay, .bar-top > a").on("click",function(){
+					window.location.hash = "";
+					$("body").removeClass("on");
+				});
+
+				$(window).on("hashchange",function(){
+					var m= window.location.hash;
+					if(m != "#open"){
+						$(".overlay, .search").hide();
+						$(".sideBar").removeClass("on");
+						$("body").removeClass("on");
+					}
+				});
+				$(".top-left ul li:first a").on("click",function(){
+					window.location.hash = "open";
+					var sh = screen.height;
+					$(".overlay").show();
+					$("body").css("height",sh)
+					$("body,.sideBar").addClass("on");
+				});
+
+				$(".top-right ul li:first a").on("click",function(){
+					$(".overlay, .search").show();
+					$("body").addClass("on");
+					$(".search-inner input[type='text']").focus();
+				});
+
+				$(".overlay, .search div span").on("click",function(){
+					$(".overlay,.search").hide();
+					$("body").removeClass("on");
+					$(".search-inner input[type='text']").val("");
+				});
+			});
+		</script>
+	</header>
+	<section>
+		<div class="detail-info-box">
+			<img src="http://webtoonimg.bookcube.com/640/d160161.jpg" alt="남의 BL만화" />
+			<div class="detail-info">
+				<h3>남의 BL만화</h3>
+				<p>레오나르도 디카프리오<em>|</em>순정/로맨스,SF판타지</p>
+				<p>월,화,수,목,금,토,일 연재</p>
+				<div class="detail-info-btn">
+					<a href="#" class="sunho on">선호작</a>  <!-- on 클래스로 조절합니다 -->
+					<a href="#" class="firstLook">1화 바로보기</a>
+					<a href="#" class="replyBtn">댓글</a>
+				</div>
+				<script>
+					$(function(){
+						var pack = $(".detail-pack ul");
+						var packLi = $(".detail-pack li").length;
+						var more = $(".detail-pack > a");
+						if(packLi >= 3){
+							more.show();
+						}else{
+							more.hide();
+						}
+						more.on("click",function(){
+							if($(this).hasClass("on")){
+								$(pack).css("max-height","40px");
+								$(this).removeClass("on");
+							}else{
+								$(pack).css("max-height","none");
+								$(this).addClass("on");
+							}
+						});
+					});
+				</script>
+				<div class="book-hit">
+					<p><em>조회수</em><br /><span>3,492,999</span></p>										
+					<p><em>선호작</em><br /><span>3,492,999</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="book-intro">
+			<h3>작품소개</h3>
+			<p>**본 도서는 '가시꽃의 이중주'의 연작입니다.***젊은 날의 풋사랑. 기만당한 진심은 상흔이 됐다. 절망의 터널을 지나고 있을 때 들이친 한 줌의 친절. 우연한 부닥침. 구원과 엇갈림. 그리고 재회.</p>
+		</div>
+		<script>
+			$(function(){
+				$(".book-intro h3").on("click",function(){
+					if($(".book-intro p").hasClass("on")){
+						$(this).removeClass("on");
+						$(".book-intro p").removeClass("on");
+					}else{
+						$(this).addClass("on");
+						$(".book-intro p").addClass("on");
+					}
+				});	
+			});
+		</script>
+		<div class="all-pay">
+			<div>
+				<ul>
+					<li>회차 별 구매 : <span>300원</span></li>
+					<li>전 회차 구매 : <span>17,400원</span></li>
+				</ul>
+				<a href="javascript:;" class="js_all_split_pay">전 회차 구매</a>
+			</div>
+		</div>
+		<div class="detail-banner">
+			<a href="http://www.bookcube.com/book/m/detail.asp?book_num=161108491&page=buy"><img src="/book/images/m_book/d_banner/webtoon_mobile_170320.png" /></a>
+		</div>
+		<div class="payment">
+			<div class="selectListBox">
+				<div class="payTop">
+					<div>
+						<input type="checkbox" name="" /><label>선택</label>
+					</div>
+					<div>
+						<a href="#">선택구매</a>
+					</div>
+				</div>
+				<div class="array">
+					<a href="#" class="on">최신순 정렬</a><em>|</em><a href="#">1화부터</a>
+				</div>
+				<!--
+					<span class="nfree"> n일후 무료
+					<span class="lock">  
+					<span class="free">
+					<span class="used">
+				-->
+				<ul>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="nfree">7일후 무료</span>
+									<span class="bgm">BGM</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="lock">lock</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="free">무료</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<label for="thum-check"><span><input type="checkbox" name="" id="thum-check" /></span>20화. 액션가면</label>
+						<a href="#">
+							<div class="detail-wrap">
+								<div class="detail-thum">
+									<img src="http://webtoonimg.bookcube.com/640/150081039.jpg" />
+									<span class="used">사용</span>
+								</div>
+								<div class="sub-detail">
+									<div>
+										<p>2016.02.29</p>
+										<p>좋아요<span>2212</span></p>
+									</div>
+									<div>
+										<p><del>500원</del>400원(20%↓)</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="select-more"><a href="javascript:;">회차 더보기(3876)<span></span></a></div>
+				<script>
+					$(function(){
+						var liHeight = $(".selectListBox li").outerHeight();
+						var bookLen = $(".selectListBox li").length;
+						if(screen.width < 768){
+							$(".selectListBox ul").css("max-height",liHeight*10);
+						}else{
+							$(".selectListBox ul").css("max-height",liHeight*5);
+						}
+						if(bookLen > 10){
+							$(".select-more").show();
+						}
+						$(".select-more a").on("click",function(){
+							$(".selectListBox ul").css("max-height","none");	
+							$(this).parent().hide();
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="toon-ps-wrap">
+			<div class="toon-ps">
+				<h4>코믹큐브의 모든 작품은 10년 소장으로 서비스 됩니다.</h4>
+				<p><span>10년 소장이란?</span><br />10년소장은 구매한 작품을 10년간 소장하는 장기대여 서비스 입니다.</p>
+                <p>&lt;기다리면 무료&gt; 서비스 되고 있는 작품의 무료회차는 구매 작품 목록에 포함 되지 않습니다.</p>
+			</div>
+		</div>
+		<div class="snsBox">
+			<p>코믹큐브 작품을 친구와 지인들에게 추천/공유 해보세요</p>
+			<a href="#" class="bg kakaostory">카카오스토리</a>
+			<a href="#" class="bg facebook">카카오스토리</a>
+			<a href="#" class="bg twitter">카카오스토리</a>
+			<div class="snsBottom">
+				<p>친구 공유시 적립금 지급</p>
+				<span>더보기</span>
+			</div>
+		</div>
+		<div class="snsPs">
+			<div class="snspd">
+				<p>SNS 친구 공유 후 적립금 지급 받는 방법</p>
+				<ul>
+					<li>본인인증 완료한 회원만 적립금 지급이 가능합니다. </li>
+					<li>SNS 친구 공유 통한 적립금 (300원) 지급은 1달에 1번만 가능 합니다. (유효기간 30일)</li>
+					<li>매월초 또는 적립금을 지급 받으시면 해당 월에 SNS 공유한 횟수는 자동 리셋 됩니다.</li>
+					<li>코믹큐브 로그인 후 카카오 스토리/페이스북/트위터를 이용하여 해당 도서의 링크 주소를 공유 합니다.</li>
+					<li>SNS를 통해 공유 된 링크 주소를 친구 또는 지인분들께서 터치 또는 클릭 할 경우 SNS 공유 횟수로 카운팅 됩니다.<br />(비로그인 상태에서 SNS 공유 하면, 공유 횟수가 카운팅 되지 않습니다.)</li>
+					<li>공유 횟수가 10번을 충족한 경우 적립금 300원이 자동 지급 되며, 알리미 통해서 확인 가능 합니다</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$(".snsBottom span").on("click",function(){
+					if($(this).hasClass("on")){
+						$(this).removeClass("on");
+						$(".snsPs").animate({
+							height : "toggle"	
+						},500,function(){
+							$(this).css("border-bottom","none")	
+						});
+					}else{
+						$(this).addClass("on");
+						$(".snsPs").animate({
+							height : "toggle"	
+						},500,function(){
+							$(this).css("border-bottom","1px solid #cdced1")	
+						});
+					}
+				});	
+			});
+		</script>
+		<div class="reply-title">
+			<h3>연재댓글(<span>817</span>)</h3>
+		</div>
+		<div class="ly_comment" data-options='{"comment_type":"member_serial", "target_num":"249", "msg_num":"", "pagesize":5, "blockpage":5}'>
+			<div class="ly_comment_write">
+				<div class="comment_write">
+					<textarea name="content"></textarea>
+					<p><span>0/500자</span><button name="btn_write" class="js_reply_write">등록</button></p>
+				</div>
+			</div>
+			<div id="comment">
+				<div class="comment">
+					<p class="user"><span>별숲</span><em>|</em>2015.11.06 11:10</p>
+					<span>연재 대박 꿀잼이네 -_- 연중만 되지 말아랑</span>
+					<button class="js_reply_add">답글</button><button class="js_reply_modify">수정</button><button class="js_reply_del">삭제</button>
+				</div>
+				<div class="comment_write">
+					<p class="user"><span>별숲</span><em>|</em>2015.11.06 11:10</p>
+					<textarea name="content"></textarea>
+					<p><span>0/500자</span><button name="btn_write" class="js_reply_cancel">취소</button><button name="btn_write" class="js_reply_write">등록</button></p>
+				</div>
+				<div class="comment">
+					<p class="user"><span>토종닭</span><em>|</em>2015.11.06 11:10</p>
+					<span>돈 아깝네요. 이 돈 가지고 치킨이나 시켜먹을걸.</span>
+					<button class="js_reply_add">답글</button>
+				</div>
+				<div class="comment">
+					<div class="reply_comment">
+						<p class="user"><span>교촌치킨</span><em>|</em>2015.11.06 11:10</p>
+						<span>비싸고 양적은 교촌치킨 드세요.</span>
+						<button class="js_reply_modify">수정</button><button class="js_reply_del">삭제</button>
+					</div>
+				</div>
+				<div class="comment">
+					<div class="reply_comment">
+						<p class="user"><span>호식이두마리치킨</span><em>|</em>2015.11.06 11:10</p>
+						<span>북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브</span>
+					</div>
+					<a href="#">더보기</a>
+				</div>
+			</div>
+			<div class="paging">
+				<a href="#" class="prev">이전</a>
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#" class="next">다음</a>
+				<p>1 / 15</p>
+			</div>
+		</div>
+		<div class="md-section-a">
+			<div class="titleBox">
+				<h3>로맨스 인기 웹소설</h3>
+			</div>
+			<div class="swiper-container mdSwiper md1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+				</div>
+			</div>
+			<div class="titleBox">
+				<h3>로맨스 인기 전자책</h3>
+			</div>
+			<div class="swiper-container mdSwiper md2">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/m_toon/thum/swiperThum.jpg" alt="" />
+							</span>
+						</a>
+						<h4>군림천하</h4>
+						<p>쑥쑥이</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="titleBox">
+			<h3>이벤트</h3>
+			<a href="#" class="more">더보기</a>
+		</div>
+		<div class="swiper-container mainEvent">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+				<div class="swiper-slide"><a href="#"><img src="http://up.bookcube.com/bookcube/upload/event/2331/e2331_mobile_banner.jpg" alt="판/무에 빠져 못나간다 전해라~" /></a></div>
+			</div>
+		</div>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+				<ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#">더보기</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">북큐브 쿠폰 등록</a></li>
+					<li><a href="#">북큐브 상품권 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#"><img src="/novel/images/m_novel/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="#">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+		</div>
+	</footer>
+	<div class="topBtn">
+		<a href="#" class="js_scroll_top">TOP</a>
+	</div>
+	<script>
+		$(function(){
+			//슬라이드 메뉴
+			$(".snb ul li:last-child").on("click",function(){
+				$(".slideOverlay").show();
+				$(".slideMenu").animate({
+					right : 0	
+				},200,"swing",function(){
+					$(".slideOverlay").on("click",function(){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					});		
+				});
+			});	
+			// 메인롤(반응형 플리킹)
+			$("#mainRoll").slick({
+				speed : 300,
+				autoplay:true,
+				autoplaySpeed:5000
+			});
+			$(".le_wrap").show();
+			
+			var swiper = new Swiper('.cate-slide', {
+				slidesPerView: 'auto'
+			});
+
+			 //푸터 배너 슬라이드
+			var swiper = new Swiper('.mainEvent', {
+				autoplay: 3000,
+				slidesPerView: 'auto'
+			});
+			var len = $(".mdSwiper").length;
+			for(i=1;i<=len;i++){
+				var swiper = new Swiper('.md'+i, {
+					slidesPerView: 'auto'
+				});
+			}
+		
+			//공지사항
+			$(function(){
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+			});
+			
+		});
+	</script>
+</body>
+</html>

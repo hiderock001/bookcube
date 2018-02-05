@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css" />
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> 
+</head>
+<body>
+	<div class="header">
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li class="lnb_on"><a href="#"><img src="images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li class="bold"><a href="#">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="images/main/bookcube_logo.png" alt="bookcube" /></a></h1>
+					<div class="h_search_box">
+						<form>
+							<fieldset>
+								<legend class="hide">북큐브 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="images/main/select_arrow.jpg" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li>전체</li>
+											<li>제목</li>
+											<li>저자</li>
+											<li>출판사</li>
+											<li>책정보</li>
+											<li>정액가능</li>
+											<li>대여가능</li>
+											<li>10년소장</li>
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" id="" class="search_input" value="" />
+								</div>
+								<input type="submit" name="" id="" class="select_submit"  />
+								<a href="#"><img src="images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="mainGnb_wrap">
+				<div class="mainGnb_inner">
+					<h2 class="hide">메인메뉴</h2>
+					<p class="all_category"><img src="images/main/all_category.jpg" alt="전체 카테고리" /></p>
+					<div class="allCate_view">
+						<div class="allCate_box">
+							<p class="allCate_title">일반도서</p>
+							<ul class="allCate_list">
+								<li class="all_red"><a href="#">리얼장르</a></li>
+								<li class="all_red"><a href="#">관능로맨스</a></li>
+								<li class="all_red"><a href="#">오디오북</a></li>
+								<li><a href="#">로맨스</a></li>
+								<li><a href="#">판타지/무협</a></li>
+								<li><a href="#">문학</a></li>
+								<li><a href="#">자기계발</a></li>
+								<li><a href="#">경제/경영</a></li>
+								<li><a href="#">외국어/언어</a></li>
+								<li><a href="#">역사/문화</a></li>
+								<li><a href="#">인문</a></li>
+								<li><a href="#">인물</a></li>
+								<li><a href="#">사회</a></li>
+								<li><a href="#">만화</a></li>
+								<li><a href="#">잡지</a></li>
+								<li><a href="#">컴퓨터/인터넷</a></li>
+								<li><a href="#">자연과 과학</a></li>
+								<li><a href="#">건강/스포츠/취미</a></li>
+								<li><a href="#">종교</a></li>
+								<li><a href="#">여행</a></li>
+								<li><a href="#">가정/생활/요리</a></li>
+								<li><a href="#">유아</a></li>
+								<li><a href="#">어린이</a></li>
+								<li><a href="#">청소년</a></li>
+								<li><a href="#">예술/대중문화</a></li>
+								<li><a href="#">교재</a></li>
+								<li><a href="#">성인</a></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<p class="allCate_title ma_top">커뮤니티/테마관</p>
+							<ul class="allCate_list">
+								<li class="all_blue"><a href="#">정액관</a></li>
+								<li class="all_green"><a href="#">대여관</a></li>
+								<li class="all_purple"><a href="#">스토리큐브</a></li>
+								<li class="all_green2"><a href="#">독점선출간</a></li>
+								<li></li>
+							</ul>
+							<img src="images/main/all_close.png"  alt="카테고리 뷰 페이지 닫기"  class="all_close" />
+						</div>
+					</div>
+					<ul class="gnb_list">
+						<li><a href="#"><img src="/images/main/general.jpg" alt="일반도서" /></a></li> 
+						<li><a href="#"><img src="/images/main/romance.jpg" alt="로맨스" /></a></li>
+						<li><a href="#"><img src="/images/main/fantasy.jpg" alt="무협/판타지" /></a></li>
+						<li><a href="#"><img src="/images/main/toon.jpg" alt="만화" /></a></li>
+						<li><a href="#"><img src="/images/main/real.jpg" alt="리얼장르" /></a></li>
+					</ul>
+					<ul class="sub_list">
+						<li><a href="#"><img src="/images/main/sub_best.jpg" alt="베스트" /></a></li>
+						<li><a href="#"><img src="/images/main/sub_new.jpg" alt="신간" /></a></li>
+						<li><a href="#"><img src="/images/main/sub_free.jpg" alt="무료" /></a></li>
+						<li><a href="#"><img src="/images/main/sub_event.jpg" alt="이벤트" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sub_contents">
+		<div class="main_inner">
+			<div class="location">
+				<p>
+					<strong>HOME</strong> > 결제하기
+				</p>
+			</div>
+			<div class="content_top_list">
+				<div class="title_area border_type">
+					<h2>결제하기</h2>
+				</div>	
+			</div>
+			<div class="contents_wrap mypage">
+				<div class="contents bdr_btm bdr_top">
+					<div class="inner_type">
+						<table class="basic type_double_line basket" cellspacing="0" summary="결제할 책 목록">
+							<caption>책바구니</caption>	
+							<colgroup>
+								<col width="*" />
+								<col width="12%" />
+								<col width="12%" />
+								<col width="13%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th abbr="전자책 제목" scope="col">전자책 제목</th>
+									<th abbr="가격" scope="col">가격</th>
+									<th abbr="구분" scope="col">구분</th>
+									<th abbr="적립금" scope="col">적립금</th>
+								</tr>	
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<a href="#"><strong>세계 전쟁사 사전</strong></a>
+									</th>
+									<td>
+										<strong class="red2">55,000</strong>
+									</td>
+									<td>구매</td>
+									<td>1,650</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<a href="#"><strong>세계 전쟁사 사전</strong></a>
+									</th>
+									<td>
+										<strong class="red2">55,000</strong>
+									</td>
+									<td>구매</td>
+									<td>1,650</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<a href="#"><strong>세계 전쟁사 사전</strong></a>
+									</th>
+									<td>
+										<strong class="red2">55,000</strong>
+									</td>
+									<td>구매</td>
+									<td>1,650</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<a href="#"><strong>세계 전쟁사 사전</strong></a>
+									</th>
+									<td>
+										<strong class="red2">55,000</strong>
+									</td>
+									<td>구매</td>
+									<td>1,650</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="bdr_btm">
+							<div class="box_cash_total">
+								<div class="fr">총 결제 금액 : <span class="red2">55,000원</span></div>
+							</div>
+						</div>
+						<form action="" method="post" name="order_info">
+							<fieldset>
+								<legend>결제하기</legend>
+								<div class="payment_step">
+									<!----------------- 추가 ---------------------->
+									<div class="coupon_step">
+										<h3>
+											<span class="red2">STEP1</span>
+											쿠폰
+										</h3>
+										<div class="box">
+											<label for="" class="hide">쿠폰 할인액</label>
+											<input type="text" name="" id="" class="coupon_sale" disabled="" value="0" />
+											<span class="gray2"> 원 할인</span>
+											<span class="orange_f16">(사용 가능한 쿠폰 : 100장)</span>
+											<div class="coupon_btn">
+												<a href="#" class="coupon_select">쿠폰선택</a>	
+												<input type="button" name="" id="" class="coupon_reset" value="쿠폰 적용 초기화" /></span>
+											</div>
+										</div>
+										<div class="coupon_pop">
+											<div class="coupon_title_box">
+												<h4>사용 가능한 쿠폰</h4>
+												<img src="/images/main/coupon_pop_close.png" class="coupon_pop_close" alt="쿠폰 팝업창 닫기" />
+											</div>
+											<div class="tbl_box">
+												<table summary="쿠폰 선택" cellspacing="0" class="coupon_tbl">
+													<colgroup>
+														<col width="8%" />
+														<col width="*" />
+														<col width="10%" />
+														<col width="35%" />
+														<col width="20%" />
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">선택</th>
+															<th scope="col">쿠폰명</th>
+															<th scope="col">할인액(율)</th>
+															<th scope="col">내용</th>
+															<th scope="col">사용기간</th>
+														</tr>
+													<thead>
+													<tbody>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" checked="checked" />
+															</td>
+															<td class="tbl_font">무협 1,000원 할인쿠폰</td>
+															<td>1,000원</td>
+															<td class="tbl_align">적용분야 : 무협/판타지 > 무협 카테고리<br />서비스 유형 : 구매<br />쿠폰 적용 금액 : 10,000원 이상</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+														<tr>
+															<td scope="row">
+																<label for="" class="hide">쿠폰 선택</label>
+																<input type="radio" name="couponSelect" id="" class="c_radio" />
+															</td>
+															<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+															<td>100원</td>
+															<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+															<td>~ 2014. 10. 16 23:59</td>
+														</tr>
+													</tbody>
+												</table>
+												<label for="" class="hide">선택 쿠폰 적용</label>
+												<input type="button" name="" id="" class="couponApply" value="선택한 쿠폰 적용" />
+											</div>
+											<div class="coupon_ps_box">
+												<div class="coupon_ps">
+													<ul>
+														<li>- 보유 쿠폰 중 이 주문에 사용할 수 있는 쿠폰만 노출됩니다.</li>
+														<li>- 결제 시 하나의 쿠폰만 사용 가능합니다. (중복 사용 불가)</li>
+														<li>- 보유하고 있는 모든 쿠폰은 <span>[마이페이지 > 나의 쿠폰]</span>에서 확인 가능합니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!---------------- 추가 end ------------------->
+									<div class="step1">
+										<h3>
+											<span class="red2">STEP2</span>
+											북캐시/적립금/북큐브상품권
+										</h3>
+										<div class="box">
+											<strong class="f16"><label for="id_1">북캐시</label><span class="orange">(현재 : 0원)</span></strong>
+											<p class="btn_area">
+												<input id="id_1" class="input_txt only_number" type="text" disabled="" value="0" name="BookCash" />
+												원
+												<input class="btn orange2 submit" type="button" value="북캐시 충전" />
+											</p>
+										</div>
+										<div class="box top10">
+											<strong class="f16"><label for="id_2">적립금</label><span class="orange">(현재 : 0원)</span></strong>	
+											<p class="btn_area">
+												<input id="id_2" class="input_txt long only_number" type="text" disabled="" value="0" name="ReservedMoney" />
+												원
+											</p>
+										</div>
+										<div class="box top10">
+											<strong class="f16"><label for="id_3">북큐브 상품권</label><span class="orange">(현재 : 0원)</span></strong>	
+											<p class="btn_area">
+												<input id="id_3" class="input_txt only_number" type="text" disabled="" value="0" name="GiftCardMoney" />
+												원
+												<input class="btn orange2 submit" type="button" value="상품권 등록" />
+											</p>
+										</div>
+									</div>
+									<div class="step2 fr">
+										<h3>
+											<span class="red2">STEP3</span>
+											결제수단 선택
+										</h3>	
+										<div class="box">
+											<ul class="f16">
+												<li>
+													<input name="payMethod" onclick="" class="input_chk" checked="checked" type="radio" name="payMethod" /><label>신용카드</label>	
+												</li>
+												<li>
+													<input name="payMethod" onclick="" class="input_chk" type="radio" name="payMethod" /><label>계좌이체</label>	
+												</li>
+												<li>
+													<input name="payMethod" onclick="" class="input_chk" type="radio" name="payMethod" /><label>휴대폰</label>	
+												</li>
+												<li>
+													<input name="payMethod" onclick="" class="input_chk" type="radio" name="payMethod" /><label>페이코<span class="paycoNew"></span></label>	
+												</li>
+												<li>
+													<input name="payMethod" onclick="" class="input_chk" type="radio" name="payMethod" /><label>해피머니/도서(문화)상품권/문화상품권</label>	
+												</li>
+											</ul>
+											<p class="do_pay btn_area">
+												<strong class="black2 f14">
+													총 결재 금액 :	
+												</strong>
+												<span id="total_order_amount">
+													<strong class="red2">55,000원</strong>
+												</span>
+												<input class="btn orange_big submit" type="submit" value="결제하기" />
+											</p>
+										</div>
+										<div class="payco coupon" style="display:block;">
+											<h3>PAYCO 간편결제 안내</h3>
+											<p>PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다.<br />휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.<br />- 지원카드: 모든 국내 신용/체크카드 </p>
+										</div>
+									</div>
+								</div>
+								<div class="nActiveX simple">
+									<p><span>ActiveX 미지원</span>으로 사용자 운영체제에 따라 결제모듈 설치가 안될 경우, 수동 설치가 필요합니다.</p>
+									<a href="https://pay.kcp.co.kr/plugin_new/file/KCPPaymentPluginSetup.exe">수동설치</a>
+								</div>
+							</fieldset>	
+						</form>
+					</div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+				<a href="#" target="_blank"><img src="images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="images/main/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

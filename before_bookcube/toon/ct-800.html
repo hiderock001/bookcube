@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=904">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/toon/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/toon/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/toon/css/toon.css" />
+<script src="/toon/js/lib/jquery-1.11.0.min.js"></script>
+<script src="/toon/js/lib/jquery.jcarousel.min.js"></script>
+<script src="/toon/js/lib/requirejs.min.js"></script>
+</head>
+<body>
+	<div class="lrpage">
+		<div class="wt_like">
+			<p><a href="#"><span class="link_br"><img src="/mobile/images/webtoon/heart.png" alt="" />좋아요</span></a><em>|</em><span>1,526</span></p>
+		</div>
+		<div class="md-section-a">
+            <h3 class="nanumTitle">코믹큐브 추천 코믹스<a href="#">더보기</a></h3>
+			<div class="comic-slide">
+				<ul class="md_list">
+					<li>
+						<div>
+							<a href="#">
+								<span class="im_br"><img src="http://webtoonimg.bookcube.com/220/s160196.jpg" alt="" /></span>
+							</a>
+							<p>실수,처음 뵙겠습니다뵙겠습니다뵙겠습니다뵙겠습니다1</p>
+							<p>로스팅</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">
+								<span class="im_br"><img src="http://webtoonimg.bookcube.com/220/s160196.jpg" alt="" /></span>
+							</a>
+							<p>실수,처음 뵙겠습니다.2</p>
+							<p>로스팅</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">
+								<span class="im_br"><img src="http://webtoonimg.bookcube.com/220/s160196.jpg" alt="" /></span>
+							</a>
+							<p>실수,처음 뵙겠습니다.3</p>
+							<p>로스팅</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">
+								<span class="im_br"><img src="http://webtoonimg.bookcube.com/220/s160196.jpg" alt="" /></span>
+							</a>
+							<p>실수,처음 뵙겠습니다.4</p>
+							<p>로스팅</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(window).load(function(){
+				var view_slide = {
+					init : function(){
+						// 스크롤 유무에 따라 화면 봐서 16 처리 관련 확인. 
+						this.li_width = parseInt($(".comic-slide").width());
+						$(".md_list li").css("width",this.li_width / 2);
+						this.margin = $(".md_list li").width();	
+						this.liLen = $(".md_list li").length;
+						this.width = $(".md_list li").width() * (this.liLen + 2); 
+						$(".md_list").css("width",this.width);
+						$(".md_list").css("margin-left",-this.margin);
+						$(".md_list li:last-child").prependTo(".md_list");
+
+					},
+					left : function(){
+						$(".md-prev").on("click",function(){
+							$(".md_list:not(:animated)").animate({
+								marginLeft : "+="+view_slide.margin
+							},300,"swing",function(){
+								$(".md_list").css("margin-left",-view_slide.margin);
+								$(".md_list li:last-child").prependTo(".md_list");
+							});	
+						});
+					},
+					right : function(){
+						$(".md-next").on("click",function(){
+							$(".md_list:not(:animated)").animate({
+								marginLeft : "-="+view_slide.margin
+							},300,"swing",function(){
+								$(".md_list").css("margin-left",-view_slide.margin);
+								$(".md_list li:first").appendTo(".md_list");	
+							});	
+							
+						});
+					}
+				}
+				with(view_slide){
+					init();
+					left();
+					right();
+				}
+			});
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/toon/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/mobile/css/m_common.css" />
+	<script type="text/javascript" src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<header class="ios">
+		<h1 class="hide">북큐브</h1>
+		<nav>
+			<ul class="gnb">
+				<li><a href="javascript:;" onclick="appLibrary()">내서재</a></li>
+				<li><a href="http://www.bookcube.com/novel/m/main.asp">웹소설</a></li>
+				<li><a href="http://www.bookcube.com/mobile/webtoon/main.asp">웹툰</a></li>
+				<li><a href="javascript:;" onclick="appLibrary('library');">도서관</a></li>
+			</ul>
+		</nav>
+		<div class="headerMiddle">
+			<h2 class="logo"><a href="#">코믹큐브</a></h2>
+			<div class="snb">
+				<ul>
+                    <li><a href="#">성인</a></li>
+					<li><a href="#">슬라이드메뉴</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+                <li><a href="#">로그인</a></li>
+				<li><a href="#">구매 웹툰/코믹스</a></li>
+			</ul>
+		</div>
+	</header>
+	<section class="m_common">
+		<div class="ios-main">
+            <div>
+		        <img src="/toon/images/m_toon/ios_main.jpg" />
+            </div>
+		</div>
+	</section>
+    <script>
+        $(function(){
+            //슬라이드 메뉴
+			$(".snb ul li:last-child").on("click",function(){
+				$(".slideOverlay").show();
+				$(".slideMenu").animate({
+					right : 0	
+				},200,"swing",function(){
+					$(".slideOverlay").on("click",function(){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					});		
+				});
+			});	   
+        });
+    </script>
+</body>
+</html>

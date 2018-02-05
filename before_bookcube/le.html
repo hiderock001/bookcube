@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimun-scale=1.0, user-scalable=no" />
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css" />
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<style>
+
+</style>
+<script>
+	$(function(){
+		var le = {
+                  list : [
+						"<li class='one'></li>",
+						"<li class='two'></li>",
+						"<li class='three'></li>",
+						"<li class='four'><div></div><div></div></li>",
+						"<li class='five'></li>",
+						"<li class='six'></li>",
+						"<li class='seven w'></li>"
+
+				  ],
+				  random : function(){
+							var bgArray = [1,2,3,4,5,6,7];
+							var bgResult = [];
+							var next =[];
+							var bgNum;
+							for(i=0;i<7; i++){
+									bgNum = Math.floor(Math.random() * bgArray.length);
+									if(bgResult.length == 3 && bgArray[bgNum] == 7){
+										var c = bgResult.splice(bgResult.length-1, 1);
+										bgResult.push(this.list[bgArray[bgNum]-1]);
+										bgResult.push(c[0]);
+									}else{
+										bgResult.push(this.list[bgArray[bgNum] - 1]);
+									}
+									bgArray.splice(bgNum, 1);
+								}
+								
+							for(var j=0;j<bgResult.length;j++){
+								$(".le_wrap ul").append(bgResult[j]);
+							}
+							
+				  }
+				 
+		}
+
+		le.random();
+       
+	 
+
+/*
+		var array = {
+				 ar : [1,2,3,4,5,6,7],
+				 random : function(){
+						this.ar.sort(function(){
+							return (Math.random() - Math.random());
+						});
+						var bgResult = this.ar;
+						if(bgResult[3]== 7){
+							bgResult.splice(bgResult.length-1,1);
+						}
+						
+				 }
+		}
+
+		array.random()
+
+*/
+
+		
+});
+</script>
+
+
+</head>
+<body>
+	<div class="le_wrap">
+		<ul>
+			
+		</ul>
+	</div>
+</body>
+</html>

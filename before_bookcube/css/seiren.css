@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+.seiren-menu{width:900px;height:80px;background:url(/event/4230/images/pc/seiren-1.jpg) no-repeat left top;}
+.seiren-menu.one{background:url(/event/4230/images/pc/seiren-1.jpg) no-repeat left top;}
+.seiren-menu.two{background:url(/event/4230/images/pc/seiren-2.jpg) no-repeat left top;}
+.seiren-menu.three{background:url(/event/4230/images/pc/seiren-3.jpg) no-repeat left top;}
+.seiren-menu ul{width:620px;height:80px;margin:0 auto;}
+.seiren-menu ul:after{content:"";display:block;clear:both;}
+.seiren-menu ul li{float:left;height:80px;text-indent:-9999px;}
+.seiren-menu ul li a{display:block;height:100%;}
+.seiren-menu ul li:nth-child(1){width:220px;}
+.seiren-menu ul li:nth-child(2){width:181px;}
+.seiren-menu ul li:nth-child(3){width:219px;}
+.seiren-main > div{display:none;}
+.seiren-main > div:first-child{display:block;}
+.quiz{width:900px;height:144px;background:url(/event/4230/images/pc/seiren-main-3-2.jpg) no-repeat left top;}
+.quiz-list{width:618px;height:144px;margin:0 auto;padding:0 50px;box-sizing:border-box;}
+.quiz-list:after{content:"";display:block;clear:both;}
+.quiz-list li{float:left;position:relative;text-indent:-9999px;}
+.quiz-list li label{display:block;}
+.quiz-list li input[type='radio']{position:absolute;left:-9999px;}
+.quiz-list li:nth-child(1){width:156px;height:144px;}
+.quiz-list li:nth-child(2){width:206px;height:144px;}
+.quiz-list li:nth-child(3){width:156px;height:144px;}
+.quiz-list li:nth-child(1) label{width:156px;height:144px;}
+.quiz-list li:nth-child(1) label span{left:22px;top:61px;}
+.quiz-list li:nth-child(2) label{width:206px;height:144px;}
+.quiz-list li:nth-child(2) label span{left:63px;top:61px;}
+.quiz-list li:nth-child(3) label{width:156px;height:144px;}
+.quiz-list li:nth-child(3) label span{left:40px;top:61px;}
+.quiz-list li span{position:absolute;display:block;width:22px;height:22px;}
+.quiz-list li span.radio_on{background:url(/event/4230/images/pc/radio_on.jpg) no-repeat left top;}
+.quiz-list li span.radio_off{background:url(/event/4230/images/pc/radio_off.jpg) no-repeat left top;}
+.submit{width:900px;height:302px;background:url(/event/4230/images/pc/seiren-main-3-3.jpg) no-repeat left top;position:relative;}
+.submit a{position:absolute;left:179px;top:22px;display:block;width:542px;height:75px;border:none;background:transparent;text-indent:-9999px;cursor:pointer;}
+
+
+
+@media screen and (min-width:320px) and (max-width:767px) {
+.book .seiren-top img{display:block;width:100%;}
+.book .seiren-menu{width:100%;height:40px;background:url(/event/4230/images/mobile/book-menu.jpg) no-repeat left top;background-size:100% 40px;}
+.seiren-menu.one{background:url(/event/4230/images/mobile/seiren-1.jpg) no-repeat left top;background-size:100% 40px;}
+.seiren-menu.two{background:url(/event/4230/images/mobile/seiren-2.jpg) no-repeat left top;background-size:100% 40px;}
+.seiren-menu.three{background:url(/event/4230/images/mobile/seiren-3.jpg) no-repeat left top;background-size:100% 40px;}
+.book .seiren-menu ul{width:100%;margin:0;height:40px;}
+.book .seiren-menu li{float:left;width:33.3% !important;text-indent:-9999px;height:40px;}
+.book .book-menu li a{display:block;height:100%;}
+.book .book-menu li img{display:block;width:100%;}
+.book .seiren-main img{display:block;width:100%;}
+.quiz{padding-top:10px;width:100%;background:url(/event/4230/images/mobile/quiz-bg.jpg) repeat-x left top;height:auto;background-size:100% 100%;}
+.quiz-list{width:100%;height:auto;padding:0;}
+.quiz-list li{float:none;width:auto !important;height:50px !important;padding:10px 15px;}
+.quiz-list li label{width:100% !important;height:50px !important;}
+.quiz-list li:nth-child(1) label{width:100% !important;height:50px !important;background:url(/event/4230/images/mobile/label-1.jpg) no-repeat left top;background-size:100% 50px;}
+.quiz-list li:nth-child(2) label{width:100% !important;height:50px !important;background:url(/event/4230/images/mobile/label-2.jpg) no-repeat left top;background-size:100% 50px;}
+.quiz-list li:nth-child(3) label{width:100% !important;height:50px !important;background:url(/event/4230/images/mobile/label-3.jpg) no-repeat left top;background-size:100% 50px;}
+.quiz-list li span.radio_on{background:url(/event/4230/images/mobile/radio_on.jpg) no-repeat left top;background-size:13px 13px;}
+.quiz-list li span.radio_off{background:url(/event/4230/images/mobile/radio_off.jpg) no-repeat left top;background-size:13px 13px;}
+.quiz-list li .checkSelect{position:relative;}
+.quiz-list li label span{left:14px !important;top:19px !important;}
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+.book{width:640px;margin:0 auto;}
+.book .seiren-menu{width:100%;height:80px;background:url(/event/4230/images/mobile/book-menu.jpg) no-repeat left top;background-size:100% 100%;}
+.seiren-menu ul{width:100%;height:auto;margin:0;}
+.seiren-menu ul li{width:33.3% !important;}
+.seiren-menu.one{background:url(/event/4230/images/mobile/seiren-1.jpg) no-repeat left top;background-size:100% 100%;}
+.seiren-menu.two{background:url(/event/4230/images/mobile/seiren-2.jpg) no-repeat left top;background-size:100% 100%;}
+.seiren-menu.three{background:url(/event/4230/images/mobile/seiren-3.jpg) no-repeat left top;background-size:100% 100%;}
+.seiren-top img{width:100%;}
+.seiren-main img{width:100%;}
+.quiz{padding-top:10px;width:100%;background:url(/event/4230/images/mobile/quiz-bg.jpg) repeat-x left top;height:auto;background-size:100% 100%;}
+.quiz-list{width:100%;height:auto;padding:0;}
+.quiz-list li{float:none;width:auto !important;height:100px !important;padding:10px 15px;}
+.quiz-list li label{width:100% !important;height:50px !important;}
+.quiz-list li:nth-child(1) label{width:100% !important;height:100px !important;background:url(/event/4230/images/mobile/label-1.jpg) no-repeat left top;background-size:100% 100px;}
+.quiz-list li:nth-child(2) label{width:100% !important;height:100px !important;background:url(/event/4230/images/mobile/label-2.jpg) no-repeat left top;background-size:100% 100px;}
+.quiz-list li:nth-child(3) label{width:100% !important;height:100px !important;background:url(/event/4230/images/mobile/label-3.jpg) no-repeat left top;background-size:100% 100px;}
+.quiz-list li span.radio_on{background:url(/event/4230/images/mobile/radio_on.jpg) no-repeat left top;}
+.quiz-list li span.radio_off{background:url(/event/4230/images/mobile/radio_off.jpg) no-repeat left top;}
+.quiz-list li label span{width:26px !important;height:26px !important;left:29px !important;top:37px !important;}
+.quiz-list li .checkSelect{position:relative;}
+
+
+}
+
+

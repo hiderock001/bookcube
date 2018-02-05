@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="header-bottom-inner">
+					<div class="h-bottom-left">
+						<p class="all-category"><a href="#"><img src="/images/main/all-category.png" alt='전체카테고리' /></a></p>
+						<ul class="snb-left">
+							<li><a href="#" class="on">일반도서</a></li>
+							<li><a href="#">로맨스</a></li>
+							<li><a href="#">BL</a></li>
+							<li><a href="#">무협/판타지</a></li>
+							<li><a href="#">만화</a></li>
+						</ul>
+					</div>
+					<div class="h-bottom-right">
+						<ul class="snb-right">
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">신간</a></li>
+							<li><a href="#">무료</a></li>
+							<li><a href="#">이벤트</a></li>
+						</ul>
+					</div>
+					<div class="m-category">
+						<div class="category-inner">
+							<div>
+								<p>장르도서</p>
+								<ul class="">
+									<li><a href="#">로맨스</a></li>	
+									<li><a href="#">BL</a></li>	
+									<li><a href="#">무협/판타지</a></li>	
+									<li><a href="#">만화</a></li>	
+									<li><a href="#">리얼장르</a></li>		
+								</ul>
+							</div>
+							<div>
+								<p>일반도서</p>
+								<ul class="">
+									<li><a href="#">오디오북</a></li>	
+									<li><a href="#">문학</a></li>	
+									<li><a href="#">자기계발</a></li>	
+									<li><a href="#">경제/경영</a></li>	
+									<li><a href="#">외국어/언어</a></li>
+									<li><a href="#">역사/문학</a></li>	
+									<li><a href="#">인문</a></li>	
+									<li><a href="#">인물</a></li>	
+									<li><a href="#">사회</a></li>	
+									<li><a href="#">잡지</a></li>
+									<li><a href="#">컴퓨터/인터넷</a></li>	
+									<li><a href="#">자연과 과학</a></li>	
+									<li><a href="#">건강/스포츠/취미</a></li>	
+									<li><a href="#">종교</a></li>	
+									<li><a href="#">여행</a></li>
+									<li><a href="#">가정/생활/요리</a></li>	
+									<li><a href="#">유아</a></li>	
+									<li><a href="#">어린이</a></li>	
+									<li><a href="#">청소년</a></li>	
+									<li><a href="#">예술/대중문화</a></li>
+								</ul>
+							</div>
+							<div>
+								<p>테마관</p>
+								<ul class="">
+									<li><a href="#">독점선출간관</a></li>	
+									<li><a href="#">장르대여관</a></li>	
+									<li><a href="#">만화대여관</a></li>	
+									<li><a href="#">장르정액관</a></li>	
+									<li><a href="#">만화정액관</a></li>		
+								</ul>
+							</div>
+							<a href="javascript:;" class="category-close">close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="contents-wrap">
+				<div class="charge">
+					<div class="charge-top">
+						<div class="ct-inner">
+							<div>
+								<h2>북큐브 북캐시 충전하기</h2>
+								<ul>
+									<li> - 매월 1일~ 3일 북캐시 충전 금액별 추가 적립금 지급 (적립금 유효기간 : 30일)</li>
+									<li> - 북캐시 결제 후 유료 서비스 및 콘텐츠 구매 시 환불 불가</li>
+									<li> - 북캐시 결제 후 7일 이내에 유료 서비스나 콘텐츠를 구매하지 않은 경우 주문취소 및 환불(주문취소 불가의 경우) 가능</li>
+									<li> - 북캐시 환불 시에는 북캐시 결제 시 추가적으로 제공된 적립금 차감 및 환불 수수료 공제</li>
+									<li> - 북큐브 캐시데이 추가적립금과 본인인증 혜택은 중복으로 적용되지 않습니다. (본인인증 혜택 우선 적용)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="charge-bottom">
+						<form action='' method=''>
+							<fieldset>
+								<legend>북캐시 충전 금액 선택</legend>
+								<h3>북캐시 충전 금액 선택</h3>
+								<div class="bookcash-charge">
+									<table>
+										<caption>북캐시 충전 금액 및 적립금</caption>
+										<colgroup>
+											<col width="50%" />
+											<col width="50%" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>북캐시 충전 금액</th>
+												<th>추가 지급 적립금</th>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='10000' id='cash10000' /><label for='cash10000'>10,000원</label></td>
+												<td>+10% (1,000원)</td>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='30000' id='cash30000' /><label for='cash30000'>30,000원</label></td>
+												<td>+14% (4,200원)</td>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='50000' id='cash50000' /><label for='cash50000'>50,000원</label></td>
+												<td>+16% (8,000원)</td>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='100000' id='cash100000' /><label for='cash100000'>100,000원</label></td>
+												<td>+18% (18,000원)</td>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='200000' id='cash200000' /><label for='cash200000'>200,000원</label></td>
+												<td>+20% (40,000원)</td>
+											</tr>
+											<tr>
+												<td><input type="radio" name='cash' value='300000' id='cash300000' /><label for='cash300000'>300,000원</label></td>
+												<td>+30% (90,000원)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<h3>결제수단 선택</h3>
+								<div class="pay-way">
+									<ul>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('100000000000')"checked="checked">신용카드</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('100000000000')">해외 발급 신용카드</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('010000000000')">계좌이체</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('000010000000')">휴대폰</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('payco')">페이코</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('')">카카오페이</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('000000001000')">해피머니/도서(문화)상품권/문화상품권</label></li>
+										<li><label><input type="radio" name="payMethod" onclick="paymethod('paypal')">페이팔</label></li>
+									</ul>
+								</div>
+								<div class="payco-choice">
+									<p>PAYCO 간편결제 안내</p>
+									<p>PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다.<br>휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.<br>- 지원카드: 모든 국내 신용/체크카드</p>
+								</div>
+								<div class="paypal-choice">
+									<dl>
+										<dt>페이팔이란?</dt>
+										<dd>페이팔은 해외 이용자를 위한 간편 결제 수단으로, 페이팔 계정에 결제정보(해외이용 가능 카드정보) 등록 시 아이디/패스워드만으로 결제가 가능합니다.</dd>
+									</dl>
+									<p>유의사항</p>
+									<ol>
+										<li>1) 3만원 이상 결제 시에만 사용 가능합니다.</li>
+										<li>2) 현재 해외에 거주 또는 체류하고 계신 분만 이용 가능합니다.</li>
+										<li>3) 페이팔 계정이 있는 경우에만 결제 시, 아이디/패스워드만으로 결제 가능합니다.</li>
+										<li>4) 페이팔 계정 없이도 결제 가능하지만, 결제정보(해외이용 가능 카드정보)를 모두 기입해야 합니다.<br />페이팔 계정은 공식 사이트(http://bit.ly/1ldeBXy)를 통해 만드실 수 있습니다.</li>
+										<li>5) 페이팔 결제로 충전한 북캐시는 취소가 불가능합니다.</li>
+									</ol>
+								</div>
+								<div class="payment-result">
+									<p>총 결제 금액 : <span>10,000원</span></p>
+									<input type="button" value="결제하기">
+								</div>
+								<script>
+									function paymethod(arg){
+										if (arg == 'payco'){
+											$(".payco-choice").css("display", "block");	
+											$(".paypal-choice").css("display", "none");	
+										}else if(arg == 'paypal'){
+											$(".paypal-choice").css("display", "block");
+											$(".payco-choice").css("display", "none");
+										}else{
+											$(".payco-choice").css("display", "none");
+											$(".paypal-choice").css("display", "none");	
+										}
+									}
+
+								</script>
+							</fieldset>
+						</form>
+					</div>
+				</div>					
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+	
+			});	
+		</script>
+	</div>	
+</body>
+</html>

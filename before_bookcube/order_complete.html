@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="dable:title" content="">
+<meta property="dable:author" content="">
+<meta property="product:category" content="">
+<meta property="product:category2" content="">
+<meta property="product:category3" content="">
+<meta property="product:price:currency" content="KRW">
+<meta property="product:price:amount" content="">
+<meta property="product:sale_price:currency" content="KRW">
+<meta property="product:sale_price:amount" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/novel/nStory.css" />
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="https://pay.kcp.co.kr/plugin/payplus_un.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+</head>
+<body>
+	<div class="header nstory">
+		<div class="head_banner">
+			<div class="h_banner_inner">
+				<img src="http://up.bookcube.com/bookcube/upload/event/2290/ts2290_img.jpg" usemap="#teaser_2290">
+				<img src="/images/main/bannerClose.png" alt="배너닫기" class="bannerClose" />
+			</div>
+		</div>
+		<map name="teaser_2290"><area shape="rect" coords="0,0,450,80" href="http://www.bookcube.com/event_detail.asp?event_num=2288&amp;event_type=cm&amp;pageNum=1"><area shape="rect" coords="450,0,900,80" href="http://www.bookcube.com/event_detail.asp?event_num=2247&amp;event_type=cm&amp;pageNum=1"></map>
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li><a href="#"><img src="/images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li class="lnb_on"><a href="#"><img src="/images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li><a href="#">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="/images/storycube/storycube_logo.png" alt="스토리큐브" /></a></h1>
+					<div class="h_search_box storycube">
+						<form>
+							<fieldset>
+								<legend class="hide">북큐브 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="/images/storycube/select_arrow.png" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li>전체</li>
+											<li>제목</li>
+											<li>저자</li>
+											<li>출판사</li>
+											<li>책정보</li>
+											<li>정액가능</li>
+											<li>대여가능</li>
+											<li>10년소장</li>
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" id="" class="search_input" value="" />
+								</div>
+								<input type="submit" name="" id="" class="select_submit"  />
+								<a href="#"><img src="/images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header_bottom">
+				<h2 class="hide">메인메뉴</h2>
+				<p class="main_category"><a href="#"><img src="/images/page/main_category.jpg" alt="전체카테고리" /></a></p>
+				<ul>
+					<li><a href="#"><img src="/images/novel/gnb1.jpg" alt="bl" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb2.jpg" alt="로맨스" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb3_on.jpg" alt="무협" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb4.jpg" alt="판타지" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb5.jpg" alt="무료" /></a></li>
+				</ul>
+				<a href="#" class="sunho"><img src="/novel/images/novel/sunho.jpg" alt="나의 선호작" /></a>
+			</div>
+		</div>
+	</div>
+	<div class="sub_contents">
+		<!-- contents_container -->
+		<div class="main_inner">
+			<div class="location">
+				<p><strong>HOME</strong> &gt; 결제완료</p>
+			</div>
+			
+			<!-- content_top_list -->
+			<div class="content_top_list">
+				<div class="title_area border_type">
+					<h2>결제완료</h2>
+				</div>			
+			</div>
+			<!-- //content_top_list -->
+
+			<!-- contents_wrap -->
+			<div class="contents_wrap mypage">				
+				<div class="contents bdr_btm bdr_top">
+					<div class="inner_type">
+						<div class="success_msg">
+							<strong class="f16 red2">감사합니다. 전자책의 결제가 성공적으로 완료되었습니다.</strong>
+						</div>
+						<table summary="결제완료된 목록" class="basic type_double_line basket" cellspacing="0">
+							<caption>결제완료 내역</caption>
+							<colgroup>
+								<col width="*" /><col width="13%" /><col width="11%" /><col width="12%" />
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col" abbr=""></th>
+								<th scope="col" abbr="가격">가격</th>
+								<th scope="col" abbr="결제수단">결제수단</th>
+								<th scope="col" abbr="만료시간">만료시간</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<th scope="row"><strong>하우스 오브 카드</strong></th>
+								<td><strong class="red2">9,900원</strong></td>
+								<td>적립금</td>
+								<td></td>								
+							</tr>
+							</tbody>
+						</table>
+						<div class="bdr_btm">
+							<div class="box_cash_total">
+								<div class="fr">
+									총 결제 금액 : <span class="red2">9,900원</span>
+								</div>
+							</div>
+						</div>					
+						<ul class="border_type list_guide2">
+							<li>- 구매/대여하신 전자책은 다운로드 후 바로 이용이 가능합니다.</li>
+							<li>- 주문하신 내역은 mobiwoos@naver.com 메일 계정으로 주문 메일을 발송하였습니다.</li>
+							<li>- 구매/대여하신 전자책은 <strong>마이페이지</strong>로 이동하셔서 전자책을 내 PC로 다운받으신 후 <a href="/appdown.asp"><strong class="red2"><u>BOOKPLAYER</u></strong></a>로 읽으실 수 있습니다.</li>
+							<li>- BOOKCUBE의 전자책을 읽기 위해서는 <a href="/appdown.asp"><strong class="red2"><u>BOOKPLAYER</u></strong></a>를 필수로 설치하셔야 합니다. </li>
+						</ul>
+						<div class="btn_area top30 ac">							
+							<!--a href="http://www.bookcube.com/rent.asp" class="btn white"><span>장르대여관 이동</span></a>&nbsp;-->
+							<a href="http://www.bookcube.com/mypage.asp" class="btn bg3">마이페이지</a>
+						</div>
+					</div>					
+				</div>
+				<div class="list_tab_menu_sub top10">
+					<div class="fl">
+						<h3>단 한번의 구매로 PC/모바일 사용이 모두 가능한 북큐브 전자책 서점</h3>
+					</div>
+				</div>
+				<div class="contents bdr_btm">
+					<ul class="list_qr_code">
+					<li class="first">
+						<p class="qr_code"><span class="hide">아이폰 QR CODE</span></p>
+						<p class="title"><strong class="f14">북큐브 내서재<br />(아이폰)</strong></p>
+						<p class="btn_area"><a href="https://itunes.apple.com/us/app/bugkyubeu-naeseojae/id576288015?mt=8" class="btn bg1" target="_blank">설치하기</a></p>					
+					</li>
+					<li>
+						<p class="qr_code ipad"><span class="hide">아이패드 QR CODE</span></p>
+						<p class="title"><strong class="f14">북큐브 내서재 HD<br />(아이패드)</strong></p>
+						<p class="btn_area"><a href="https://itunes.apple.com/us/app/bugkyubeunaeseojaehd/id590058402?mt=8" class="btn bg1" target="_blank">설치하기</a></p>
+					</li>
+					<li>
+						<p class="qr_code android"><span class="hide">안드로이드 QR CODE</span></p>
+						<p class="title"><strong class="f14">북큐브 내서재<br />(안드로이드)</strong></p>
+						<p class="btn_area"><a href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" class="btn bg1" target="_blank">설치하기</a></p>			
+					</li>
+					<li>
+						<p class="qr_code apk"><span class="hide">기기 이미지</span></p>
+						<p class="title"><strong class="f14">스토어 사용이<br />불가능한 기기</strong></p>
+						<p class="btn_area"><a href="http://www.bookcube.com/apk/BookPlayer_1.3.23.apk" class="btn white"><span>APK파일 다운로드</span></a></p>			
+					</li>					
+					</ul>						
+				</div>
+			</div>
+			<!-- //contents_wrap -->
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<div class="footer">
+	<div class="foot_inner">
+		<div class="foot_left">
+			<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleanSite.png" alt="클린사이트" /></a>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/goodContents.png" alt="kodb" /></a>
+		</div>
+		<div class="foot_right">
+			<ul class="f_lnb">
+				<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+				<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+				<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+			</ul>
+			<h4 class="hide">북큐브 주소 및 정보</h4>
+			<ul class="f_lnb">
+				<li>상호 : 주식회사 북큐브네트웍스</li>
+				<li>대표이사 : 유철종</li>
+				<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+				<li>개인정보 관리 책임자 : 남지원</li>
+				<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+				<li>전화 1588-1925</li>
+			</ul>
+			<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+		</div>	
+	</div>
+</div>
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+</script>
+	<!-- //footer -->
+</body>
+</html>
+
+<script language="javascript">
+$(function(){
+	var order_num = '27034036';
+	if(confirm('결제가 완료되었습니다.\n도서를 바로 보시겠습니까?')){
+		window.open('/download/book_down.asp?order_num='+order_num, 'openMyLibrary', 'width=470,height=670,scrollbars=no,toolbar=no');
+	}
+});
+
+(function(d,a,b,l,e,_) {
+d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+_=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
+})(window,document,'dable','script');
+dable('setService', 'bookcube.com');
+
+// ITEM_ID가 4000원이고 2개를 구매한 경우 total_sales는 8000으로 입력해주세요.
+var buy_items = [ // 1000원짜리 ITEM_ID1을 1개, 1500원짜리 ITEM_ID2를 2개 구매한 경우
+  {id: '160300812', count: 1, total_sales: 9900}
+];
+dable('sendLog', 'buy', buy_items);
+
+
+function bill_view(url, width, height){
+	window.open(url, "bill_view", "width="+ width +",height="+ height +",left=50,top=50,location=no,scrollbars=no,toolbar=no");
+}
+
+
+</script>

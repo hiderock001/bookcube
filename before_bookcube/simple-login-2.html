@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+</head>
+<body id="common">
+	<div class="common-wrap">
+		<h1 class="hide">북큐브 로그인 페이지</h1>
+		<div class="c-header">
+			<div class="header-top">
+				<div class="h-top-inner">
+					<ul class="c-gnb">
+						<li><a href="#"><img src="/images/common/global_menu1_bookcube.gif" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu2_storycube.gif" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu2_webtoon.gif" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu4_library.gif" alt="전자도서관" /></a></li>
+					</ul>
+					<div>
+						<ul>
+							<li class="bold"><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">이용안내</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-contents">
+			<div class="title-box">
+				<h2><img src="/images/login/title-login.png" alt="로그인" /></h2>
+			</div>
+			<div class="c-inner">
+				<form>
+					<fieldset>
+						<legend>회원가입</legend>
+						<div class="pop default">
+							<form>
+								<fieldset>
+									<legend>로그인</legend>
+									<div class="s-login">
+										<div class="login-bookcube"><img src="/images/main/login-bookcube.png" alt="북큐브" /></div>
+										<p class="s-login-confirm"><span>네이버</span> 인증이 완료되었습니다.</p>
+										<div class="id-connect-wrap">
+											<p>이미 북큐브 회원인 경우<span>북큐브 ID로 로그인하시면, SNS계정이 자동으로 연결됩니다.</span></p>
+											<div class="bookcube-connect">
+												<p><a href="javascript:;">북큐브 ID 연결하기</a></p>
+												<div class="bookcube-input">
+													<div class="connect-join">
+														<input type="text" name="" id="" class="" placeholder="아이디" />
+													</div>
+													<div class="connect-join">
+														<input type="password" name="" id="" class="" placeholder="비밀번호" />
+													</div>
+													<div class="connect-join">
+														<p><a href="javascript:;" class="find-id">아이디찾기</a><em>|</em><a href="javascript:;" class="find-pwd">비밀번호 찾기</a></p>
+													</div>
+													<a href="javascript:;" class="bookcube-login">로그인</a>
+												</div>
+											</div>
+											<div class="sns-connect">
+												<p>SNS 계정으로 신규 가입하기<span>SNS계정으로 로그인 시 해당 SNS 계정으로 북큐브에 자동<br />가입되며 간편하게 로그인이 가능합니다.</span></p>
+												<a href="javascript:;">SNS 계정으로 가입하기</a>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>	
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>	
+	<script>
+		$(function(){
+			var snsTitle = $(".s-login-confirm span").text();
+			$(".bookcube-connect > p").on("click",function(){
+				if($(this).hasClass("on")){
+					$(this).removeClass("on");
+					$(".bookcube-input").hide();
+				}else{
+					$(this).addClass("on");
+					$(".bookcube-input").show();
+				}
+			});	
+			$(".bookcube-login").on("click",function(){
+				if(confirm("북큐브 ID와 " + snsTitle+ "계정을 연결하시겠습니까?" )){
+					alert(snsTitle + " 계정이 정상적으로 연결되었습니다.");
+				}
+			});
+			$(".sns-connect a").on("click",function(){
+				$("#login").hide();
+				$("#sns-error").show();
+			});
+			$("#sns-error a").on("click",function(){
+				$("#sns-error").hide();	
+			});
+
+			// 닫기
+			$(".pop-top .close").on("click",function(){
+				$(this).parents().find(".login-pop").hide();	
+			});
+			$(".login-bg").on("click",function(){
+				$(".login-pop").fadeOut(100);
+			});				
+			$(".pop-top .prev").on("click",function(){
+				$(".login-pop").hide();
+				$("#login").show();
+				
+			});
+			$(".find-id").on("click",function(){
+				$("#login").hide();
+				$("#find-id").show();
+			});
+			$(".find-pwd").on("click",function(){
+				$("#login").hide();
+				$("#find-pwd").show();
+			});
+		});
+	</script>
+</body>
+</html>

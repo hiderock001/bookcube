@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/m_nStory.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/mobile/css/popBanner.css?v=141118" />
+	<script type="text/javascript" src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/novel/js/lib/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="/novel/js/lib/swipe/swiper-2.1.min.js"></script>
+	<script type="text/javascript" src="/novel/js/lib/slick.min.js"></script> 
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브</h1>
+		<nav>
+			<ul class="gnb">
+				<li><a href="#">내서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul>
+		</nav>
+		<div class="headerMiddle">
+			<h2 class="logo"><a href="#">스토리큐브</a></h2>
+			<div class="snb">
+				<ul>
+					<li><a href="#">알리미</a></li>
+					<li><a href="#">선호작</a></li>
+					<li><a href="#">검색</a></li>
+					<li><a href="#">슬라이드메뉴</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">나의선호작</a></li>
+				<li><a href="#">알리미</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section class="bl">
+		<div class="detailTitle">
+			<h3>연재 상세정보</h3>
+		</div>
+		<div class="detail-info-box">
+			<img src="/novel/images/m_novel/7.jpg" alt="" />
+			<div class="season-banner">
+				<a href="#">(6/1~8/30) 2017 SUMMER SEASON</a>
+			</div>
+			<div class="detail-info">
+				<h4>그녀에겐 뭔가 특별한 것이 있다</h4>
+				<p>레오나르드 디카프리오<em>|</em>도서출판 북큐브네트웍스</p>
+				<p>월,화,수,목,금,토,일 연재</p>
+				<div class="detail-info-btn">
+					<a href="#" class="sunho">선호작 추가</a> <!-- a 에 클래스 on 이 추가되면 선호작 해제 버튼이 됩니다. -->
+					<a href="#" class="firstLook">1화 바로보기</a>
+					<a href="#" class="replyBtn">댓글</a>
+				</div>
+				<div class="book-hit">
+					<p><em>조회수</em><br /><span>3,492,999</span></p>										
+					<p><em>선호작</em><br /><span>3,492,999</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="book-intro">
+			<h3>연재소개</h3>
+			<p>**본 도서는 '가시꽃의 이중주'의 연작입니다.***젊은 날의 풋사랑. 기만당한 진심은 상흔이 됐다. 절망의 터널을 지나고 있을 때 들이친 한 줌의 친절. 우연한 부닥침. 구원과 엇갈림. 그리고 재회.</p>
+		</div>
+		<script>
+			$(function(){
+				$(".book-intro h3").on("click",function(){
+					if($(".book-intro p").hasClass("on")){
+						$(this).removeClass("on");
+						$(".book-intro p").removeClass("on");
+					}else{
+						$(this).addClass("on");
+						$(".book-intro p").addClass("on");
+					}
+				});	
+			});
+		</script>
+		<div class="payment">
+			<table>
+				<caption class="hide">구매/대여 가격정보 노출</caption>
+				<colgroup>
+					<col width="20%" />
+					<col width="20%" />
+					<col width="20%" />
+					<col width="40%" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th rowspan="3">구매</th>
+						<td>회차 별</td>
+						<td>판매가</td>
+						<td><span class="orange">100원</span></td>
+					</tr>
+					<tr>
+						<td rowspan="2">전 회차</td>
+						<td>정가</td>
+						<td>19,100원</td>
+					</tr>
+					<tr>
+						<td>판매가</td>
+						<td><span class="orange">17,170원</span><span class="red">(50%↓)</span></td>
+					</tr>
+					<tr>
+						<th rowspan="2">대여</th>
+						<td>회차 별</td>
+						<td>1일</td>
+						<td><span class="orange">50원</span></td>
+					</tr>
+					<tr>
+						<td>전 회차</td>
+						<td>3600일</td>
+						<td><span class="orange">9,550원</span><span class="red">(50%↓)</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="paymentBtn">
+				<a href="#" class="allPayBtn">전 회차 구매</a>
+				<a href="#" class="allRentBtn">전 회차 대여</a>
+			</div>
+			<script>
+				// 버튼이 한개일때 크기 늘리기
+				$(function(){
+					var len = $(".paymentBtn a").length;
+					if(len < 2){
+						$(".paymentBtn a").css("width","240px");
+					}
+				});
+			</script>
+		</div>
+		<div class="bookPay">
+			<ul class="tabList">
+				<li><a href="#" class="on">구매</a></li>
+				<li><a href="#">대여</a></li>
+			</ul>
+			<div class="authorNotice">
+				<dl>
+					<dt><span class="book_tit">[작가공지]229화 오탈자 수정오탈자 수정오탈자 수정오탈자 수정오탈자 수정수정수정수정</span><span>2015.11.06</span></dt>
+					<dd>안녕하세요<br />북큐브입니다<br />북치기 박치기 북치기 박치기 북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브</dd>
+					<dt><span class="book_tit">[작가공지]229화 오탈자 수정오탈자 수정오탈자 수정오탈자 수정오탈자 수정수정수정수정</span><span>2015.11.06</span></dt>
+					<dd>안녕하세요<br />북큐브입니다<br />북치기 박치기 북치기 박치기 북큐브 박</dd>
+				</dl>
+				<script>
+					$(function(){
+						var author = $(".authorNotice dt");
+						$(author).on("click",function(){
+							if($(this).hasClass("on")){
+								$(this).removeClass("on");
+								$(".authorNotice dd").hide();
+								$(this).next().hide();
+							}else{
+								$(author).removeClass("on");
+								$(this).addClass("on");	
+								$(".authorNotice dd").hide();
+								$(this).next().show();
+							}
+						});	
+					});
+				</script>
+			</div>
+			<div class="selectListBox">
+				<div class="payTop">
+					<div>
+						<input type="checkbox" name="" /><label>선택</label>
+					</div>
+					<div>
+						<span>총 0화 0원</span>
+						<a href="#">선택구매</a>
+					</div>
+				</div>
+				<div class="array"><a href="#">최신순 정렬<span></span></a></div>
+				<ul>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="down">다운</a>
+					</li>
+					<li>
+						<span class="check"></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 3</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<span class="rentText">대여전용</span>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">3100원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">200원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+					<li>
+						<span class="check"><input type="checkbox" name="" /></span>
+						<div>
+							<p><span class="title">229화<em>|</em>군림천하 30권 - 제 3권이 어쩌고 저쩌고</span><span class="up">up</span></p>
+							<p>epub<em>|</em>2015.11.06</p>
+						</div>
+						<a href="#" class="pay">31000원</a>
+					</li>
+				</ul>
+				<div class="paging">
+					<a href="#" class="prev">이전</a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#" class="next">다음</a>
+					<p>1 / 15</p>
+				</div>
+			</div>
+			<div class="tBox">
+				<h3>관리자공지</h3>
+			</div>
+			<ul class="adminNotice-list">
+				<li>
+					<p><span>관리자</span><em>|</em>2015.11.03 11:10</p>
+					<p>[공지]군림천하 연재 업로드 시간 변경 안내<br />매주 월, 수, 금 오후 2시 → 오후 4시로 연재 업로드 시간이 변경됩니다.</p>
+				</li>
+				<li>
+					<p>관리자<em>|</em>2015.11.03 11:10</p>
+					<p>[공지]군림천하 연재 업로드 시간 변경 안내<br />매주 월, 수, 금 오후 2시 → 오후 4시로 연재 업로드 시간이 변경됩니다.</p>
+				</li>
+			</ul>
+			<div class="tBox topBorder">
+				<h3>연재댓글(<span>817</span>)</h3>
+			</div>
+			<div class="ly_comment" data-options='{"comment_type":"member_serial", "target_num":"249", "msg_num":"", "pagesize":5, "blockpage":5}'>
+				<div class="ly_comment_write">
+					<div class="comment_write">
+						<textarea name="content"></textarea>
+						<p><span>0/500자</span><button name="btn_write" class="js_reply_write">등록</button></p>
+					</div>
+				</div>
+				<div id="comment">
+					<div class="comment">
+						<p class="user"><span>별숲</span><em>|</em>2015.11.06 11:10</p>
+						<span>연재 대박 꿀잼이네 -_- 연중만 되지 말아랑</span>
+						<button class="js_reply_add">답글</button><button class="js_reply_modify">수정</button><button class="js_reply_del">삭제</button>
+					</div>
+					<div class="comment_write">
+						<p class="user"><span>별숲</span><em>|</em>2015.11.06 11:10</p>
+						<textarea name="content"></textarea>
+						<p><span>0/500자</span><button name="btn_write" class="js_reply_cancel">취소</button><button name="btn_write" class="js_reply_write">등록</button></p>
+					</div>
+					<div class="comment">
+						<p class="user"><span>토종닭</span><em>|</em>2015.11.06 11:10</p>
+						<span>돈 아깝네요. 이 돈 가지고 치킨이나 시켜먹을걸.</span>
+						<button class="js_reply_add">답글</button>
+					</div>
+					<div class="comment">
+						<div class="reply_comment">
+							<p class="user"><span>교촌치킨</span><em>|</em>2015.11.06 11:10</p>
+							<span>비싸고 양적은 교촌치킨 드세요.</span>
+							<button class="js_reply_modify">수정</button><button class="js_reply_del">삭제</button>
+						</div>
+					</div>
+					<div class="comment">
+						<div class="reply_comment">
+							<p class="user"><span>호식이두마리치킨</span><em>|</em>2015.11.06 11:10</p>
+							<span>북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브북큐브 박큐브 북큐브 박큐브</span>
+						</div>
+						<a href="#">더보기</a>
+					</div>
+				</div>
+				<div class="paging">
+					<a href="#" class="prev">이전</a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#" class="next">다음</a>
+					<p>1 / 15</p>
+				</div>
+			</div>
+		</div>
+		<div class="snsBox">
+			<p>전자책을 친구와 지인들에게 추천/공유 해보세요</p>
+			<a href="#" class="bg kakaostory">카카오스토리</a>
+			<a href="#" class="bg facebook">카카오스토리</a>
+			<a href="#" class="bg twitter">카카오스토리</a>
+			<div class="snsBottom">
+				<p>친구 공유 0명(16명)</p>
+				<span>더보기</span>
+			</div>
+		</div>
+		<div class="snsPs">
+			<div class="snspd">
+				<p>SNS 친구 공유 후 큐브 지급 받는 방법</p>
+				<ul>
+					<li>본인인증 된 회원에게만 큐브가 지급됩니다.</li>
+					<li>SNS 친구 공유 통한 큐브 지급 횟수는 1일 최대 5번까지 가능합니다.</li>
+					<li>SNS 공유 한 횟수는 다음날 자동 리셋 됩니다.</li>
+					<li>북큐브 서점 로그인 후 카카오톡/카카오스토리/페이스북/트위터를 이용하여 해당 도서의 링크 주소를 공유합니다.</li>
+					<li>SNS를 통해 공유 된 링크 주소를 친구 또는 지인분들께서 터치 또는 클릭 한 횟수가 1일 10회인 경우 500큐브를 지급 합니다.<br />(비로그인 상태에서 sns 공유 시 공유 횟수에 포함 되지 않습니다.)</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$(".snsBottom span").on("click",function(){
+					if($(this).hasClass("on")){
+						$(this).removeClass("on");
+						$(".snsPs").animate({
+							height : "toggle"	
+						},500,function(){
+							$(this).css("border-bottom","none")	
+						});
+					}else{
+						$(this).addClass("on");
+						$(".snsPs").animate({
+							height : "toggle"	
+						},500,function(){
+							$(this).css("border-bottom","1px solid #cdced1")	
+						});
+					}
+				});	
+			});
+		</script>
+		<div class="titleBox">
+			<h3>이 작가의 다른 연재</h3>
+		</div>
+		<div class="detailBox"> 
+			<ul>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="titleBox">
+			<h3>이 분야의 베스트 연재</h3>
+		</div>
+		<div class="detailBox"> 
+			<ul>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="titleBox">
+			<h3>이 분야의 베스트 전자책</h3>
+		</div>
+		<div class="detailBox"> 
+			<ul>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하군림천하군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하군림천하군림천하</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="titleBox">
+			<h3>이 분야의 베스트 웹툰</h3>
+		</div>
+		<div class="webBox"> 
+			<ul>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하군림천하군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하군림천하군림천하</h4>
+				</li>
+				<li>
+					<a href="#">
+						<span class="im_br">
+							<img src="/novel/images/m_novel/dokThum.jpg" alt="" />
+						</span>
+					</a>
+					<h4>군림천하군림천하군림천하</h4>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+					<li class="notice_text"><a href="/mobile/storycube/bbs/notice_view.asp?msg_num=553">[공지] 웹소설 무료연재 업로드 기준 변경 안내</a></li>
+				<ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#">더보기</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">북큐브 쿠폰 등록</a></li>
+					<li><a href="#">북큐브 상품권 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#"><img src="/novel/images/m_novel/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="#">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+		</div>
+	</footer>
+	<script>
+		$(function(){
+			//슬라이드 메뉴
+			$(".snb ul li:nth-child(4)").on("click",function(){
+				$(".slideOverlay").show();
+				$(".slideMenu").animate({
+					right : 0	
+				},200,"swing",function(){
+					$(".slideOverlay").on("click",function(){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					});		
+				});
+			});	
+		
+			//공지사항
+			$(function(){
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+			});
+			
+		});
+	</script>
+</body>
+</html>

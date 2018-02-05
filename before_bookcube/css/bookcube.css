@@ -1,0 +1,72 @@
+/* 2013.07.02 Hellen Byun */
+@charset "utf-8";
+@import url("default.css");
+@import url("board.css");
+
+/* common */
+.fl{float:left}
+.fr{float:right}
+.hide{position:absolute;display:inline-block;font-size:0;letter-spacing:-10000px;top:-10000px;left:-100000px}
+#skiptoContent{display:none;}
+
+/* Layout */
+body{background-color:#fff;color:#666}
+.body_wrap{width:100%;height:100%}
+.container{width:1000px;margin:0 auto}
+#header{height:172px;text-align:center}
+#header h1{height:135px}
+#header h1 img{margin-top:27px}
+#header #gnb{height:37px;overflow:hidden}
+#header #gnb a{display:inline-block;float:left}
+#header #gnb a.on img{margin-top:-40px}
+#footer{width:100%;height:150px;border-top:1px solid #e5e5e5;overflow:hidden}
+#footer p{margin-top:42px;padding-right:12px}
+#footer p.fr a{display:inline-block;margin-left:5px}
+.contents{min-height:560px}
+
+/* Overview */
+.overview{background:url(../images/bookcube/overview_bg.jpg) 100% 0 no-repeat}
+.overview .text1{padding:82px 0 0 38px}
+.overview .text2 {padding:97px 0 0 42px}
+
+/* Business */
+.business{background:url(../images/bookcube/business_bg.jpg) 50% 123px no-repeat}
+.business h2{padding-top:82px;padding-left:4px;text-align:center}
+.business .row1{overflow:hidden;padding:54px 117px 54px 126px}
+.business .row2{overflow:hidden;padding:0 117px 0 126px}
+
+/* History */
+.history{padding:81px 37px 84px 37px}
+.history a:link, a:visited { text-decoration:underline;color:#fd6734}
+.history h3{padding:33px 0 5px}
+.history ul.history_year{border-top:2px solid #b6b7b7}
+.history li.year_wp{padding:27px 0 23px 12px;overflow:hidden;border-top:1px solid #d4d5d6}
+.history li.year_wp.first{border-top:0}
+.history .year{float:left;width:144px}
+.history .history_list{float:left;width:760px}
+.history .history_list li{overflow:hidden;line-height:22px;margin-top:14px;font-size:14px;color:#6d6e71}
+.history .history_list li.first{margin-top:0}
+.history .history_list li strong{float:left;display:inline-block;width:97px}
+.history .history_list li strong span{color:#ff6633}
+.history .history_list li p{float:left;width:650px}
+
+/* Map */
+.map{width:724px;margin:0 auto;padding-bottom:80px;background:url(../images/bookcube/map_bg.jpg) 100% 53px no-repeat}
+.map h2{padding-top:82px;padding-left:4px;text-align:center}
+.map .map1,.map .map2{padding-left:17px}
+.map .map1{margin:28px 0 0 3px}
+.map .map1 p{padding-top:5px}
+.map .map2{margin:60px 0 0 3px}
+.map .map2 p{padding-top:8px}
+
+/*채용공고 */
+.recruit{width:926px;margin:0 auto}
+.recruit h2{padding:82px 0 37px}
+.recruit .basic.type_double_line tbody th{font-size:14px;text-indent:23px;border-bottom:0}
+.recruit .pagenate{margin-bottom:80px}
+.recruit table.input_type{border-top:2px solid #b6b7b7;border-bottom:2px solid #b6b7b7}
+.recruit table.input_type th{background:#fff;width:100px;text-indent:0;text-align:center;border-bottom:0}
+.recruit table.input_type .first th,.recruit table.input_type .first td{border-top:0}
+.recruit table.input_type td{text-indent:0;padding-left:22px;font-size:14px}
+.recruit table.input_type td .contact_txt{min-height:395px;margin:20px 0;color:#999}
+.recruit .btn_area.btn_list{padding:37px 0 50px;text-align:center}

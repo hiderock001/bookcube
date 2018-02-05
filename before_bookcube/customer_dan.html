@@ -1,0 +1,522 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430" />
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+
+</script>
+<!-- naver-->
+
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+</head>
+<body>
+<!-- skip navi -->
+<dl id="skiptoContent">
+	<dt><strong>바로가기 메뉴</strong></dt>
+	<dd><a href="#gnb">메인메뉴 바로가기</a></dd>
+</dl>
+<!-- //skip navi -->
+
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+	<div class="fl">
+		<a href="http://www.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점" /></a>
+		<a href="http://www.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브" /></a>
+		<a href="http://www.bookcube.com/webtoon/main.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰" /></a>
+		<a href="http://www.bookcube.com/b2b.asp" ><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관" /></a>
+	</div>
+	<div class="fr">
+		<a href="https://www.bookcube.com/login.asp?return_url=http://www.bookcube.com%2Fcustomer%2Easp%3Fpage%3Dreader%26page2%3Dsetting" class="on login">로그인</a><em class="divider">|</em>
+		<a href="https://www.bookcube.com/member/register_step1.asp">회원가입</a><em class="divider">|</em>
+		<a href="http://www.bookcube.com/customer.asp">고객센터</a><em class="divider">|</em>
+		<a href="http://www.bookcube.com/event.asp?page=nm">이벤트</a>
+	</div>
+</div>
+<!-- 팝업레이어 :: Alarm 안내-->
+	<div class="alarm_layer_box common" style="display:none;">
+		<div class="alarm_layer_head_top"><img src="/images/board/sns_bt.gif"></div>
+		<div id="" class="border_type_box2">
+		<iframe src="" width="492" height="359" frameborder="0"  name="alarm_view" id="alarm_view" scrolling="no"></iframe>
+		</div>
+	</div>
+		<!-- //header -->
+
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/storycube/images/integration/h2_02_00_customer.gif" alt="고객센터" /></h2>
+			</div>
+			<!-- contents_wrap -->
+			<div class="contents_wrap">
+				<div class="list_tab_menu">
+					<!-- [Dev Comment] :: 선택된 메뉴에 클래스 on 이 추가됩니다 -->
+					<a href="/customer.asp?page=faq" class="first"><span>FAQ</span></a>
+					<a href="/customer.asp?page=notice" class=""><span>공지사항</span></a>
+					<a href="/customer.asp?page=pc" class=""><span>PC 안내</span></a>
+					<a href="/customer.asp?page=mobile" class=""><span>모바일 안내</span></a>
+					<a href="/customer.asp?page=reader" class="on"><span>단말기 안내</span></a>
+					<a href="/customer.asp?page=storycube" class="last "><span>웹소설 안내</span></a>
+				</div>
+				<div class="contents bdr_btm">
+
+
+
+
+
+				<!------------------------------------------------------------- 여기 부터 입니다.------------------------------------------------------------->
+
+
+
+
+
+
+					<div class="inner_type dan">
+						<div class="contents guide_tab3">
+							<div class="faq_menu mobile">
+								<!-- [Dev] :: 활성화된 메뉴에 클래스 on 생성됨 -->
+								<ul>
+								<li class=""><a href="/customer.asp?page=reader&page2=pc">PC/인터넷 연결</a></li>
+								<li class=""><a href="/customer.asp?page=reader&page2=bookcube">전자책 서점</a></li>
+								<li class="last"><a href="/customer.asp?page=reader&page2=library">전자책 도서관</a></li>
+								<li class=""><a href="/customer.asp?page=reader&page2=player">북플레이어</a></li>
+								<li class="on"><a href="/customer.asp?page=reader&page2=setting">기타 / 환경설정</a></li>
+								<li class="last"><a href="/customer.asp?page=reader&page2=download">프로그램 다운로드</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<h2 class="customer_h2">오디오 플레이어</h2>
+					<div class="customerDan">
+						<h3 class="danH3"><span>STEP 1</span> 오디오 플레이어 실행</h3>
+						<div class="guide_terminal bookplayer">	
+							<ul class="bar_list num_type">								
+								<li><em>1.</em> 메인 화면에서 오디오 플레이어를 선택한 후, 방향키를 누르거나 메인 화면이 디스플레이 된 상태에서 오디오<br />
+								플레이어에 해당하는 2번 숫자 키를 선택하면 바로 실행됩니다.</li>
+								<li><em>2.</em> 또는 메인 화면이 디스플레이된 상태에서 북플레이어에 해당하는 1번 숫자 키를 선택하면 바로 실행됩니다.</li>	
+							</ul>								
+						</div>
+						<h3 class="danH3"><span>STEP 2</span> 오디오 플레이어 사용법</h3>
+						<div class="guide_terminal bookplayer">	
+							<ul class="bar_list num_type">								
+								<li><em>1.</em> 한 페이지에 10개의 오디오 파일이 표시되며 듣고자 하는 오디오 파일을 선택하여 [ENTER] 키나 방향 키를 누르면<br />해당 파일이 재생되기 시작합니다.</li>
+								<li><em>2.</em> 오디오 파일을 재생시킨 후에 [MENU] 키를 눌러서 [8. 전자책 이어보기]를 실행하면 음악을 들으면서 전자책을<br />읽을 수 있습니다.</li>	
+								<li><em>3.</em> 단말기 상단 왼쪽 측면에 위치한 볼륨 조절 키로 음량 조절을 할 수 있으며, 음량 크기는 화면 우측 상단에 아이콘과<br />현재의 볼륨 레벨을 나타내는 숫자가 표시됩니다. 볼륨 레벨은 0부터 15(MAX)까지 입니다.</li>	
+								<li><em>4.</em> 음악 파일 재생의 세부 설정을 하려면 [MENU] 키를 눌러서 원하는 재생 방법을 설정합니다.</li>	
+							</ul>
+							<div class="img_wrap pad4">
+								<img src="/images/guide/terminal_tab5_1.jpg" alt="설명 이미지" />
+							</div>
+							<div class="top30 f12">
+								<ul class="in_list">
+									<li>- 재생 중인 음악 파일이 선택되어 있는 상태에서 다시 [ENTER] 키나 방향 키를 누르면 재생이 중지됩니다.</li>
+									<li>- 오디오 파일은 단말기의 내부 메모리에 저장된 파일명으로 화면에 표시됩니다.</li>
+									<li>- 음악 파일은 MP3 파일과 WMA 파일을 지원합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<h3 class="danH3"><span>STEP 3</span> 오디오 플레이어 &gt; 세부 메뉴의 기능</h3>							
+						<div class="guide_terminal bookplayer">
+							<div class="img_wrap audio">
+								<div class="fl img"><img src="/images/guide/terminal_tab5_2.jpg" alt="설명 이미지" /></div>
+									<ul class="fl arr_type">
+										<li>음악 파일이 실행 중일 경우 실행을 중지 시킵니다.</li>
+										<li>선택한 음악 파일 하나만 재생하고 종료됩니다.</li>
+										<li>선택한 음악 파일 하나만 반복하여 재생합니다.</li>
+										<li>단말기 내부 메모리에 저장되어 있는 전체 음악 파일을<br />
+											순차적으로 한 번씩 재생하고 모두 재생하면 종료됩니다.</li>
+										<li>단말기 내부 메모리에 저장되어 있는 전체 음악 파일을 순차적으로<br />
+											재생하며, 사용자가 정지시키기 전까지 무한 반복됩니다.</li>
+										<li>단말기 내부 메모리에 저장되어 있는 전체 음악 파일을 무작위로<br />
+											재생하며, 사용자가 정지시키기 전까지 재생합니다.</li>
+										<li>선택한 음악 파일을 삭제합니다.(재생 중인 음악 파일은 삭제 불가)</li>
+										<li>음악이 재생된 상태에서 최근까지 보던 전자책을 이어 봅니다.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<p class="divider_area"></p><!-- 구분선 영역 -->
+						<h2 class="customer_h2">이미지 플레이어</h2>
+						<div class="customerDan">
+							<h3 class="danH3"><span>STEP 1</span> 이미지 플레이어 실행</h3>
+							<div class="guide_terminal bookplayer">	
+								<ul class="bar_list num_type">								
+									<li><em>1.</em>  메인 화면에서 이미지 플레이어를 선택한 후, 방향 키를 누르거나 메인 화면이 디스플레이 된 상태에서 이미지<br />
+									플레이어에 해당하는 3번 숫자 키를 선택하면 바로 실행됩니다.</li>
+									<li><em>2.</em> 이미지 플레이어를 실행하면 아래 그림과 같이 현재 단말기 내부 메모리 또는 외장 마이크로 SD 카드에 저장되어<br />
+									있는 이미지 파일 목록이 표시됩니다.</li>	
+								</ul>								
+							</div>
+							<h3 class="danH3"><span>STEP 2</span> 이미지 플레이어 사용법</h3>
+							<div class="guide_terminal bookplayer">	
+								<ul class="bar_list num_type">								
+									<li><em>1.</em> 읽고자 하는 이미지 파일을 아래 폴더에 저장합니다.
+										<ul class="in_list">
+											<li>- 내부 메모리 : \eBook Store\image</li>
+											<li>- 외장 마이크로 SD카드 : 전체</li>
+											<li>* 모든 이미지들을 폴더 구조로 탐색 가능합니다(JPG, GIF, PNG, BMP, ZIP)</li>
+											<li>* ZIP 파일은 아래와 같은 구조를 지원합니다.</li>
+											<li>- 여러 개의 이미지 파일을 ZIP으로 묶은 경우</li>
+											<li>- 여러 개의 이미지를 포함한 폴더 또는 폴더들을 ZIP으로 묶은 경우</li>
+										</ul>
+									</li>
+									<li class="top30"><em>2.</em> 이미지 플레이어를 실행하면 위의 폴더에 있는 이미지들의 목록을 출력합니다.</li>	
+									<li class="top30"><em>3.</em> 이미지 파일을 선택하여 실행하면 이미지 플레이어가 실행됩니다.
+										<ul class="in_list">
+											<li>- 이미지가 선택된 상태에서 방향키를 누르거나 &quot;메뉴\실행&quot;을 선택하면 됩니다.</li>
+											<li>- 이미지 출력은 같은 폴더나 ZIP파일 내에서 순서대로 출력되며, 출력 순서는 파일명 또는 파일날짜 순으로<br />정렬이 가능합니다.</li>
+											<li>- 이어보기 기능: 이미지 플레이어 종료 후 폴더나 ZIP파일을 재실행하면 자동으로 이전에 읽던 파일이 선택되거나 출력됩니다.</li>
+										</ul>
+									</li>
+									<li class="top30"><em>4.</em> 이미지 플레이어 메뉴설명
+										<ul class="in_list">
+											<li>1. 전체화면 보기(끄기) : 상단의 파일이름과 하단의 페이지 정보가 사라지고 전체화면으로 이미지를 출력</li>
+											<li>2. 화면에 맞추기: 원본 이미지의 비율을 무시하고 화면 안에 꽉 차게 이미지 출력(전체화면 모드에서도 동일)</li>
+											<li>3. 자동비율 : 원본 비율대로 화면 안에 이미지를 출력(전체화면 모드에서도 동일)</li>
+											<li>4. 페이지 이동: 원하는 페이지로 이동</li>
+										</ul>
+									</li>
+								</ul>							
+							</div>				
+						</div>
+						<p class="divider_area"></p><!-- 구분선 영역 -->
+						<h2 class="customer_h2">사전</h2>
+						<div class="customerDan">
+							<h3 class="danH3"><span>STEP 1</span> 사전 실행</h3>
+							<div class="guide_terminal bookplayer flow">	
+								<p class="fl w350">메인 화면에서 사전을 실행(숫자 키 4번)하면 영한사전,<br />
+								한영사전, 국어사전 중 한 가지를 선택할 수 있는 팝업<br />메뉴가 나타납니다.</p>
+								<p class="fr"><img src="/images/guide/terminal_tab5_3.jpg" alt="설명 이미지" /></p>
+							</div>
+							<h3 class="danH3"><span>STEP 2</span> 영한사전</h3>
+							<div class="guide_terminal bookplayer flow">	
+								<div class="fl w350">
+									<ul class="bar_list num_type">								
+										<li><em>1.</em> Prime 영한사전을 선택하여 실행합니다.</li>
+										<li><em>2.</em> 영한 사전은 입력한 키워드에 대해 단어, 예문,<br />숙어의 세 가지를 검색할 수 있습니다.</li>	
+										<li><em>3.</em> 단어, 예문, 숙어 검색의 선택을 변경하려면 [Fn]<br />키를 누른 상태에서 좌/우 방향 키를 이용합니다.</li>	
+									</ul>
+								</div>
+								<p class="fr"><img src="/images/guide/terminal_tab5_4.jpg" alt="설명 이미지" /></p>
+							</div>
+							<h3 class="danH3"><span>STEP 3</span> 영한 사전 &gt; 단어 찾기</h3>							
+							<div class="guide_terminal bookplayer">
+								<div class="img_wrap dic">
+									<div class="flow">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>1.</strong> 검색하고자 하는 단어를 키보드의 문자 키를 이용하여 입력합니다.</li>
+												<li><strong>2.</strong> 잘못 입력된 문자는 [DEL] 키를 이용하여 삭제합니다.</li>	
+												<li><strong>3.</strong> 입력이 끝나면 [ENTER] 키나 방향 키를 누릅니다.</li>	
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_5.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>4.</strong> 입력한 키워드로 시작되는 모든 단어들의 목록이 화면에 표시됩니다.</li>
+												<li><strong>5.</strong> 검색하는 단어가 존재할 경우에는 해당 단어가 목록 상단에 표시되며,<br />검색 단어가 존재하지 않는 경우에는 가장 비슷한 단어 목록이 알파벳<br />순으로 정렬되어 표시됩니다.</li>	
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_6.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>6.</strong> 단어를 선택하여 [ENTER] 키나 방향키를 누르면 선택한 단어에<br />대한 상세 설명이 표시 됩니다.</li>
+												<li><strong>7.</strong> 단어 상세 설명 화면에서 숫자 키 1을 누르면 미국식 발음을 들려주고<br />숫자 키 2를 누르면 영국식 발음을 들려줍니다. (단어에 따라서는<br />발음이 지원되지 않는 경우도 있습니다.)</li>	
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_7.jpg" alt="설명 이미지" /></p>
+									</div>
+								</div>
+							</div>
+							<h3 class="danH3"><span>STEP 4</span> 영한 사전 &gt; 세부 메뉴의 기능</h3>							
+							<div class="guide_terminal bookplayer">
+								<div class="img_wrap dic">
+									<div class="flow">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>1.</strong> [MENU] 키를 누르면 다른 사전을 실행하거나, 글자크기와<br />발음 크기를 설정할 수 있는 팝업 메뉴가 나타납니다. 방향키를<br />이용하거나 숫자 키 7번 (글자크기) 혹은 8번(발음크기)를 이용하여<br />해당 메뉴를 선택 및 실행합니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_8.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>2.</strong> 좌/우 방향 키를 이용하여 원하는 글자 크기를 선택한 후<br />[ENTER] 키나 방향 키를 누릅니다. </li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_9.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>3.</strong> 좌/우 방향 키를 이용하여 원하는 발음크기를 선택한 후<br />[ENTER] 키나 방향키를 누릅니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_10.jpg" alt="설명 이미지" /></p>
+									</div>
+								</div>
+							</div>
+							<h3 class="danH3"><span>STEP 5</span> 한영사전</h3>							
+							<div class="guide_terminal bookplayer">
+								<div class="img_wrap dic">
+									<div class="flow">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>1.</strong> Prime 한영사전을 선택하여 실행합니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_11.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>2.</strong> 검색하고자 하는 단어를 키보드의 문자 키들을 이용하여 입력하고<br />[ENTER] 키나 방향 키를 누릅니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_12.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>3.</strong> 검색한 단어의 철자로 시작되는 단어들의 목록이 출력됩니다.</li>
+												<li><strong>4.</strong> 검색하는 단어가 존재할 경우에는 해당 단어가 화면 상단에 표시되며<br />검색 단어가 존재하지 않는 경우에는 가장 비슷한 단어 목록이 철자<br />순으로 정렬되어 표시됩니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_13.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>5.</strong> 단어를 선택하여 [ENTER] 키나 방향 키를 누르면 단어에 대한<br />상세 설명이 표시 됩니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_14.jpg" alt="설명 이미지" /></p>
+									</div>
+								</div>
+							</div>
+							<h3 class="danH3"><span>STEP 6</span> 국어사전</h3>							
+							<div class="guide_terminal bookplayer">
+								<div class="img_wrap dic">
+									<div class="flow">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>1.</strong> Prime 국어사전을 선택하여 실행합니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_15.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>2.</strong> 검색하고자 하는 단어를 키보드의 문자 키들을 이용하여 입력하고<br />[ENTER] 키나 방향 키를 누릅니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_16.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>3.</strong> 검색한 단어의 철자로 시작되는 단어들의 목록이 출력됩니다.</li>
+												<li><strong>4.</strong> 검색하는 단어가 존재할 경우에는 해당 단어가 화면 상단에 표시되며<br />검색 단어가 존재하지 않는 경우에는 가장 비슷한 단어 목록이 철자<br />순으로 정렬되어 표시됩니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_17.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<ul class="bar_list">								
+												<li><strong>5.</strong> 단어를 선택하여 [ENTER] 키나 방향 키를 누르면 단어에 대한<br />상세 설명이 표시 됩니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_18.jpg" alt="설명 이미지" /></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="divider_area"></p><!-- 구분선 영역 -->
+						<h2 class="customer_h2">환경설정</h2>
+						<div class="customerDan">
+							<p class="f14 lh22">메인 화면에서 환경설정을 선택하면 우측 하단에 팝업 메뉴가 나타납니다.<br />PC와 USB로 연결된 유선 연결 상태에서 업데이트를 진행하는 것이 안정적입니다.</p>
+							<div class="guide_terminal bookplayer">
+								<div class="img_wrap dic">
+									<div class="flow">
+										<div class="fl">
+											<strong class="black2 f12">업데이트 실행</strong>
+											<ul class="bar_list">								
+												<li><span>1.</span> 북플레이어 소프트웨어의 업데이트를 실시간으로 실행합니다.</li>
+												<li><span>2.</span> 단말기가 온라인 상태일 때에 업데이트를 할 수 있습니다.</li>
+												<li><span>3.</span> 주기적으로 업데이트를 실행하여 최신 프로그램을 사용하는 것이<br />좋습니다.</li>
+												<li><span>4.</span> 현재 설치된 북플레이어 프로그램에 대한 버전 정보는<br />도움말 &gt; 프로그램 정보에서 확인할 수 있습니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_19.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<strong class="black2 f12">단말기 고유번호</strong>
+											<ul class="bar_list">								
+												<li><span>1.</span> 단말기 고유번호를 조회합니다.</li>
+												<li><span>2.</span> 전자책 서점, 전자책 도서관을 이용하기 위해서는 반드시 단말기<br />고유번호를 해당 웹 사이트에 등록한 후에 이용하실 수 있습니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_20.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<strong class="black2 f12">Wi-Fi 설정 &gt; 전원 ON/OFF</strong>
+											<ul class="bar_list">								
+												<li><span>1.</span> 켜기, 끄기를 선택하여 [ENTER] 키가 방향 키를 누르면<br />Wi-Fi 전원을 켜거나 끌 수 있습니다. (키패드의 1번과 2번<br />키를 선택해도 됩니다.)</li>
+												<li><span>2.</span> Wi-Fi 전원이 한 번 켜지면, 단말기의 전원을 끌 때까지는<br />ON 상태를 계속 유지하므로, 온라인 접속을 사용하지 않는 경우,<br />배터리 관리를 위해 Wi-Fi 전원을 OFF 시켜주시는 것이 좋습니다.</li>
+												<li><span>3.</span> Wi-Fi의 전원은 다음 페이지에 설명된 Wi-Fi 접속을 실행할 때<br />자동으로 켜지므로 Wi-Fi 전원 ON/OFF 기능은 Wi-Fi 전원을<br />OFF 시킬 때 주로 사용합니다.</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_21.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<strong class="black2 f12">Wi-Fi 설정 &gt; 자동접속/수동접속</strong>
+											<ul class="bar_list">								
+												<li><span>1.</span> 자동 접속으로 설정해두면 비밀번호를 요구하는 AP에 접속할 때,<br />이전에 입력해둔 비밀번호를 이용하여 자동으로 접속을 진행하므로<br />AP에 처음 접속할 경우에만 비밀번호를 입력하면 됩니다.</li>
+												<li><span>2.</span> 수동 접속으로 설정해 두면 비밀번호가 설정된 AP에 접속을 시도할<br />때마다 비밀번호를 입력해야 합니다.</li>
+												<li><span>3.</span> 설정이 완료되면 닫기로 이동하여 [ENTER] 키나 방향 키를 누르면<br />설정 값을 저장한 후 메인 화면으로 이동합니다. (키패드의 5번 키를<br />선택해도 됩니다.)</li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_22.jpg" alt="설명 이미지" /></p>
+									</div>
+									<div class="flow top30">
+										<div class="fl">
+											<strong class="black2 f12">환경설정 &gt; Wi-Fi 접속</strong>
+											<ul class="bar_list">								
+												<li><span>1.</span> Wi-Fi 접속하기를 실행하면 Wi-Fi 모듈의 전원이 자동적으로<br />켜집니다.</li>
+												<li><span>2.</span> 화면 왼쪽 아래에 Wi-Fi 모듈이 ON 상태임을 보여주는<br />아이콘(<img src="/images/guide/ico_network.gif" alt="설명 이미지" />)이 나타나면서, 접속 가능한 네트워크의 목록을<br />보여 줍니다.</li>
+												<li><span>3.</span> 접속하고자 하는 네트워크를 선택한 후[ENTER]나 방향 키를<br />누르면 접속을 시도합니다.</li>
+												<li><span>4.</span> 보안이라고 표시된 네트워크에 접속하는 경우에는 네트워크<br />관리자가 설정한 암호를 입력해야 합니다.</li>
+												<li><span>5.</span> 네트워크 연결이 성공하면, 연결된 네트워크 목록에 &#39;연결&#39;이라고<br />표시됩니다. Wi-Fi 아이콘에는 수신 감도가 표시됩니다. <img src="/images/guide/ico_network.gif" alt="설명 이미지" /></li>
+											</ul>
+										</div>
+										<p class="fr"><img src="/images/guide/terminal_tab5_23.jpg" alt="설명 이미지" /></p>
+									</div>
+									<p class="wifi_img"><img src="/images/guide/terminal_tab5_24.jpg" alt="설명 이미지" /></p>
+								</div>
+							</div>
+						</div>
+					
+					
+
+
+
+
+
+
+
+
+						<!------------------------------------------------------------- 여기 까지 입니다.------------------------------------------------------------->
+
+
+
+
+
+
+
+
+					
+					
+					
+					
+					
+					
+					
+					</div>
+				<!-- //contents -->
+			</div>
+			<!-- //contents_wrap -->			
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+<Br /><br />
+	<!-- footer -->
+	<div class="footer">
+	<div class="foot_inner">
+		<div class="foot_left">
+			<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+			<img src="/images/main/goodContents.jpg" alt="클린사이트" />
+		</div>
+		<div class="foot_right">
+			<ul class="f_lnb">
+				<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+				<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+				<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+			</ul>
+			<h4 class="hide">북큐브 주소 및 정보</h4>
+			<ul class="f_lnb">
+				<li>상호 : 주식회사 북큐브네트웍스</li>
+				<li>대표이사 : 유철종</li>
+				<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+				<li>개인정보 관리 책임자 : 남지원</li>
+				<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+				<li>전화 1588-1925</li>
+			</ul>
+			<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+		</div>	
+	</div>
+</div>
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>

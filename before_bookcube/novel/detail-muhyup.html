@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=904">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/novel/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/nStory.css" />
+<script src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+<script src="/novel/js/lib/jquery.jcarousel.min.js"></script>
+<script src="/novel/js/lib/requirejs.min.js"></script>
+</head>
+<body>
+	<div class="header nstory">
+		<div class="head_banner">
+			<div class="h_banner_inner">
+				<img src="http://up.bookcube.com/bookcube/upload/event/2290/ts2290_img.jpg" usemap="#teaser_2290">
+				<img src="/images/main/bannerClose.png" alt="배너닫기" class="bannerClose" />
+			</div>
+		</div>
+		<map name="teaser_2290"><area shape="rect" coords="0,0,450,80" href="http://www.bookcube.com/event_detail.asp?event_num=2288&amp;event_type=cm&amp;pageNum=1"><area shape="rect" coords="450,0,900,80" href="http://www.bookcube.com/event_detail.asp?event_num=2247&amp;event_type=cm&amp;pageNum=1"></map>
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li><a href="#"><img src="/images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li class="lnb_on"><a href="#"><img src="/images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li><a href="#">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="/images/storycube/storycube_logo.png" alt="스토리큐브" /></a></h1>
+					<div class="h_search_box storycube">
+						<form>
+							<fieldset>
+								<legend class="hide">북큐브 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="/images/storycube/select_arrow.png" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li>전체</li>
+											<li>제목</li>
+											<li>저자</li>
+											<li>출판사</li>
+											<li>책정보</li>
+											<li>정액가능</li>
+											<li>대여가능</li>
+											<li>10년소장</li>
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" id="" class="search_input" value="" />
+								</div>
+								<input type="submit" name="" id="" class="select_submit"  />
+								<a href="#"><img src="/images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header_bottom">
+				<h2 class="hide">메인메뉴</h2>
+				<p class="main_category"><a href="#"><img src="/images/page/main_category.jpg" alt="전체카테고리" /></a></p>
+				<ul>
+					<li><a href="#"><img src="/images/novel/gnb1_on.jpg" alt="bl" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb2.jpg" alt="로맨스" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb3.jpg" alt="무협" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb4.jpg" alt="판타지" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb5.jpg" alt="무료" /></a></li>
+				</ul>
+				<a href="#" class="sunho"><img src="/novel/images/novel/sunho.jpg" alt="나의 선호작" /></a>
+			</div>
+		</div>
+	</div>
+	<div class="contentsWrap">
+		<div class="contents muhyup">
+			<div class="location">
+				<p>HOME > 로맨스 > 귀신잡는 공무원</p>
+			</div>
+			<div class="bookTitle">
+				<div class="bookTitleName">
+					<span>eBook</span><h3>귀신잡는 공무원 공무원 공무원 공원 공뭉원[완결]</h3>
+				</div>
+				<div class="bookInfoBox">
+					<div class="bookInfo">
+						<p><a href="#">레오나르도 디카프리오</a><em>|</em>도서출판 북큐브네트웍스</p>
+						<p class="pub">매주<span>월, 화, 수, 목, 금, 토, 일</span>연재</p>
+					</div>
+					<div class="bookIcon">
+						<p><span class="bigHit">조회수 <em>3,495,222</em></span><span class="bigPrefer">선호작 <em>3,495,222</em></span><span class="bigRe"><a href="#">연재댓글</a></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="bookContents">
+				<div class="bookThum">
+					<img src="/novel/images/novel/thum/bookThum.jpg" alt="" class="bookImg" />
+					<p class="sunhoBtn"><a href="#" class="">선호작</a></p> <!-- 선호작 추가 a에 클래스 on으로 조절합니다 -->
+					<p class="firstLook"><a href="#">1화 바로보기</a></p>
+				</div>
+				<div class="bookP">
+					<p class="bookCon">젊은 날의 풋사랑. 기만당한 진심은 상흔이 됐다. 절망의 터널을 지나고 있을 때 들이친 한 줌의 친절 우연한 부닥침 구원과 엇갈림. 그리고 재회.서른의 봄, 생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난난생채기 난</p>
+					<a href="javascript:;" class="moreBtn">더보기</a>
+				</div>
+			</div>
+			<script>
+				// 3줄이상 더보기 버튼 생기고 컨텐츠 보여주기
+				$(function(){
+					var p=$(".bookCon").height();
+					var a=$(".bookP a");
+					if(p > 40){
+						$(".moreBtn").show();
+					}else{
+						$(".moreBtn").hide();
+					}
+					$(".moreBtn").on("click",function(){
+						if($(this).hasClass("on")){
+							$(".bookCon").css("max-height","60px");
+							$(this).removeClass("on");
+						}else{
+							$(".bookCon").css("max-height","none");
+							$(this).addClass("on");
+						}
+					});
+
+				});
+			</script>
+			<div class="allPay">
+				<div class="aPayLeft">
+					<table>
+						<caption>책 가격 정보</caption>
+						<colgroup>
+							<col width="55px" />
+							<col width="400px" />
+							<col width="*" />
+						</colgroup>
+						<tr>
+							<th>구매</th>
+							<td>
+								<p><span class="f14">회차 별 구매 :</span><span class="orange f16">100원</span>(<del>200원</del><span class="orange">50% 할인</span>)<em>|</em>영구소장</p>
+								<p><span class="f14">전 회차 구매 :</span><span class="orange f16">17,190원</span>(<del>19,100원</del><span class="orange">10% 할인</span>)<em>|</em>영구소장</p>
+							</td>
+							<td>
+								<a href="#" class="allPayBtn">전 회차 구매</a>
+							</td>
+						</tr>
+						<tr>
+							<th>대여</th>
+							<td>
+								<p><span class="f14">회차별 대여 :</span><span class="orange f16">100원</span><em>|</em>1일</p>
+								<p><span class="f14">전 회차 대여 :</span><span class="orange f16">17,190원</span>(<del>19,100원</del><span class="orange">10% 할인</span>)<em>|</em>7일</p>
+							</td>
+							<td>
+								<a href="#" class="allRentBtn">전 회차 대여</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="aPayRight">
+					<div class="ebookUse">
+						<p><a href="javascript:;" id="ebookGo">eBook 이용안내 <span>클릭</span></a></p>
+						<p><a href="javascript:;" id="supportPop">지원단말기 : PC, IOS, Android, 전용단말기 <span>클릭</span></a></p>
+						<div class="supportPop">
+							<div class="supportPopTop">
+								<p>이용 가능 단말기</p>
+								<a href="javascript:;" class="popClose">닫기</a>
+							</div>
+							<div class="supportPopMiddle">
+								<p><span>스마트기기</span>(이용시 최대 3대 사용)</p>
+								<ul>
+									<li>- IOS 6.0 이상</li>
+									<li>- Android 2.2 이상</li>
+								</ul>
+								<p><span>PC</span>(이용시 최대 3대 사용)</p>
+								<ul>
+									<li>- Windows OS 지원</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="sns">
+						<p><a href="javascript:;" id="snsPop">SNS 공유하고 큐브 지급받자! <span>클릭</span></a><a href="javascript:;"><img src="/novel/images/novel/facebook.png" alt="페이스북" /></a><a href="javascript:;"><img src="/novel/images/novel/twitter.png" alt="트위터" /></a></p>
+						<div class="snsPop">
+							<div class="snsPopTop">
+								<p>SNS 친구 공유 후 도서를 무료 지급 받는 방법</p>
+								<a href="javascript:;" class="popClose">닫기</a>
+							</div>
+							<div class="snsPopMiddle">
+								<p>주의사항<p>
+								<ul>
+									<li>1) 본인인증 된 회원에게만 무료도서가 지급됩니다.</li>
+									<li>2) SNS 친구 공유를 통한 무료 도서 지급 및 대여는 1달에 1권만 가능합니다.</li>
+									<li>3) 무료로 도서를 소장 or 대여하시거나 매 월 1일이 되면 해당 달에 SNS 공유한 횟수는 자동으로 리셋 됩니다.</li>
+								</ul>
+								<p>SNS 공유하고 도서 무료 지급 받자<p>
+								<ul>
+									<li>1) 페이스북/트위터를 이용하여 해당 도서의 링크 주소를 공유 합니다.</li>
+									<li>2) SNS를 통해 공유 된 링크 주소를 친구 또는 지인분들께서 터치 또는 클릭할 경우 SNS 공유 횟수로 카운팅됩니다.</li>
+									<li>3) 공유횟수가 정해진 기준을 충족할 경우 도서를 무료로 소장할 수 있습니다.</li>
+									<li>4) 공유횟수가 정해진 기준의 50% 이상 충족할 경우 무료로 대여할 수 있습니다.</li>
+									<li>5) 무료로 소장한 도서는 마이페이지 > 전자책 다운로드 메뉴에서 확인 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<script>
+						$(function(){
+							$("#ebookGo").on("click",function(){
+								$("html, body").animate({
+									scrollTop :  $(document).height()	
+								},1000);
+							});
+							$("#supportPop").on("click",function(){
+								$(".supportPop").fadeIn();	
+							});	
+							$("#snsPop").on("click",function(){
+								$(".snsPop").fadeIn();	
+							});
+							$(".popClose").on("click",function(){
+								$(this).parent().parent().fadeOut();	
+							});
+						});
+					</script>
+				</div>
+			</div>
+			<div class="bookPay">
+				<div class="tab">
+					<ul>
+						<li><a href="#" class="on">구매</a></li>
+						<li><a href="#">대여</a></li>
+					</ul>
+				</div>
+				<div class="authorNotice">
+					<div class="auLeft">
+						작가공지
+					</div>
+					<div class="auRight">
+						<dl>
+							<dt><a href="javascript:;">[작가공지]229화 오탈자 수정 관련의 수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의</a><em>2015.11.06</em></dt>
+							<dd>안녕하세요<br />북큐브입니다.<br />북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브</dd>
+							<dt><a href="javascript:;">[작가공지]229화 오탈자 수정 관련의 수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의</a><em>2015.11.06</em></dt>
+							<dd>안녕하세요<br />북큐브입니다.<br />북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="authorNotice admin">
+					<div class="auLeft">
+						관리자공지
+					</div>
+					<div class="auRight">
+						<dl>
+							<dt><a href="javascript:;">[작가공지]229화 오탈자 수정 관련의 수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의</a><em>2015.11.06</em></dt>
+							<dd>안녕하세요<br />북큐브입니다.<br />북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브 북큐브 박큐브</dd>
+							<dt><a href="javascript:;">[작가공지]229화 오탈자 수정 관련의 수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의수정관련의</a><em>2015.11.06</em></dt>
+							<dd>안녕하세요<br />북큐브입니다.<br />북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기</dd>
+						</dl>
+					</div>
+					<script>
+						$(function(){
+							var author = $(".auRight dt a");
+							$(author).on("click",function(){
+								if($(this).hasClass("on")){
+									$(this).removeClass("on");
+									$(".auRight dd").hide();
+									$(this).parent().next().hide();
+								}else{
+									$(author).removeClass("on");
+									$(this).addClass("on");	
+									$(".auRight dd").hide();
+									$(this).parent().next().show();
+								}
+							});	
+						});
+					</script>
+				</div>
+				<div class="selectPay">
+					<div>
+						<div class="selectLeft">
+							<input type="checkbox" name="" class="" /><label>선택</label>
+							<input type="checkbox" name="" class="" /><label>1화부터 정렬</label>
+						</div>
+						<div class="selectRight">
+							<span>총 0화 0원</span>
+							<a href="javascript:;">선택구매</a>
+						</div>
+					</div>
+					<div class="selectInfo">
+						<p>회차정보</p>
+						<p>다운로드</p>
+					</div>
+					<div class="selectListBox">
+						<ul>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="down">다운로드</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="down">다운로드</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="pay">구매 200원</a>
+							</li>
+							<li>
+								<input type="checkbox" name="" />
+								<div>
+									<p>229화<em>|</em>군림천하 30권 - 제 321장 사인사색</p>
+									<p>epub<em>|</em>2015.11.06</p>
+								</div>
+								<a href="#" class="down">다운로드</a>
+							</li>						
+						</ul>
+						<div class="paging">
+							<a href="#" class="arr first">처음으로</a>
+							<a href="#" class="arr prev">이전으로</a>
+							<a href="#" class="on one">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">66666</a>
+							<a href="#" class="arr next">다음으로</a>
+							<a href="#" class="arr last">마지막으로</a>
+						</div>
+						<script>
+							//구매 대여 리스트에서 스크롤바가 생기면 버튼 위치 조정해주기.
+							$(function(){
+								if($(".selectListBox ul li").length > 10){
+									$(".selectListBox ul li a").css("margin-right","10px");
+								}
+							});
+						</script>
+					</div>
+				</div>
+				<!-- 웹소설과 같습니다. -->
+				<div class="ly_comment" data-options='{"comment_type":"member_serial", "target_num":"249", "msg_num":"", "pagesize":5, "blockpage":5}'>
+					<div class="ly_comment_write">
+						<div class="comment_write write">
+							<p class="reply">연재 댓글<br />(<span>56,371</span>)</p>
+							<textarea name="content"></textarea>
+							<p><button name="btn_write" class="js_reply_write">등록</button></p>
+						</div>
+					</div>
+					<div id="comment">
+						<div class="comment">
+							<div class="replyControl">
+								<p class="replyUser"><span>노란범</span><em>|</em>2016.01.12 13:53</p>
+								<div class="controlBtn">
+									<button class="js_reply_add">답글</button>
+									<button class="js_reply_modify">수정</button>
+									<button class="js_reply_del">삭제</button>
+								</div>
+							</div>
+							<span class="rep">재밌게 잘 읽었습니다.</span>
+						</div>
+						<div class="comment">
+							<div class="replyControl">
+								<p class="replyUser"><span>살인범</span><em>|</em>2016.01.12 13:53</p>
+								<div class="controlBtn">
+									<button class="js_reply_add">답글</button>
+								</div>
+							</div>
+							<span class="rep">돈 아깝네요 치킨이나 시켜먹을걸..</span>
+						</div>
+						<div class="comment">
+							<div class="replyControl">
+								<p class="replyUser"><span>한기범</span><em>|</em>2016.01.12 13:53</p>
+								<div class="controlBtn">
+									<button class="js_reply_add">답글</button>
+								</div>
+							</div>
+							<span class="rep">북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기북치기 박치기</span>
+						</div>
+						<div class="reply_write">
+							<textarea name="content"></textarea>
+							<div class="controlBtn">
+								<button class="js_reply_swrite">등록</button>
+								<button class="js_reply_cancel">취소</button>
+							</div>
+						</div>
+						<div class="comment_write reply_write">
+							<div class="replyControl">
+								<p class="replyUser"><span>살인범</span><em>|</em>2016.01.12 13:53</p>
+								<div class="controlBtn">
+									<button class="js_reply_modify">수정</button>
+									<button class="js_reply_del">삭제</button>
+								</div>
+							</div>
+							<span class="rep">북큐브 박큐브 북큐브 박큐브북큐브 박큐브북큐브 박큐브북큐브 박큐브</span>
+						</div>
+					</div>
+					<div class="paging">
+						<a href="#" class="arr first">처음으로</a>
+						<a href="#" class="arr prev">이전으로</a>
+						<a href="#" class="on one">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">66666</a>
+						<a href="#" class="arr next">다음으로</a>
+						<a href="#" class="arr last">마지막으로</a>
+					</div>
+				</div>
+				<div class="mdWrap">
+					<h3 class="otherBookTitle">이 작가의 다른 연재</h3>
+					<div class="mdRoll jcarousel-wrapper">
+						<div class="jcarousel1 js_jcarousel">
+							<ul>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 111111111111</p>
+								</li>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 222222222222222</p>
+								</li>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 3333333333333</p>
+								</li>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 4444444444444444</p>
+								</li>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 55555555555555</p>
+								</li>
+								<li>
+									<a href="#">
+										<span class="im_br">
+											<img src="/images/novel/thum_daylist.jpg" alt="" />
+										</span>
+									</a>
+									<p>이제는 정말 66666666666</p>
+								</li>
+							</ul>
+							<a href="#" class="prev jcarousel-prev">이전</a>
+							<a href="#" class="next jcarousel-next">다음</a>
+						</div>
+					</div>
+					<h3 class="thisBestTitle">이 분야의 베스트 연재</h3>
+					<div class="customBox">
+						<ul class="dayList_book">
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li class="liLast">
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+						</ul>	
+					</div>
+					<h3 class="thisBestElecTitle">이 분야의 베스트 전자책</h3>
+					<div class="customBox">
+						<ul class="dayList_book">
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li>
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+							<li class="liLast">
+								<a href="#">
+									<span class="im_br">
+										<img src="/images/novel/thum_daylist.jpg" alt="" />
+									</span>
+								</a>
+								<p>이제는 정말 나를 위해서만</p>
+							</li>
+						</ul>	
+					</div>
+					<h3 class="thisBestWebtoon">이 분야의 베스트 웹툰</h3>
+					<div class="customBox">
+						<ul class="rbList">
+							<li>
+								<a href="#">
+									<div class="rmdImg">
+										<span class="im_br">
+											<img src="/images/novel/rmdThum.jpg" alt="" />
+										</span>
+									</div>
+									<div class="rmdInfo">
+										<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="rmdImg">
+										<span class="im_br">
+											<img src="/images/novel/rmdThum.jpg" alt="" />
+										</span>
+									</div>
+									<div class="rmdInfo">
+										<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="rmdImg">
+										<span class="im_br">
+											<img src="/images/novel/rmdThum.jpg" alt="" />
+										</span>
+									</div>
+									<div class="rmdInfo">
+										<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="rmdImg">
+										<span class="im_br">
+											<img src="/images/novel/rmdThum.jpg" alt="" />
+										</span>
+									</div>
+									<div class="rmdInfo">
+										<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="operation">
+					<h3>이용안내</h3>
+					<ul>
+						<li>- 구매 후 배송이 필요 없이 다운로드를 통해 이용 가능한 전자책 상품입니다.</li>
+						<li>- BOOKCUBE(B-612)에서는 현재 텍스트북이 제공되며, 이미지북은 추후에 제공됩니다.</li>
+						<li>- 전자책 1회 구매로 PC, 스마트폰, 태블릿PC, eBook전용단말기 등에서 모두 이용하실 수 있습니다.(동시 이용 가능)</li>
+						<li>- 저작권 보호를 위해 인쇄/출력 기능은 지원하지 않습니다.</li>
+						<li>- 구매하신 전자책을 “ MY BOOKCUBE > 전자책 다운로드”에서 다운로드를 할 수 있습니다.</li>
+						<li>- 스마트폰, 태블릿PC의 경우 북큐브 어플리케이션을 설치하여 이용할 수 있습니다. (<a href="http://www.bookcube.com/appDown.asp">모바일 페이지 바로가기</a>)</li>
+						<li>- PC에서 이용하실 경우 전자책 전용 프로그램, <a href="http://www.bookcube.com/appDown.asp">북플레이어</a>를 통해 이용하실 수 있습니다.</li>
+						<li>- PC에서의 다운로드는 서로 다른 3대의 PC에서 횟수 제한 없이 이용하실 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- contents end -->
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h3 class="f_logo">북큐브네트웍스</h3>
+				<a href="#" target="_blank"><img src="/novel/images/page/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="/novel/images/page/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb large">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+	<script>
+			$(function(){
+				var page_section = $(".js_page_section").data("page");
+				if(page_section == "bl" || page_section == "romance"){
+					$(".js_jcarousel").find("li").eq(-1).addClass("last");
+				}
+
+				$(".js_jcarousel").jcarousel();
+				$(".js_jcarousel").each(function(){
+					if($(this).jcarousel("items").length <= 5){
+						$(this).find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+					}
+				});
+				$('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$('.jcarousel-next').on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+		    });
+		
+	</script>
+	<div id="overay_pop" class="layer_popup border_type_box serial_popup">
+		<form onsubmit="" action="" method="post">
+			<fieldset>
+				<legend>독점연재 결제하기</legend>
+				<div class="layer_head">
+					<h2>독점연재 결제하기</h2>
+					<a class="btn_layer_x close" href="#"><span class="hide">닫기</span></a>
+				</div>
+				<div class="layer_content">
+					<table class="line_type" cellspacing="0" summary="독점연재 결제 내용">
+						<caption>독점연재 결제</caption>
+						<colgroup>
+							<col width="*" />
+							<col width="25%" />
+							<col width="25%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th abbr="제목" scope="col">제목</th>
+								<th abbr="구매연재개수" scope="col">구매연재개수</th>
+								<th abbr="결제금액" scope="col">결제금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong class="f14 impact">마성의 마법사</strong></td>
+								<td class="ac"><strong class="impact spt_cnt">1회</strong></td>
+								<td class="ac"><strong class="impact spt_price">100원</strong></td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="top10"><strong>소액 결제인 연재의 경우 한 가지 결제 수단으로만 결제가 가능합니다.</strong></p>
+					<div class="cash_step">
+						<h3>STEP1 <span>쿠폰</span></h3>
+					</div>
+					<div class="cash_coupon_box">
+						<p>
+							<label for="" class="hide">쿠폰 할인 액</label>
+							<input type="text" name="" id="" class="couponIpt" disabled="disabled" />
+							<span class="gray2">원 할인</span>
+							<span class="o_f16">(사용 가능한 쿠폰 : 100장)</span>
+							<div class="coupon_btn ma_top">
+								<a class="story_coupon_select" href="#">쿠폰선택</a>
+								<input type="button" name="" id="" class="coupon_reset" value="쿠폰 적용 초기화" />
+							</div>
+						</p>
+					</div>
+					<div class="story_coupon_pop">
+						<div class="coupon_title_box">
+							<h4>사용 가능한 쿠폰</h4>
+							<img src="/images/main/coupon_pop_close.png" class="story_coupon_pop_close" alt="쿠폰 팝업창 닫기" />
+						</div>
+						<div class="tbl_box">
+							<table summary="쿠폰 선택" cellspacing="0" class="coupon_tbl">
+								<colgroup>
+									<col width="8%" />
+									<col width="*" />
+									<col width="10%" />
+									<col width="35%" />
+									<col width="20%" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">선택</th>
+										<th scope="col">쿠폰명</th>
+										<th scope="col">할인액(율)</th>
+										<th scope="col">내용</th>
+										<th scope="col">사용기간</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">
+											<label for="" class="hide">쿠폰 선택</label>
+											<input type="radio" name="couponSelect" id="" class="c_radio" checked="checked" />
+										</td>
+										<td class="tbl_font">무협 1,000원 할인쿠폰</td>
+										<td>1,000원</td>
+										<td class="tbl_align">적용분야 : 무협/판타지 > 무협 카테고리<br />서비스 유형 : 구매<br />쿠폰 적용 금액 : 10,000원 이상</td>
+										<td>~ 2014. 10. 16 23:59</td>
+									</tr>
+									<tr>
+										<td scope="row">
+											<label for="" class="hide">쿠폰 선택</label>
+											<input type="radio" name="couponSelect" id="" class="c_radio" />
+										</td>
+										<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+										<td>100원</td>
+										<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+										<td>~ 2014. 10. 16 23:59</td>
+									</tr>
+								</tbody>
+							</table>
+							<label for="" class="hide">선택 쿠폰 적용</label>
+							<input type="button" name="" id="" class="couponApply2" value="선택한 쿠폰 적용" />
+						</div>
+						<div class="coupon_ps_box">
+							<div class="coupon_ps">
+								<ul>
+									<li>- 보유 쿠폰 중 이 주문에 사용할 수 있는 쿠폰만 노출됩니다.</li>
+									<li>- 결제 시 하나의 쿠폰만 사용 가능합니다. (중복 사용 불가)</li>
+									<li>- 보유하고 있는 모든 쿠폰은 <span>[마이페이지 > 나의 쿠폰]</span>에서 확인 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="cash_step">
+						<h3>STEP2 <span>북캐시/적립금/북큐브 상품권</span></h3>
+					</div>
+					<div class="fl select_pay_method top5">
+						<div class="flow border_type">
+							<p class="fl">
+								<input id="pay_bookcash" class="input_chk" type="radio" disabled="disabled" value="bookcash" name="pay_method" />
+								<strong class="f16"><label for="pay_bookcash">북캐시</label><span class="orange">(현재 : 0원)</span></strong>
+							</p>
+							<p class="fr btn_area">
+								<a class="btn orange2" href="https://www.bookcube.com/order/order_bookcash.asp">북캐시 충전하기</a>
+							</p>
+						</div>
+						<div class="flow border_type top10">
+							<p class="fl">
+								<input id="pay_savemoney" class="input_chk" type="radio" checked="checked" value="savemoney" name="pay_method" />	
+								<strong class="f16"><label for="pay_savemoney">적립금</label><span class="orange">(현재 : 196,000원)</span></strong>
+							</p>
+							<p class="fr">
+								<a href="#">
+									<u>적립금은 어떻게 얻나요?</u>
+								</a>
+							</p>
+						</div>
+						<div class="flow border_type top10">
+							<p class="fl">
+								<input id="pay_gift_card" class="input_chk" type="radio" disabled="disabled" value="gift_card" name="pay_method" />	
+								<strong class="f16"><label for="pay_gift_card">북큐브 상품권</label><span class="orange">(현재 : 0원)</span></strong>
+							</p>
+							<p class="fr btn_area">
+								<a class="btn orange close" onclick="PopGiftCard();" href="javascript:;">상품권 등록</a>
+							</p>
+						</div>
+					</div>
+					<div class="fr btn_pay border_type2 top5">
+						<p class="ac top40"><strong class="f14 black2">총 결제 금액 :<span class="red2 f18 spt_price">100원</span></strong></p>
+						<p class="btn_area top40 ac">
+							<a class="btn_serial_pay submit" href="#" onclick="SerialCart.pay()">결제하기</a>
+						</p>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

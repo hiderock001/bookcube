@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430" />
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+
+</script>
+<!-- naver-->
+
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+</head>
+<body>
+<!-- skip navi -->
+<dl id="skiptoContent">
+	<dt><strong>바로가기 메뉴</strong></dt>
+	<dd><a href="#gnb">메인메뉴 바로가기</a></dd>
+</dl>
+<!-- //skip navi -->
+
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+	<div class="fl">
+		<a href="http://www.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점" /></a>
+		<a href="http://www.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브" /></a>
+		<a href="http://www.bookcube.com/webtoon/teaser.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰" /></a>
+		<a href="http://www.bookcube.com/b2b.asp" ><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관" /></a>
+	</div>
+	<div class="fr"><a href="javascript:;" class="on" style="color:#f45e00" onclick="check_alarm_view();">알리미</a><em class="divider">|</em>
+		<!--a href="http://www.bookcube.com/mypage/mypage.asp">마이페이지</a><em class="divider">|</em-->
+		<a href="https://www.bookcube.com/action/logout_process.asp" class="on login">로그아웃</a><em class="divider">|</em>
+		<a href="https://www.bookcube.com/mypage/member_info.asp">회원정보수정</a><em class="divider">|</em>
+		<a href="http://www.bookcube.com/customer.asp">고객센터</a>
+	</div>
+</div>
+<!-- 팝업레이어 :: Alarm 안내-->
+<div class="alarm_layer_box common" style="display:none;">
+	<div class="alarm_layer_head_top"><img src="/images/board/sns_bt.gif"></div>
+	<div id="" class="border_type_box2">
+	<iframe src="" width="492" height="359" frameborder="0"  name="alarm_view" id="alarm_view" scrolling="no"></iframe>
+	</div>
+</div>
+<!-- //header -->
+
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/images/renewal/mypage.gif" alt="마이페이지" /></h2>
+			</div>
+			<div class="mypage_myinfo">
+				<p class="myinfo_user"><span>Peropero37님</span>의 마이페이지 입니다.</p>
+				<p class="myinfo_modify"><a href="#"><span>회원정보수정</span></a></p>
+			</div>
+			<div class="mypage_popwrap">
+				<div class="mypage_info">
+					<div class="info_left">
+						<ul>
+							<li>
+								<img src="/images/renewal/cash_img.png" alt="북캐시" />
+								<p><a href="#"><span class="bookcashPop">내역보기</span></a> | <a href="https://www.bookcube.com/order/order_bookcash.asp"><span>충전하기</span></a></p>
+								<p class="info_result">5,000원</p>
+							</li>
+						</ul>
+					</div>
+					<div class="info_right">
+						<ul>
+							<li>
+								<img src="/images/renewal/savemoney_img.png" alt="적립금" />
+								<p><a href="#"><span class="savePop">내역보기</span></a></p>
+								<p class="info_result">0원</p>
+							</li>
+							<li>
+								<img src="/images/renewal/giftcard_img.png" alt="상품권" />
+								<p><a href="#"><span class="giftPop">내역보기</span></a> | <a href="http://www.bookcube.com/ticket.asp?page=giftcard"><span>등록하기</span></a></p>
+								<p class="info_result">1,500,000원</p>
+							</li>
+							<li>
+								<img src="/images/renewal/coupon_img.png" alt="쿠폰" />
+								<p><a href="#"><span class="couponPop">내역보기</span></a> | <a href="http://www.bookcube.com/ticket.asp?page=coupon"><span>등록하기</span></a></p>
+								<p class="info_result">3장</p>
+							</li>
+							<li>
+								<img src="/images/renewal/present_img.png" alt="선물함" />
+								<p><a href="#"><span class="presentLInk">받은 선물함</span></a><br /><a href="http://www.bookcube.com/ticket.asp?page=coupon"><span>보낸 선물함</span></a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 북캐시 -->
+				<div class="mpop pop_book">
+					<div class="mpop_top">
+						<p>북캐시 상세내역</p>
+						<a href="javascript:;"><img src="/images/renewal/popClose.png" alt="팝업창닫기" /></a>
+					</div>
+					<div class="mpop_inner">
+						<p>나의 북캐시 : <span>2,634원</span></p>
+						<table summary="북캐시 상세내역" cellspacing="0" class="mpop_tbl">
+							<caption>북캐시 상세내역</caption>
+							<colgroup>
+								<col width="15%" />
+								<col width="*%" />
+								<col width="20%" />
+								<col width="20%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>날짜</th>
+									<th>구분</th>
+									<th>금액</th>
+									<th>잔액</th>
+								</tr>
+								<!-- 첫번째줄 보더값을 없애기 위해 tr에 클래스를 주었습니다 -->
+								<tr class="mpop_first">
+									<td>2013/05/16</td>
+									<td>북캐시</td>
+									<td>6,300</td>
+									<td>6,300</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>적립금</td>
+									<td>6,300</td>
+									<td>6,300</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>상품권</td>
+									<td>6,300</td>
+									<td>6,300</td>
+								</tr>	
+								<tr>
+									<td>2013/05/16</td>
+									<td>북캐시</td>
+									<td>6,300</td>
+									<td>6,300</td>
+								</tr>	
+							</tbody>
+						</table>
+						<!-- 페이징 -->
+						<div class="pagenate"><a href="" class="btn on">1</a><a href="" class="btn">2</a><a href="" class="btn">3</a><a href="" class="btn">4</a><a href="" class="btn">5</a><a href="" class="btn">6</a><a href="" class="btn">7</a><a href="" class="btn">8</a><a href="" class="btn">9</a><a href="" class="btn">10</a><a href="" class="arr next"><span class="hide">다음페이지</span></a><a href="" class="arr last"><span class="hide">마지막 페이지</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- 적립금 -->
+				<div class="mpop pop_save">
+					<div class="mpop_top">
+						<p>적립금 상세내역</p>
+						<a href="javascript:;"><img src="/images/renewal/popClose.png" alt="팝업창닫기" /></a>
+					</div>
+					<div class="mpop_inner">
+						<p>나의 적립금 : <span>2,634원</span></p>
+						<table summary="적립금 상세내역" cellspacing="0" class="mpop_tbl">
+							<caption>적립금 상세내역</caption>
+							<colgroup>
+								<col width="15%" />
+								<col width="*%" />
+								<col width="15%" />
+								<col width="15%" />
+								<col width="15%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>날짜</th>
+									<th>구분</th>
+									<th>금액</th>
+									<th>잔액</th>
+									<th>유효기간</th>
+								</tr>
+								<!-- 첫번째줄 보더값을 없애기 위해 tr에 클래스를 주었습니다 -->
+								<tr class="mpop_first">
+									<td>2013/05/16</td>
+									<td>유효기간 만</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>적립금 지급</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>유효기간 만</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>	
+							</tbody>
+						</table>
+						<!-- 페이징 -->
+						<div class="pagenate"><a href="" class="arr first"><span class="hide">첫 페이지</span></a><a href="" class="arr prev"><span class="hide">이전페이지</span></a><a href="" class="btn on">1</a><a href="" class="btn">2</a><a href="" class="btn">3</a><a href="" class="btn">4</a><a href="" class="btn">5</a><a href="" class="btn">6</a><a href="" class="btn">7</a><a href="" class="btn">8</a><a href="" class="btn">9</a><a href="" class="btn">10</a><a href="" class="arr next"><span class="hide">다음페이지</span></a><a href="" class="arr last"><span class="hide">마지막 페이지</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- 상품권 -->
+				<div class="mpop pop_gift">
+					<div class="mpop_top">
+						<p>상품권 상세내역</p>
+						<a href="javascript:;"><img src="/images/renewal/popClose.png" alt="팝업창닫기" /></a>
+					</div>
+					<div class="mpop_inner">
+						<p>나의 상품권 : <span>2,634원</span></p>
+						<table summary="상품권 상세 내역" cellspacing="0" class="mpop_tbl">
+							<caption>상품권 상세 내역</caption>
+							<colgroup>
+								<col width="15%" />
+								<col width="*%" />
+								<col width="15%" />
+								<col width="15%" />
+								<col width="15%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>날짜</th>
+									<th>구분</th>
+									<th>금액</th>
+									<th>잔액</th>
+									<th>유효기간</th>
+								</tr>
+								<!-- 첫번째줄 보더값을 없애기 위해 tr에 클래스를 주었습니다 -->
+								<tr class="mpop_first">
+									<td>2013/05/16</td>
+									<td>상품권등록</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>상품권등록</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>
+								<tr>
+									<td>2013/05/16</td>
+									<td>상품권등록</td>
+									<td>6,300</td>
+									<td>6,300</td>
+									<td>2015/12/11</td>
+								</tr>	
+							</tbody>
+						</table>
+						<!-- 페이징 -->
+						<div class="pagenate"><a href="" class="arr first"><span class="hide">첫 페이지</span></a><a href="" class="arr prev"><span class="hide">이전페이지</span></a><a href="" class="btn on">1</a><a href="" class="btn">2</a><a href="" class="btn">3</a><a href="" class="btn">4</a><a href="" class="btn">5</a><a href="" class="btn">6</a><a href="" class="btn">7</a><a href="" class="btn">8</a><a href="" class="btn">9</a><a href="" class="btn">10</a><a href="" class="arr next"><span class="hide">다음페이지</span></a><a href="" class="arr last"><span class="hide">마지막 페이지</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- 쿠폰 -->
+				<div class="mpop pop_coupon">
+					<div class="mpop_top">
+						<p>쿠폰 상세내역</p>
+						<a href="javascript:;"><img src="/images/renewal/popClose.png" alt="팝업창닫기" /></a>
+					</div>
+					<div class="mpop_inner">
+						<p>나의 쿠폰 : <span>3장</span></p>
+						<table summary="나의쿠폰" cellspacing="0" class="mpop_tbl">
+							<caption>나의 쿠폰</caption>
+							<colgroup>
+								<col width="*" />
+								<col width="15%" />
+								<col width="30%" />
+								<col width="20%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>쿠폰명</th>
+									<th>할인액(율)</th>
+									<th>내용</th>
+									<th>
+										사용기간
+										<a href="javascript:;" class="btn sort ascend"><span class="hide">오름차순</span></a>
+									</th>
+								</tr>
+								<!-- 첫번째줄 보더값을 없애기 위해 tr에 클래스를 주었습니다 -->
+								<tr class="mpop_first">
+									<td>방학기념 대여 할인 쿠폰</td>
+									<td>20%</td>
+									<td>
+										<span>적용분야 :</span> 무협판타지 카테고리 <br />
+										<span>서비스 유형 :</span> 대여
+									</td>
+									<td>~ 2015.12.31 23:59</td>
+								</tr>
+								<tr>
+									<td>1,000원 할인쿠폰</td>
+									<td>20%</td>
+									<td>
+										<span>적용분야 :</span> 전체 카테고리 <br />
+										<span>서비스 유형 :</span> 구매 <br />
+										<span>쿠폰 적용금액 :</span> 10,000원 이상
+									</td>
+									<td>~ 2015.12.31 23:59</td>
+								</tr>
+								<tr>
+									<td>로맨스 10% 할인 쿠폰</td>
+									<td>20%</td>
+									<td>
+										<span>적용분야 :</span> 로맨스 카테고리 <br />
+										<span>서비스 유형 :</span> 구매 <br />
+										<span>쿠폰 적용금액 :</span> 10,000원 이상
+									</td>
+									<td>~ 2015.12.31 23:59</td>
+								</tr>	
+							</tbody>
+						</table>
+						<!-- 페이징 -->
+						<div class="pagenate"><a href="" class="arr first"><span class="hide">첫 페이지</span></a><a href="" class="arr prev"><span class="hide">이전페이지</span></a><a href="" class="btn on">1</a><a href="" class="btn">2</a><a href="" class="btn">3</a><a href="" class="btn">4</a><a href="" class="btn">5</a><a href="" class="btn">6</a><a href="" class="btn">7</a><a href="" class="btn">8</a><a href="" class="btn">9</a><a href="" class="btn">10</a><a href="" class="arr next"><span class="hide">다음페이지</span></a><a href="" class="arr last"><span class="hide">마지막 페이지</span></a>
+						</div>
+						<ul class="border_type list_guide2">
+							<li>- 결제 시 하나의 쿠폰만 사용 가능합니다. (쿠폰 중복 사용 불가)</li>
+							<li>- 쿠폰 할인액(율), 쿠폰 적용금액을 확인해 주시기 바랍니다.</li>
+							<li>- 도서정가제 시행에 따라 구매에 적용되는 쿠폰은 정가 대비 10% 이상 할인이 불가합니다.</li>
+							<li>- 컨텐츠 오류를 제외한 나머지 경우에 대해서는 사용한 쿠폰에 대한 철회 및 복구가 불가합니다.</li>
+							<li>- 사용기간이 만료된 쿠폰은 목록에서 자동 삭제 됩니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<ul class="mypage_list">
+				<li><h3><img src="/images/renewal/h3_book.png" alt="북큐브 서점" /></h3>
+					<ul>
+						<li><a href="#">내서재</a></li>
+						<li><a href="#">장르/만화 정액권</a></li>
+						<li><a href="#">나의 서평</a></li>
+						<li><a href="#">책바구니</a></li>
+					</ul>
+				</li>
+				<li><h3><img src="/images/renewal/h3_storycube.png" alt="웹소설" /></h3>
+					<a href="#"><img src="/images/renewal/choolchk.jpg" alt="출석체크" class="choolchk" /></a>
+					<ul>
+						<li><a href="#">내서재</a></li>
+						<li><a href="#">큐브 관리</a></li>
+						<li><a href="#">나의 활동</a></li>
+						<li><a href="#">선호작/북마크</a></li>
+					</ul>
+				</li>
+				<li><h3><img src="/images/renewal/h3_webtoon.png" alt="웹툰" /></h3>
+					<ul>
+						<li><a href="#">내서재(구매웹툰)</a></li>
+						<li><a href="#">선호웹툰</a></li>
+						<li><a href="#">행운쿠키</a></li>
+					</ul>
+				</li>
+			</ul>
+			<!-- contents_wrap -->
+			<div class="contents_wrap">
+				
+				<!-- 리스트 탭부분 새로 만들었습니다 -->
+				<div class="eventList_btn">
+					<!-- [Dev Comment] :: 선택된 메뉴에 클래스 on 이 추가됩니다 -->
+					<a href="#" class="first">받은 선물함</a>
+					<a href="#" class="on">보낸 선물함</a>
+				</div>
+				<div class="contents bdr_btm">
+					<div class="inner_type">
+						<script>
+							$(function(){
+								$(".gListTbl tr td:nth-child(1)").addClass("leftAlign").css("padding-left","15px");	
+								$(".leftAl a").click(function() {  
+									var subTr =$(this).parents().next("tr");  
+									var subTd = $(".giftTbl > tbody > tr:nth-child(2n)");
+									if(subTr.hasClass("dn")){  
+										subTd.removeClass("db").addClass("dn");
+										subTr.removeClass("dn").addClass("db");
+									}else{
+										subTr.removeClass("db").addClass("dn");
+									}
+								});  
+							});
+						</script>
+						<table class="giftTbl" summary="받은선물 목록" cellspacing="0" cellpadding="0">
+							<caption>받은선물 목록 컨텐츠</caption>
+							<colgroup>
+								<col width="50%" />
+								<col width="10%" />
+								<col width="15%" />
+								<col width="25%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th>보낸선물</th>
+									<th>받는사람</th>
+									<th>주문날짜</th>
+									<th>선물상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="leftAl"><a href="javascript:;">카르탄의 여왕 1권 외 2종</a></td>
+									<td>쑥쑥이</td>
+									<td>2013/05/16</td>
+									<td>
+										<span class="gCondition">수령 미완료</span>
+										<a href="#" class="re_btn"><img src="/images/renewal/re_send.jpg" alt="" /></a>
+									</td>
+								</tr>
+								<tr class="dn">
+									<td colspan="4">
+										<div class="giftBox_info">
+											<p class="giftCoupon_number">선물 쿠폰번호 : 4BF4F2C02C90</p>
+											<table class="gListTbl" summary="받은선물 목록" cellspacing="0" cellpadding="0">
+												<tbody>
+													<tr>
+														<th>상품명</th>
+														<th>구분</th>
+														<th>이용 만료 기간</th>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 1권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 2권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="leftAl"><a href="javascript:;">카르탄의 여왕 1권 외 2종</a></td>
+									<td>쑥쑥이</td>
+									<td>2013/05/16</td>
+									<td>
+										<span class="gCondition">수령 완료</span>
+									</td>
+								</tr>
+								<tr class="dn">
+									<td colspan="4">
+										<div class="giftBox_info">
+											<p class="giftCoupon_number">선물 쿠폰번호 : 4BF4F2C02C90</p>
+											<table class="gListTbl" summary="받은선물 목록" cellspacing="0" cellpadding="0">
+												<tbody>
+													<tr>
+														<th>상품명</th>
+														<th>구분</th>
+														<th>이용 만료 기간</th>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 1권</td>
+														<td>구매</td>
+														<td>-</td>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 2권</td>
+														<td>구매</td>
+														<td>-</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="leftAl"><a href="javascript:;">카르탄의 여왕 1권 외 2종</a></td>
+									<td>쑥쑥이</td>
+									<td>2013/05/16</td>
+									<td>
+										<span class="gCondition">기간만료 취소</span>
+									</td>
+								</tr>
+								<tr class="dn">
+									<td colspan="4">
+										<div class="giftBox_info">
+											<p class="giftCoupon_number">선물 쿠폰번호 : 4BF4F2C02C90</p>
+											<table class="gListTbl" summary="받은선물 목록" cellspacing="0" cellpadding="0">
+												<tbody>
+													<tr>
+														<th>상품명</th>
+														<th>구분</th>
+														<th>이용 만료 기간</th>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 1권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 2권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="leftAl"><a href="javascript:;">카르탄의 여왕 1권 외 2종</a></td>
+									<td>쑥쑥이</td>
+									<td>2013/05/16</td>
+									<td>
+										<span class="gCondition">발송대기</span>
+										<a href="#" class="re_btn"><img src="/images/renewal/re_send.jpg" alt="" /></a>
+									</td>
+								</tr>
+								<tr class="dn">
+									<td colspan="4">
+										<div class="giftBox_info">
+											<p class="giftCoupon_number">선물 쿠폰번호 : 4BF4F2C02C90</p>
+											<table class="gListTbl" summary="받은선물 목록" cellspacing="0" cellpadding="0">
+												<tbody>
+													<tr>
+														<th>상품명</th>
+														<th>구분</th>
+														<th>이용 만료 기간</th>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 1권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+													<tr>
+														<td>카르탄의 여왕 2권</td>
+														<td>10년소장</td>
+														<td>~2025-05-02 21:59</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- 페이징 -->
+						<div class="pagenate"><a href="" class="arr first"><span class="hide">첫 페이지</span></a><a href="" class="arr prev"><span class="hide">이전페이지</span></a><a href="" class="btn on">1</a><a href="" class="btn">2</a><a href="" class="btn">3</a><a href="" class="btn">4</a><a href="" class="btn">5</a><a href="" class="btn">6</a><a href="" class="btn">7</a><a href="" class="btn">8</a><a href="" class="btn">9</a><a href="" class="btn">10</a><a href="" class="arr next"><span class="hide">다음페이지</span></a><a href="" class="arr last"><span class="hide">마지막 페이지</span></a>
+						</div>
+						<div class="present_ps gift_ps">
+							<ul>
+								<li>- 보낸 선물의 상태가 발송 대기 또는 수령 미완료일 경우 선물 재발송이 가능합니다.</li>
+								<li>- 선물을 받는 사람이 수령 기간 내에 선물 쿠폰을 등록하지 않은 경우 해당 선물은 기간만료 취소 처리됩니다.</li>
+								<li>- 기간만료 취소 시, 결제수단에 따라 북캐시 또는 북큐브 적립금으로 자동 환불처리 됩니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+<Br /><br />
+	<!-- footer -->
+	<div class="footer">
+	<div class="foot_inner">
+		<div class="foot_left">
+			<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+			<img src="/images/main/goodContents.jpg" alt="클린사이트" />
+		</div>
+		<div class="foot_right">
+			<ul class="f_lnb">
+				<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+				<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보보호정책</a></li>
+				<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+				<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+			</ul>
+			<h4 class="hide">북큐브 주소 및 정보</h4>
+			<ul class="f_lnb">
+				<li>상호 : 주식회사 북큐브네트웍스</li>
+				<li>대표이사 : 유철종</li>
+				<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+				<li>개인정보 관리 책임자 : 남지원</li>
+				<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+				<li>전화 1588-1925</li>
+			</ul>
+			<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+		</div>	
+	</div>
+</div>
+
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}	
+</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>
+
+
+
+<div id="presentInfo" class="gift_pop">
+	<form>
+		<fieldset>
+			<legend class="hide">선물하기 정보 입력</legend>
+			<div class="piTop">
+				<h2>선물하기 정보 입력</h2>
+				<a href="#"><img src="/images/renewal/popclose.gif" alt="팝업창 닫기" class="pPopClose" /></a>
+			</div>
+			<div class="piContent">
+				<table class="piTable" summary="선물하기 정보 입력" cellspacing="0" cellpadding="0">
+					<caption>선물하기 정보 입력 창</caption> 
+					<colgroup>
+						<col width="15%" />
+						<col width="85%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><label for="">보내는 사람</label></th>
+							<td>
+								<input type="text" name="" id="" class="piInput"  />
+								<span>* 한글 10자, 영문 및 숫자 20자까지 입력 가능</span>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="">선물 받는사람</label></th>
+							<td>
+								<input type="text" name="" id="" class="piInput"  />
+								<span>* 한글 10자, 영문 및 숫자 20자까지 입력 가능</span>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="">선물 보내는 방법</label></th>
+							<td>
+								<input type="radio" name="" id="" class="" checked="checked" />이메일
+								<span>* 카카오톡을 통한 선물하기는 모바일에서만 지원 가능</span><br />
+								<div class="piLeft">
+									<input type="text" name="" id="" class="" /> @ <input type="text" name="" id="" class="piSel" />
+								</div>
+								<div class="piRight">
+									<div class="piSelect_wrap">
+										<p>직접입력</p>
+										<span>▼</span>
+										<ul>
+											<li data=''><a href="#">직접입력</a></li>
+											<li data='daum.net'><a href="#">daum.net</a></li>
+											<li data='naver.com'><a href="#">naver.com</a></li>
+											<li data='nate.com'><a href="#">nate.com</a></li>
+											<li data='daumwiz.com'><a href="#">daumwiz.com</a></li>
+											<li data='empas.com'><a href="#">empas.com</a></li>
+											<li data='yahoo.co.kr'><a href="#">yahoo.co.kr</a></li>
+											<li data='yahoo.com'><a href="#">yahoo.com</a></li>
+											<li data='freechal.com'><a href="#">freechal.com</a></li>
+											<li data='chol.com'><a href="#">chol.com</a></li>
+											<li data='paran.com'><a href="#">paran.com</a></li>
+											<li data='empal.com'><a href="#">empal.com</a></li>
+											<li data='gmail.com'><a href="#">gmail.com</a></li>
+											<li data='hanafos.com'><a href="#">hanafos.com</a></li>
+											<li data='hanmir.com'><a href="#">hanmir.com</a></li>
+											<li data='korea.com'><a href="#">korea.com</a></li>
+											<li data='lycos.co.kr'><a href="#">lycos.co.kr</a></li>
+											<li data='netian.com'><a href="#">netian.com</a></li>
+										</ul>
+									</div>
+									<script type="text/javascript">
+										$(".piSelect_wrap").on("click",function(){
+											$(".piSelect_wrap ul").toggle();	
+											return false;
+										});
+
+										$(".piSelect_wrap ul li").click(function(){
+											var sText = $(".piSelect_wrap > p");
+											var $data_val = $(this).attr('data') ;
+											$(sText).text($(this).text());
+											$(".piSel").val($data_val);
+										});
+									</script>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>선물 메시지</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="preBtn_area">
+					<input type="submit" name="" id="" class="present_go" />
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			$(".re_btn").on("click",function(){
+				$(".gift_pop").fadeIn();
+				return false;
+			});	
+		});
+		$(function(){
+		var maxcount = 20;
+        var maximumByte = maxcount * 1;
+			$(".piInput").on("click",function(){
+				var input = $(this);
+				var update = function(){
+					var str_len = input.val().length;
+					var cbyte = 0;
+					var li_len = 0;
+					for (i = 0; i < str_len; i++) {
+						var ls_one_char = input.val().charAt(i);
+						if (escape(ls_one_char).length > 4) {
+							cbyte += 2;
+						} else {
+							cbyte++; 
+						}
+						if (cbyte <= maximumByte) {
+							li_len = i + 1;
+						}
+					}
+					if (parseInt(cbyte) > parseInt(maximumByte)){
+						alert('허용된 글자수가 초과되었습니다.\n\n초과된 부분은 자동으로 삭제됩니다.');
+						var str = input.val();
+						var str2 = input.val().substr(0, li_len);
+						input.val(str2);
+						var cbyte = 0;
+						for (i = 0; i < input.val().length; i++) {
+							var ls_one_char = input.val().charAt(i);
+							if (escape(ls_one_char).length > 4) {
+								cbyte += 2; 
+							} else {
+								cbyte++; 
+							}
+						}
+					}
+           
+				};	
+				 input.bind('input keyup keydown paste change', function() {
+					setTimeout(update, 0)
+				});
+
+			});
+		
+		 });
+
+
+		 
+	</script>
+</div>

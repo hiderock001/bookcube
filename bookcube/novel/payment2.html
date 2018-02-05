@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=904">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/novel/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/novel/css/nStory.css" />
+<script src="/novel/js/lib/jquery-1.11.0.min.js"></script>
+<script src="/novel/js/lib/jquery.jcarousel.min.js"></script>
+<script src="/novel/js/lib/requirejs.min.js"></script>
+</head>
+<body>
+	<div class="header nstory">
+		<div class="head_banner">
+			<div class="h_banner_inner">
+				<img src="http://up.bookcube.com/bookcube/upload/event/2290/ts2290_img.jpg" usemap="#teaser_2290">
+				<img src="/images/main/bannerClose.png" alt="배너닫기" class="bannerClose" />
+			</div>
+		</div>
+		<map name="teaser_2290"><area shape="rect" coords="0,0,450,80" href="http://www.bookcube.com/event_detail.asp?event_num=2288&amp;event_type=cm&amp;pageNum=1"><area shape="rect" coords="450,0,900,80" href="http://www.bookcube.com/event_detail.asp?event_num=2247&amp;event_type=cm&amp;pageNum=1"></map>
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li><a href="#"><img src="/images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li class="lnb_on"><a href="#"><img src="/images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li><a href="#">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="/images/storycube/storycube_logo.png" alt="스토리큐브" /></a></h1>
+					<div class="h_search_box storycube">
+						<form>
+							<fieldset>
+								<legend class="hide">북큐브 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="/images/storycube/select_arrow.png" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li>전체</li>
+											<li>제목</li>
+											<li>저자</li>
+											<li>출판사</li>
+											<li>책정보</li>
+											<li>정액가능</li>
+											<li>대여가능</li>
+											<li>10년소장</li>
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" id="" class="search_input" value="" />
+								</div>
+								<input type="submit" name="" id="" class="select_submit"  />
+								<a href="#"><img src="/images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header_bottom">
+				<h2 class="hide">메인메뉴</h2>
+				<p class="main_category"><a href="#"><img src="/images/page/main_category.jpg" alt="전체카테고리" /></a></p>
+				<ul>
+					<li><a href="#"><img src="/images/novel/gnb1_on.jpg" alt="bl" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb2.jpg" alt="로맨스" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb3.jpg" alt="무협" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb4.jpg" alt="판타지" /></a></li>
+					<li><a href="#"><img src="/images/novel/gnb5.jpg" alt="무료" /></a></li>
+				</ul>
+				<a href="#" class="sunho"><img src="/novel/images/novel/sunho.jpg" alt="나의 선호작" /></a>
+			</div>
+		</div>
+	</div>
+	<div class="contentsWrap">
+		<div class="contents">
+			<div class="location">
+				<p>홈 > 결제하기</p>
+			</div>
+			<div class="content_top_list">
+				<div class="title_area">
+					<h2>결제하기</h2>
+				</div>	
+			</div>
+			<div class="contents_wrap mypage">
+				<div class="payment-renewal">
+					<div class="payment-list">
+						<table>
+							<caption>결제 상품 - 총 결제 금액</caption>
+							<colgroup>
+								<col width="74%" />
+								<col width="13%" />
+								<col width="13%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th>상품 정보</th>
+									<th>가격</th>
+									<th>구분</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="#">삼국지 풍운을 삼키다 1</a></td>
+									<td>2,800</td>
+									<td>구매</td>
+								</tr>
+								<tr>
+									<td><a href="#">삼국지 풍운을 삼키다 2</a></td>
+									<td>2,800</td>
+									<td>10년소장</td>
+								</tr>
+								<tr>
+									<td><a href="#">삼국지 풍운을 삼키다 3</a></td>
+									<td>2,800</td>
+									<td>구매</td>
+								</tr>
+								<tr>
+									<td><a href="#">삼국지 풍운을 삼키다 4</a></td>
+									<td>2,800</td>
+									<td>구매</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="d-more">
+							<a href="#">더보기(25권)</a>
+						</div>
+						<div class="cash-result">
+							<p>총 결제 금액 : <span>11,200원</span></p>
+						</div>
+					</div>
+					<form action='' method=''>
+						<fieldset>
+							<legend>결제 정보</legend>
+									<h3 class="step"><span>STEP 1</span><em>|</em>쿠폰/상품권</h3>
+							<div class="step1">
+								<!-- 쿠폰 상품권이 없을때 
+									<p>사용 가능한 쿠폰/상품권이 없습니다.</p>
+								-->
+								<div>
+									<label><input type="text" name='' placeholder='0' /></label>
+									<span>원 할인 <em>(사용 가능한 쿠폰/상품권 : 15장)</em></span>
+								</div>
+								<div>
+									<a href="#" class="btn">쿠폰/상품권 선택</a>
+									<a href="#" class="btn">적용 초기화</a>
+								</div>
+							</div>
+
+							<h3 class="step"><span>STEP 2</span><em>|</em>북캐시/적립금/기프트카드</h3>
+							<div class="step2">
+								<div>
+									<label>북캐시</label><input type="text" name='' placeholder='0' />
+									<span>원 <em>(현재: 0원)</em></span>
+								</div>
+								<div>
+									<a href="#" class="btn">북캐시 충전</a>
+								</div>
+							</div>
+							<div class="step2-2">
+								<div>
+									<label>적립금</label><input type="text" name='' placeholder='0' />
+									<span>원 <em>(현재: 0원)</em></span>
+								</div>
+							</div>
+							<div class="save-ps">
+								<p>북캐시 충전 금액 및 추가 적립금 안내 <span>(연재는 북캐시/적립금으로만 결제 가능합니다.)</span></p>
+								<table>
+									<caption>북캐시 충전 금액 및 추가 적립금 안내</caption>
+									<tbody>
+										<tr>
+											<th>북캐시<br />충전금액</th>
+											<td>2,000원</td>
+											<td>5,000원</td>
+											<td>10,000원</td>
+											<td>30,000원</td>
+											<td>50,000원</td>
+											<td>100,000원</td>
+											<td>200,000원</td>
+											<td>300,000원</td>
+										</tr>
+										<tr>
+											<th>추가 적립금</th>
+											<td>-</td>
+											<td>-</td>
+											<td>500원<span>(5%)</span></td>
+											<td>2,100원<span>(7%)</span></td>
+											<td>4,000원<span>(8%)</span></td>
+											<td>9,000원<span>(9%)</span></td>
+											<td>20,000원<span>(10%)</span></td>
+											<td>30,000원<span>(10%)</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="payment-result">
+								<p>총 결제 금액 : <span>11,200원</span></p>
+								<p>지급 예정 적립금 : 3원</p>
+								<input type="button"  value='결제하기' />
+							</div>
+							<script>
+								function paymethod(arg){
+									if (arg == 'payco'){
+										$(".payco-choice").css("display", "block");	
+									}else{
+										$(".payco1.payment").css("display", "none");
+									}
+								}
+							</script>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- contents end -->
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h3 class="f_logo">북큐브네트웍스</h3>
+				<a href="#" target="_blank"><img src="/novel/images/page/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="/novel/images/page/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb large">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+	<script>
+			$(function(){
+				var page_section = $(".js_page_section").data("page");
+				if(page_section == "bl" || page_section == "romance"){
+					$(".js_jcarousel").find("li").eq(-1).addClass("last");
+				}
+
+				$(".js_jcarousel").jcarousel();
+				$(".js_jcarousel").each(function(){
+					if($(this).jcarousel("items").length <= 5){
+						$(this).find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+					}
+				});
+				$('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$('.jcarousel-next').on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+
+
+				// 쿠폰 결제
+				var cPop = $(".coupon_pop");
+				var cSel = $(".coupon_select");
+				var cClose = $(".coupon_pop_close");
+				var sPop = $(".story_coupon_pop");
+				var sSel = $(".story_coupon_select");
+				var sClose = $(".story_coupon_pop_close");
+				var cApply = $(".couponApply");
+				var cApply2 = $(".couponApply2");
+				cSel.click(function(){
+					$(cPop).fadeIn();
+					return false;
+				});
+				cClose.click(function(){
+					$(cPop).fadeOut();	
+				});
+
+				cApply.click(function(){
+					var coupon_num 		= $(':radio[name="couponSelect"]:checked');
+					if (coupon_num.length < 1){alert('쿠폰을 선택해주세요');return false}
+					
+					//재계산을 돌려준다. 각 결제 페이지에 위치
+					recalculation(coupon_num.val());
+					
+					$(cPop).fadeOut();		
+				});
+				sSel.click(function(){
+					$(sPop).fadeIn();
+					return false;
+				});
+				sClose.click(function(){
+					$(sPop).fadeOut();	
+				});
+				cApply2.click(function(){
+					var coupon_num 		= $(':radio[name="couponSelect"]:checked');
+					if (coupon_num.length < 1){alert('쿠폰을 선택해주세요');return false}
+					
+					//재계산을 돌려준다. 각 결제 페이지에 위치
+					recalculation(coupon_num.val());
+					$(sPop).fadeOut();		
+				});
+
+
+
+
+
+
+
+
+
+
+
+
+		    });
+		
+
+			
+
+	</script>
+</body>
+</html>

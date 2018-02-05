@@ -1,0 +1,374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430" />
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="https://pay.kcp.co.kr/plugin/payplus_test_un.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+
+</script>
+<!-- naver-->
+
+<script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+</head>
+<body>
+<!-- skip navi -->
+<dl id="skiptoContent">
+	<dt><strong>바로가기 메뉴</strong></dt>
+	<dd><a href="#gnb">메인메뉴 바로가기</a></dd>
+</dl>
+<!-- //skip navi -->
+
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+	<div class="fl">
+		<a href="http://dev.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점" /></a>
+		<a href="http://dev.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브" /></a>
+		<a href="http://dev.bookcube.com/webtoon/main.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰" /></a>
+		<a href="http://dev.bookcube.com/b2b.asp" ><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관" /></a>
+	</div>
+	<div class="fr"><img src="/images/icon/ico_new.gif"> <a href="javascript:;" class="on" style="color:#f45e00" onclick="check_alarm_view();">알리미</a><em class="divider">|</em>
+		<!--a href="http://dev.bookcube.com/mypage/mypage.asp">마이페이지</a><em class="divider">|</em-->
+		<a href="http://dev.bookcube.com/mypage.asp">마이페이지</a><em class="divider">|</em>
+		<a href="https://dev.bookcube.com/action/logout_process.asp" class="on login">로그아웃</a><em class="divider">|</em>
+		
+		<a href="http://dev.bookcube.com/customer.asp">고객센터</a><em class="divider">|</em>
+		<a href="http://dev.bookcube.com/event.asp?page=nm">이벤트</a>
+	</div>
+</div>
+<!-- 팝업레이어 :: Alarm 안내-->
+	<div class="alarm_layer_box common" style="display:none;">
+		<div class="alarm_layer_head_top"><img src="/images/board/sns_bt.gif"></div>
+		<div id="" class="border_type_box2">
+		<iframe src="" width="492" height="359" frameborder="0"  name="alarm_view" id="alarm_view" scrolling="no"></iframe>
+		</div>
+	</div>
+		<!-- //header -->
+
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/images/integration/h2_05_book_cash.gif" alt="북캐시 충전"></h2>
+			</div>
+
+			<!-- contents_wrap -->
+			<div class="contents_wrap mypage">
+				<div class="contents bdr_btm bdr_top">
+					<div class="inner_type">
+						
+						
+                      
+					   <!--------------------------------------- 북캐시 충전금액 ------------------------------------------------------->
+
+
+						
+						<div class="book_title_box5">
+							<div style="margin-left:20px;'">
+								<strong>북캐시는 북큐브의 전자책을 빠르고 쉽게 결제하기 위한 결제수단입니다. </strong><strong class="orange">(단, 연재정액권은 결제 불가)</strong><br />
+								북캐시 구매 시 상시 최대 <strong class="orange">10%</strong> 적립금으로 적립해 드립니다. 추가 적립금 확인 후 북캐시 결제를 해주시기 바랍니다.<br />
+								이벤트 적립금은 지급일로부터 </strong><strong class="orange">30</strong><strong>일간 유효합니다.</strong><br /><br />
+								<strong class="orange">&lt;이벤트시 추가 적립금 안내&gt;</strong>
+								<table class="bookcashTbl" summary="북캐시충전목록" cellpadding="0" cellspacing="0">
+									<caption>북캐시 충전</caption>
+									<colgroup>
+										<col width="*" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+										<col width="12%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>북캐시<br />충전금액</th>
+											<td>5,000원</td>
+											<td>10,000원</td>
+											<td>30,000원</td>
+											<td>50,000원</td>
+											<td>100,000원</td>
+											<td>200,000원</td>
+											<td>300,000원</td>
+										</tr>
+										<tr>
+											<th>추가 적립금</th>
+											<td>150원<br /><span>(3%)</span></td>
+											<td>300원<br /><span>(3%)</span></td>
+											<td>1,500원<br /><span>(5%)</span></td>
+											<td>2,500원<br /><span>(5%)</span></td>
+											<td>7,000원<br /><span>(7%)</span></td>
+											<td>14,000원<br /><span>(7%)</span></td>
+											<td>30,000원<br /><span>(10%)</span></td>
+										</tr>
+									</tbody>
+								</table>				
+								<span class="inblock top10"> ※ Chrome 브라우저에서 최초 결제 진행 시 프로그램 설치 및 설정값 변경이 필요합니다. <a href="javascript:chrome_alert();"><strong class="orange">> 안내 페이지 바로가기</strong></a></span>
+							</div>
+						</div>
+						
+						
+						
+						
+
+
+
+
+						
+						
+						<form name="order_info" method="post" action="https://dev.bookcube.com/order/kcp/pp_cli_hub.asp">				
+						<input type="hidden" name="UserBookCash" value="0">
+						<input type="hidden" name="UserReservedMoney" value="0">
+						<input type="hidden" name="UserCoupondMoney" value="0">
+						<input type="hidden" name="user_good_mny" value="5000">
+						<input type="hidden" name="good_mny" value="5000">
+						<input type="hidden" name="order_info" value="bookcash" size="40" maxlength="40"/>
+
+						<!-- 주문번호(ordr_idxx) -->
+						<input type="hidden" name="ordr_idxx" value="22041912" size="40" maxlength="40"/>
+						<!-- 상품명(good_name) -->
+						<input type="hidden" name="good_name" value="BookCash 5,000원"/>
+						<!-- 주문자명(buyr_name) -->
+						<input type="hidden" name="buyr_name" value="차남일"/>
+						<!-- 주문자 E-mail(buyr_mail) -->
+						<input type="hidden" name="buyr_mail" value="mobiwoos@naver.com" size="30" maxlength="30" />
+						<!-- 주문자 연락처1(buyr_tel1) -->
+						<input type="hidden" name="buyr_tel1" value="--"/>
+						<!-- 휴대폰번호(buyr_tel2) -->
+						<input type="hidden" name="buyr_tel2" value="010-9438-3250"/>
+						<!-- 문화상품권 관련 shop_id 처리-->
+						<input type="hidden" name="tk_shop_id" value="hiderock001"/>
+						<input type="hidden" name="pay_method" value="100000000000">
+						<input type="hidden" name="req_tx"          value="pay" />
+						<input type="hidden" name="site_cd"         value="T0000" />
+						<input type="hidden" name="site_key"        value="3grptw1.zW0GSo4PQdaGvsF__" />
+						<input type="hidden" name="site_name"       value="KCP TEST SHOP" />
+						<input type="hidden" name="quotaopt"        value="12"/>
+						<!-- 필수 항목 : 결제 금액/화폐단위 -->
+						<input type="hidden" name="currency"        value="WON"/>
+						<!-- PLUGIN 설정 정보입니다(변경 불가) -->
+						<input type="hidden" name="module_type"     value="01"/>
+						<!-- 복합 포인트 결제시 넘어오는 포인트사 코드 : OK캐쉬백(SCSK), 베네피아 복지포인트(SCWB) -->
+						<input type="hidden" name="epnt_issu"       value="" />
+						<input type="hidden" name="soc_no"          value="" />
+						<input type="hidden" name="escw_used"       value="Y"/>
+						<!--
+							  ※ 필 수
+							  필수 항목 : Payplus Plugin에서 값을 설정하는 부분으로 반드시 포함되어야 합니다
+							  값을 설정하지 마십시오
+						-->
+						<input type="hidden" name="res_cd"          value=""/>
+						<input type="hidden" name="res_msg"         value=""/>
+						<input type="hidden" name="tno"             value=""/>
+						<input type="hidden" name="trace_no"        value=""/>
+						<input type="hidden" name="enc_info"        value=""/>
+						<input type="hidden" name="enc_data"        value=""/>
+						<input type="hidden" name="ret_pay_method"  value=""/>
+						<input type="hidden" name="tran_cd"         value=""/>
+						<input type="hidden" name="bank_name"       value=""/>
+						<input type="hidden" name="bank_issu"       value=""/>
+						<input type="hidden" name="use_pay_method"  value=""/>
+
+						<!--  현금영수증 관련 정보 : Payplus Plugin 에서 설정하는 정보입니다 -->
+						<input type="hidden" name="cash_tsdtime"    value=""/>
+						<input type="hidden" name="cash_yn"         value=""/>
+						<input type="hidden" name="cash_authno"     value=""/>
+						<input type="hidden" name="cash_tr_code"    value=""/>
+						<input type="hidden" name="cash_id_info"    value=""/><!--input type="hidden" name="not_used_card" value="CCXX"/-->
+						<input type="hidden" name="wish_vbank_list" value="05:03:04:07:11:23:26:32:34:81:71"/>
+						<input type="hidden" name="disp_tax_yn"     value="Y"/>
+						<input type="hidden" name="site_logo"       value="http://testpay.kcp.co.kr/plugin/img/KcpLogo.jpg" />					
+							<fieldset>
+							<legend>북캐시 충전하기</legend>
+							<ul class="pay_cash bookcashbg">
+								<li><input type="radio" name="Cash" value="2000" onclick="setCash(2000);" class="input_chk" checked="checked" /><span class="bookcash2">BookCash &#8361;2,000</span></li>
+								<li><input type="radio" name="Cash" value="5000" onclick="setCash(5000);" class="input_chk" /><span class="bookcash5">BookCash &#8361;5,000</span></li>
+								<li><input type="radio" name="Cash" value="10000" onclick="setCash(10000);" class="input_chk" /><span class="bookcash10">BookCash &#8361;10,000</span></li>
+								<li><input type="radio" name="Cash" value="30000" onclick="setCash(30000);" class="input_chk" /><span class="bookcash30">BookCash &#8361;30,000</span></li>
+								<li><input type="radio" name="Cash" value="50000" onclick="setCash(50000);" class="input_chk" /><span class="bookcash50">BookCash &#8361;50,000</span></li>
+								<li><input type="radio" name="Cash" value="100000" onclick="setCash(100000);" class="input_chk" /><span class="bookcash100">BookCash &#8361;100,000</span></li>
+								<li><input type="radio" name="Cash" value="200000" onclick="setCash(200000);" class="input_chk" /><span class="bookcash200">BookCash &#8361;200,000</span></li>
+								<li><input type="radio" name="Cash" value="300000" onclick="setCash(300000);" class="input_chk" /><span class="bookcash300">BookCash &#8361;300,000</span></li>
+							</ul>
+							<div class="bdr_type top15">
+								<div class="box_gray ac">
+									<strong class="f14 black2">총 결제 금액 : <span id="total_order_amount" class="red2 f18">5,000원</span></strong>
+								</div>
+							</div>
+							<h3 class="in_title top45">결제수단 선택</h3>
+							<div class="nActiveX">
+								<p><span>ActiveX 미지원</span>으로 사용자 운영체제에 따라 결제모듈 설치가 안될 경우, 수동 설치가 필요합니다.</p>
+								<a href="https://pay.kcp.co.kr/plugin_new/file/KCPPaymentPluginSetup.exe">수동설치</a>
+							</div>
+							<div class="bdr_btm2 top10">
+								<div class="border_box type1">
+									<div class="cashPayment">
+										<table class="payment-tbl">
+											<colgroup>
+												<col width="25%" />
+												<col width="25%" />
+												<col width="25%" />
+												<col width="25%" />
+											</colgroup>
+											<tbody>
+												<tr>
+													<td><input type="radio" name="payMethod" onclick="paymethod('100000000000')" class="input_chk nkPay" checked="checked"><label>신용카드</label></td>
+													<td><input type="radio" name="payMethod" onclick="paymethod('100000000000')" class="input_chk nkPay"><label>해외 발급 신용카드</label></td>
+													<td><input type="radio" name="payMethod" onclick="paymethod('010000000000')" class="input_chk nkPay"><label>계좌이체</label></td>
+													<td><input type="radio" name="payMethod" onclick="paymethod('000010000000')" class="input_chk nkPay"><label>휴대폰</label></td>
+												</tr>
+												<tr>
+													<td><input type="radio" name="payMethod" onclick="paymethod('payco')" class="input_chk nkPay Pco"><label>페이코<span class="paycoNew">new</span></label></td>
+													<td colspan='2'><input type="radio" name="payMethod" onclick="paymethod('000000001000')" class="input_chk nkPay"><label>해피머니/도서(문화)상품권/문화상품권</label></td>
+													<td><input type="radio" name="payMethod" onclick="paymethod('paypal')" class="input_chk kPay"><label>페이팔</label></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<p class="pay_cash_alert"><strong class="red">※ 북캐시 30만원 결제 시 별도의 공인 인증 및 ISP 인증이 필요합니다.</strong></p>
+								</div>
+							</div>
+							<p class="pay_cash_alert"><strong class="red">- 북큐브 캐시데이 추가적립금과 본인인증 혜택은 중복으로 적용되지 않습니다. (본인인증 혜택 우선 적용)</strong></p>
+							<div class="kakaoPay" style="display:none;">
+								<h3>페이팔이란?</h3>
+								<p>페이팔은 해외 이용자를 위한 간편 결제 수단으로, 페이팔 계정에 결제정보(해외이용 가능 카드정보) 등록 시 아이디/패스워드만으로 결제가 가능합니다.</p>
+								<h4>유의사항</h4>
+								<ol>
+									<li>1) 3만원 이상 결제 시에만 사용 가능합니다.</li>
+									<li>2) 현재 해외에 거주 또는 체류하고 계신 분만 이용 가능합니다.</li>
+									<li>3) 페이팔 계정이 있는 경우에만 결제 시, 아이디/패스워드만으로 결제 가능합니다.</li>
+									<li>4) 페이팔 계정 없이도 결제 가능하지만, 결제정보(해외이용 가능 카드정보)를 모두 기입해야 합니다.<br />페이팔 계정은 공식 사이트(<a href="http://bit.ly/1ldeBXy" target="_blank">http://bit.ly/1ldeBXy</a>)를 통해 만드실 수 있습니다.</li>
+									<li>5) 페이팔 결제로 충전한 북캐시는 취소가 불가능합니다.</li>
+								</ol>
+							</div>
+
+
+							<!-- 페이코 안내 페이지 추가 -->
+							<div class="payco" style="display:block;">
+								<h3>PAYCO 간편결제 안내</h3>
+								<p>PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다.<br />휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.<br />- 지원카드: 모든 국내 신용/체크카드 </p>
+							</div>
+
+							<script>
+								$(function(){
+									var kPay = $("input[name='payMethod']");
+									$(kPay).change(function(){
+										var is_check = $(this).is(":checked");
+										if(is_check){
+											if($(this).hasClass("kPay")){
+												$(".pay_cash_alert").hide();
+												$(".kakaoPay").show();
+											}else if($(this).hasClass("nkPay")){
+												$(".pay_cash_alert").show();
+												$(".kakaoPay").hide();
+											}
+										}
+									});		
+								});			
+							</script>
+							<div class="btn_area ac top30" id="display_pay_button" style="display:none">
+								<div id="kcp_submit" style="display:block;">
+								<input type="submit" value="결제하기" onclick="return jsf__pay(this.form);" class="btn bg3 submit" />
+								</div>
+								<div id="paypal_submit" style="display:none;">
+								<input type="button" value="결제하기" onclick="jsf__pay(this.form);" class="btn bg3 submit" />
+								</div>
+							</div>
+							<div class="btn_area ac top30" id="display_setup_message" style="display:none">								
+								<span class="red">결제를 계속 하시려면 상단의 노란색 표시줄을 클릭</span>하시거나<br/>
+								<a href="http://pay.kcp.co.kr/plugin/file_vista/PayplusWizard.exe"><span class="bold">[수동설치]</span></a>를 눌러 Payplus Plug-in을 설치하시기 바랍니다.<br/>
+								[수동설치]를 눌러 설치하신 경우 <span class="red bold">새로고침(F5)키</span>를 눌러 진행하시기 바랍니다.
+							</div>
+							</fieldset>
+						</form>
+
+					</div>					
+				</div>
+			</div>
+			<!-- //contents_wrap -->
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<div class="footer">
+	<div class="foot_inner">
+		<div class="foot_left">
+			<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+			<img src="/images/main/goodContents.jpg" alt="클린사이트" />
+		</div>
+		<div class="foot_right">
+			<ul class="f_lnb">
+				<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+				<li><a href="http://dev.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+				<li><a href="http://dev.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+				<li><a href="http://dev.bookcube.com/partner.asp">제휴문의</a></li>
+				<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+			</ul>
+			<h4 class="hide">북큐브 주소 및 정보</h4>
+			<ul class="f_lnb">
+				<li>상호 : 주식회사 북큐브네트웍스</li>
+				<li>대표이사 : 유철종</li>
+				<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+				<li>개인정보 관리 책임자 : 남지원</li>
+				<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+				<li>전화 1588-1925</li>
+			</ul>
+			<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+		</div>	
+	</div>
+</div>
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>

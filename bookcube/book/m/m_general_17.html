@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="title" content="e북포털 북큐브">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+<meta property="og:url" content="http://www.bookcube.com/book/m/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/images/icon/m.bookcube.png" />
+<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+<link rel="stylesheet" type="text/css" href="/js/lib/swipe/swiper.css" />
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/lib/requirejs.min.js"></script>
+<script>
+	requirejs.config({
+		baseUrl : "/js",
+		paths : {
+			"jquery" : "lib/jquery-1.11.0.min",
+			"swiper" : "lib/swipe/swiper-2.1.min"
+		},
+		shim : {
+			"cookie" : ["jquery"],
+			"swiper" : ["jquery"]
+		}
+	});
+
+	require(["m.bookcube"]);
+</script>
+<style type="text/css">
+.isloading-overlay{position:relative;text-align:center;}
+.isloading-overlay .isloading-wrapper{background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:10%;z-index:9000;}
+.icon-refresh{background-position:-240px -24px;}
+</style>
+</head>
+<body>
+	<header>
+		<div class="header-top">
+			<div class="top-left">
+				<ul>
+					<li><a href="javascript:;">MY PAGE</a></li>
+					<li class="alarm"><a href="#">알리미<span class="alarm-new">새로운 알리미</span></a></li>
+				</ul>
+			</div>
+			<h1><a href="#">북큐브</a></h1>
+			<div class="top-right">
+				<ul>
+					<li><a href="javascript:;">검색</a></li>
+					<li><a href="#">내서재</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-middle">
+			<h2 class="hide">장르</h2>
+			<ul>
+				<li><div><a href="#">서점</a><em>line</em></div></li>
+				<li><div><a href="#">웹소설</a></div></li>
+				<li><div><a href="#">웹툰</a></div></li>
+			</ul>
+		</div>
+		<div class="overlay"></div>
+		<div class="search">
+			<h2 class="hide">북큐브 작품 검색</h2>
+			<form>
+				<fieldset>
+					<legend>검색</legend>
+					<div class="search-inner">
+						<div>
+							<div>
+								<span></span>
+								<input type="text" name='' placeholder='제목, 작가명, 출판사명' />
+							</div>
+							<input type="submit" name='' />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="sideBar">
+			<h2 class="hide">사이드 메뉴</h2>
+			<div class="bar-top">
+				<a href="javascript:;">close</a>
+				<div>
+					<a href="javascript:;" class="bookcube">로그인 아이콘</a>
+					<p>로그인하세요</p>
+					<div>
+						<a href="javascript:;">로그아웃</a>
+					</div>
+				</div>
+			</div>
+			<div class="bar-middle">
+				<ul>
+					<li><a href="#"><p>마이페이지</p></a></li>
+					<li><a href="#"><p>책바구니</p></a></li>
+					<li><a href="#"><p>선호작</p></a></li>
+				</ul>
+			</div>
+			<div class="bar-bottom">
+				<ul>
+					<li><a href="#">북캐시 충전</a></li>
+					<li><a href="#">이벤트</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+				<div>
+					<p>북큐브앱을 설치하시고 편리한 이용과 더 많은 혜택을 누리세요.</p>
+					<a href="#">북큐브앱 설치하기</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function(){
+				var fixHeader = $("header").height();
+				$("header").wrapInner("<div class='h-wrap'></div>");
+				$("header,.h-wrap").css("height",fixHeader);
+				$(window).scroll(function(){
+					var top = $(window).scrollTop();
+					$(".h-wrap").css("position","fixed");	
+					if(top === 0){
+						$(".h-wrap").css("position","static");	
+					}
+				});
+				$(".overlay, .bar-top > a").on("click",function(){
+					window.location.hash = "";
+					$("body").removeClass("on");
+				});
+
+				$(window).on("hashchange",function(){
+					var m= window.location.hash;
+					if(m != "#open"){
+						$(".overlay, .search").hide();
+						$(".sideBar").removeClass("on");
+						$("body").removeClass("on");
+					}
+				});
+				$(".top-left ul li:first a").on("click",function(){
+					window.location.hash = "open";
+					var sh = screen.height;
+					$(".overlay").show();
+					$("body").css("height",sh)
+					$("body,.sideBar").addClass("on");
+				});
+
+				$(".top-right ul li:first a").on("click",function(){
+					$(".overlay, .search").show();
+					$("body").addClass("on");
+					$(".search-inner input[type='text']").focus();
+				});
+
+				$(".overlay, .search div span").on("click",function(){
+					$(".overlay,.search").hide();
+					$("body").removeClass("on");
+					$(".search-inner input[type='text']").val("");
+				});
+			});
+		</script>
+	</header>
+	<section>
+		<div class="sub-list">
+			<div class="h-title">
+				<a href="#">이전</a>
+				<h3>대여관</h3>
+			</div>
+			<div class="genre-tab three">
+				<ul>
+					<li class="romance"><a href="#" class="on">로맨스</a></li>
+					<li class="fanmu"><a href="#">판무</a></li>
+					<li class="manhwa"><a href="#">만화</a></li>
+				</ul>
+			</div>
+			<div class="select-area">
+				<div class="k-array three">
+					<input type="radio" name='' id='new' checked="checked">
+					<label for='new' class="radio"><span class="radio_on"><em>최신순</em></span></label>
+					<input type="radio" name='' id='popular'>
+					<label for='popular' class="radio"><span class="radio_off"><em>인기순</em></span></label>
+					<input type="radio" name='' id='reply'>
+					<label for='reply' class="radio"><span class="radio_off"><em>서평순</em></span></label>
+				</div>
+			</div>
+			<div class="list">
+				<ul>
+					<li>
+						<a href="#">
+							<div>
+								<div class="box">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1707/170705164.jpg" alt="도서 이미지 - 밥먹고가라 1-...">
+									</span>
+									<span class="light"></span>
+								</div>
+							</div>
+							<div>
+								<p>밥먹고 가라</p>
+								<p>쑥쑥이</p>
+								<div class="book-info">
+									<p>BL > 판타지</p>
+									<p>총 205화<em>|</em>미완결</p>
+									<p>
+										<span class="list-star rank3"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+									<div>
+										<p>구매 <span>3,600원</span></p>
+										<p>10년소장 <span>3,600원</span></p>
+										<p>대여 <span>3,600원</span></p>
+									</div>
+
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div>
+								<div class="box">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1707/170705164.jpg" alt="도서 이미지 - 밥먹고가라 1-...">
+									</span>
+									<span class="light"></span>
+								</div>
+							</div>
+							<div>
+								<p>밥먹고 가라</p>
+								<p>쑥쑥이</p>
+								<div class="book-info">
+									<p>BL > 판타지</p>
+									<p>총 205화<em>|</em>미완결</p>
+									<p>
+										<span class="list-star rank3"></span>
+										<em class="star-vote">(1,405명)</em>
+									</p>
+									<div>
+										<p>구매 <span>3,600원</span></p>
+										<p>10년소장 <span>3,600원</span></p>
+										<p>대여 <span>3,600원</span></p>
+									</div>
+
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="paging">
+					<a href="#" class="prev">이전</a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="next">다음</a>
+					<p>1 / 15</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="notice-box">
+			<p class="notice">[공지]</p>
+			<div class="notice-view">
+				<ul class="notice-list">
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore-box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">책바구니</a></p></li>
+				<li><p><a href="#">고객센터</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div><img src="/book/images/m_book/clean.png" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<div class="topBtn">
+		<a href="#" class="js_scroll_top">TOP</a>
+	</div>
+	<script>
+		require(['jquery','swiper'],function($){
+
+			$(".swiper-container").each(function(){
+				$(this).swiper({slidesPerView: 'auto'});
+			});
+
+			//공지사항
+				var list = $(".notice-list");
+				$(".notice-text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice-list:not(:animated)").css("margin-top"))+29+"px"
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice-text:last").prependTo(list);
+					});
+				},3000);
+
+				$('.radio').click(function(){
+					$('.radio').find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+
+		});
+
+
+
+	</script>
+</body>
+</html>

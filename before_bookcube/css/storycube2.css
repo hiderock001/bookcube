@@ -1,0 +1,435 @@
+/* top global area bg */
+.body_wrap#storycube{background:#f6f6f6 url(../images/storycube/global_line_bg.gif) repeat-x}
+
+/* footer */
+#footer.storycube{margin-top:30px}
+
+/* global area resetting */
+#storycube #header{height:167px}
+#storycube #header .global{height:33px}
+#storycube .global .fl{padding:0}
+#storycube .global .fl a{display:inline-block;float:left;width:108px;height:33px;margin-right:-1px;overflow:hidden}
+#storycube .global .fl a.on img{margin-top:-35px}
+#storycube .global .fr{height:33px;padding-right:3px;background:none}
+#storycube .global .fr a{display:inline-block;margin-top:10px;color:#666;font-size:11px;letter-spacing:-1px}
+#storycube .global .fr a.on{font-weight:bold;color:#666}
+#storycube .global .fr .divider{display:inline-block;margin:-2px 2px 0 7px;background:none;color:#d4d5d6;text-indent:0;font-size:11px}
+
+/* head_box area resetting */
+#storycube .head_box{height:78px;margin-top:15px;background:#7b61b7 url(../images/storycube/bg_headbox.jpg) no-repeat;border:1px solid;border-color:#5b4196 #5b4196 #2a165b #5b4196;z-index:10}
+#storycube .head_box h1{margin:18px 0 0 19px}
+#storycube .head_box .search_area{height:29px;margin:24px 0 0 70px;border:1px solid #5b4196}
+#storycube .head_box .search_area .menulist{border:1px solid #5b4196;border-top:0}
+#storycube .head_box .search_area .menulist_face{border-right:1px solid #d4d5d6}
+#storycube .head_box .search_area .ico_arr{background:url(../images/storycube/search_arrow.gif) 0 3px no-repeat}
+#storycube .head_box input.btn_search{background:url(../images/storycube/btn_search.gif) no-repeat}
+#storycube .head_box .menu_link .divider{margin:1px 5px 0 8px;background:url(../images/storycube/head_bar.gif) no-repeat}
+#storycube .gnb_menu{margin-right:-1px}
+#storycube .fr .gnb_menu{margin-right:0}
+#storycube .gnb .gnb_category a.gnb_menu.on img{top:-40px}
+#storycube a.gnb_menu.tab1.on{margin-left:0;border-left:0}
+
+#storycube .gnb_sub{position:relative;width:898px;min-height:38px;background:#f1f1f1;border:1px solid #999999;border-top:none}
+#storycube .gnb_sub li a:hover{font-weight:bold;color:#7f48ff;text-decoration:underline}
+#storycube .gnb_sub li a.on{font-weight:bold;color:#7f48ff;text-decoration:underline}
+#storycube .gnb_sub li em{color:#d4d5d6;margin:0 8px}
+#storycube .gnb_sub p{padding:18px 0 0 26px}
+#storycube .gnb_sub p a.on{font-weight:bold;color:#7f48ff;text-decoration:underline}
+#storycube .gnb_sub p em{color:#d4d5d6;margin:0 8px}
+
+#storycube ul.sub1 li{padding:14px 0 0 30px}
+#storycube ul.sub2 li{padding:14px 0 0 135px}
+#storycube ul.sub3 li{padding:14px 0 0 245px}
+
+/* story-cube main contents */
+.contents_wrap.sc_main{margin-top:10px}/* story cube main */
+.list_topic{padding-bottom:40px}
+.list_topic li{height:275px}
+.sc_row_wrap{background:url(../images/storycube/aside_bg.gif) 100% 100% no-repeat}
+.sc_row_wrap:after{clear:both;display:block;content:''}
+.sc_row_wrap .sc_left_contents{float:left;width:670px}
+.sc_row_wrap .sc_aside{float:right;width:220px}
+.sc_row_wrap .sc_aside .contents{border-bottom:none}
+
+.list_tab_menu_sub .fl h2{font-size:14px;margin-left:-24px}
+.list_bulet{padding:7px 0 6px;margin:13px 0;overflow: hidden;}
+.list_bulet li{background:url(../images/storycube/ico_bulet_purple.gif) 0 50% no-repeat}
+.sc_row_wrap .list_bulet li{width:300px;margin-left:22px;padding-left:10px;line-height:28px}
+.sc_row_wrap .list_bulet.fl{border-right:1px solid #d4d5d6}
+.sc_row_wrap .list_bulet.fr{float:left}
+.sc_row_wrap .md .list_bulet li a{font-weight:bold}
+
+.sc_row_wrap .contents.latest_serial{padding-top:24px;min-height:574px}
+.sc_row_wrap .type_list_wp{position:relative;overflow:hidden;left:28px;width:612px;padding-left:13px}
+.sc_row_wrap .type_list.thumbnail{position:relative;width:620px;margin-top:2px;margin-left:-23px;border-top:0}
+.sc_row_wrap .type_list.thumbnail li{width:100px;padding:0;margin:33px 0 0 23px}
+.sc_row_wrap .type_list.thumbnail li a{color:#666}
+.sc_row_wrap .type_list.thumbnail li a.thumb{width:100px;height:137px;margin:0;background:url(../images/storycube/main_booklist_bg.gif) no-repeat;border:none}
+.sc_row_wrap .type_list.thumbnail li a img{width:93px;height:131px;margin:1px 0 0 1px}
+.sc_row_wrap .type_list.thumbnail li .book_info{width:93px;height:auto;margin-left:0;text-align:center;line-height:18px}
+.sc_row_wrap .type_list.thumbnail li .book_author{font-size:11px;padding-top:5px}
+.sc_row_wrap .icon.small_new_book{top:-10px;left:-10px}
+.sc_row_wrap .type_list.thumbnail.row2{margin-top:25px;margin-bottom:22px;border-top:1px solid #e5e6e6}
+
+/* main tab(purple color) */
+.sc_row_wrap .tab_purple{overflow:hidden;width:612px;margin:0 auto}
+.sc_row_wrap .tab_purple a{display:inline-block;float:left;height:28px;width:203px;margin-right:-1px;background:url(../images/storycube/main_tab_bg.gif) no-repeat;border-right:1px solid #c2c2c2;text-align:center;line-height:28px;text-decoration:none}
+.sc_row_wrap .tab_purple a.on{background-position:0 -30px;width:204px;border-right:1px solid #7e6aab;margin-right:0;color:#fff;font-weight:bold}
+.sc_row_wrap .sc_aside .tab_purple{width:199px;padding:24px 0 12px;margin-left:11px}
+.sc_row_wrap .sc_aside .tab_purple a{width:65px;font-size:11px}
+.sc_row_wrap .sc_aside .tab_purple a.on{width:66px}
+.sc_row_wrap .sc_aside .list_tab_menu_sub .fr .bold.f11{margin-right:-7px;margin-top:2px}
+
+/* aside 인기연재 리스트 */
+.pop_series li{overflow:hidden;line-height:28px;padding-left:9px} 
+.pop_series a, .pop_series strong{display:inline-block;float:left}
+.pop_series strong{width:35px;text-align:center}
+.pop_series a.title{width:117px;padding-left:3px}
+.pop_series a.author{width:42px}
+
+/* 제휴 출판사 배너 */
+.partner_banner{width:842px;margin:0 auto}
+.partner_banner ul{overflow:hidden;margin-left:-11px;padding:28px 0}
+.partner_banner ul li{margin-left:11px;float:left}
+
+/* 유료정액관 - table 타입 리스트 */
+.table_list table tr.bg{background-color:#f6f6f6}
+.table_list table td{line-height:18px;padding:11px 0 9px;border-bottom:1px solid #e5e6e6}
+.table_list .title{font-size:14px;color:#46474b;font-weight:bold;margin-right:5px}
+.sc_main .table_list table{width:612px;margin:0 auto}
+.sc_main .table_list table td{width:296px;padding-left:10px}
+
+/* common */
+.purple{color:#7b61b7}
+.purple2{color:#9966cc}
+.icon{display:inline-block;width:13px;height:13px;margin-top:2px;background:url(../images/storycube/icon.png) no-repeat;text-indent:-10000px;font-size:0;vertical-align:top}
+.icon.monopoly{width:24px;background-position:0 -20px}
+.icon.adult{background-position:0 -40px}
+.icon.exclamation{background-position:0 -60px}
+.icon.reply{background-position:0 -80px;width:12px;height:12px}
+.icon.lock{background-position:0 -100px;}
+.top88{margin-top:88px}
+.head_box .search_area .menulist{width:79px}
+
+
+/*100문 100답 */
+.view .notice_content .notice_100_Q {margin:25px 0 0 80px;font-weight:bold; color:#666666; font-size:13px;}
+.view .notice_content .notice_100_A {margin:5px 0 0 100px;font-weight:bold;color:#9a9999;font-size:12px;}
+
+/* 검색결과 */
+.list_tab_menu a.on span{color:#9933ff}
+.list_tab_menu_sub .fl a.on{color:#9966cc;text-decoration:underline}
+
+.contents.table_list{border-bottom:none;border-top:1px solid #d4d5d6;margin-top:-1px}
+.table_list.type_noborder table{border-top:none}
+.table_list .type_result{text-align:center;margin-top:-1px}
+.table_list .type_result td{line-height:22px;padding:15px 0 13px;border-bottom:none;border-bottom:1px solid #d4d5d6}
+.table_list .type_result .col_left{padding-left:41px;text-align:left}
+.table_list .type_result .col_left em{display:inline-block;color:#d4d5d6;font-size:12px;padding:0 9px 0 8px}
+.table_list .type_result .author{color:#999;font-size:14px;font-weight:bold}
+
+/* 자유 연재관 */
+.impact1{font-size:14px;font-weight:bold;color:#46474b}
+.table_list .type_result.with_num .col_left{padding-left:0}
+#storycube .content_top_list .title_area{overflow:visible}
+#storycube .content_top_list .title_area:after{clear:both;display:block;content:''}
+#storycube .srch_field_list .content_top_list{margin-bottom:0;border-bottom:none}
+/* 검색 */
+.srch_field_list{margin-bottom:30px;border-bottom:1px solid #b7b7b7}
+.srch_field_list:after{clear:both;display:block;content:''}
+.srch_field_list .contents{border-bottom:none;border-top:1px solid #d5d5d5}
+.srch_field_list .list_bulet{padding:17px 0 14px 25px;margin:0;line-height:22px}
+.srch_field_list .list_bulet li{float:left;padding-left:8px;width:166px;background-image:url(../images/storycube/ico_bulet.gif)}
+.srch_field:after{clear:both;display:block;content:''}
+.srch_field.fr{position:relative;width:350px;padding-top:7px;right:-36px;text-align:right}
+.search_area.category .menulist{position:absolute;top:29px;width:69px;padding:5px 0 6px;background:#fff;border:1px solid #bebebe;border-top:0;z-index:500;text-align:left}
+.search_area.category .menulist li{padding-left:10px;line-height:19px}
+.search_area.category .menulist li a{color:#999;text-decoration:none;letter-spacing:-1px}
+.search_area.category .menulist li a:hover{color:#000}
+.search_area.category .menulist_face{position:relative;float:left !important;min-width:57px;height:26px !important;border:1px solid #d4d5d6 !important;line-height:23px;vertical-align:top;cursor:pointer;text-align:left}
+.search_area.category .menulist_face span{display:inline-block;padding:0 0 0 10px;line-height:26px;text-align:left;color:#999}
+.search_area.category .ico_arr{position:absolute;top:7px;display:inline-block;width:10px;height:10px;background:url(../images/storycube/search_arrow.gif) 0 3px no-repeat;text-indent:-10000px;font-size:0;cursor:pointer}
+.search_area.category .input_txt{width:160px;height:20px;line-height:25px;padding:3px 5px 3px 10px;margin:0 4px;color:#999}
+.search_area.category select{float:left;width:79px}
+
+/* 상세페이지 */
+.book_detail_contents{padding-bottom:53px}
+.book_detail_contents .type_result .col_left{padding-left:9px}
+.book_info_tab{margin-bottom:34px}
+.book_info_box{width:724px;padding:32px;margin:21px auto 43px auto;border:2px solid #d4d5d6}
+.book_info_box:after{clear:both;display:block;content:''}
+.book_info_box .book_img{float:left;width:100px;height:137px;margin:0;background:url(../images/storycube/booklist_bg.gif) no-repeat;border:none}
+.book_info_box .book_img a img{width:93px;height:131px;margin:1px 0 0 1px}
+.book_info_box .book_details{float:left;width:589px;margin-left:32px}
+.book_info_box em{color:#d4d5d6;margin:0 10px}
+.book_info_box .author{padding:8px 0 0 2px}
+.book_info_box .btn_area{padding:25px 0 0 2px}
+.book_info_box .exclamation{margin-top:5px}
+.book_info_box .award{line-height:24px;padding:7px 0 12px;margin:11px 0;border-top:1px solid #d4d5d6;border-bottom:1px solid #d4d5d6}
+.book_info_box.series_title{padding:28px 32px 12px 32px;margin-bottom:0}
+.book_info_box.series_title h2{font-size:24px}
+.book_info_box.series_title .author{margin-top:20px;padding-top:12px}
+.book_info_box.series_title .icon{margin-top:7px}
+.book_info_tab a.on{color:#9966ff}
+.list_tab_menu_sub{padding:0 15px 0 46px}
+.list_tab_menu_sub div.fl{padding-top:1px}
+.list_tab_menu_sub .fr.btn_area{padding:7px 25px 0 0}
+.mypage .book_info_box.series_title{}
+
+.btn{line-height:32px;text-align:center;font-size:12px;font-weight:bold}
+.btn.btn_purple{display:inline-block;width:102px;height:32px;background:url(../images/storycube/btn_purple.png) no-repeat;color:#fff;text-indent:0;font-size:12px}
+.btn.btn_purple2{display:inline-block;width:102px;height:28px;line-height:28px;background:url(../images/storycube/btn_purple2.gif) no-repeat;color:#fff;text-indent:0;font-size:12px}
+.btn_area .btn{font-family:gulim}
+.btn_area .btn.w58{width:58px;background:url(../images/storycube/btn_w58.gif) no-repeat}
+.box_gray{width:790px;height:50px;margin:0 auto;background:url(../images/storycube/boxbg_gray_singleline.gif) repeat-x;border:1px solid #b6b7b7;overflow:hidden}
+.box_gray .btn_area{margin-top:9px}
+.box_gray .btn_area.fl{margin-left:33px}
+.box_gray .btn_area.fr{margin-right:33px}
+.tab_contents .basic tbody td{color:#666}
+.tab_contents .basic tbody th a{font-size:14px}
+.tab_contents .contents.table_list{border-left:none;border-right:none}
+.table_list .no_list{height:300px;border-bottom:1px solid #d4d5d6;text-align:center}
+.table_list .no_list p{padding-top:138px}
+.contents.inner_table{padding:43px 53px 53px 53px}
+.view_novel{width:754px;padding:98px 19px;font-size:16px;line-height:27px;color:#010101}
+.view_novel_detail{width:754px;padding:98px 19px;font-size:16px;line-height:27px;color:#010101;background:#ffffff}
+
+.author_msg{width:790px;margin:0 auto;border:1px solid #d4d5d6}
+.author_msg .bg_top{height:43px;background:#f6f6f6;border-bottom:1px solid #d4d5d6}
+.author_msg .bg_top h3{padding:13px 0 0 16px;font-size:16px;color:#46474b}
+.author_msg .author_msg_txt{padding:16px;line-height:20px;min-height:54px}
+
+#serial_split .basic.type_double_line tbody th{text-indent:1px}
+.serial_review .data_comment .box_comment {height:69px;margin-top:44px;background: url(../images/contents/box_write_comment.gif) 100% 0 no-repeat;}
+.serial_review .data_comment .box_comment p .input_comment{line-height:37px;height:37px;padding:0 7px 0 20px}
+.serial_review .data_comment .box_comment p .btn.btn_comment {height:39px;background: url(../images/btn/btns.png) no-repeat;background-position: 0 -630px;text-indent:0}
+
+/* 댓글입력 */
+.data_comment .box_comment{position:relative;width:792px;height:124px;margin-top:0;padding:0;background:url(../images/storycube/bgbox_comment.gif) 0 0 no-repeat}
+.data_comment .box_comment p .btn.btn_comment{width:80px;height:93px;margin-left: 10px;background:url(../images/storycube/btn_post_comment.gif) no-repeat;text-indent:-10000px}
+.data_comment .box_comment p .input_comment{line-height:19px;height:66px;padding:13px}
+.data_comment .box_comment .guide_msg{position:absolute;top:25px;left:100px;font-size:14px;color:#999;line-height:22px}
+.data_comment .box_comment .guide_msg2{position:absolute;top:25px;left:100px;font-size:14px;color:#999;line-height:22px}
+.data_comment .btn_area .btn.review{font-weight:normal}
+
+.data_comment .book_review .review_about em{color:#d4d5d6}
+.data_comment .edit_type{overflow-y:scroll;min-height:67px;width:726px;margin:20px auto 0;padding:14px;border:1px solid #d4d5d6;clear:both}
+.data_comment .edit_type.post{width:600px;margin:0}
+.data_comment .edit_type.modify{width:706px}
+.data_comment .icon.reply{margin:1px 7px 0 0}
+.data_comment li.reply_area .icon.reply{margin:40px 7px 0 0}
+.book_review li.reply_area .fr.btn_area{margin-top:30px}
+
+/* 유료정액관 */
+.content_top_list .title_area p.fr.btn_area a img{margin:7px 3px 0 0}
+.srch_field.fr.payper{width:474px;right:0}
+.srch_field.fr.payper .fr.btn_area{margin:-7px 0 0 0}
+.btn_area .btn.orange4{background:url(../images/storycube/btn_orange4.gif) no-repeat;width:127px;height:32px;line-height:32px;color:#fff !important;font-weight:bold}
+.content_top_list.btm0{margin-bottom:0;border-bottom:1px solid #d5d5d5}
+/* 프리미엄관 */
+.book_info_main .book_img{height:275px;background:url(../images/contents/box_bg_book_small.gif) no-repeat}
+.book_info_main .book_img img{height:268px}
+/* 공지사항 */
+.fl.space{padding-left:5px}
+.fr.space{padding-right:5px}
+.inner_type.customer{padding-bottom:72px}
+.basic.type_double_line tbody th{text-indent:0;border-bottom:0;}
+.btn_submit.write{width:88px;height:32px;color:#fff;background:url(../images/storycube/btn_write_post.gif) no-repeat}
+
+/* 게시판 */
+.file_searh p.tip{float:left;padding-top:4px;color:#999;margin-bottom:10px;}
+.file_searh .btn_area{float:left;position:relative;width:65px;margin:0 15px 0 5px;z-index:0}
+.file_searh .btn_area .btn_file_container{position:relative;width:65px;height:28px;background-position:-78px -160px;border:0;z-index:1}
+.file_searh .file_txt{float:left;width:330px;line-height:22px;font-size:14px;color:#666;text-indent:10px}
+.file_searh .file_txt .btn_close_x{display:inline-block;width:21px;height:21px;margin:-3px 0 0 5px;background:url(../images/btn/close_x.gif) 0 -90px;vertical-align:middle}
+.file_searh .input_file{font-size: 28px;position: absolute;width:65px;}
+
+.input_type textarea{width:635px}
+.input_type th{border-bottom:0;}
+.second{margin-left:5px}
+.category {position:relative}
+.category .menulist{position:absolute;top:28px;min-width:97px;padding:8px 0 6px;background:#fff;border:1px solid #bebebe;border-top:0;z-index:500;text-align:left}
+.category .menulist li{padding-left:10px;line-height:19px}
+.category .menulist li a{color:#999;text-decoration:none;letter-spacing:-1px}
+.category .menulist li a:hover{color:#000}
+.category .menulist_face{float:left !important;min-width:97px;height:26px !important;border:1px solid #d4d5d6 !important;line-height:23px;vertical-align:top;cursor:pointer;text-align:left}
+.category .menulist_face span{display:inline-block;padding:0 0 0 10px;line-height:26px;text-align:left;color:#999}
+.category .ico_arr{position:absolute;top:15px;left:56px;display:inline-block;width:10px;height:10px;background:url(../images/storycube/search_arrow.gif) 0 3px no-repeat;text-indent:-10000px;font-size:0;cursor:pointer}
+.category .input_txt{width:160px;height:20px;line-height:25px;padding:3px 5px 3px 10px;margin:0 4px;color:#999}
+.category select{float:left;min-width:79px}
+.category .ico_arr{top:7px;right:8px;left:inherit}
+.srch_field .category .menulist_face{min-width:57px}
+.srch_field .category .menulist{top:28px;min-width:57px}
+.btn.bg1.btn_submit{line-height:32px}
+.customer table.input_type td{padding-left:24px}
+.customer table.input_type td.ac{padding-left:0}
+.customer table.input_type .td_content{min-height:238px;padding:33px 0;line-height:22px;color:#989898;word-break:break-all;}
+
+/* 게시판 미리보기 팝업 */
+.board_preview{width:900px}
+.board_preview.layer_popup .layer_head{height:44px;line-height:43px}
+.board_preview.layer_popup .layer_head h2{padding-left:30px}
+.board_preview.layer_popup .layer_content{padding:83px 47px 92px}
+.board_preview.layer_popup .layer_foot{height:116px;line-height:116px}
+.board_preview.layer_popup .btn_layer_x{top:14px;right:14px}
+.board_preview .input_type th{width:100px;background:none;text-align:center;padding-left:0;text-indent:0}
+.board_preview .input_type td{text-indent:23px}
+.board_preview .input_type td.ac{text-indent:0}
+.board_preview .input_type td .td_content{padding:85px 0 85px 23px;text-indent:0;color:#010101;font-size:16px;line-height:27px}
+
+/* 아이템샵 */
+.pay_cash span{background-image:url(../images/storycube/payper_ticket_3.png)}
+.empty_msg{text-align:center;padding:140px 0}
+.step1 .padtop20{padding-top:20px}
+.success_msg{line-height:23px}
+.success_msg .black{color:#333}
+
+/* 출판사 소식 */
+.publisher_news{overflow:hidden;padding:53px 0 76px 47px}
+.publisher_news .news_box{float:left;width:260px;margin-right:12px}
+.publisher_news .news_box .list_tab_menu_sub{padding:0 0 0 15px;line-height:43px}
+.publisher_news .news_box .list_tab_menu_sub h2{font-size:14px}
+.publisher_news .news_box .list_tab_menu_sub .fr .bold.f11{margin-right:8px}
+.publisher_news .news_box .list_bulet{width:228px;height:181px;margin:0 auto;padding-top:20px}
+.publisher_news .news_box .list_bulet li{overflow:hidden;line-height:28px;padding-left:10px}
+.publisher_news .news_box .list_bulet li span.fr{color:#999}
+.customer table.input_type tr.answer th,.customer table.input_type tr.answer td{background:#f6f6f6}
+.customer table.input_type tr.answer td .td_content{min-height:60px}
+.customer_post{padding-top:10px;padding-bottom:10px;line-height:24px;color:#999;font-size:14px}
+
+/* 마이이페이지 */
+.basic.type_double_line td{color:#999}
+.basic.type_double_line tbody th a strong{font-size:12px;margin-left:10px}
+
+.thick_btm{border-bottom:2px solid #ededed}
+.thick{border:3px solid #d4d5d6}
+.thick.h83{height:83px}
+.thick.h184{height:184px}
+.thick.w391{width:391px}
+.thick.w391{width:391px}
+.fr.thick_btm{float:left;margin-left:10px}
+
+.mypage .book_details .author.top{padding-top:0;padding-bottom:9px;margin-bottom:10px;border-bottom:1px solid #d5d5d5}
+.mypage .book_details .btn_area{padding-top:5px}
+.mypage .book_details .btn_area .btn.white{padding-right:24px}
+.mypage .book_details .btn_area .btn.white span{padding-left:24px}
+.mypage .book_details .btn_area .btn.gray2{padding-right:28px}
+.mypage .book_details .btn_area .btn.gray2 span{padding-left:28px}
+.mypage .book_info_box{margin: 0 auto 10px auto;}
+.btn.gray2{width:auto;height:32px;padding-right:14px;background:url(../images/storycube/btn_gray.gif) 100% 0 no-repeat}
+.btn.gray2 span{display:inline-block;height:32px;padding-left:14px;background:url(../images/storycube/btn_gray.gif) 0 0 no-repeat;font-weight:bold;font-family:dotum;color:#fff !important}
+.input_type.series_write .btn_file_container{width:74px;height:28px;background:url(../images/storycube/btn_file_search.gif) no-repeat}
+.input_type.series_write .btn_file_download{width:74px;height:28px;background:url(../images/storycube/btn_download.gif) no-repeat}
+.input_type.series_write .btn_free_yn{width:89px;height:28px;background:url(/storycube/images/storycube/btn_free_yn.gif) no-repeat}
+.input_type.series_write th{width:160px !important;text-indent:20px;line-height:20px}
+.input_type.series_write td{text-indent:0;padding-left:20px;line-height:20px}
+.input_type.series_write td.ac{padding-left:0}
+.input_type.series_write .thumbnail{float:left;width:93px;height:131px;border:1px solid #a9a9a9}
+.input_type.series_write .thumbnail img{width:93px;height:131px}
+.input_type.series_write textarea{width:595px;margin-bottom:0}
+.input_type.series_write input.title{width:595px}
+.input_type.series_write .book_cover{overflow:hidden;width:500px;padding:16px 0}
+.input_type.series_write .book_cover .file_searh.fr{float:left;margin-left:20px}
+.input_type.series_write .book_cover .file_searh.fr .file_txt.input_txt{width:283px}
+
+table.basic.color2 tbody td, table.basic.color2 tbody td *{color:#666}
+table.basic.color2 tbody td a.review{font-weight:normal}
+.write_text_area{padding:20px;text-align:left}
+.write_text_area textarea{padding:30px 0 28px 28px;width:736px;height:542px;color:#010101;font-size:16px;line-height:27px;text-align:left}
+.write_text_area textarea.author{padding:25px 0 20px 18px;width:736px;height:53px;color:#b3b3b3;font-size:12px;line-height:16px;text-align:left}
+
+.pop_temp_view{width:796px}
+.mypage .inner_type .book_detail_contents{padding-top:10px;padding-bottom:0}
+.mypage .inner_type .book_detail_contents .book_info_box{width:724px}
+.mypage .layer_popup .btn_area{padding-top:0}
+.layer_popup.border_type_box .layer_head{height:44px;line-height:43px}
+.layer_popup.border_type_box .layer_head h2{padding-left:20px;text-align:left}
+.pop_temp_view.layer_popup .layer_content{padding:28px 32px 20px 32px}
+.board_preview.layer_popup .layer_content.board_view{padding:0 47px 55px}
+.board_preview.layer_popup .layer_content.board_view .book_detail_contents{padding-bottom:0}
+.contents .inner_type{position:relative}
+.in_lyr{position:relative}
+.impact{color:#46474b !important}
+.basic.type_double_line tbody .layer_content .line_type th{font-weight:normal}
+.basic.type_double_line tbody .layer_content .line_type th,.basic.type_double_line tbody .layer_content .line_type td{border-top:none}
+.basic.type_double_line tbody .layer_content .line_type th{background-color:#f3f3f4}
+.border_type_box.pop_send_note{width:394px;top:-31px;left:170px;border:3px solid #46474b;z-index:100}
+.border_type_box.pop_send_note .layer_head{width:100%;height:41px;line-height:41px}
+.border_type_box.pop_send_note .layer_head h2{padding-left:13px}
+.border_type_box.pop_send_note .layer_content{padding:12px}
+.border_type_box.pop_send_note .layer_content .input_txt.title{height:25px;width:243px}
+.border_type_box.pop_send_note .layer_content textarea.border_type{height:275px;width:350px;line-height:22px}
+.border_type_box.pop_send_note tbody th,.border_type_box.pop_send_note tbody td{line-height:40px;line-height:40px;padding:0;text-align:left;font-weight:normal;color:#46474b}
+.border_type_box.pop_send_note tbody td{padding-left:6px}
+.border_type_box.pop_send_note td.col2{padding-left:20px}
+.border_type_box.pop_send_note .line_type{width:370px}
+.border_type_box.pop_send_note textarea{color:#46474b}
+
+/* 통합페이지 CSS 추가 ------------------------------------------------------------------------------------*/
+.content_top_list .top_list{padding:14px 16px 13px}
+.input_type.series_write input.input_txt.title.top20{color:#656565;font-weight:bold;font-size:14px}
+
+/* 2013-12-02 추가 */
+.sponsor.layer_popup{width:400px}
+.sponsor.layer_popup h2, .del_series.layer_popup h2{padding-left:10px !important}
+.sponsor.layer_popup .layer_content{padding:30px 10px 20px}
+.sponsor.layer_popup .layer_content table *{color:#46474c}
+.sponsor.layer_popup .layer_content table th{background:#f5f5f5;text-align:center;text-indent:0;font-weight:normal}
+.sponsor.layer_popup .layer_content table td{padding-left:20px}
+.del_series.layer_popup{width:344px;top:931px;right:0}
+.del_series.layer_popup .layer_content{padding:10px 10px 20px}
+.layer_popup .layer_content.bg{background:#f6f6f6}
+.layer_popup .layer_content.bg .border_type{height:auto;line-height:26px}
+.border_type.single_line .btn_area a.btn{margin:7px 12px 0 0}
+.top100{margin-top:100px}
+
+/* 닉네임 검색 */
+.msg_layer{position:absolute;top:67px;left:30px;width:112px;height:64px;border:2px solid #000;background:#fff;z-index:500}
+.msg_layer p{padding:10px 0 0 20px;line-height:24px;margin:0;text-align:left}
+.msg_layer p a:hover{text-decoration:underline;font-weight:bold}
+.msg_layer p a{font-size:12px !important}
+
+
+/* 신간이북 */
+.jcarousel-skin-new .jcarousel-container {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+	border-radius: 0px;
+	/*background: #ffffff;*/
+	/*border: 1px solid #346F97;*/
+	
+}
+
+.jcarousel-skin-new .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-new .jcarousel-container-horizontal {
+    width: 850px;
+	margin-left:25px;
+    
+}
+
+.jcarousel-skin-new .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-new .jcarousel-clip-horizontal {
+    width:  850px;
+    height: 350px;
+}
+
+.jcarousel-skin-new .jcarousel-item {
+    width: 145px;
+    height: 350px;
+	margin-top: 50px ;
+	margin-left:25px;
+}
+
+.jcarousel-skin-new .jcarousel-item-placeholder {
+	/*
+	background: #fff;
+    color: #000;
+	*/
+
+}

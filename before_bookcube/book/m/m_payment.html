@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="payment">
+			<h3 class="sub-title">결제하기</h3>
+			<div class="title-bar">
+				<p>상품정보</p>
+			</div>
+			<ul class="payment-list">
+				<li>
+					<div>
+						<span>검게 물들다 3검게 물들다 3검게 물들다 3검게 물들다 3검게 물들다 3검게 물들다</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>죽음의 밥상 GMO</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>[세트]화폐전쟁(전3권)</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>반응하지 않는 연습</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>[추천]기적의 3분 설득법</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>[추천]기적의 3분 설득법</span>
+						<span>10,500원</span>
+					</div>
+				</li>
+			</ul>
+			<div class="btn-center payment">
+				<a href="#" class="on">더보기</a>
+			</div>
+			<div class="cash-before">
+				<p>총 주문 금액</p>
+				<span>52,500원</span>
+			</div>
+			<div class="title-bar">
+				<p>쿠폰/상품권 <span class="gray">| 보유 개수 0장</span></p>
+			</div>
+			<div class="payment-coupon">
+				<ul>
+					<li>보유한 쿠폰 중 이 주문에 사용할 수 있는 쿠폰만 노출됩니다. 전체 쿠폰은 [마이페이지 > 나의 쿠폰]에서 확인 가능합니다.</li>
+					<li>결제 시 하나의 쿠폰만 사용 가능합니다. (중복 사용 불가)</li>
+				</ul>
+				<div class="kSelectArea">
+					<div class="fSelect">
+						<select name="">
+							<option value="" selected="selected">프라이데이 1,000원 상품권</option>
+							<option value="">불금 이벤트 500원 상품권</option>
+							<option value="">북큐브데이 50원 상품권</option>
+						</select>
+						<span><img src="/book/images/m_book/selectDot.png" /></span>
+					</div>
+				</div>
+				<p>쿠폰 할인 금액 : 1,000원</p>
+			</div>
+			<div class="title-bar">
+				<p>북캐시/적립금/기프트 카드 사용하기</p>
+			</div>
+			<div class="payment-cash">
+				<ul>
+					<li>
+						<p>북캐시<em>|</em><span>보유 : 99,999원</span></p>
+						<div class="charge">
+							<input type="text" name="" id="" />
+							<a href="#">북캐시 충전</a>
+						</div>
+					</li>
+					<li>
+						<p>적립금<em>|</em><span>보유 : 99,999원</span></p>
+						<div>
+							<input type="text" name="" id="" />
+						</div>
+					</li>
+					<li>
+						<p>북캐시<em>|</em><span>보유 : 99,999원</span></p>
+						<div class="charge">
+							<input type="text" name="" id="" />
+							<a href="#">카드등록</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cash-result">
+				<p>총 결제 금액 : 24,400원</p>
+				<span>지급 예정 적립금 : 285원</span>
+			</div>
+			<div class="title-bar">
+				<p>결제 수단</p>
+			</div>
+			<div class="payment-way">
+				<ul>
+					<li>
+						<input type="radio" name="" id="card" class="" />
+						<label for="card" class="method_radio"><span class="payment_off"><em>신용카드</em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="phone" class="" />
+						<label for="phone" class="method_radio"><span class="payment_off"><em>휴대폰</em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="phone" class="" />
+						<label for="phone" class="method_radio"><span class="payment_off"><em>페이코<span class='paycoNew'>new</span></em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="phone" class="" />
+						<label for="phone" class="method_radio"><span class="payment_off"><em>페이팔</em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="happymoney" class="" />
+						<label for="happymoney" class="method_radio"><span class="payment_off"><em>해피머니</em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="booknlife" class="" />
+						<label for="booknlife" class="method_radio"><span class="payment_off"><em>도서상품권</em></span></label>
+					</li>
+					<li>
+						<input type="radio" name="" id="cultureland" class="" />
+						<label for="cultureland" class="method_radio"><span class="payment_off"><em>문화상품권</em></span></label>
+					</li>
+				</ul>
+			</div>
+			<script>
+				// 기존의 라디오 스크립트와 클래스가 다릅니다.
+				require(['jquery'],function($){
+					// 라디오버튼
+					$(function(){
+						$('.radio').click(function(){
+							$('.radio').find('span').removeClass('payment_on').addClass('payment_off');
+							$(this).find('span').removeClass('payment_off').addClass('payment_on');
+							$('#'+$(this).attr('for')).attr('checked','checked');
+						});
+
+					});
+				});
+			</script>
+			<div class="payment-btn">
+				<p class="ps-pc">*해외 발급 신용카드 결제는 PC에서만 가능합니다.</p>
+				<div class="payco-ps">
+					<p>PAYCO 간편결제 안내</p>
+					<p>PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다.<br />휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.<br />- 지원카드: 모든 국내 신용/체크카드</p>
+				</div>
+				<a href="#" class="js_pay_btn">결제</a>
+				<a href="#">취소</a>
+			</div>
+		</div>
+	</section>
+	<footer class="common">
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

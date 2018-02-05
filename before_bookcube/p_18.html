@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430"/>
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script>
+<!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+</script>
+<!-- naver-->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+</head>
+<body>
+<!-- skip navi -->
+<dl id="skiptoContent">
+	<dt><strong>바로가기 메뉴</strong></dt>
+	<dd><a href="#gnb">메인메뉴 바로가기</a></dd>
+</dl>
+<!-- //skip navi -->
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+			<div class="fl">
+				<a href="http://www.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점"/></a>
+				<a href="http://www.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브"/></a>
+				<a href="http://www.bookcube.com/webtoon/main.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰"/></a>
+				<a href="http://www.bookcube.com/b2b.asp"><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관"/></a>
+			</div>
+			<div class="fr">
+				<a href="javascript:;" class="on" style="color:#f45e00" onclick="check_alarm_view();">알리미</a><em class="divider">|</em>
+				<!--a href="http://www.bookcube.com/mypage/mypage.asp">마이페이지</a><em class="divider">|</em-->
+				<a href="http://www.bookcube.com/mypage.asp">마이페이지</a><em class="divider">|</em>
+				<a href="https://www.bookcube.com/action/logout_process.asp" class="on login">로그아웃</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/customer.asp">고객센터</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/event.asp?page=nm">이벤트</a>
+			</div>
+		</div>
+		<!-- 팝업레이어 :: Alarm 안내-->
+		<div class="alarm_layer_box common" style="display:none;">
+			<div class="alarm_layer_head_top">
+				<img src="/images/board/sns_bt.gif">
+			</div>
+			<div id="" class="border_type_box2">
+				<iframe src="" width="492" height="359" frameborder="0" name="alarm_view" id="alarm_view" scrolling="no">
+				</iframe>
+			</div>
+		</div>
+		<!-- //header -->
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/storycube/images/integration/h2_06_00_ticket.gif" alt="쿠폰/북큐브 상품권 목록"/></h2>
+			</div>
+			<!-- contents_wrap -->
+			<div class="contents_wrap">
+				<div class="list_tab_menu">
+					<!-- [Dev Comment] :: 선택된 메뉴에 클래스 on 이 추가됩니다 -->
+					<a href="/ticket.asp?page=coupon" class="first on"><span>쿠폰 등록</span></a>
+					<a href="/ticket.asp?page=giftcard" class=""><span>북큐브상품권 등록</span></a>
+				</div>
+				<div class="contents bdr_btm">
+					<div class="inner_type ticket">
+						<form id="CouponFrm" name="CouponFrm" method="post">
+							<input type="hidden" name="ticket_title" value="쿠폰">
+							<fieldset>
+								<legend>쿠폰 번호 등록하기</legend>
+								<div class="box_ticket_srch">
+									<div class="box_in">
+										<label for="ticket">쿠폰 번호</label>
+										<input type="text" name="c_num" id="c_num" onkeypress="enterKey(event);" value="" class="input_txt"/>
+										<span class="btn_area">
+										<input type="button" onclick="coupon_reg()" value="등록" class="white" style="background:url(../images/btn/btn_coupon.gif);width:102px;height:40px;border:0"/>
+										</span>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						<div class="box_ticket_msg coupon top45">
+							<div class="box_in">
+								<strong class="orange">도서 쿠폰 등록 방법 안내</strong>
+								<ol class="top15">
+									<li>도서 쿠폰 번호를 등록창에 입력해 주세요.</li>
+									<li>입력 후 등록 버튼을 클릭하면 도서 혹은 오디오 파일이 자동으로 지급됩니다.</li>
+									<li>쿠폰은 계정당 1번만 등록 할 수 있습니다.(중복등록 불가)</li>
+									<li>마이페이지 > 전자책 다운로드 > 10년 소장탭에서 다운로드가 가능합니다.</li>
+								</ol>
+							</div>
+							<div class="box_link">
+								<span class="link_icon"><img src="/images/icon/box_ticket_icon1.gif"></span>
+								<span class="btn_area">
+								<input type="button" value="도서지급 확인하기" style="background:url(../images/btn/btn_coupon_1.gif);width:141px;height:32px;border:0;font-weight:bold;cursor:pointer;" onclick="location.href('/mypage.asp?sub_list=rent_long');"/>
+								</span>
+							</div>
+						</div>
+						<div class="box_ticket_msg coupon top10">
+							<div class="box_in">
+								<strong class="orange">선물 쿠폰 등록 방법 안내</strong>
+								<ol class="top15">
+									<li>선물 받은 이메일/카카오톡에 포함된 쿠폰번호를 등록창에 입력해 주세요.</li>
+									<li>입력 후 등록 버튼을 클릭하면 선물 받은 상품(북캐시/정액권/도서)이 자동으로 지급됩니다.</li>
+									<li>선물 받은 쿠폰은 하나의 계정에서만 등록 할 수 있습니다.</li>
+									<li>받은 선물은 [마이페이지 > 선물함 > 받은선물함]에서 목록 확인이 가능합니다.</li>
+									<li>도서를 선물 받은 경우, [마이페이지 > 북큐브 서점 > 내서재] 에서 다운로드가 가능합니다.</li>
+								</ol>
+							</div>
+							<div class="box_link">
+								<span class="link_icon"><img src="/images/renewal/present_c_bg.gif"></span>
+								<span class="btn_area">
+								<input type="button" value="받은 선물 목록 확인하기" style="background:url(../images/btn/btn_coupon_2.gif);width:171px;height:32px;border:0;font-weight:bold;cursor:pointer;" onclick="location.href('')"/>
+								</span>
+							</div>
+						</div>
+						<div class="box_ticket_msg coupon top10">
+							<div class="box_in">
+								<strong class="orange">적립금 쿠폰 등록 방법 안내</strong>
+								<ol class="top15">
+									<li>적립금 쿠폰 번호를 등록창에 입력해 주세요.</li>
+									<li>입력 후 등록 버튼을 클릭하면 적립금이 자동으로 지급됩니다.</li>
+									<li>쿠폰은 계정당 1번만 등록 할 수 있습니다.(중복등록 불가)</li>
+									<li>적립금은 유효기간이 있으며 적립금 지급 및 유효기간은<br/>마이페이지 > 북캐시/적립금/상품권탭 > 적립금 적립내역에서 확인 할 수 있습니다.</li>
+								</ol>
+							</div>
+							<div class="box_link">
+								<span class="link_icon"><img src="/images/icon/box_ticket_icon2.gif"></span>
+								<span class="btn_area">
+								<input type="button" value="적립금 지급내역 확인하기" style="background:url(../images/btn/btn_coupon_2.gif);width:171px;height:32px;border:0;font-weight:bold;cursor:pointer;" onclick="location.href('/mypage.asp')"/>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //contents -->
+			</div>
+			<!-- //contents_wrap -->
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE"/></h4>
+				<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"/></a>&nbsp; <img src="/images/main/goodContents.jpg" alt="클린사이트"/>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+					<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+					<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">
+					COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED
+				</p>
+			</div>
+		</div>
+	</div>
+	<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+	</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		$('#c_num').focus();
+	}
+	function enterKey(e){
+		if(e.keyCode == 13){  /* IE기준으로 설명 */
+			coupon_reg();
+		}
+	}
+	function coupon_reg(){
+		$.ajax({
+				type: "POST",
+				url: "/action/coupon_process.asp",
+				data : $('#CouponFrm').serialize(),
+				success: function(msg){			
+					var arr = msg.split('|');
+					if (arr[0] == "OK"){
+						if (arr[1] == "53" || arr[1] == "84" || arr[1] == "224"){
+							alert('China Marketing(박영사) 쿠폰 사용 ');
+							window.close();
+						}else{		
+							if (arr[3] == "상품권")	{
+								alert('상품권 등록이 완료되었습니다.');
+							}else if (arr[3] == "책")	{
+								alert('도서가 지급 되었습니다.\n다시내려받기 페이지에서 확인하세요.');
+							}else{
+								alert('쿠폰 등록이 완료되었습니다.');
+							}							
+						}
+						$('#c_num').val('');
+						$('#c_num').focus();
+					}else{
+						alert(arr[2]);	
+						$('#c_num').val('');
+						$('#c_num').focus();
+						return false ;
+					}
+				},
+				onFailure : function(){
+					alert('잘못된 요청입니다.');
+					return false ;
+				}
+			});
+	}
+</script>

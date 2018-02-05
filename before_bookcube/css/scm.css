@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+html { font-size: 1em}
+body { font-size: 0.75em}
+button { cursor:pointer}
+a{text-decoration:none;}
+a:link, a:visited { text-decoration:none;color:#666}
+a:hover, a:focus, a:active { text-decoration:none}
+table{border-collapse:collapse;border-spacing:0;}
+caption{text-indent:-9999px;width:0;height:0;display:none;}
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed,
+fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, menu, object, ol, output,
+p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var { margin:0; padding:0}
+
+h1, h2, h3, h4, h5, h6, th, td, table, input, button, select, textarea, sub{ font-size:1em}
+body, input, button, select, textarea, sub,input{ font-family:dotum,sans-serif;color:#666}
+em, cite, address, optgroup {font-style:normal}
+kbd, samp, code { font-family:monospace}
+
+img, input, button, select, textarea { vertical-align:middle}
+ul, ol { list-style:none}
+img, fieldset { border:0}
+abbr, acronym { cursor:help; border-bottom:1px dotted black}
+table {width:100%;border-spacing:0;border:0;border-collapse:collapse;border-spacing:0;}
+
+button {border:0;padding:0;margin:0;text-decoration:none}
+
+legend, hr { overflow:hidden; position:absolute; top:0; left:0}
+legend, hr, caption { visibility:hidden; font-size:0; width:0; height:0; line-height:0}
+
+/* Html5 Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video{ display: block}
+mark, rp, rt, ruby, summary, time{ display: inline }
+ 
+.hide{position:absolute;left:-9999px;width:0;height:0;font-size:0;line-height:0;}
+
+
+/* 정산페이지 */
+body, html{width:100%;}
+#header{height:45px;background:url(/images/scm/head_bg.gif) repeat-x;}
+.header_inner{position:relative;margin:0 auto;width:1200px;background:url(/images/scm/head_bg.gif) repeat-x;}
+.header_inner .logo{margin-left:20px;}
+#contents{width:1200px;padding-top:22px;margin:0 auto;}
+#contents:after{content:"";display:block;clear:both;}
+.c_left{float:left;width:180px;height:500px;}
+.userInfo{padding:13px 10px;border:1px solid #d5d5d5;text-align:center;}
+.userInfo p{line-height:18px;font-size:11px;}
+.userInfo input[type='button']{margin-top:3px;width:72px;height:25px;border:none;cursor:pointer;background:url(/images/scm/btn_01.gif) no-repeat left center;color:#fff;text-align:center;font-size:11px;}
+.userName{color:#676767;font-weight:bold;}
+.userName span{color:#999;}
+.userHello{color:#999;font-weight:bold;}
+.c_right{padding-bottom:100px;float:left;margin-left:20px;width:1000px;}
+.lnbBox{margin-top:10px;border:1px solid #d5d5d5;}
+.lnbBox h2{padding-left:20px;line-height:30px;border-bottom:1px solid #d5d5d5;color:#111;background:url(/images/scm/arrow_dot.gif) no-repeat 10px center #f4f4f4;}
+.lnbBox h2.joo{color:#f26434;}
+.lnb{padding:15px 21px;}
+.lnb li{margin:10px 0;}
+.lnb li.on a{color:#f26434;font-weight:bold;}
+.titleBox{padding:25px 0 0 25px;width:975px;height:57px;background:url(/images/scm/title_bg.gif) no-repeat left center;}
+.titleBox h3{font-size:30px;color:#000;letter-spacing:-2px;}
+.searchBox{margin-top:10px;margin-bottom:30px;border:1px solid #d5d5d5;border-left:none;border-right:none;}
+.searchBox th{height:40px;background:#f5f5f5;font-weight:bold;border-bottom:1px solid #e5e5e5;}
+.searchBox td{padding-top:7px;padding-bottom:2px;height:30px;border-bottom:1px solid #e5e5e5;}
+.searchBox span{float:left;margin-left:5px;display:inline-block;line-height:35px;}
+.searchBox label{float:left;margin-left:5px;display:inline-block;line-height:35px;font-weight:normal;}
+.searchBox input[type='checkbox']{margin-left:15px;margin-top:7px;float:left;width:19px;height:19px;}
+.searchBox input[type='text']{padding-left:10px;margin:0px 10px 0 15px;width:190px;height:19px;border:1px solid #e1e1e1;line-height:19px;}
+.selBox{float:left;padding-left:15px;}
+.yearBox{position:relative;width:77px;height:26px;border:1px solid #d4d5d6;line-height:26px;background:url(/images/scm/arr_select.gif) no-repeat 50px center;cursor:pointer;}
+.yearBox p{padding-left:10px;font-weight:bold;font-size:14px;}
+.yearList{position:absolute;left:-1px;top:26px;padding-left:10px;width:67px;border:1px solid #d4d5d6;background:#fff;display:none;}
+.yearList li a{display:block;font-weight:bold;font-size:14px;}
+.yearList li a:hover{text-decoration:underline;}
+.monthBox{position:relative;width:60px;height:26px;border:1px solid #d4d5d6;line-height:26px;background:url(/images/scm/arr_select.gif) no-repeat 33px center;cursor:pointer;}
+.monthBox p{padding-left:10px;font-weight:bold;font-size:14px;}
+.monthList{position:absolute;left:-1px;top:26px;padding-left:10px;width:50px;border:1px solid #d4d5d6;background:#fff;display:none;}
+.monthList li a{display:block;font-weight:bold;font-size:14px;}
+.monthList li a:hover{text-decoration:underline;}
+.searchBtn{margin-top:1px;border:none;background:url(/images/scm/btn_02.gif) no-repeat;width:41px;height:25px;text-align:center;color:#fff;font-size:12px;line-height:25px;cursor:pointer;}
+.tblBox{margin:10px 0;}
+.tblBox:after{content:"";display:block;clear:both;}
+.h4_title{float:left;padding-left:10px;font-size:14px;color:#f26434;background:url(/images/scm/bul_orange.gif) no-repeat left center;line-height:25px;}
+.tbl{margin-top:20px;margin-bottom:40px;width:100%;border:1px solid #000;}
+.tbl thead th{background:#555;color:#fff;text-align:center;border-bottom:1px solid #000;border-right:1px solid #000;line-height:30px;font-weight:normal;}
+.tbl tbody td{border-right:1px solid #d5d5d5;border-top:1px solid #d5d5d5;text-align:center;height:40px;}
+.tbl tfoot td{background:#555;color:#fff;text-align:center;border-bottom:1px solid #000;border-right:1px solid #000;line-height:30px;font-weight:normal;}
+.excelDown{display:block;float:right;width:90px;height:25px;background:url(/images/scm/btn_03.gif) no-repeat left center;line-height:25px;text-align:center;color:#fff !important;}
+.excelBtn{margin-top:1px;display:inline-block;margin-left:3px;width:90px;height:25px;background:url(/images/scm/btn_03.gif) no-repeat left center;line-height:25px;text-align:center;color:#fff !important;vertical-align:middle;}
+/* page */
+.page{height:25px;overflow:hidden;width:auto;margin-top:20px;text-align:center;}
+.page a{display:inline-block;vertical-align:middle;min-width:25px;height:13px;margin-left:-1px;font-size:14px;text-align:center;}
+.page a.on{font-weight:bold;}
+.page a span{display:none;}
+.page a:hover{color:#f26434;}
+
+
+.dayBox{padding:5px 0;border-top:1px solid #d5d5d5;border-bottom:1px solid #d5d5d5;background:#f4f4f4;}
+.dayBox p{text-align:center;font-weight:bold;color:#333;line-height:20px;}
+.popOpen{color:#356bf3 !important;font-weight:bold;text-decoration:underline !important;}
+.tblPop{display:none;position:fixed;left:50%;top:250px;margin-left:-300px;padding:20px;width:600px;border:2px solid #333;background:#fff;}
+.tblBottom{margin-bottom:0;}
+.popClose{float:right;display:block;width:40px;height:20px;border:1px solid #666;text-align:center;line-height:20px;background:#f5f5f5;border-radius:3px;-webkit-border-radius:3px;}
+.input{height:24px !important;}
+.btnBox{margin-top:-15px;float:right;}
+.btnBox a{display:inline-block;background:url(/images/scm/btn_01.gif) no-repeat left center;width:72px;height:25px;text-align:center;line-height:25px;color:#fff !important;}
+
+.qna{margin-top:20px;width:100%;border-bottom:1px solid #d5d5d5;}
+.qna th{padding:10px 0;text-align:center;background:#f1f1f1;border-top:1px solid #d5d5d5;}
+.qna th label{font-weight:normal;}
+.qna td{padding:10px;border-top:1px solid #d5d5d5;}
+.qna td textarea{width:865px;height:300px;margin:5px;padding:7px;border:1px solid #d4d5d6;overflow-y:scroll;color:#999;line-height:18px;text-align:left;font-size:12px;resize:none;}
+.qnaIpt{margin-left:5px;width:600px;height:24px;border:1px solid #d5d5d5;padding-left:10px;line-height:24px;}
+.buttonBox{margin-top:30px;text-align:center;}
+.buttonBox input[type='submit']{margin:0 2px;width:60px;height:30px;border:1px solid #666;background:#f1f1f1;line-height:30px;cursor:pointer;}
+.buttonBox a{margin:0 2px;display:inline-block;width:60px;height:28px;border:1px solid #666;background:#f1f1f1;line-height:30px;vertical-align:middle;}
+.viewBox{min-height:150px;line-height:18px;}
+.viewTbl{margin-top:20px;width:100%;border-top:1px solid #d5d5d5;}
+.viewTbl th{padding:20px;border-bottom:1px solid #d5d5d5;text-align:left;background:#f1f1f1;}
+.viewTbl th span{margin-right:10px;padding-left:15px;color:#f26532;font-size:14px;font-weight:normal;background:url(/images/scm/icon_re.png) no-repeat left top;}
+.re{margin-right:10px;width:8px;height:8px;display:inline-block;background:url(/images/scm/icon_re.png) no-repeat left top;}
+.viewTbl td{padding:10px 20px;border-bottom:1px solid #d5d5d5;text-align:left;}
+.qnaTbl td:nth-child(2){padding-left:10px;text-align:left !important;}
+.qnaTbl td:nth-child(2) a{text-decoration:underline;font-weight:bold;}
+
+/* 로그인 페이지 */
+.loginWrap{position:relative;margin:40px auto;width:990px;height:680px;background:url(/images/scm/login_bg.jpg) no-repeat left center;}
+.loginBox{position:absolute;left:355px;top:334px;width:305px;height:150px;}
+.login{position:relative;margin-bottom:23px;width:227px;padding-right:78px;}
+.iptBox{margin-bottom:3px;}
+.iptBox:after{content:"";display:block;clear:both;}
+.scmIpt{width:153px;padding-left:10px;height:20px;border:1px solid #bcbcbc;line-height:22px;background:#fff;}
+.iptBox label{float:left;padding-left:7px;padding-top:2px;display:block;width:53px;color:#373735;line-height:24px;background:url(/images/scm/txt_bg.jpg) no-repeat left center;}
+.iptBox input{float:left;}
+.scmBtn{position:absolute;top:0;right:0;border:none;width:68px;height:51px;cursor:pointer;background:url(/images/scm/login_btn.gif) no-repeat left center;text-indent:-9999px;}
+.managePs{padding:10px 16px;border:1px solid #dadada;}
+.managePs p{letter-spacing:-1px;line-height:20px;}
+.managePs p a{margin-left:2px;display:inline-block;color:#0066cb;text-decoration:underline;}
+
+/* 계약권자 검색 */ 
+.contract{padding-left:170px;}
+.contract:after{content:"";display:block;clear:both;}
+.conBox{float:left;position:relative;width:150px;height:26px;border:1px solid #d4d5d6;line-height:26px;background:url(/images/scm/arr_select.gif) no-repeat 120px center;cursor:pointer;}
+.conBox p{padding-left:10px;font-weight:bold;font-size:14px;}
+.conList{position:absolute;left:-1px;top:26px;padding-left:10px;width:140px;border:1px solid #d4d5d6;background:#fff;display:none;}
+.conList li a{display:block;font-weight:bold;font-size:14px;}
+.conList li a:hover{text-decoration:underline;}
+.conSearch{float:left;margin-left:10px;}
+.conSearch:after{content:"";display:block;clear:both;}
+.conSearch input{float:left;}
+.conIpt{width:240px;height:24px;border:1px solid #d4d5d6;padding-left:10px;line-height:26px;font-weight:bold;}
+.conBtn{margin-left:5px;margin-top:1px;border:none;background: url(/images/scm/btn_02.gif) no-repeat;width:41px;height:25px;text-align:center;color:#fff;font-size:12px;line-height:25px;cursor:pointer;}
+.conTbl{margin-top:30px;width:100%;border-top:1px solid #000;border-right:1px solid #000;}
+.conTbl th{padding:10px 0;background:#555;border-left:1px solid #000;border-bottom:1px solid #000;font-weight:normal;color:#fff;}
+.conTbl td{padding:10px 0;border-left:1px solid #000;border-bottom:1px solid #000;text-align:center;}
+.conTbl td a{text-decoration:underline;font-weight:bold;}
+.contactList:after{content:"";display:block;clear:both;}
+.contactList li{margin-left:20px;float:left;width:394px;border:3px solid #d1d0d6;border-radius:5px;}
+.contactList li:first-child{margin-left:0;background:url(/images/scm/liBg1.jpg) no-repeat 44px center #fff;}
+.contactList li:last-child{background:url(/images/scm/liBg2.jpg) no-repeat 44px center #fff;}
+.contactList li a{display:block;font-weight:bold;font-size:27px;color:#666;letter-spacing:-3px;width:100%;height:100%;padding-left:118px;padding-top:43px;padding-bottom:43px;}
+.contactList li:hover a{color:#f57d4b;}
+.yearBox.book{float:left;}
+.bold{font-weight:bold;}
+.contactWrap{width:820px;margin:150px auto 0;background:#f0eff5;padding:40px;border-radius:10px;}
+
+/* 담당자 정보 모달창 2016-12-06 */
+.modal{display:none;left:200px;top:100px;position:absolute;background:#fafafa;padding:14px 14px 14px 14px;border-radius:3px;box-shadow:-1px 1px 15px rgba(0,0,0,0.75);z-index:1000;}
+.modal div{border-bottom:2px solid #666;padding-bottom:10px;}
+.modal div:after{content:"";display:block;clear:both;}
+.modal div a{float:right;display:block;width:15px;height:15px;background:url(/images/scm/login-close.png) no-repeat left center;text-indent:-9999px;}
+.modal p{margin-top:20px;font-weight:600;}
+.modal ul{margin-top:10px;}
+.modal ul li{margin:10px 0;line-height:20px;font-size:12px;}
+.modal ul li a{color:#197dcb;}
+
+/* 선물정보 입력 페이지 문구 삽입 */
+.gift-beta{margin-top:20px;}
+.gift-beta p{padding-left:10px;line-height:18px;background:url(/images/icon/bul_orange.gif) no-repeat left center;}

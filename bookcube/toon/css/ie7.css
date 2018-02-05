@@ -1,0 +1,47 @@
+﻿/* header 검색 영역 */
+.head_box .search_area .input_txt{padding:1px 5px !important}
+
+/* footer */
+.foot_contents .company_info li{white-space:nowrap;}
+.foot_contents .company_info .address em{margin:0;padding:0 10px}
+
+/* 리스트 페이지 */
+.type_list li{position:static;overflow:hidden}
+.type_list li strong.num{position:relative;margin-left:-40px;top:15px}
+
+/* 상세검색 레이어 */
+.head_box .search_detail label{float:left}
+
+.download_top .fr{margin:-10px 0 15px !important}
+.download_top .fr input.input_txt{float:left;margin-left:-50px}
+.download_top .fr span.btn_area{display:inline-block;float:left;margin-left:3px}
+
+.list_tab_menu_sub button.bg{line-height:23px}
+
+.btn_area .btn{line-height:32px}
+.btn_area .btn.bg5{line-height:32px}
+.btn_area .btn.review_like{line-height:29px}
+.btn_area .btn.gray{line-height:28px}
+.btn_area .btn.orange{line-height:28px}
+.btn_area .btn.orange2{line-height:28px}
+
+.login_wrap .input_area .fl p input{padding:10px 10px 0 10px;height:21px}
+.find_id .border_box .top20{padding-top:20px}
+.input_type td{padding-left:21px;text-indent:0}
+.input_type td textarea,.input_type td input.input_txt{text-indent:0}
+
+.monoply .type_list.thumbnail li strong.num{top:19px;left:46px}
+
+.layer_popup .layer_content .border_type .fr .btn{margin-top:0}
+
+.data_comment form{margin-top:44px}
+
+.register_roadmap{margin-bottom:40px}
+
+/* main */
+#main .list_tab_menu_sub.best a span{width:46px}
+#main .topic_area .type_list.thumbnail li a.thumb{margin-left:40px}
+#main .topic_area .type_list.thumbnail li .book_info{margin-left:40px}
+#main .list_tab_menu_sub.best{padding-left:280px}
+
+.input_login{line-height:14px}

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<style type="text/css">
+body{background: #356e43;
+}
+a{text-decoration:none;}
+.publishing{width:1000px;margin:50px auto;}
+.publishing table{width:100%;border-top:1px solid #fff;border-left:1px solid #fff;}
+.publishing table th{height:40px;border-bottom:1px solid #000;border-right:1px solid #fff;color:#fff;background:#333;}
+.publishing table td{padding-left:30px;height:34px;border-bottom:1px solid #fff;border-right:1px solid #fff;}
+.publishing table td a{color:#fff;display:block;}
+.publishing table td:hover{background:#23251d;}
+.publishing table td:hover a{color:#fff;}
+</style>
+</head>
+<body>
+	<div class="publishing">
+		<table class="pub_table" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<th>1.웹툰 PC</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-100.html" target="_blank">웹툰 메인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-200.html" target="_blank">웹툰 요일</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-300.html" target="_blank">웹툰 신간</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-400.html" target="_blank">웹툰 완결</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-500.html" target="_blank">웹툰 TOP50</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-600.html" target="_blank">웹툰 장르</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-700.html" target="_blank">웹툰 테마</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-800.html" target="_blank">웹툰 테마_상세</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-900.html" target="_blank">웹툰 상세페이지</a></td>
+				</tr>
+				<tr>
+					<th>1.코믹스 PC --- 코믹스 신간,테마관 웹툰과 동일합니다.</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/ct-100.html" target="_blank">코믹스 메인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/ct-300.html" target="_blank">코믹스 TOP50</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/ct-400.html" target="_blank">코믹스 장르</a></td>
+				</tr>
+                <tr>
+					<td><a href="http://html.bookcube.com/toon/ct-theme.html" target="_blank">코믹스 테마_상세</a></td>
+				</tr>
+				<tr>
+					<th>2.PC 공통영역 </th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-100.html" target="_blank">웹툰 검색</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-200.html" target="_blank">코믹스 검색</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-300.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-400.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-500.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-700.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-800.html" target="_blank">마이페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wct-900.html" target="_blank">이벤트상세 페이지</a></td>
+				</tr>
+				<tr>
+					<th>3.웹툰 모바일</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-100.html" target="_blank">웹툰 메인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-200.html" target="_blank">웹툰 요일</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-300.html" target="_blank">웹툰 신간</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-400.html" target="_blank">웹툰 완결</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-500.html" target="_blank">웹툰 TOP50</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-600.html" target="_blank">웹툰 장르</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-700.html" target="_blank">웹툰 테마</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-800.html" target="_blank">웹툰 테마_상세</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-900.html" target="_blank">웹툰 상세페이지</a></td>
+				</tr>
+				<tr>
+					<th>3.코믹스 모바일 -- 웹툰 모바일과 공통된 부분은 뺐습니다.</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/ct-100.html" target="_blank">코믹스 메인</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/ct-400.html" target="_blank">코믹스 장르</a></td>
+				</tr>
+				<tr>
+					<th>4.모바일 공통영역 -- 마이페이지 공통영역은 m_common.css 파일이 사용됩니다.</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-100.html" target="_blank">결제페이지</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-200.html" target="_blank">웹툰 검색</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-300.html" target="_blank">코믹스 검색</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-400.html" target="_blank">마이페이지(나의구매작품-웹툰)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-500.html" target="_blank">마이페이지(나의구매작품-코믹스)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-600.html" target="_blank">마이페이지(나의구매작품-회차)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-800.html" target="_blank">마이페이지(나의선호작품-웹툰)</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-900.html" target="_blank">마이페이지(나의선호작품-코믹스)</a></td>
+				</tr>
+				<tr>
+					<th>5.PC-뷰어</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/wt-1000.html" target="_blank">웹툰 뷰어</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/ct-800.html" target="_blank">코믹큐브 뷰어</a></td>
+				</tr>
+				<tr>
+					<th>5.모바일-뷰어</th>
+				</tr>
+				<tr>
+					<td><a href="http://html.bookcube.com/toon/m/wt-1001.html" target="_blank">웹툰,코믹 뷰어</a></td>
+				</tr>
+                <tr>
+                    <th>모바일 이벤트</th>
+                </tr>
+                <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/wct-1000-2.html" target="_blank">이벤트</a></td>
+                </tr>
+                <tr>
+					<td><a href="http://html.bookcube.com/toon/m/wct-1000.html" target="_blank">이벤트 상세</a></td>
+				</tr>
+                <tr>
+                    <th>IOS.   IOS는 m_common.css 에 추가시켰습니다.</th>
+                </tr>
+                <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/ios-3.html" target="_blank">IOS 메인</a></td>
+                </tr>
+                 <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/ios-4.html" target="_blank">IOS 기획서4</a></td>
+                </tr>
+                 <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/ios-4-2.html" target="_blank">IOS 기획서4</a></td>
+                </tr>
+                 <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/ios-5.html" target="_blank">IOS 기획서5</a></td>
+                </tr>
+                 <tr>
+                    <th>성인 작품 노출 모드</th>
+                </tr>
+                 <tr>
+                    <td><a href="http://html.bookcube.com/toon/adult.html" target="_blank">pc.성인</a></td>
+                </tr>
+                 <tr>
+                    <td><a href="http://html.bookcube.com/toon/m/adult.html" target="_blank">모바일.성인</a></td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

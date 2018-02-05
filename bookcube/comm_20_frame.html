@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/datepicker.js"></script>
+</head>
+<body>
+<div class="frame">
+	<h3>나의 작품 > 글쓰기</h3>
+	<div class="tab">
+		<div class="my-active ipt">
+			<p class="s-title">회차 정보</p>
+			<table>
+				<caption>나의 작품 연재 정보</caption>
+				<colgroup>
+					<col width="17%" />
+					<col width="83%" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>회차</th>
+						<td>13화</td>
+					</tr>
+					<tr>
+						<th>소회차 제목</th>
+						<td>현대판타지의 시작</td>
+					</tr>
+					<tr>
+						<th>구매가격</th>
+						<td>100원</td>
+					</tr>
+					<tr>
+						<th>연재 반영일시</th>
+						<td>2017-11-11 20:00:00</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn-box">
+				<a href="#" class="btn">회차정보수정</a>
+			</div>
+			<p class="s-title epub-input-title">회차 epub 파일 등록</p>
+			<form action='' method=''>
+				<fieldset>
+					<legend>회차 epub 파일 등록</legend>
+					<table>
+						<caption>회차 epub 파일 등록 폼</caption>
+						<colgroup>
+							<col width="17%" />
+							<col width="83%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label>파일첨부</label></th>
+								<td class="file_name">
+									<div>
+										<p><input type="text" name='' readonly='readonly' id="fileName" class="file_name" /></p>
+										<p class="file-btn">찾아보기<input type="file" name="" value="찾아보기" ></p>
+									</div>
+									<span>epub 확장자만 첨부 가능합니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+			</form>
+			<div class="btn-box">
+				<input type="button" name='' value="확인" />
+				<a href="#" class="btn">목록보기</a>
+			</div>
+			<script>
+				$(function() {
+					// 첨부 파일 확장자 검사 
+					$("input[type='file']").on("change", function() {	
+						var ext = $(this).val().split('.').pop().toLowerCase();
+						var text = $(this).val();
+						if($.inArray(ext, ['epub']) == -1) {
+							window.alert('epub 확장자 파일만 첨부 가능합니다.');
+							$(".file_name").val("");
+							resetFormElement($(this));
+						}else{
+							$(".file_name").val(text);
+						}
+					});
+					// 첨부파일 실패시 첨부파일 form 리셋
+					function resetFormElement(e) {
+						e.wrap('<form>').closest('form').get(0).reset(); 
+						e.unwrap(); 
+					}
+
+				});
+
+			</script>
+		</div>
+	</div>
+</div>
+</body>
+</html>

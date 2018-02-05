@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="keyword-wrap k-romance"> <!-- !!!!!!!이곳에 로맨스는 k-romance, 판무는 k-fanmu 만화는 k-manhwa 클래스가 들어갑니다!!!!!!!! 일반서는 keyword-wrap만 있습니다. -->
+			<h3 class="title">키워드관</h3>
+			<div class="kSelectArea">
+				<div class="fSelect">
+					<select name="">
+						<option value="" selected="selected">일반도서</option>
+						<option value="">로맨스</option>
+						<option value="">판타지/무협</option>
+						<option value="">만화</option>
+					</select>
+					<span><img src="/book/images/m_book/selectDot.png" /></span>
+				</div>
+			</div>
+			<div class="title-bar">
+				<p>내게 맞는 일반서 찾기</p>
+				<a href="#">랜덤 키워드</a>
+			</div>
+			<div class="keyword">
+				<div class="key-select">
+					<div class="k_wrap">
+						<div class="k_bar">
+							<p>국가</p>
+							<div class="swiper-container kSelect">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="#">한국</a></div>
+									<div class="swiper-slide"><a href="#">영미</a></div>
+									<div class="swiper-slide"><a href="#">일본</a></div>
+									<div class="swiper-slide"><a href="#">프랑스</a></div>
+									<div class="swiper-slide"><a href="#">독일</a></div>
+									<div class="swiper-slide"><a href="#">러시아</a></div>
+									<div class="swiper-slide"><a href="#">북유럽</a></div>
+									<div class="swiper-slide"><a href="#">중국</a></div>
+									<div class="swiper-slide"><a href="#">기타국가</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="k_bar">
+							<p>장르</p>
+							<div class="swiper-container kSelect">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="#">스릴러액션</a></div>
+									<div class="swiper-slide"><a href="#">호러공포</a></div>
+									<div class="swiper-slide"><a href="#">SF</a></div>
+									<div class="swiper-slide"><a href="#">역사</a></div>
+									<div class="swiper-slide"><a href="#">추리미스터리</a></div>
+									<div class="swiper-slide"><a href="#">고전</a></div>
+									<div class="swiper-slide"><a href="#">판타지</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="k_bar">
+							<p>배경</p>
+							<div class="swiper-container kSelect">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="#">일상</a></div>
+									<div class="swiper-slide"><a href="#">연애</a></div>
+									<div class="swiper-slide"><a href="#">범죄</a></div>
+									<div class="swiper-slide"><a href="#">전쟁</a></div>
+									<div class="swiper-slide"><a href="#">종말</a></div>
+									<div class="swiper-slide"><a href="#">우주</a></div>
+									<div class="swiper-slide"><a href="#">가상세계</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="k_bar">
+							<p>분위기</p>
+							<div class="swiper-container kSelect">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="#">유쾌</a></div>
+									<div class="swiper-slide"><a href="#">감동</a></div>
+									<div class="swiper-slide"><a href="#">암울</a></div>
+									<div class="swiper-slide"><a href="#">음산</a></div>
+									<div class="swiper-slide"><a href="#">잔잔</a></div>
+									<div class="swiper-slide"><a href="#">강렬</a></div>
+									<div class="swiper-slide"><a href="#">몽환</a></div>
+									<div class="swiper-slide"><a href="#">반전</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="k_bar">
+							<p>미디어셀러</p>
+							<div class="swiper-container kSelect">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="#">국내드라마</a></div>
+									<div class="swiper-slide"><a href="#">해외드라마</a></div>
+									<div class="swiper-slide"><a href="#">국내영화</a></div>
+									<div class="swiper-slide"><a href="#">해외영화</a></div>
+									<div class="swiper-slide"><a href="#">게임</a></div>
+									<div class="swiper-slide"><a href="#">애니메이션</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div>
+			<p class="key_ps">키워드를 선택해주세요.</p>
+			<div class="kselectResult">
+				<div class="title-bar">
+					<p>내가 선택한 키워드</p>
+					<a href="#" class="allDel">키워드 전체 해제</a>
+				</div>
+				<div class="key_select">
+					<ul class="kSelect_list"></ul>
+					<p class="noSearch">키워드와 일치하는 도서가 없습니다.</p>
+				</div>
+			</div>
+			<div class="kResult">
+				<div class="title-bar">
+					<p>당신에게 맞는 <span>50권</span>의 키워드 도서</p>
+				</div>
+				<div class="checkSelect">
+					<input type="radio" name="" value="" id="popular" checked="checked" />
+					<label class="radio" for="popular"><span class="radio_on"><em>인기순</em></span></label>
+					<input type="radio" name="t" value="" id="reply" />
+					<label class="radio" for="reply"><span class="radio_off"><em>서평순</em></span></label>
+				</div>
+				<script>
+					require(['jquery'],function($){
+						// 라디오버튼
+						$(function(){
+							$('.radio').click(function(){
+								$('.radio').find('span').removeClass('radio_on').addClass('radio_off');
+								$(this).find('span').removeClass('radio_off').addClass('radio_on');
+								$('#'+$(this).attr('for')).attr('checked','checked');
+							});
+
+						});
+					});
+				</script>
+				<ul class="book_list">
+					<li>
+						<a href="#">
+							<img src="/mobile/images/storycube/thum.jpg" alt="" />
+							<div>
+								<p class="book_title">
+									<span class="book_tit">습관의 힘</span>
+									<span class="icon_adult"></span>
+								</p>
+								<p class="book_anchor">한승희<em>|</em>스토리훈</p>
+								<p class="book_des">미국 사회에 융화하지 못하고 마피아 조직을 선택 미국 사회에 사회에 사회에</p>							
+								<div class="order_else">
+									<p class="book_cash">구매 <del>5,000원</del>500원</p>
+									<p class="book_cash">10년소장 3200원</p>
+									<p class="book_cash"><span class="rent">대여 100원</span><em>|</em><span class="flat">정액</span></p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="/mobile/images/storycube/thum.jpg" alt="" />
+							<div>
+								<p class="book_title">
+									<span class="book_tit">습관의 힘</span>
+									<span class="icon_adult"></span>
+								</p>
+								<p class="book_anchor">한승희<em>|</em>스토리훈</p>
+								<p class="book_des">미국 사회에 융화하지 못하고 마피아 조직을 선택 미국 사회에 사회에 사회에</p>
+								<p class="book_cash">구매 <del>3200원</del> 500원</p>
+								<p class="book_10years">10년 소장 3200원</p>
+								<p class="book_rent">대여 100원<em>|</em><span class="flat">정액</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="/mobile/images/storycube/thum.jpg" alt="" />
+							<div>
+								<p class="book_title">
+									<span class="book_tit">습관의 힘</span>
+									<span class="icon_adult"></span>
+								</p>
+								<p class="book_anchor">한승희<em>|</em>스토리훈</p>
+								<p class="book_des">미국 사회에 융화하지 못하고 마피아 조직을 선택 미국 사회에 사회에 사회에</p>
+								<p class="book_cash">구매 <del>3200원</del> 500원</p>
+								<p class="book_10years">10년 소장 3200원</p>
+								<p class="book_rent">대여 100원<em>|</em><span class="flat">정액</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="/mobile/images/storycube/thum.jpg" alt="" />
+							<div>
+								<p class="book_title">
+									<span class="book_tit">습관의 힘</span>
+									<span class="icon_adult"></span>
+								</p>
+								<p class="book_anchor">한승희<em>|</em>스토리훈</p>
+								<p class="book_des">미국 사회에 융화하지 못하고 마피아 조직을 선택 미국 사회에 사회에 사회에</p>
+								<p class="book_cash">구매 <del>3200원</del> 500원</p>
+								<p class="book_10years">10년 소장 3200원</p>
+								<p class="book_rent">대여 100원<em>|</em><span class="flat">정액</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="/mobile/images/storycube/thum.jpg" alt="" />
+							<div>
+								<p class="book_title">
+									<span class="book_tit">습관의 힘</span>
+									<span class="icon_adult"></span>
+								</p>
+								<p class="book_anchor">한승희<em>|</em>스토리훈</p>
+								<p class="book_des">미국 사회에 융화하지 못하고 마피아 조직을 선택 미국 사회에 사회에 사회에</p>
+								<p class="book_cash">구매 <del>3200원</del> 500원</p>
+								<p class="book_10years">10년 소장 3200원</p>
+								<p class="book_rent">대여 100원<em>|</em><span class="flat">정액</span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!-- Paging -->
+				<div class="paging">
+					<a href="#" class="prev"><img src="/book/images/m_book/p_prev.png" alt="이전" /></a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#" class="next"><img src="/book/images/m_book/p_next.png" alt="다음" /></a>
+					<p>1 / 15</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function($){
+				$(function(){
+		
+
+					// 웹뷰에서 사이즈가 작게 설정되어 키워드가 밑으로 떨어지는 현상으로 인해 각 사이즈를 읽어서 5px 추가 시켜줌.
+					$(".kSelect").each(function(){
+						var width = 5;
+						$(this).find(".swiper-slide").each(function(){
+							width += $(this).width();
+						});
+						$(this).find(".swiper-wrapper").width(width);
+					});
+
+					var key = $(".kSelect a");
+					$(key).on("click",function(){
+						var text = $(this).text();
+						var temp = $(".kSelect_list").find("li:contains("+text+")");
+						var li = "<li class='listDel'><a href='#'><em>"+text+"</em><span>close</span></a></li>";	
+						if($(this).hasClass("on") && temp.length){
+							$(this).removeClass("on");
+								temp.remove();
+							if($(".kSelect_list li").length <= 0){
+								$(".key_ps").show();
+								$(".kselectResult, .kResult").hide();
+								$("html,body").animate({
+									scrollTop:0	
+								},500,"swing");
+							}	
+								
+							}else if($(".kSelect_list li").length > 4){
+									li = "";	
+									alert("키워드는 최대 5개까지 선택 가능합니다")				
+							}else{
+									$(this).addClass("on");	
+									$(".key_ps").hide();
+									$(".kselectResult, .kResult").fadeIn(300);
+									$(li).appendTo(".kSelect_list");
+									$("html,body").animate({
+										scrollTop:132	
+									},500,"swing");
+							}
+					
+							return false;
+					});					
+				});
+				$(function(){
+					$(document).on("click",".listDel",function(){
+						var txtDel = $(this).children().find("em").text();
+						var bgDel = $(".kSelect").find("a:contains("+txtDel+")");
+						bgDel.removeClass("on");
+						$(this).remove();
+						if($(".kSelect_list li").length <= 0){
+							$(".key_ps").show();
+							$(".kselectResult, .kResult").hide();
+							$("html,body").animate({
+								scrollTop:0	
+							},500,"swing");
+						}else{
+							keywordBook.list(1);
+						}
+						return false;
+					});	
+					$(".allDel").on("click",function(){
+						$(".kSelect a").removeClass("on");	
+							$(".kSelect_list li").remove();
+							$(".key_ps").show();
+							$(".kselectResult, .kResult").hide();
+							$("html,body").animate({
+								scrollTop:0	
+							},500,"swing");
+											
+							return false;
+					});
+				});
+
+
+			});
+		</script>
+	</section>
+	<footer>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				// 탑버튼
+				$(".topBtn").on("click",function(){
+					$(window).scrollTop(0);
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

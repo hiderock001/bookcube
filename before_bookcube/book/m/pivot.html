@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="/js/jquery-1.11.0.min.js"></script>
+	<style>
+		.main-roll{margin:0 auto;z-index:1;overflow:hidden;}
+		.swiper-slide{position:relative;text-align:center;}
+		.cha-swiper:after{content:"";display:block;clear:both;}
+		@media screen and (min-width :768px){
+			.swiper-slide{padding-right:10px;width:192px;}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul>
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li>
+					<a href="#" class="backColor">
+						<div class="menu-app">
+							<div class="m-app-top">
+								<span>북큐브 아이콘</span>
+								<p>북큐브앱을 설치하시고 편리한 이용과 더 많은 혜택을 누리세요.</p>
+							</div>
+							<p>북큐브앱 설치하기</p>
+						</div>
+					</a>
+				</li>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="main-roll" style="border-bottom:none;">
+			<div class="swiper-slide">
+				<a href="#"><span class="im_br"><img src="http://bookimg.bookcube.com/150/1607/160704041.jpg" alt="도서 이미지 - 덕혜옹주 (개정..."></span></a>
+				<div class="book-name"><p>덕혜옹주는 손예진입니다.</p></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><span class="im_br"><img src="http://bookimg.bookcube.com/150/1607/160704041.jpg" alt="도서 이미지 - 덕혜옹주 (개정..."></span></a>
+				<div class="book-name"><p>덕혜옹주 손익분기점</p></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><span class="im_br"><img src="http://bookimg.bookcube.com/150/1607/160704041.jpg" alt="도서 이미지 - 덕혜옹주 (개정..."></span></a>
+				<div class="book-name"><p>덕혜옹주(개정판)</p></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><span class="im_br"><img src="http://bookimg.bookcube.com/150/1607/160704041.jpg" alt="도서 이미지 - 덕혜옹주 (개정..."></span></a>
+				<div class="book-name"><p>덕혜옹주(개정판)</p></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#"><span class="im_br"><img src="http://bookimg.bookcube.com/150/1607/160704041.jpg" alt="도서 이미지 - 덕혜옹주 (개정..."></span></a>
+				<div class="book-name"><p>덕혜옹주(개정판)</p></div>
+			</div>
+		</div>
+		<div>
+			<p>스와이프 만들기</p>
+		</div>
+	</section>
+	<script>
+			
+				 
+				
+				
+				
+				pivot = function(){
+					this.target = $(this);
+					this.items = this.target.find('.swiper-slide');
+					this.play = this.target.wrapInner('<div class="cha-swiper"></div>'),
+					this.option = { width: this.items.width(), height:this.items.height() };
+					this.originalLeft = 0;
+					this.oldLeft = 0;
+					this.nowPosition = 0;
+					this.isDown = false;
+					
+				}
+	
+
+				var pivot = {
+					css : function(){
+						this.target.css({
+							height : this.play.height(),
+							position :"relative"
+						});
+						this.items.css({
+							float : "left"
+						});
+						$(".cha-swiper").css({
+							position:'absolute',
+							height : this.items.outerHeight(),
+							width :  this.items.length * this.items.outerWidth()
+						});
+					},
+					start :function(){
+						this.target.bind("touchstart",function(e){
+							var event = e.originalEvent;
+							var touchX = event.touches[0].pageX;
+							oldLeft = originalLeft = touchX;
+							isDown = true;
+							e.preventDefault();
+						})
+					},
+					move :function(){
+						this.target.bind("touchstart",function(e){
+							if (this.isDown) {
+								// 변수를 선언합니다.
+								var event = e.originalEvent;
+								var touchX = event.touches[0].pageX;
+								var distance = oldLeft - touchX;
+								this.oldLeft = touchX;
+								// 움직입니다.
+								$(".cha-swiper").animate({ left: '-=' + distance }, 0);
+								$(".cha-swiper").stop(true);
+							}
+							e.preventDefault();
+						})
+					}
+				}
+				
+				
+			
+	</script>
+	<script>
+        $(document).ready(function () {
+            with(pivot){
+				css();
+			}
+        });
+    </script>
+</body>
+</html>

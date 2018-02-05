@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+</head>
+<body id="common">
+	<div class="common-wrap">
+		<h1 class="hide">북큐브 회원가입 페이지</h1>
+		<div class="c-header">
+			<div class="header-top">
+				<div class="h-top-inner">
+					<ul class="c-gnb">
+						<li><a href="#"><img src="/images/login/gnb-1.jpg" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="/images/login/gnb-2.jpg" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/login/gnb-3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/login/gnb-4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<div>
+						<ul>
+							<li class="bold"><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">이용안내</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-contents">
+			<div class="title-box">
+				<h2><img src="/images/login/title-join.png" alt="회원가입" /></h2>
+			</div>
+			<div class="c-inner">
+				<form name="join-step">
+					<fieldset>
+						<legend>회원가입</legend>
+						<div class="join-wrap">
+							<h3>인증 회원가입</h3>
+							<!-- 경고창 대신 input 다음의 p 태그에 해당 경고문이 들어갑니다 -->
+							<div class="join-info">
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="아이디" maxlength="20" class="strId" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="password" name="" placeholder="비밀번호" class="strPass" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="password" name="" id="" placeholder="비밀번호 확인" class="rePass" />
+									<p class="check"></p>
+								</div>
+							</div>
+							<div class="join-info mt20">
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="이름" class="strName" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="이메일" class="strMail" />
+									<p class="check"></p>
+								</div>
+							</div>
+							<div class="join-check">
+								<label><span><input type="checkbox" name="" id="" />전체 동의</span></label>
+								<label><span><input type="checkbox" name="" id="" />이용약관 동의</span><a href="#">자세히보기</a></label>
+								<label><span><input type="checkbox" name="" id="" />개인정보 취급 방침 동의</span><a href="#">자세히보기</a></label>
+								<label><span><input type="checkbox" name="" id="" />이메일 수신 동의</span></label>
+							</div>
+							<input type="submit" name="" id="" value="본인 인증" />
+						</div>
+					</fieldset>
+				</form>
+				<script>				
+					$(function(){
+						$(".join-info input[type='text']:first").focus();
+						$(".js-join input").on("focus",function(){
+							$(".js-join p.check").hide();
+							if($(this).hasClass("strId")){
+								$(this).attr("placeholder","6~20자 영문, 숫자");
+							}
+							if($(this).hasClass("strPass")){
+								$(this).attr("placeholder","최소 6자 이상");	
+							}
+				
+						});
+						$(".js-join input").on("blur",function(){
+							if($(this).hasClass("strId")){
+								$(this).attr("placeholder","아이디");
+							}
+							if($(this).hasClass("strPass")){
+								$(this).attr("placeholder","비밀번호");
+							}
+						});
+					
+						var idCheck = /^[a-z][a-z0-9_-]{5,19}$/;
+						var passCheck =  /^[A-Za-z0-9_-]{6,18}$/;
+						var mailCheck = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+						var phoneCheck = /^\d{3}\d{3,4}\d{4}$/;
+						var _idval = $(".strId");
+						var _pass = $(".strPass");
+						var _repass = $(".rePass");
+						var	_strName = $(".strName");
+						var _strMail = $(".strMail");
+						var form = {
+							id : function(){
+								if(idCheck.test(_idval.val()) != true){
+									$(".strId").next().text("6~20자의 영문 및 숫자로만 가능합니다.").show();
+									if($.trim(_idval.val()).length == 0){
+										$(".strId").next().text("필수 정보입니다.").show();
+									}	
+									return false;
+								}
+							},
+							pass : function(){
+								if($.trim(_pass.val()).length < 6){
+									$(".strPass").next().text("6자 이상만 입력 가능합니다.").show();
+									if($.trim(_pass.val()).length == 0){
+										$(".strId").next().text("필수 정보입니다.").show();
+									}
+									return false;
+								}
+							},
+							repass : function(){
+								if($.trim(_repass.val()) != $.trim(_pass.val())){
+									$(".rePass").next().text("비밀번호가 일치하지 않습니다.").show();
+									if($.trim(_repass.val()).length == 0){
+										$(".strpass").next().text("필수 정보입니다.").show();
+									}
+									return false;
+								}
+							},
+							name : function(){
+								if($.trim(_strName.val()).length == 0){
+									$(".strName").next().text("필수 정보입니다.").show();	
+									return false;
+								}
+							},
+							mail : function(){
+								if(mailCheck.test(_strMail.val()) != true){
+									$(".strMail").next().text("잘못된 이메일 주소입니다.").show();
+									if($.trim(_strMail.val()).length == 0){
+										$(".strMail").next().text("필수 정보입니다.").show();
+									}	
+									return false;
+								}
+							}
+						}
+
+
+
+					});
+
+				</script>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

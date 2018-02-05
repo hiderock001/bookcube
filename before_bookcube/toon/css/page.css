@@ -1,0 +1,230 @@
+@charset "utf-8";
+/******************************************************************************************************************************************************************************************************/
+/*******************************************************************************북큐브네트웍스 퍼블리셔 차남일 ****************************************************************************************/
+/******************************************************************************************************************************************************************************************************/
+/* header */
+body{position:relative;background-color:#fff !important;min-width:900px;}
+.hide{position:absolute;left:-9999px;width:0;height:0;font-size:0;line-height:0;}
+a:hover{text-decoration:none;}
+.header{width:100%;border-bottom:1px solid #CDCED1;}
+.head_banner{height:80px;}
+.h_banner_inner{position:relative;margin:0 auto;width:900px;}
+.bannerClose{position:absolute;top:24px;right:-66px;cursor:pointer;}
+.header_top{width:100%;background:#333;border-bottom:1px solid #000;height:32px;}
+.h_top_inner{position:relative;margin:0 auto;width:904px;*zoom:1;}
+.h_top_inner:after{content:"";display:block;clear:both;}
+.lnb_left{float:left;*zoom:1;}
+.lnb_left:after{content:"";display:block;clear:both;}
+.lnb_left li{float:left;height:33px;}
+.lnb_left li a{display:block;overflow:hidden;height:33px;}
+.lnb_on img{margin-top:-35px;}
+.lnb_right{float:right;*zoom:1;}
+.lnb_right:after{content:"";display:block;clear:both;}
+.lnb_right li{float:left;padding:0 7px;background:url(/toon/images/toon/lnb_line.jpg) no-repeat left center;}
+.lnb_right li:first-child{background:none;}
+.lnb_right li a{font-size:11px;line-height:32px;color:#999;}
+.lnb_right li a.on{color:#fff;font-weight:600;}
+.lnb_right li:first-child a{color:#f2652f;font-weight:bold;}
+.lnb_right li.bold a{font-weight:bold;}
+.lnb_right li:hover a{text-decoration:underline;}
+/* header middle */
+.header_middle{border-bottom:1px solid #8f0100;
+background:url(/toon/images/page/headerBg.jpg) repeat-x;}
+.h_middle_inner{position:relative;margin:0 auto;padding:28px 0;width:904px;*zoom:1;}
+.h_middle_inner:after{content:"";display:block;clear:both;}
+.bookcube{float:left;margin-left:26px;height:36px;width:166px;}
+.h_search_box{padding-left:325px;width:100%;box-sizing:border-box;*zoom:1;}
+.h_search_box:after{content:"";display:block;clear:both;}
+.h_search_box .tab{float:left;width:155px;height:38px;}
+.h_search_box .tab:after{content:"";display:block;clear:both;}
+.h_search_box .tab li{float:left;height:38px;}
+.h_search_box .tab li h2{width:100%;height:100%;}
+.h_search_box .tab li{width:75px;}
+.h_search_box .tab li:last-child{width:80px;}
+.h_search_box .tab li a{display:block;text-indent:-9999px;width:100%;height:100%;}
+.h_search_box .tab.webtoon{background:url(/toon/images/toon/tnb_tab.png) no-repeat;}
+.h_search_box .tab.comic{background:url(/toon/images/toon/pc-toon.png) no-repeat;background-position:-4px -419px;}
+
+.search_box{padding:6px 0;float:left;margin-left:110px;border:1px solid #8f0100;background:#950101;border-radius:4px;}
+.select{float:left;position:relative;width:69px;height:23px;line-height:23px;padding-left:12px;border-right:1px solid #bf4748;cursor:pointer;}
+.select > p{color:#fff;}
+.select_arrow{position:absolute;left:63px;top:9px;}
+.selectList{padding:5px 0 5px 4px;position:absolute;width:78px;left:-1px;top:27px;border:1px solid #8f0100;border-top:none;background:#950101;z-index:2000;display:none;}
+.selectList li{padding-left:9px;line-height:19px;color:#fff;}
+.selectList li:hover{color:#000;}
+.search_input{float:left;margin-right:5px;width:145px;height:22px;border:none;padding-left:10px;line-height:22px;background:transparent;color:#fff;}
+.bookcash{float:left;margin-left:6px;}
+.select_submit{float:left;margin-left:4px;width:53px;height:38px;background:url(/toon/images/toon/pc-toon.png) no-repeat;background-position:-4px -92px;text-indent:-9999px;border:none;cursor:pointer;}
+/* header bottom */
+.header_bottom{position:relative;padding-top:12px;width:100%;height:28px;background:#f6f6f6;}
+.h_bottom_inner{width:904px;margin:0 auto;position:relative;}
+.h_bottom_inner:after{content:"";display:block;clear:both;}
+.main_category{float:left;margin-top:1px;}
+.lnb{float:right;}
+.lnb:after{content:"";display:block;clear:both;}
+.lnb li{float:left;background:url(/toon/images/toon/lnb-dot.jpg) no-repeat left center;}
+.lnb li a{display:block;padding:0 11px;}
+.lnb li:first-child{background:none;}
+/*.lnb li:last-child{margin-top:-6px;}*/
+/*.lnb li:last-child a{display:block;width:54px;height:30px;margin:0 auto;background:url(/toon/images/toon/adult-off.png) no-repeat center center;text-indent:-9999px;}*/
+/*.lnb li:last-child a.on{background:url(/toon/images/toon/adult-on.png) no-repeat center center;}*/
+.header_bottom .main-snb{margin-left:10px;float:left;}
+.header_bottom .main-snb:after{content:"";display:block;clear:both;}
+.header_bottom .main-snb li{float:left;}
+.header_bottom .main-snb li a{display:block;padding:0 11px;text-align:center;}
+
+/* contents */
+.contentsWrap{width:100%;}
+.contents{width:904px;margin:0 auto;}
+/* mainBottom */
+.mainBottom{padding-top:10px;border-top:1px solid #e5e6e7;width:100%;background:#f6f6f6;}
+.mainBottom_inner{width:904px;margin:0 auto;}
+.cs{border:1px solid #e5e6e7;border-top:1px solid #cdced1;background:#fff;}
+.cs:after{content:"";display:block;clear:both;}
+.csLeft{float:left;width:719px;}
+.csLeft div:first-child{border-top:none;padding:24px 0;}
+.csLeft div{border-top:1px solid #e5e6e7;}
+.csLeft div ul:after{content:"";display:block;clear:both;}
+.csLeft div ul.csList li{width:180px;height:45px;float:left;text-align:center;background:url(/toon/images/page/csBg.gif) no-repeat left center;}
+.csLeft div ul.csList li:first-child{width:179px;background:none;}
+.csLeft div ul li a{display:block;}
+.csBoard{position:relative;padding:20px  0 20px 29px;}
+.csBoard li{padding-left:13px;background:url(/images/page/csDot.gif) no-repeat left center;}
+.csBoard li a{line-height:18px;}
+.csBoard > a{display:block;position:absolute;top:32px;right:34px;width:40px;height:12px;background:url(/toon/images/page/moreDot.gif) no-repeat right 3px;}
+.csLine{margin-top:8px;}
+.csRight{float:left;border-left:1px solid #e5e6e7;width:182px;height:170px;}
+.csRight span{display:block;width:113px;margin:22px auto 0;height:120px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-10px -372px;}
+.mainBottom_banner{display:block;margin:36px auto 0;}
+
+/* 푸터 */
+.footer{width:100%;height:184px;border-top:1px solid #d6d6d6;background:#e5e6e7;}
+.foot_inner{margin:0 auto;padding-top:24px;width:900px;*zoom:1;}
+.foot_inner:after{content:"";display:block;clear:both;}
+.foot_left{float:left;padding-left:18px;width:200px;box-sizing:border-box;}
+.foot_left h3{width:142px;height:30px;margin-bottom:30px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-134px -372px;}
+.foot_right{float:left;width:700px;padding-left:85px;box-sizing:border-box;}
+.f_lnb{margin-bottom:15px;*zoom:1;}
+.f_lnb:after{content:"";display:block;clear:both;}
+.f_lnb li{float:left;padding:0 12px;background:url(/images/page/footerDot.gif) no-repeat left center;font-size:11px;line-height:18px;color:#9d9d9d;}
+.f_lnb.large li{float:left;padding:0 8px;background:url(/images/page/footerDot.gif) no-repeat left center;font-size:11px;line-height:18px;color:#9d9d9d;}
+.f_lnb li:first-child{padding-left:0;background:none;}
+.f_lnb li a{font-size:14px;color:#666;}
+.f_lnb li a strong{color:#333;}
+.f_lnb li:hover a{text-decoration:underline;} 
+.f_lnb li.no_ba{background:none;padding-left:0;}
+.copyright{font-size:11px;color:#9d9d9d;}
+.foot_left > a{display:inline-block;margin-right:12px;}
+.foot_left > a:last-child{margin-right:0;}
+
+
+
+.toonNew{position:absolute;left:0;top:0;display:block;width:36px;height:20px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-303px -238px;}
+.toonUp{position:absolute;right:0;bottom:0;display:block;width:25px;height:20px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-349px -238px;}
+.toonAdult{position:absolute;right:0;top:0;display:block;width:25px;height:20px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-384px -238px;}
+
+/* 페이징 */
+.paging{padding:15px 0 30px 0;text-align:center;}
+.paging a{display:inline-block;font-size:15px;vertical-align:middle;padding:0 13px;border-left:1px solid #ccc;font-weight:600;}
+.paging a.one{border-left:none;}
+.paging a.on{color:#f26532;}
+.paging .arr{border-left:none;padding:0;margin:0 3px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;}
+.paging .arr.first{width:34px;height:26px;background-position:-608px -242px;}
+.paging .arr.prev{width:26px;height:26px;background-position:-645px -242px;}
+.paging .arr.next{width:26px;height:26px;background-position:-674px -242px;}
+.paging .arr.last{width:34px;height:26px;background-position:-703px -242px;}
+
+/* 전체카테고리 */
+.all-category{display:none;background:#fff;position:absolute;top:50px;left:0;box-shadow:0 2px 2px 2px rgba(0,0,0,.2);z-index:10000;}
+.all-category:after{content:"";display:block;clear:both;}
+.all-category > div:nth-child(1){border-left:1px solid #45474c;}
+.all-category > div:nth-child(5){width:178px;border-right:1px solid #45474c;}
+.caseBox{position:relative;float:left;width:180px;height:550px;border-right:1px solid #898b8f;border-bottom:1px solid #898b8f;}
+.cate-title > li > p{padding-left:22px;line-height:48px;font-size:16px;background:#45474c;}
+.cate-title > li > p > a{display:block;color:#fff;}
+.cate-title > li > p span{margin-left:20px;height:12px;width:7px;display:inline-block;background:url(/novel/images/novel/cateTitleBg.png) no-repeat left center;}
+.cate-title ul{margin-top:10px;}
+.cate-title ul li{height:30px;}
+.cate-title ul li a{line-height:30px;padding-left:22px;display:block;} 
+.cate-btn-wrap{position:absolute;left:0;height:62px;bottom:0;background:#f4f4f4;width:100%;}
+.cate-btn-wrap p{border:1px solid #c1c1c1;width:162px;margin:10px auto 0;box-shadow:0 2px #e8e8e8;border-radius:3px;background:url(/novel/images/novel/cateTitleBg.png) no-repeat 143px center #fff;}
+.cate-btn-wrap p a{display:block;line-height:40px;padding-left:12px;font-size:13px;}
+.cate-btn-wrap p span{display:inline-block;margin-right:10px;}
+.all-category > div:nth-child(1) .cate-btn-wrap p span{color:#c16e7b;}
+.all-category > div:nth-child(2) .cate-btn-wrap p span{color:#f75294;}
+.all-category > div:nth-child(3) .cate-btn-wrap p span{color:#ae5b4b;}
+.all-category > div:nth-child(4) .cate-btn-wrap p span{color:#5d78bb;}
+
+/* 결제 팝업 */
+#overay_pop{display:none;position:fixed;background:#fff;border:4px solid #46474b;width:800px;z-index:10000;top:100px;left:50%;margin-left:-400px;}
+.layer_popup .layer_head{position:relative;width:100%;background-color:#46474b;color:#fff;height:44px;line-height:43px;}
+.layer_popup.border_type_box .layer_head h2 {padding-left:20px;text-align:left;font-size:14px;color:#fff;}
+.layer_popup .btn_layer_x{top:10px;right:10px;display:inline-block;position:absolute;width:16px;height:16px;background:url(/novel/images/novel/layerPopClose.png) no-repeat;}
+.layer_popup .layer_content{padding:30px;overflow:hidden;}
+.line_type thead th{background:#f3f4f4;font-weight:normal;color:#46474b;font-size:12px !important;height:40px;line-height:40px;border-right:1px solid #d4d5d6;border-bottom:1px solid #d4d5d6;}
+.line_type tbody th{text-indent:16px;text-align:left;font-size:12px !important;height:40px;line-height:40px;border-right:1px solid #d4d5d6;border-bottom:1px solid #d4d5d6;}
+.line_type th, .line_type td{height:40px;line-height:40px;border-right:1px solid #d4d5d6;border-bottom:1px solid #d4d5d6;font-size:12px !important;}
+.ac{text-align: center !important;}
+.top10{margin-top: 10px !important;font-size: 12px !important;}
+.cash_step{padding:13px 0;}
+.cash_step h3{color:#ff3300;font-size:14px;}
+.cash_step h3 span{color: #46474b !important;}
+.cash_coupon_box{line-height:48px;height:48px;padding-left:10px;border:1px solid #D4D5D6;background-color:#FFF;text-align:center;font-size:12px !important;}
+.cash_coupon_box p{float:left;}
+.couponIpt{padding-left:10px;width:170px;height:26px;line-height:26px;border:1px solid #D4D5D6;vertical-align:middle;color:#999;vertical-align:middle;}
+.gray2{color:#676767 !important;}
+.o_f16{margin-left:10px;font-size:16px;color:#F26532;vertical-align:middle;font-weight:bold;}
+.ma_top{margin-top:10px;margin-right: 10px;}
+.coupon_btn{float:right;}
+.story_coupon_select{display:block;float:left;width:105px;height:26px;text-align:center;color:#fff !important;line-height:26px;background:#f26532;border:1px solid #df5c2d;border-radius:3px;box-shadow:0 2px #fde8e0;font-weight:normal !important;}
+.coupon_reset{display:block;float:left;margin-left:5px;width:105px;height:28px;text-align:center;color:#666 !important;line-height:28px;background:url(/novel/images/novel/couponBtn2.jpg) no-repeat left center;font-weight:normal !important;border:none;cursor:pointer;}
+.story_coupon_pop{padding-bottom:30px;position:absolute;left:20px;top:120px;width:780px;border:3px solid #46474b;background:#fff;display:none;}
+.coupon_title_box{height:41px;background:#46474b;}
+.coupon_title_box h4{float:left;margin-left:8px;font-size:14px;color:#fff;line-height:41px;}
+.story_coupon_pop_close{float:right;margin-right:13px;margin-top:11px;cursor:pointer;}
+.tbl_box{padding:30px;text-align:center;}
+.coupon_tbl{margin-bottom:15px;}
+.coupon_tbl td{padding:15px 0;text-align:center;font-size:12px !important;}
+.c_radio{width:19px;height:19px;}
+.couponApply2{display:inline-block;width:105px;height:26px;text-align:center;color:#fff !important;line-height:26px;background:#f26532;border:1px solid #df5c2d;border-radius:3px;box-shadow:0 2px #fde8e0;font-weight:normal !important;cursor:pointer;}
+.coupon_ps_box{padding:0 30px;}
+.coupon_ps{padding:15px;border:1px solid #d5d5d5;}
+.coupon_ps li{color:#666;font-weight:normal;line-height:18px;font-size:12px !important;}
+.coupon_ps li span{font-weight:bold;color:#ff6600;}
+.layer_popup.serial_popup .select_pay_method{width:457px;}
+.top5{margin-top: 5px !important;}
+.fl{float:left;}
+.layer_popup .layer_content .border_type {height:48px;line-height:48px;padding-left:10px;border:1px solid #d4d5d6;background-color:#fff;}
+.input_chk{margin-top:-2px;width:19px;height:19px;padding:5px;}
+.f16{font-size:16px !important;}
+.orange{color:#f26532 !important;}
+.layer_popup .layer_content .border_type .fr{padding-right:17px;}
+.layer_popup .layer_content .border_type .fr .btn{display:block;text-align:center;margin-top:11px;vertical-align:top !important;width:105px;height:26px;line-height:26px;color:#fff !important;font-weight:normal;background:#f26532;overflow:hidden;border:1px solid #df5c2d;border-radius:3px;box-shadow:0 2px #fde8e0;}
+.flow{overflow:hidden;}
+.layer_popup.serial_popup .btn_pay{width:263px;height:168px;}
+.border_type2{border:1px solid #d4d5d6;background-color:#f6f6f6;}
+.fr{float:right;}
+.top40{margin-top:40px !important;}
+.black2{color:#010101 !important;}
+.f14{font-size:14px !important;}
+.red2{color:#ff3300 !important;}
+.f18{font-size:18px !important;}
+.layer_popup.serial_popup .btn_pay .btn_serial_pay{display:inline-block;color:#fff !important;font-size:16px;width:227px;height:56px;line-height:56px;font-weight:600;background:#f26532;border:1px solid #df5c2d;border-radius:3px;box-shadow:0 2px #fde8e0;}
+
+
+/* 라벨 */
+.label{display:inline-block;height:20px;position:absolute;left:0;bottom:0;}
+.label:after{content:"";display:block;clear:both;}
+.label .toonNew{float:left;position:static;}
+.label .toonUp{float:left;position:static;}
+.label-red{position:absolute;left:0;top:0;display:block;width:41px;height:41px;border-radius:41px;background:#f00;color:#fff;line-height:40px;text-align:center;font-size:22px;font-weight:600;background:url(/toon/images/toon/pc-toon.png) no-repeat left center;
+background-position:-64px -91px;}
+.label-gray{position:absolute;left:0;top:0;display:block;width:41px;height:41px;border-radius:41px;background:#f00;color:#fff;line-height:40px;text-align:center;font-size:22px;font-weight:600;background:url(/toon/images/toon/pc-toon.png) no-repeat left center;
+background-position:-109px -91px;}
+
+/* 알리미 */
+.alarm_layer_box{position:absolute;width:500px;z-index:10000;top:25px;left:410px;margin-left:0;}
+.alarm_layer_head_top{position:relative;height:7px;text-align:center;width:500px;}
+.alarm_layer_head_top img{display:none;position:absolute;top:0;left:50%;margin-left:-7px;}
+.border_type_box2{background-color:#ededef;border:4px solid #46474b;}
+.btn_layer_x{background:url(/novel/images/novel/close_x.gif) no-repeat !important;}

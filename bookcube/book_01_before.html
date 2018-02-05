@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<link rel="canonical" href="http://m.bookcube.com/">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="e북포털 북큐브">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="http://www.bookcube.com">
+<meta property="dable:title" content="">
+<meta property="dable:author" content="">
+<meta property="product:category" content="">
+<meta property="product:category2" content="">
+<meta property="product:category3" content="">
+<meta property="product:price:currency" content="KRW">
+<meta property="product:price:amount" content="">
+<meta property="product:sale_price:currency" content="KRW">
+<meta property="product:sale_price:amount" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script type="text/javascript" src="/js/lib/jcarousel.js"></script>
+<script type="text/javascript" src="slider.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+</script>
+<!-- naver-->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+<!-- kakao 로그인-->
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method=''>
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#" class="on">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="header-bottom-inner">
+					<div class="h-bottom-left">
+						<p class="all-category"><a href="#"><img src="/images/main/all-category.png" alt='전체카테고리' /></a></p>
+						<ul class="snb-left">
+							<li><a href="#" class="on">일반도서</a></li>
+							<li><a href="#">로맨스</a></li>
+							<li><a href="#">BL</a></li>
+							<li><a href="#">무협/판타지</a></li>
+							<li><a href="#">만화</a></li>
+						</ul>
+					</div>
+					<div class="h-bottom-right">
+						<ul class="snb-right">
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">신간</a></li>
+							<li><a href="#">무료</a></li>
+							<li><a href="#">이벤트</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="today-hot">
+				<h3 class="hot-title">오늘의 추천</h3>
+				<div class="hot-inner">
+					<p class="prev"><a href="javascript:;"><span>prev</span></a></p>
+					<p class="next"><a href="javascript:;"><span>next</span></a></p>
+				</div>
+				<div class="slider">
+					<ul>
+						<li>
+							<div class="figure">
+								<span class="label"><em>50%<span>할인</span></em></span>
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1708/170800343.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">가만히 끌어안다</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<span class="label"><em>50%<span>적립</span></em></span>
+								<span class="adult">19</span>
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1701/170101176.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">최후의 승자가 되던지 말던지</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">사소 하고도 특별한</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<span class="adult">19</span>
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/150/1710/171001023.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">집 살래 월세 살래</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1402/140218376.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">아빠의 3분육아</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/150/1709/170909640.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">도요타의 원가</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1708/170802233.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">내 아이를 위한 칼 비테 교육법</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1512/151207830.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">내 아이를 위한 UP학습코칭</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1508/150802296.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">엄마의 대화법</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1401/140100551.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">내 아이을 위한 진로코칭</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1304/130400329.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">내 아이를 위한 사랑표현 학교</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1709/170909382.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">회귀행</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/120/1501/150104809.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">착한 스프는 전화를 받지 않는다</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1708/170803912.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">나를 사랑하지 못하는 나에게</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1710/171001321.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">근데 영화 한편 씹어먹어 봤니?</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1710/171001021.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">가만히 끌어안다</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1709/170911654.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">안드로이드는 전기장의</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+						<li>
+							<div class="figure">
+								<a href="#">
+									<span class="rm_br">
+										<img src="http://bookimg.bookcube.com/200/1709/170905713.jpg" />	
+									</span>
+									<span class="light"></span>
+									<div class="caption">
+										<div class="about">
+											<p>살아 있는 한, 사랑은 떠나간다. 피할 수 없이 그 순간은 찾아온다.  그렇지만 그 사랑의 순간이 지금 살아</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="hot-info">
+								<p class="hot-title">남한산성</p>
+								<p>황이라 저</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-inner">
+				<div class="quick general">
+					<ul>
+						<li><a href="#">캐시충전</a></li>
+						<li><a href="#">최대 50% 파격가에 만나다!</a></li>
+						<li><a href="#">오디오북 어디서나 바로</a></li>
+						<li><a href="#">세트할인 몰아서 할인 받자</a></li>
+						<li><a href="#">MD추천 어떤 책이 좋을까?</a></li>
+					</ul>
+				</div>
+				<div class="main-event">
+					<h3 class="coTitle">이벤트</h3>
+					<a href="javascript:;" class="event-prev">prev</a>
+					<div class="banner-list">
+						<ul>
+							<li><a href="#"><img src="/images/thum/banner01.jpg" alt='북큐브 독점 신작'/></a></li>
+							<li><a href="#"><img src="/images/thum/banner02.jpg" alt='북큐브 독점 신작'/></a></li>
+							<li><a href="#"><img src="/images/thum/banner03.jpg" alt='북큐브 독점 신작'/></a></li>
+							
+						</ul>
+					</div>
+					<a href="javascript:;" class="event-next">next</a>
+					<div class="more">더보기</div>
+				</div>
+			</div>
+		</section>
+		<footer></footer>
+	</div>	
+	<script>
+		(function($){
+			var count = 0;
+			var screen = $(window).outerWidth();
+			var li = $(".slider ul li").width();
+			var len = $(".slider ul li").length;
+			var width = $(".slider ul li").width() * len;
+			var timer = 0;
+			var paging = '';
+			var area = len / 2;
+			var left = 0;
+			var left2 = 0;
+			var offLeft = $(".hot-inner").offset().left;
+			for(var i = 0; i <len; i++){
+				var eq = $(".slider ul li").eq(i).index();
+				if(len % 2 == 1){
+					var hol=0;
+					hol = Math.ceil(area);
+					if(eq < hol){
+						left += li;
+						$(".slider ul li").eq(eq).css("left",left+(width/2-li/2) - li);
+					}else if(eq >= hol){
+						left2 += li;
+						$(".slider ul li").eq(eq).css("left",left2 - li);
+					}
+				}else{
+					if(eq < area){
+						left += li;
+						$(".slider ul li").eq(eq).css("left",left+(width/2) - li);
+					}else{
+						left2 += li;
+						$(".slider ul li").eq(eq).css("left",left2 - li);
+					}
+				}
+			}
+			if(len % 2 == 1){
+				$(".slider ul").css({"width":width,"left":-width/2+li/2 + offLeft});
+			}else{
+				$(".slider ul").css({"width":width,"left":-width/2 + offLeft});
+			}
+			//$(".slider ul").css({"width":width,"left":-width/2 + offLeft});
+			for(var i = 1; i <= len; i++){
+				paging += "<a href='javascript:;'>"+i+"</a>";
+				$(".paging").html(paging);
+			}
+			var pagingLen = $(".paging a").length;
+			$(".paging a:first").addClass("on");
+			$(".next").on("click",function(e){
+				next();	
+			});
+			$(".prev").on("click",function(e){
+				prev();	
+			});
+			
+			$(window).resize(function(){
+				var reLeft = $(".hot-inner").offset().left;
+				var point1 = 0;
+				var point2 = 0;
+				for(var i = 0; i <len; i++){
+					var eq = $(".slider ul li").eq(i).index();
+					if(len % 2 == 1){
+						var hol=0;
+						hol = Math.ceil(area);
+						if(eq < hol){
+							point1 += li;
+							$(".slider ul li").eq(eq).css("left",point1+(width/2-li/2) - li);
+						}else if(eq >= hol){
+							point2 += li;
+							$(".slider ul li").eq(eq).css("left",point2 - li);
+						}
+					}else{
+						if(eq < area){
+							point1 += li;
+							$(".slider ul li").eq(eq).css("left",point1+(width/2) - li);
+						}else{
+							point2 += li;
+							$(".slider ul li").eq(eq).css("left",point2 - li);
+						}
+					}
+				}
+				if(len % 2 == 1){
+					$(".slider ul").css({"width":width,"left":-width/2+li/2 + reLeft});
+				}else{
+					$(".slider ul").css({"width":width,"left":-width/2 + reLeft});
+				}
+			});
+
+			function next(){
+				var delay = Math.abs(timer-$.now());
+				if (delay > 300) {
+					timer = $.now();
+					count++;
+					$(".slider ul li").each(function(){
+						var move = $(this).css("left");	
+						if(move <= 0+"px"){
+							$(this).stop().animate({
+								left : width - li
+							},0);	
+						}else{
+							$(this).stop().animate({
+								left : "-="+li +"px"
+							},300);	
+						}
+					});
+					if(count > pagingLen - 1){
+						count = 0
+					}
+
+				}
+			}
+			function prev(){
+				var delay = Math.abs(timer-$.now());
+				if (delay > 300) {
+					timer = $.now();
+					count--;
+					$(".slider ul li").each(function(){
+						var move = $(this).css("left");	
+						if(move == width - li + "px"){
+							$(this).stop().animate({
+								left : 0
+							},0);	
+						}else{
+							$(this).stop().animate({
+								left : "+="+li +"px"
+							},300);	
+						}
+					});
+					if(count < 0){
+						count = pagingLen - 1
+					}	
+				}
+			}
+		}(jQuery));
+		
+	</script>
+	<script>
+			$(function(){
+				var page_section = $(".js_page_section").data("page");
+				if(page_section == "bl" || page_section == "romance"){
+					$(".js_jcarousel").find("li").eq(-1).addClass("last");
+				}
+
+				$(".js_jcarousel").jcarousel();
+				$(".js_jcarousel").each(function(){
+					if($(this).jcarousel("items").length <= 5){
+						$(this).find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+					}
+				});
+				$('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$('.jcarousel-next').on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+
+
+				// 검색창 닫기	
+				$("body").click(function(){
+					$(".all-category").fadeOut(100);
+				});
+				$(".all-category,.main_category a").on("click",function(event){
+					event.stopPropagation();
+				});
+
+
+
+				// 전체카테고리
+				$(".main_category a").on("click",function(){
+					$(".all-category").toggle();
+				});
+		
+
+		    });
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430"/>
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script>
+<!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+</script>
+<!-- naver-->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+</head>
+<body>
+<!-- skip navi -->
+<dl id="skiptoContent">
+	<dt><strong>바로가기 메뉴</strong></dt>
+	<dd><a href="#gnb">메인메뉴 바로가기</a></dd>
+</dl>
+<!-- //skip navi -->
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+			<div class="fl">
+				<a href="http://www.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점"/></a>
+				<a href="http://www.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브"/></a>
+				<a href="http://www.bookcube.com/webtoon/main.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰"/></a>
+				<a href="http://www.bookcube.com/b2b.asp"><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관"/></a>
+			</div>
+			<div class="fr">
+				<a href="https://www.bookcube.com/login.asp?return_url=http://www.bookcube.com%2Fcustomer%2Easp%3Fpage%3Dmobile" class="on login">로그인</a><em class="divider">|</em>
+				<a href="https://www.bookcube.com/member/register_step1.asp">회원가입</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/customer.asp">고객센터</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/event.asp?page=nm">이벤트</a>
+			</div>
+		</div>
+		<!-- 팝업레이어 :: Alarm 안내-->
+		<div class="alarm_layer_box common" style="display:none;">
+			<div class="alarm_layer_head_top">
+				<img src="/images/board/sns_bt.gif">
+			</div>
+			<div id="" class="border_type_box2">
+				<iframe src="" width="492" height="359" frameborder="0" name="alarm_view" id="alarm_view" scrolling="no">
+				</iframe>
+			</div>
+		</div>
+		<!-- //header -->
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/storycube/images/integration/h2_02_00_customer.gif" alt="고객센터"/></h2>
+			</div>
+			<!-- contents_wrap -->
+			<div class="contents_wrap">
+				<div class="list_tab_menu">
+					<!-- [Dev Comment] :: 선택된 메뉴에 클래스 on 이 추가됩니다 -->
+					<a href="/customer.asp?page=faq" class="first"><span>FAQ</span></a>
+					<a href="/customer.asp?page=notice" class=""><span>공지사항</span></a>
+					<a href="/customer.asp?page=pc" class=""><span>PC 안내</span></a>
+					<a href="/customer.asp?page=mobile" class="on"><span>모바일 안내</span></a>
+					<a href="/customer.asp?page=reader" class=""><span>단말기 안내</span></a>
+					<a href="/customer.asp?page=storycube" class="last "><span>웹소설 안내</span></a>
+				</div>
+				<div class="contents bdr_btm">
+					<div class="inner_type customer">
+						<div class="faq_menu Cmobile">
+							<!-- [Dev] :: 활성화된 메뉴에 클래스 on 생성됨 -->
+							<ul>
+								<li class="on"><a href="javascript:;">Android 기기</a></li>
+								<li><a href="javascript:;">IOS 기기</a></li>
+								<li class=""><a href="javascript:;">전자책 대여</a></li>
+								<li class="last"><a href="javascript:;">전자책 선물하기<img src="/images/renewal/customerNew.png" alt="" class="customerNew" /></a></li>
+							</ul>
+						</div>
+						<!-- 1 Android 기기 -->
+						<div class="gudie_contents">
+							<h3 class="first"><span>STEP 1</span>앱 설치 및 실행</h3>
+							<div class="guide_detail">
+								<ul>
+									<li><strong class="orange">①</strong> 마켓(Play스토어)에서 &quot;북큐브&quot;를 검색하여 &quot;북큐브 내서재&quot;앱(app)을 찾습니다.</li>
+									<li><strong class="orange">②</strong> 다운로드 버튼을 터치하여 앱을 다운로드 한 후 앱을 실행합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab1_1.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 2</span>내 서재 및 북큐브 서점 실행</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>다운로드 받은 북큐브를 실행하면 내서재 혹은 전자책 서점 화면이 나옵니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_2.jpg" alt=""/>
+											<p class="gray_txt">
+												[내서재]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_3.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 서점]
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 3</span>로그인 및 회원가입</h3>
+							<div class="guide_detail">
+								<ul>
+									<li><strong class="orange">①</strong> 로그인을 합니다.(로그인시에만 구매 및 개인 정보 확인이 가능합니다.)</li>
+									<li><strong class="orange">②</strong> 북큐브 회원이 아닌 경우 회원가입 메뉴를 터치하여 절차에 맞게 가입을 진행합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab1_4.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 4</span>메뉴 한 눈에 보기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>북큐브 전자책 서점은 다음과 같은 메뉴로 구성이 되어 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_5.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong><span class="orange">①</span> 내서재</strong><br/>
+												다운로드 받은 책을 보관하는 메뉴 </li>
+												<li class="top20"><strong><span class="orange">②</span> 북큐브 서점</strong><br/>
+												전자책을 구매할 수 있는 상점 </li>
+												<li class="top20"><strong><span class="orange">③</span> 커뮤니티</strong>
+												<p>
+													북큐브 무료연재 커뮤니티<br/>
+													-로맨스토리<br/>
+													-무신
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_6.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong><span class="orange">④</span> 마이페이지</strong>
+												<p class="top20">
+													<strong>다시 내려받기</strong><br/>
+													: 구매한 전자책을 내서재에 담을 수 있습니다.
+												</p>
+												<p class="top20">
+													<strong>주문내역 확인</strong><br/>
+													: 구매한 전자책의 주문내역을 확인할 수 있습니다.
+												</p>
+												<p class="top20">
+													<strong>북캐시/적립금/상품권 내역</strong><br/>
+													: 북큐브 전자책 서점의 사이버머니 <br/>
+													&nbsp;&nbsp;내역을 확인할 수 있습니다.
+												</p>
+												<p class="top20">
+													<strong>북캐쉬 충전</strong><br/>
+													: 북큐브의 전자책을 구매할 수 있는 <br/>
+													&nbsp;&nbsp;사이버 머니를 구매하실 수 있습니다.
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 5</span>전자책 찾기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>원하는 전자책을 검색을 통해 찾거나 무료 전자책/분야별 전자책/베스트 전자책/독점연재를 선택해 볼 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_7.jpg" alt=""/>
+											<p class="gray_txt">
+												[검색어를 통해 전자책 찾기]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 검색영역을 선택합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 검색어를 입력합니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 검색 아이콘을 터치 합니다.</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_8.jpg" alt=""/>
+											<p class="gray_txt">
+												[디텍토리로 전자책 찾기]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 분야별 전자책을 터치하면 전자책이<br/>소속된 카테고리로 이동합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 대여/자유관을 터치하면 대여/자유이용 가능한<br/>전자책이 모여있는 곳으로 이동합니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 터치하면 베스트/추천/신간/독점연재<br/>도서를 볼 수 있습니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 6</span>전자책 선택</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>원하는 전자책을 선택하여 전자책 상세 페이지로 이동합니다. </li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_9.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 상세 페이지]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 즉시구매를 터치하면 결제<br/>페이지로 바로 이동합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 책바구니를 터치하면 책바구니에 책이 담깁니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 찜하기를 터치하면 찜목록에 책이 담깁니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 7</span>책바구니</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>책바구니에 책을 담아 한번에 여러 권의 책을 결제할 수 있습니다. 주문하기를 터치하면 결제 페이지로 이동합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab1_10.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 8</span>결제하기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>선택하신 전자책을 구매하는 단계입니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_11.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li class="ls_m"><strong class="orange">①</strong> 소지하고 있는 북캐시/적립금/상품권을 입력합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 북캐시/적립금/상품권의 금액이 충분하지 않다면 결제수단을 사용하여 결제를 할 수 있습니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 9</span>마이 페이지</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>북캐쉬/적립금/상품권 내역 및 구매한 도서 다시 내려받기, 주문내역 확인 등을 할 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box mypage">
+									<div class="flow">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_12.jpg" alt=""/>
+											<p class="gray_txt">
+												[1. 마이페이지 메뉴를 터치]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_13.jpg" alt=""/>
+											<p class="gray_txt second">
+												[2. 마이페이지 이동]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_14.jpg" alt=""/>
+											<p class="gray_txt">
+												[3. 다시내려받기 이동]
+											</p>
+										</div>
+									</div>
+									<div class="flow al top30">
+										<ul>
+											<li><strong class="orange">①</strong> 구매한 도서를 다시 내려받을수있습니다.</li>
+											<li class="top20"><strong class="orange">②</strong> 주문한 전자책 리스트 및 취소를 할 수 있습니다 .<br/>
+											(주문 취소는 다운로드 대기 상태일 때에만 가능합니다.)</li>
+											<li class="top20"><strong class="orange">③</strong> 찜하기를 선택한 도서 목록을 확인할 수 있습니다.</li>
+											<li class="top20"><strong class="orange">④</strong> 내서재 담기 버튼을 터치하면 해당 도서가 내서재로 이동</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 10</span>내서재</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>다운로드한 책은 내서재에 담깁니다. 보고자 하는 전자책을 터치하여 선택합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab1_15.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 11</span>전자책 보기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>뷰어를 통해 전자책을 볼 수 있습니다. 가운데를 클릭하면 도구 메뉴가 뜹니다. <br/>왼쪽을 터치하면 이전 페이지로 오른쪽을 터치하면 다음 페이지로 이동합니다.(기본 설정)</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_16.jpg" alt=""/>
+											<p class="gray_txt">
+												[이용 방법]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li class="ls_m pad_no">스마트폰의 화면을 수직으로 3등분 하여 클릭 하였을 때 <br/>이전페이지, 메뉴바, 다음페이지로 이동할 수 있습니다. </li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp top40">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab1_17.jpg" alt=""/>
+											<p class="gray_txt">
+												[메뉴바]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 내서재</li>
+												<li><strong class="orange">②</strong> 책갈피</li>
+												<li><strong class="orange">③</strong> 목차</li>
+												<li><strong class="orange">④</strong> 스크랩</li>
+												<li><strong class="orange">⑤</strong> 설정</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp top40">
+										<div class="fl set">
+											<img src="/images/guide/mobile_tab1_18.jpg" alt=""/>
+											<p class="gray_txt">
+												[설정]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li>
+												<p>
+													<strong class="orange">①</strong> 배경<br/>- 밝기 조절<br/>- 배경색 변경
+												</p>
+												</li>
+												<li><strong class="orange">②</strong> 글자크기</li>
+												<li><strong class="orange">③</strong> 상/하, 좌/우 여백 조절</li>
+												<li><strong class="orange">④</strong> 글꼴</li>
+												<li>
+												<p>
+													<strong class="orange">⑤</strong> 기타<br/>- 밝기 조절 ON/OFF
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 2 IOS 기기 -->
+						<div class="gudie_contents">
+							<h3 class="first"><span>STEP 1</span>IOS용 앱 설치</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>App Store에서 &quot;북큐브 내서재&quot;를 검색하여 북큐브 전자책 서점 앱(app)을 찾습니다. <br/>다운로드 버튼을 터치하여 앱을 다운로드합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab2_1.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 2</span>북큐브 사이트 접속</h3>
+							<div class="guide_detail">
+								<ul>
+									<li><strong class="orange">①</strong> 사파리(Safari)에서 북큐브 사이트(m.bookcube.com)에 접속합니다.</li>
+									<li><strong class="orange">②</strong> 홈화면에 북큐브 서점 바로가기 추가시 더 편리하게 이용 가능합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_2.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 서점]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_3.jpg" alt=""/>
+											<p class="gray_txt">
+												[홈화면에 추가]
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 3</span>로그인 및 회원가입</h3>
+							<div class="guide_detail">
+								<ul>
+									<li><strong class="orange">①</strong> 로그인을 합니다.(로그인시에만 구매 및 개인 정보 확인이 가능합니다.)</li>
+									<li><strong class="orange">②</strong> 북큐브 회원이 아닌 경우 회원가입 메뉴를 터치하여 절차에 맞게 가입을 진행합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab2_4.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 4</span>메뉴 한 눈에 보기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>북큐브 전자책 서점은 다음과 같은 메뉴로 구성이 되어 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_6.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong><span class="orange">①</span> 내서재</strong><br/>
+												다운로드 받은 책을 보관하는 메뉴 </li>
+												<li class="top20"><strong><span class="orange">②</span> 북큐브 서점</strong><br/>
+												전자책을 구매할 수 있는 상점 </li>
+												<li class="top20"><strong><span class="orange">③</span> 커뮤니티</strong>
+												<p>
+													북큐브 무료연재 커뮤니티<br/>
+													-로맨스토리<br/>
+													-무신
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_7.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong><span class="orange">④</span> 마이페이지</strong>
+												<p class="top10">
+													<strong>다시 내려받기</strong><br/>
+													: 구매한 전자책을 내서재에 담을 수 있습니다.
+												</p>
+												<p class="top10">
+													<strong>주문내역 확인</strong><br/>
+													: 구매한 전자책의 주문내역을 확인할 수 있습니다.
+												</p>
+												<p class="top10">
+													<strong>북캐시/적립금/상품권 내역</strong><br/>
+													: 북큐브 전자책 서점의 사이버머니 <br/>
+													&nbsp;&nbsp;내역을 확인할 수 있습니다.
+												</p>
+												<p class="top10">
+													<strong>북캐쉬 충전</strong><br/>
+													: 북큐브의 전자책을 구매할 수 있는 <br/>
+													&nbsp;&nbsp;사이버 머니를 구매하실 수 있습니다.
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 5</span>전자책 찾기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>원하는 전자책을 검색을 통해 찾거나 무료 전자책/분야별 전자책/베스트 전자책/독점연재를 선택해 볼 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_8.jpg" alt=""/>
+											<p class="gray_txt">
+												[검색어를 통해 전자책 찾기]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 검색영역을 선택합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 검색어를 입력합니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 검색 아이콘을 터치 합니다.</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_9.jpg" alt=""/>
+											<p class="gray_txt">
+												[디텍토리로 전자책 찾기]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 분야별 전자책을 터치하면 전자책이<br/>소속된 카테고리로 이동합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 대여/자유관을 터치하면 대여/자유이용 가능한<br/>전자책이 모여있는 곳으로 이동합니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 터치하면 베스트/추천/신간/독점연재<br/>도서를 볼 수 있습니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 6</span>전자책 선택</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>원하는 전자책을 선택하여 전자책 상세 페이지로 이동합니다. </li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_10.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 상세 페이지]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 즉시구매를 터치하면 결제<br/>페이지로 바로 이동합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 책바구니를 터치하면 책바구니에 책이 담깁니다.</li>
+												<li class="top20"><strong class="orange">③</strong> 찜하기를 터치하면 찜목록에 책이 담깁니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 7</span>책바구니</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>책바구니에 책을 담아 한번에 여러 권의 책을 결제할 수 있습니다. 주문하기를 터치하면 결제 페이지로 이동합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab2_11.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 8</span>결제하기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>선택하신 전자책을 구매하는 단계입니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_12.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li class="ls_m"><strong class="orange">①</strong> 소지하고 있는 북캐시/적립금/상품권을 입력합니다.</li>
+												<li class="top20"><strong class="orange">②</strong> 북캐시/적립금/상품권의 금액이 충분하지 않다면 <br/>결제수단을 사용하여 결제를 할 수 있습니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 9</span>마이 페이지</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>북캐쉬/적립금/상품권 내역 및 구매한 도서 다시 내려받기, 주문내역 확인 등을 할 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box mypage">
+									<div class="flow">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_13.jpg" alt=""/>
+											<p class="gray_txt">
+												[1. 마이페이지 메뉴를 터치]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_14.jpg" alt=""/>
+											<p class="gray_txt second">
+												[2. 마이페이지 이동]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_15.jpg" alt=""/>
+											<p class="gray_txt">
+												[3. 다시내려받기 이동]
+											</p>
+										</div>
+									</div>
+									<div class="flow al top30">
+										<ul>
+											<li><strong class="orange">①</strong> 구매한 도서를 다시 내려받을수있습니다.</li>
+											<li class="top20"><strong class="orange">②</strong> 주문한 전자책 리스트 및 취소를 할 수 있습니다 .<br/>
+											(주문 취소는 다운로드 대기 상태일 때에만 가능합니다.)</li>
+											<li class="top20"><strong class="orange">③</strong> 찜하기를 선택한 도서 목록을 확인할 수 있습니다.</li>
+											<li class="top20"><strong class="orange">④</strong> 내서재 담기 버튼을 터치하면 해당 도서가 내서재로 이동</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 10</span>내서재</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>다운로드한 책은 내서재에 담깁니다. 보고자 하는 전자책을 터치하여 선택합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab2_16.jpg" alt=""/>
+									<p class="gray_txt">
+										[도서 터치]
+									</p>
+								</div>
+							</div>
+							<h3><span>STEP 11</span>전자책 보기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>뷰어를 통해 전자책을 볼 수 있습니다. 가운데를 클릭하면 도구 메뉴가 뜹니다. <br/>왼쪽을 터치하면 이전 페이지로 오른쪽을 터치하면 다음 페이지로 이동합니다.(기본 설정)</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_17.jpg" alt=""/>
+											<p class="gray_txt">
+												[이용 방법]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li class="ls_m pad_no">스마트폰의 화면을 수직으로 3등분 하여 클릭 하였을 때 <br/>이전페이지, 메뉴바, 다음페이지로 이동할 수 있습니다. </li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp top40">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab2_18.jpg" alt=""/>
+											<p class="gray_txt">
+												[도구바의 기능]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 목차
+												<p>
+													- 목차 이동
+												</p>
+												</li>
+												<li><strong class="orange">②</strong> 스크랩
+												<p>
+													- 책갈피 이동
+												</p>
+												</li>
+												<li><strong class="orange">③</strong> 설정
+												<p>
+													- 배경 밝기<br/>- 글자크기<br/>- 글꼴<br/>- 페이지 넘김 효과<br/>- 기타 설정
+												</p>
+												</li>
+												<li><strong class="orange">④</strong> 책갈피</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 3 전자책 대여 -->
+						<div class="gudie_contents">
+							<h3 class="first"><span>STEP 1</span>북큐브 실행</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>Android 기기는 북큐브 앱, IOS는 사파리(Safari)에서 북큐브 사이트를 접속하여 대여/자유관 버튼을 터치합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab3_1.jpg" alt=""/>
+								</div>
+							</div>
+							<h3><span>STEP 2</span>대여/자유이용관 페이지</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>대여/자유이용권 가능한 도서들이 모여있는 페이지입니다.<br/>장르는 무협/판타지, 로맨스로 구분되어 있습니다.<br/>자유이용권 구매 시, 자유이용 가능한 도서를 이용 가능 시간 동안 무제한으로 이용할 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_2.jpg" alt=""/>
+											<p class="gray_txt">
+												[자유이용권 미구매 고객]
+											</p>
+										</div>
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_3.jpg" alt=""/>
+											<p class="gray_txt">
+												[자유이용권 구매 고객]
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 3</span>전자책 선택</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>원하는 전자책을 선택하여 전자책 상세 페이지로 이동합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_4.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 상세 페이지]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 대여 탭을 선택합니다.</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">②</strong> 시리즈 도서일 경우, 전권 대여 버튼을 터치하면<br/>해당 도서의 시리즈를 한번에 대여할 수 있습니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">③</strong> 즉시 대여 버튼을 터치하면 <br/>결제 페이지로 바로 이동 합니다.
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_5.jpg" alt=""/>
+											<p class="gray_txt">
+												[전자책 상세 페이지 – 자유이용권 구매 고객]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 대여 탭을 선택합니다.</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">②</strong> 시리즈 도서일 경우, 전권 담기 버튼을 터치하면 <br/>해당 도서의 시리즈를 한번에 담을 수 있습니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">③</strong> 즉시 담기 버튼을 터치하면 도서가 <br/>내서재에 바로 담깁니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">④</strong> 자유이용권 만료시간을 확인 가능합니다.
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 4</span>결제하기</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>선택하신 전자책을 결제하는 단계입니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl set2">
+											<img src="/images/guide/mobile_tab3_6.jpg" alt=""/>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li>
+												<p>
+													<strong class="orange">①</strong> 소지하고 있는 북캐시/적립금/상품권을 입력합니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">②</strong> 북캐시/적립금/상품권의 금액이 충분하지 않다면 <br/>결제수단을 사용하여 결제를 할 수 있습니다.
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 5</span>마이 페이지</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>북캐쉬/적립금/상품권 내역 및 자유이용권 이용 가능 시간, 대여한 도서를 다시 내려 받을 수 있습니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<div class="flow explanation_wp">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_7.jpg" alt=""/>
+											<p class="gray_txt">
+												[1. 마이페이지 메뉴를 터치]
+											</p>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_8.jpg" alt=""/>
+											<p class="gray_txt">
+												[2. 마이페이지 이동]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li>
+												<p>
+													<strong class="orange">①</strong> 자유이용권과 관련한 정보를 확인할 수 있습니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">②</strong> 대여한 도서를 내서재에 다시 내려받을 수 있습니다.
+												</p>
+												</li>
+												<li class="top5">
+												<p>
+													<strong class="orange">③</strong> 주문한 전자책 리스트 및 취소를 할 수 있습니다.<br/>(주문 취소는 다운로드 대기 상태일 <br/>때에만 가능합니다.)
+												</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="flow explanation_wp second">
+										<div class="fl">
+											<img src="/images/guide/mobile_tab3_9.jpg" alt=""/>
+											<p class="gray_txt">
+												[3. 다시내려받기 이동]
+											</p>
+										</div>
+										<div class="fl explanation">
+											<ul>
+												<li><strong class="orange">①</strong> 대여/자유 탭 선택</li>
+												<li class="top20"><strong class="orange">②</strong> 대여한 도서를 내서재에 담을 수 있습니다.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3><span>STEP 6</span>내서재</h3>
+							<div class="guide_detail">
+								<ul>
+									<li>다운로드한 책은 내서재에 담깁니다. 보고자 하는 전자책을 터치하여 선택합니다. <br/>이용 기간 만료 된 도서는 터치 시 삭제가 가능합니다.</li>
+								</ul>
+								<div class="gudie_box">
+									<img src="/images/guide/mobile_tab3_10.jpg" alt=""/>
+								</div>
+							</div>
+						</div>
+						<div class="gudie_contents">
+							<div class="customerTitle audio">
+								<h2>1.전자책 선물하기</h2>
+							</div>
+							<h3 class="first"><span>STEP 1</span> 도서 상세페이지</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 선물하기 버튼을 터치하면 STEP3. 선물 결제 페이지로 이동합니다(단권 도서에 한함)</li>
+								</ul>
+								<p class="orange"><strong>※ 일부 도서는 상세페이지 내 "선물하기" 버튼이 없으며, 이는 선물하기 서비스가 제공되지 않습니다.</strong></p>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_10.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 2</span> 시리즈 목록 중 선물 도서 선택</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 시리즈 도서 중 발송을 원하는 권호의 체크박스를 터치합니다.</li>
+									<li><em>②</em> 선물 발송을 원하는 도서를 체크한 뒤 버튼 터치 시 결제 페이지로 이동합니다.</li>	
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_11.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 3</span> 결제하기</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 보유한 북캐시 금액 내에서 사용하고자 하는 금액을 입력합니다. 결제 시 해당 금액만큼 차감됩니다.</li>
+									<li><em>②</em> 보유한 적립금 금액 내에서 사용하고자 하는 금액을 입력합니다. 결제 시 해당 금액만큼 차감됩니다.</li>	
+									<li><em>③</em> 보유한 북큐브 상품권 금액에서 사용하고자 하는 금액을 입력합니다. 결제 시 해당 금액만큼 차감됩니다.</li>	
+									<li><em>④</em> 쿠폰/북캐시/적립금/북큐브 상품권에서 차감된 금액을 제외한 나머지 금액에 대하여 결제할 수단을 선택 할 수 있습니다.</li>	
+									<li><em>⑤</em> 버튼 터치 시 결제하기가 진행됩니다.</li>	
+									<li><em>⑥</em> 결제 완료 후 선물 발송하기 버튼 터치 시 보낸선물함 &gt; 선물 정보 입력 페이지로 이동합니다.</li>	
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_12.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 4</span> 선물 정보 입력</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 결제한 회원의 이름이 자동 입력되며, 한글 10자, 영문 및 숫자 20자 내로 수정 입력 가능합니다.</li>
+									<li><em>②</em> 선물 받는 분의 이름을 한글 10자, 영문 및 숫자 20자 내로 입력 가능합니다.</li>	
+									<li><em>③</em> 선물 보낸 방법을 선택합니다.</li>	
+									<li><em>④</em> 선물 받는 분에게 보낼 메시지 정보를 입력합니다.</li>	
+									<li><em>⑤</em> 선택한 수단(카카오톡/이메일)으로 선물 쿠폰번호를 포함한 선물 메시지가 발송되며, 보낸 선물함 페이지로 이동합니다.</li>	
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_13.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 5</span> 보낸 선물함</h3>
+								<div class="guide_terminal">
+									<ul class="bar_list num_type">
+										<li><em>①</em> 보낸 선물의 수령 여부 및 상태를 보여줍니다.</li>
+									</ul>
+									<div class="cImg_wrap">
+										<img src="/images/renewal/g_pc_4.jpg" alt="" class="cImg"/>
+									</div>
+								</div>
+								<div class="guide_terminal">
+									<ul class="bar_list num_type">
+										<li><em>②</em> 수령 미 완료 상태일 경우, 선물 받는 사람의 정보를 재입력 할 수 있습니다.</li>
+									</ul>
+									<div class="cImg_wrap">
+										<img src="/images/renewal/g_pc_18.jpg" alt="" class="cImg cMar"/>
+									</div>
+								</div>
+							<p class="divider_area"></p><!-- 구분선 영역 -->
+							<div class="customerTitle">
+								<h2>1.전자책 선물 수령</h2>
+							</div>
+							<h3 class="first"><span>STEP 1</span> 선물 카카오 메시지/이메일 확인</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 선물 보낸사람 및 메시지 내용을 확인 후 선물 확인하기 또는 상품 수령하기 버튼을 터치합니다.</li>
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_14.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 2</span> 선물 목록 확인 및 선물 수령하기</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 선물 받은 도서 목록 및 선물 수령 기간을 확인합니다.</li>
+									<li><em>②</em> 터치 시 북큐브 로그인 페이지로 이동되며, 로그인 시 쿠폰 등록 페이지가 노출됩니다.</li>	
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_15.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 3</span> 선물 목록 확인 및 선물 수령하기</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 선물 이메일 또는 카카오톡에 포함된 선물 쿠폰번호 12자리를 입력 후 등록 버튼을 클릭합니다.</li>
+								</ul>
+								<p class="orange"><strong>※ 본인의 아이디 계정에 선물하기는 불가합니다.</strong></p>
+								<p class="orange"><strong>※ 이미 보유한 전자책에 대하여 중복 수령이 가능합니다.</strong></p>
+								<p class="orange"><strong>※ 10년 소장 / 대여 전자책은 선물 수령 수점을 기준으로 일정 시간 동안 이용 가능합니다.</strong></p>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_16.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+							<h3 class="noMa"><span>STEP 4</span> 선물 수령 도서 다운로드</h3>
+							<div class="guide_terminal bookplayer customerPadding">	
+								<ul class="bar_list num_type">								
+									<li><em>①</em> 내 서재 탭에서 수령 받은 도서를 터치하여 다운로드 합니다.<br />내 서재에서 도서 확인이 되지 않을 경우, 다시 내려 받기를 통해 내서재 담기 후 이용 해 주시기 바랍니다.</li>
+								</ul>
+								<div class="cImg_wrap">
+									<img src="/images/renewal/g_pc_17.jpg" alt="" class="cImg" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //contents -->
+			</div>
+			<!-- //contents_wrap -->
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+	<br/><br/>
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE"/></h4>
+				<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"/></a>&nbsp; <img src="/images/main/goodContents.jpg" alt="클린사이트"/>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+					<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+					<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">
+					COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED
+				</p>
+			</div>
+		</div>
+	</div>
+	<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+	</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>

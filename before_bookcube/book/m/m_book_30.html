@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header>
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="logo"><a href="#">북큐브서점</a></h2>
+			<ul class="snb">
+				<li class="alarm"><a href="#">알리미
+					<span class="alarm-new">새로운 알리미</span>
+				</a></li>
+				<li><a href="#">검색</a></li>
+				<li class="js_slideMenu"><a href="javascript:;">슬라이드 메뉴</a></li>
+			</ul>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" class="backColor">로그인</a></li>
+				<li><a href="#" class="backColor">회원가입</a></li>
+				<li><a href="#">북캐시충전</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">공지 및 이용안내</a></li>
+				<li><a href="#">1:1 문의</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<h3 class="sub-title">북캐시 충전하기</h3>
+		<div class="charge-ps">
+			<ul>
+				<li>매월 1일 ~ 3일 북캐시 충전 금액별 추가 적립금 지급(적립금 유효기간:30일)</li>
+				<li>북캐시 결제 후 7일 이내에 유료 서비스나 콘텐츠를 구매하지 않은 경우 환불 가능</li>
+				<li>북캐시 환불 시에는 북캐시 결제 시 추가적으로 제공된 적립금 차감 및 환불 수수료 공제</li>
+			</ul>
+		</div>
+		<div class="cash-saving">
+			<p>북캐시 충전 금액별 적립률</p>
+			<table>
+				<caption>북캐시 충전 금액별 적립률</caption>
+				<colgroup>
+					<col width="50%" />
+					<col width="50%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>북캐시 충전 금액</th>
+						<th>적립금 지급률</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2000원</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>5000원</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>10,000원</td>
+						<td>5%(500원)</td>
+					</tr>
+					<tr>
+						<td>30,000원</td>
+						<td>7%(2,100원)</td>
+					</tr>
+					<tr>
+						<td>50,000원</td>
+						<td>8%(4,000원)</td>
+					</tr>
+					<tr>
+						<td>100,000원</td>
+						<td>9%(9,000원)</td>
+					</tr>
+					<tr>
+						<td>200,000원</td>
+						<td>10%(20,000원)</td>
+					</tr>
+					<tr>
+						<td>300,000원</td>
+						<td>10%(30,000원)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="title-bar">
+			<p>북캐시 충전 금액 선택</p>
+		</div>
+		<div class="charge-select">
+			<ul>
+				<li>
+					<input type="radio" name="" id="cash_2000" class="" />
+					<label for="cash_2000" class="radio"><span class="payment_off">2,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_5000" class="" checked="checked" />
+					<label for="cash_5000" class="radio"><span class="payment_off">5,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_10000" class="" checked="checked" />
+					<label for="cash_10000" class="radio"><span class="payment_off">10,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_30000" class="" checked="checked" />
+					<label for="cash_30000" class="radio"><span class="payment_off">30,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_50000" class="" checked="checked" />
+					<label for="cash_50000" class="radio"><span class="payment_off">50,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_100000" class="" checked="checked" />
+					<label for="cash_100000" class="radio"><span class="payment_off">100,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_200000" class="" checked="checked" />
+					<label for="cash_200000" class="radio"><span class="payment_off">200,000원</span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cash_300000" class="" checked="checked" />
+					<label for="cash_300000" class="radio"><span class="payment_off">300,000원</span></label>
+				</li>
+			</ul>
+			<p>※ 북캐시 30만원 결제 시 별도의 공인 인증 및 ISP 인증이 필요합니다.</p>
+			<p>※ 외환, 씨티 은행의 카드는 모바일을 통한 30만원 결제가 제한될 수 있습니다.</p>
+			<script>
+				// 기존의 라디오 스크립트와 클래스가 다릅니다.
+				require(['jquery'],function($){
+					// 라디오버튼
+					$(function(){
+						$('.radio').click(function(){
+							$('.radio').find('span').removeClass('payment_on').addClass('payment_off');
+							$(this).find('span').removeClass('payment_off').addClass('payment_on');
+							$('#'+$(this).attr('for')).attr('checked','checked');
+						});
+
+					});
+				});
+			</script>
+		</div>
+		<div class="cash-result">
+			<p>총 결제 금액 : 24,400원</p>
+			<span>지급 예정 적립금 : 285원</span>
+		</div>
+		<div class="title-bar">
+			<p>결제수단</p>
+		</div>
+		<div class="payment-way">
+			<ul>
+				<li>
+					<input type="radio" name="" id="card" class="" />
+					<label for="card" class="method_radio"><span class="payment_off"><em>신용카드</em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="phone" class="" />
+					<label for="phone" class="method_radio"><span class="payment_off"><em>휴대폰</em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="phone" class="" />
+					<label for="phone" class="method_radio"><span class="payment_off"><em>페이코<span class='paycoNew'>new</span></em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="phone" class="" />
+					<label for="phone" class="method_radio"><span class="payment_off"><em>페이팔</em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="happymoney" class="" />
+					<label for="happymoney" class="method_radio"><span class="payment_off"><em>해피머니</em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="booknlife" class="" />
+					<label for="booknlife" class="method_radio"><span class="payment_off"><em>도서상품권</em></span></label>
+				</li>
+				<li>
+					<input type="radio" name="" id="cultureland" class="" />
+					<label for="cultureland" class="method_radio"><span class="payment_off"><em>문화상품권</em></span></label>
+				</li>
+			</ul>
+		</div>
+		<div class="payment-btn">
+			<p class="ps-pc">*해외 발급 신용카드 결제는 PC에서만 가능합니다.</p>
+			<div class="payco-ps">
+				<p>PAYCO 간편결제 안내</p>
+				<p>PAYCO는 온/오프라인 쇼핑은 물론 송금, 멤버십 적립까지 가능한 통합 서비스입니다.<br />휴대폰과 카드 명의자가 동일해야 결제 가능하며, 결제금액 제한은 없습니다.<br />- 지원카드: 모든 국내 신용/체크카드</p>
+			</div>
+			<a href="#" class='js_pay_btn'>결제</a>
+			<a href="#">취소</a>
+		</div>
+		<script>
+			// 기존의 라디오 스크립트와 클래스가 다릅니다.
+			require(['jquery'],function($){
+				// 라디오버튼
+				$(function(){
+					$('.method_radio').click(function(){
+						$('.method_radio').find('span').removeClass('payment_on').addClass('payment_off');
+						$(this).find('span').removeClass('payment_off').addClass('payment_on');
+						$('#'+$(this).attr('for')).attr('checked','checked');
+					});
+				});
+			});
+		</script>
+	</section>
+	<footer class="common">
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+#HomeBtn {background-size:291px 100px; -webkit-background-size:291px 100px; position:absolute; display:none; z-index:999; width:291px; height:100px;}
+#HomeBtn a.close { position:absolute;left:267px;top:0px;display:block;width:24px; height:22px; }
+#HomeBtn a.urlLink { position:absolute;left:0px;top:0px;display:block;width:267px; height:100px; }
+
+#HomeBtn.e0723 { background:url(/mobile/images/pop/pop_e1634_img.png) no-repeat; background-size:291px 100px; -webkit-background-size:291px 100px; position:absolute; display:none; z-index:999; width:291px; height:100px;}
+#HomeBtn.e0724 { background:url(/mobile/images/pop/pop_e1638_img.png) no-repeat; background-size:291px 100px; -webkit-background-size:291px 100px; position:absolute; display:none; z-index:999; width:291px; height:100px;}

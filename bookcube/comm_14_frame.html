@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+<div class="frame">
+	<h3>선물함</h3>
+	<div class="tab gift-tab">
+		<ul>
+			<li><a href="#">받은 선물함</a></li>
+			<li><a href="#" class="on">보낸 선물함</a></li>
+		</ul>
+		<div class="gift-ps">
+			<ul>
+				<li>- 보낸 선물의 상태가 발송 대기 또는 수령 미완료일 경우 선물 재발송이 가능합니다,</li>
+				<li>- 선물 받는 사람이 수령 기간 내에 선물 쿠폰을 등록하지 않은 경우 해당 선물은 기간만료 취소 처리됩니다.</li>
+				<li>- 기간만료 취소 시, 결제수단에 따라 북캐시 또는 북큐브 적립금으로 자동 환불처리 됩니다.	</li>
+			</ul>
+		</div>
+		<table class="gift">
+			<caption>구매목록</caption>
+			<colgroup>
+				<col width="55%" />
+				<col width="15%" />
+				<col width="15%" />
+				<col width="15%" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>보낸 선물</th>
+					<th>받은 사람</th>
+					<th>주문날짜</th>
+					<th>선물 상태</th>
+				</tr>
+				<tr>
+					<td>
+						<div class="figure">
+							<a href="javascript:;">
+								<span class="rm_br">
+									<img src="http://bookimg.bookcube.com/150/1711/171102921.jpg" alt="">
+								</span>
+								<span class="light"></span>
+							</a>
+						</div>
+						<p>해빗 스태킹<span>김성현</span></p>
+					</td>
+					<td>박영란</td>
+					<td>2016.08.24</td>
+					<td>
+						<em>수령 미완료</em>
+						<a href="#" class="btn resend">재발송</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="figure">
+							<a href="javascript:;">
+								<span class="rm_br">
+									<img src="http://bookimg.bookcube.com/150/1711/171102921.jpg" alt="">
+								</span>
+								<span class="light"></span>
+							</a>
+						</div>
+						<p>해빗 스태킹<span>김성현</span></p>
+					</td>
+					<td>박영란</td>
+					<td>2016.08.24</td>
+					<td>
+						<em>기간 만료 취소</em>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="figure">
+							<a href="javascript:;">
+								<span class="rm_br">
+									<img src="http://bookimg.bookcube.com/150/1711/171102921.jpg" alt="">
+								</span>
+								<span class="light"></span>
+							</a>
+						</div>
+						<p>해빗 스태킹<span>김성현</span></p>
+					</td>
+					<td>박영란</td>
+					<td>2016.08.24</td>
+					<td>
+						<em>수령 완료</em>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="paging">
+			<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+			<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+			<a href="#" class="fir on">1</a> 
+			<a href="#">2</a> 
+			<a href="#">3</a> 
+			<a href="#">4</a> 
+			<a href="#">5</a> 
+			<a href="#">6</a> 
+			<a href="#">7</a> 
+			<a href="#">8</a> 
+			<a href="#">9</a> 
+			<a href="#">10</a> 
+			<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+			<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+		</div>
+	</div>
+	<div class="gift-send">
+		<div class="send-inner">
+			<h4>선물하기 정보 입력</h4>
+			<div>
+				<form action='' method=''>
+					<fieldset>
+						<legend>받는 사람 정보 입력하기</legend>
+						<table>
+							<caption>받는 사람 정보</caption>
+							<colgroup>
+								<col width="150px" />
+								<col width="*" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><label>보내는 사람</label></th>
+									<td><input type="text" name='' onclick="textLen(20,this)" onfocus="textLen(20,this)" /> - 한글, 영문 및 숫자 20자까지 입력 가능</td>
+								</tr>
+								<tr>
+									<th><label>선물 받는사람</label></th>
+									<td><input type="text" name='' onclick="textLen(20,this)" onfocus="textLen(20,this)" /> - 한글, 영문 및 숫자 20자까지 입력 가능</td>
+								</tr>
+								<tr>
+									<th><label>선물 보내는 방법</label></th>
+									<td>
+										<div>
+											<p><input type="radio" name='' />이메일 <em>- 카카오톡을 통한 선물하기는 모바일에서만 지원 가능</em></p>
+											<div>
+												<label><input type="text" name='' /></label>
+												<span>@</span>
+												<label><input type="text" name='' id='register_email_domain' /></label>
+												<div class="arrayBox">
+													<a href="javasript:;" class="s-result">직접입력</a>
+													<ul>
+														<li><a href="#" data="" class="on" class='register_email_domain_val'>직접입력</a></li>
+														<li><a href="#" data="daum.net" class='register_email_domain_val'>daum.net</a></li>
+														<li><a href="#" data="naver.com" class='register_email_domain_val'>naver.com</a></li>
+														<li><a href="#" data="nate.com" class='register_email_domain_val'>nate.com</a></li>
+														<li><a href="#" data="daumwiz.com" class='register_email_domain_val'>dreamwiz.com</a></li>
+														<li><a href="#" data="empas.com" class='register_email_domain_val'>empas.com</a></li>
+														<li><a href="#" data="yahoo.co.kr" class='register_email_domain_val'>yahoo.co.kr</a></li>
+														<li><a href="#" data="yahoo.com" class='register_email_domain_val'>yahoo.com</a></li>
+														<li><a href="#" data="freechal.com" class='register_email_domain_val'>freechal.com</a></li>
+														<li><a href="#" data="chol.com" class='register_email_domain_val'>chol.com</a></li>
+														<li><a href="#" data="paran.com" class='register_email_domain_val'>paran.com</a></li>
+														<li><a href="#" data="empal.com" class='register_email_domain_val'>empal.com</a></li>
+														<li><a href="#" data="gmail.com" class='register_email_domain_val'>gmail.com</a></li>
+														<li><a href="#" data="hanafos.com" class='register_email_domain_val'>hanafos.com</a></li>
+														<li><a href="#" data="hanmir.com" class='register_email_domain_val'>hanmir.com</a></li>
+														<li><a href="#" data="korea.com" class='register_email_domain_val'>korea.com</a></li>
+														<li><a href="#" data="lycos.co.kr" class='register_email_domain_val'>lycos.co.kr</a></li>
+														<li><a href="#" data="netian.com" class='register_email_domain_val'>netian.com</a></li>
+													</ul>
+													<script>
+														$(function(){
+															$(".s-result").on("click focus",function(){
+																$(this).next().show();
+															});
+															$(document).on("click",".arrayBox ul li a",function(){
+																var text = $(this).text();
+																$(this).parent().parent().find("li a").removeClass("on");
+																$(this).parent().parent().hide();
+																$(this).addClass("on");
+																$(this).parent().parent().prev().text(text);
+																return false;
+															});
+															$(".register_email_domain_val").click(function(e){
+																e.preventDefault();
+																var register_email_domain_val = $(this).attr("data");
+																$("#register_email_domain").val(register_email_domain_val);
+																if (register_email_domain_val == ""){$("#register_email_domain").focus();}
+															});
+															$(".resend").on("click",function(){
+																$(".gift-send").fadeIn();
+															});
+															$(".mpop-close").on("click",function(){
+																$(this).parent().parent().fadeOut();
+																return false;
+															});
+														});
+													</script>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>선물 메시지</th>
+									<td>
+										<textarea class="text" onclick="textLen(150,this)" onfocus="textLen(150,this)"></textarea>
+										<p class="text-length"><span>0</span>/150자</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<script>
+							function textLen(max,f){
+								var maxcount = max;
+								$(this).on("input keyup keydown paste change",function(){
+									setTimeout(function(){
+										var count = f.value.length;
+										var li_len = 0;
+										var push = 0;
+										for (i = 0; i < count; i++) {
+											push++;
+											if (push <= maxcount) {
+												li_len = i + 1;
+											}
+										}
+										if(count > maxcount){
+											alert(max+"글자가 초과되었습니다.\r\n\n초과된 부분은 자동으로 삭제됩니다.");
+											var str2 = f.value.substr(0, li_len);
+											f.value = str2;
+											
+											
+										}
+										if(f.classList == 'text'){
+											$(".text-length span").text(count);
+										}	
+									}, 0)
+									
+								});	
+							}	
+						</script>
+						<div class="payment-btn gift-give">
+							<input type="button" name="" value="선물 발송하기">
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<a href="javascript:;" class="mpop-close">close</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header class="common">
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="h-title">1:1 문의</h2>
+		</div>
+	</header>
+	<section>
+		<div class="tab-menu present">
+			<ul>
+				<li><a href="#" class="on">1:1 문의하기</a></li>
+				<li><a href="#">문의 내역 확인</a></li>
+			</ul>
+		</div>
+		<div class="m-advice">
+			<form method='' action=''>
+				<fieldset>
+					<legend>1:1 문의하기</legend>
+					<table class="onebyone" summary="1:1 문의하기 폼">
+						<caption>1:1 문의하기</caption>
+						<colgroup>
+							<col width="100px" />
+							<col width="*" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><span class="one-req">*</span>문의유형</th>
+								<td>
+									<div class="kSelectArea one">
+										<div class="fSelect">
+											<select name="" class="sel1">
+												<option value="" selected="selected">1차 선택</option>
+												<option value="">오류문의</option>
+												<option value="">작품문의 및 원고투고</option>
+												<option value="">이벤트 문의</option>
+												<option value="">이용문의</option>
+												<option value="">취소/환불/현금영수증 발급</option>
+											</select>
+											<span><img src="/book/images/m_book/selectDot.png"></span>
+										</div>
+									</div>
+									<div class="kSelectArea one">
+										<div class="fSelect">
+											<select name="" class="sel2">
+												<option value="" selected="selected">2차 선택</option>
+											</select>
+											<span><img src="/book/images/m_book/selectDot.png"></span>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr class="select-ps">
+							</tr>
+							<tr>
+								<th><span class="one-req">*</span>문의제목</th>
+								<td>
+									<input type="text" name="" class="required" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<textarea cols="5" rows="8" class="required"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th>기기사양</th>
+								<td>
+									<p><span class="model-name"></span> / <span class="model-version"></span> / <span class="model-os"></span></p>
+								</td>
+							</tr>
+							<tr>
+								<th>파일첨부</th>
+								<td>
+									<input type="file" name='' />
+									<p class="one-file"><span class='one-dot'>-</span>2MB 이하의 이미지 파일만 첨부 가능합니다.</p>
+								</td>
+							</tr>
+							<tr>
+								<th>답변알림</th>
+								<td>
+									<input type="text" name='' value='' />
+									<div class="one-check">
+										<input type="checkbox" id='one-reply' /><label for="one-reply">답변 알림 받기</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="one-btn">
+						<input type="submit" name="" value="등록" />
+						<a href="#">취소</a>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<footer class="common">
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				
+				//문의 유형 뎁스 분류
+				var select0 = '',select1 = '',select2 = '',select3 = '',select4 = '',select5 = '';
+				select0 +=		
+				"<option value=''>2차 선택</option>"+
+				"<option value=''>전자책 다운로드 오류</option>"+
+				"<option value=''>결제 오류</option>"+
+				"<option value=''>앱오류</option>"+
+				"<option value=''>기타 오류</option>";
+				select1 +=	
+				"<option value=''>2차 선택</option>"+
+				"<option value=''>작품 출간일정 문의</option>"+
+				"<option value=''>오탈자 문의</option>"+
+				"<option value=''>원고 투고</option>"+
+				"<option value=''>기타 작품 문의</option>";
+				select2 +=	
+				"<option value=''>2차 선택</option>"+
+				"<option value=''>이벤트 적립금 미지급</option>"+
+				"<option value=''>기타 이벤트 문의</option>";
+				select3 +=	
+				"<option value=''>2차 선택</option>"+
+				"<option value=''>가입/탈퇴/로그인</option>"+
+				"<option value=''>본인/성인인증</option>"+
+				"<option value=''>서비스 이용문의</option>"+
+				"<option value=''>전자도서관</option>"+
+				"<option value=''>제안 및 개선 사항</option>"+
+				"<option value=''>기타 문의</option>";
+				select4 +=	
+				"<option value=''>2차 선택</option>"+
+				"<option value=''>주문 취소</option>"+
+				"<option value=''>북캐시 환불</option>"+
+				"<option value=''>현금영수증 발급신청</option>";
+				
+				//2차 선택후 1차분류 
+				select5 +=				
+				"<option value=''>오류문의</option>"+
+				"<option value=''>작품문의 및 원고투고</option>"+
+				"<option value=''>이벤트 문의</option>"+
+				"<option value=''>이용 문의</option>"+
+				"<option value=''>취소/환불/현금영수증 발급</option>";
+
+
+				// 문의유형 사전 안내 문구
+				var ps0 = '',ps1 = '',ps2 = '',ps3 = '',ps4 = '',ps5 = '',ps6 = '',ps7 = '',ps8 = '';
+				ps0 +=
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>다운로드 오류시 먼저 '내서재'에서 도서 삭제 후 '구매내역'에서 재다운로드 해보세요.</p>"+
+				"<p><span class='one-dot'>-</span>북큐브 앱이 최신 버전인지 확인 해보세요.[북큐브앱>내서재>설정>하단 '최신 버전 업데이트']</p>"+
+				"</td>";
+				ps1 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>북큐브 앱이 최신 버전인지 확인 해보세요.[북큐브앱>내서재>설정>하단 '최신 버전 업데이트']</p>"+
+				"</td>";
+				ps2 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>북큐브 앱이 최신 버전인지 확인해보세요. (플레이스토어/앱스토어에서 업데이트)</p>"+
+				"</td>";
+				ps3 += 
+				"<td colspan='2'>"+
+				"<p><잠깐 확인!><br />혹시 적립금으로 결제하셨나요?추가적립 이벤트는 '적립금'으로 결제시 혜택을 받을 수 없습니다.(이벤트 유의사항 참고) 결제방법을 '북캐시'로 변경 후 이벤트 추가적립금을 받고 싶으신 경우, '북캐시'가 충전되어 있는지 확인 후 문의 남겨 주세요.</p>"+
+				"</td>";
+				ps4 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>탈퇴는 pc에서 가능합니다.[PC 북큐브 접속 > 로그인 > 마이페이지 > 회원정보 수정 > 하단 탈퇴 버튼 클릭]</p>"+
+				"</td>";
+				ps5 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>전자도서관 문의는 이용하시는 도서관 기관명, 아이디와 함께 아래의 메일주소로 문의 주시면 더욱 빠른 처리가 가능합니다. 1588-1925 (내선 2번) library@bookcube.com</p>"+
+				"</td>";
+				ps6 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>다운로드를 받지 않은 전자책에 대해서는 직접 취소하실 수 있습니다.[마이페이지 > 주문내역 확인 > 전자책 선택 > 주문취소 요청]</p>"+
+				"</td>";
+				ps7 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>북캐시 환불은 화요일까지 접수해주신 분에 한하여, 매주 수요일 일괄 처리됩니다.*환불을 신청하는 회원과 예금주의 성함이 일치해야 합니다.</p>"+
+				"<p><span class='one-dot'>-</span>환불금액은 고객님의 계좌로 입금되며, 회원약관에 명시된 바와 같이 환불 수수료 (10%와 1,000원 중 큰 금액)을 공제합니다.</p>"+
+				"<p><span class='one-dot'>-</span>북캐시 구매시 추가로 적립된 적립금을 사용하셨다면, 그 금액을 제외하고 환불됩니다.</p>"+
+				"</td>";
+				ps8 += 
+				"<td colspan='2'>"+
+				"<p><span class='one-dot'>-</span>메일주소를 입력하지 않으시면 회원가입시 등록하신 이메일로 발송이 됩니다.</p>"+
+				"</td>";
+				
+				
+				var selectPs = $(".select-ps");
+				$(".sel1").change(function(){
+					var textContent = $(".onebyone textarea");
+					textContent.text("");
+					selectPs.html("");
+					if($(".sel2").hasClass("on")){
+						var idx = parseInt($(".sel1 option").index($(".sel1 option:selected")));
+						$(".sel2").removeClass("on");
+						$(".sel2").addClass("on");
+						$(".sel2").html(eval("select"+idx));
+						selectPs.hide();
+					}else{
+						var idx = parseInt($(".sel1 option").index($(".sel1 option:selected"))-1);
+						$(".sel2").html("");	
+						$(".sel2").append(eval("select"+idx)).addClass("on");
+						$(".sel1").html("");
+						$(".sel1").append(select5);
+					}
+				});
+				
+				//텍스트 아레아
+				var textarea =['정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*오류시간 : \n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*도서명 및 연재회차 : \n\n*오류발생 상황(자세한 설명) : \nex.내서재에서 세트도서를 보는 도중 2권 파일이 열리지 않아요.\n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*결제 오류시간 : \n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*도서명 및 연재회차/북캐시 : \n\n*결제수단 : \n\n*오류발생 상황(자세한 설명) : \nex.연재소설 이어보기 결제하려는데 충전한 북캐시가 안보여요\n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*기기버전(안드로이드버전,IOS버전) : \n\n*북큐브 앱 버전 : \n[북큐브 앱 > 설정 > 버전정보]\n\n*오류 발생 상황(자세한 설명) : \n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*오류시간 : \n\n*사용환경(PC,IOS,안드로이드등) : \n\n*도서명 및 연재회차 : \n\n*오류 발생 상황(자세한 설명) : \n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*문의 작품 유형(일반도서/로맨스/BL/웹툰) : \n\n*문의 작품 : ','*투고 작품 유형(일반도서/로맨스/BL/웹툰) : \n\n*이름 : \n\n*연락처 : \n\n*메일주소 : \n\n*제목 : \n\n*작가소개 : \n\n*등장인물소개 : \n\n*시놉시스 : \n\n*원고는 파일로 첨부해 주세요.','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*이벤트 도서 : \n\n*문의 및 불편내용 : ','정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*이벤트 명 : \n\n*이벤트 도서 : \n\n*문의 및 불편내용','*결제일 : \n\n*결제수단 : \n\n*환불금액 : \n\n*은행 : \n\n*계좌번호 : \n\n*예금주명 : \n\n*환불사유 : ','*구매일시 : \n\n*성함 : \n\n*휴대폰번호 : \n\n*메일주소 : \n\n*구매한 상품 이름(전자책 또는 북캐시) : \n\n전자책의 경우 반드시 전자책 이름, 주문 번호에 대한 정보를 주셔야 합니다.[마이페이지 > 주문내역 확인에서 조회가능]\n\n*결제수단 : ']
+						
+
+				$(document).on("change",".sel2",function(){
+					var textContent = $(".onebyone textarea");
+					var text =$(".sel2 option:selected").text();
+					selectPs.html("");
+					switch(text){
+						case "전자책 다운로드 오류" : textContent.text(textarea[0]); selectPs.show(); selectPs.html(ps0); 
+						break;
+						case "결제 오류" : textContent.text(textarea[1]); selectPs.hide();
+						break;
+						case "앱오류" : textContent.text(textarea[2]); selectPs.show(); selectPs.html(ps1); 
+						break;
+						case "기타 오류" : textContent.text(textarea[3]); selectPs.show(); selectPs.html(ps2); 
+						break;
+						case "작품 출간일정 문의" : textContent.text(textarea[4]); selectPs.hide();
+						break;
+						case "오탈자 문의" : textContent.text(textarea[4]); selectPs.hide();
+						break;
+						case "원고 투고" : textContent.text(textarea[5]); selectPs.hide();
+						break;
+						case "기타 작품 문의" : textContent.text(textarea[4]); selectPs.hide();
+						break;
+						case "이벤트 적립금 미지급" : textContent.text(textarea[6]); selectPs.show(); selectPs.html(ps3); 
+						break;
+						case "기타 이벤트 문의" : textContent.text(textarea[7]); selectPs.hide();
+						break;
+						case "가입/탈퇴/로그인" : selectPs.html(ps4); selectPs.show();
+						break;
+						case "전자도서관" : selectPs.html(ps5); selectPs.show();
+						break;
+						case "주문 취소" : textContent.text(""); selectPs.html(ps6); selectPs.show();
+						break;
+						case "북캐시 환불" : textContent.text(textarea[8]); selectPs.show(); selectPs.html(ps7); 
+						break;
+						case "현금영수증 발급신청" : textContent.text(textarea[9]); selectPs.show(); selectPs.html(ps8);
+						break;
+						default : textContent.text(""); selectPs.hide();
+					}
+				});
+
+				//기기사양 체크
+				
+				var unknown = '-';
+				var nVer = navigator.appVersion;
+				var nAgt = navigator.userAgent;
+				var os = unknown;
+				var clientStrings = [
+					{s:'Android', r:/Android/},
+					{s:'iOS', r:/(iPhone|iPad|iPod)/},
+					{s:'Mac OS X', r:/Mac OS X/},
+					{s:'Mac OS', r:/(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/}
+				];
+				for (var id in clientStrings) {
+					var cs = clientStrings[id];
+					if (cs.r.test(nAgt)) {
+						os = cs.s;
+						break;
+					}
+				}
+				var osVersion = unknown;
+				switch(os){
+					case 'Mac OS X':
+						osVersion = /Mac OS X (10[\.\_\d]+)/.exec(nAgt)[1];
+						break;
+					case 'Android':
+						osVersion = /Android ([\.\_\d]+)/.exec(nAgt)[1];
+						break;
+					case 'iOS':
+						osVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(nVer);
+						osVersion = osVersion[1] + '.' + osVersion[2] + '.' + (osVersion[3] | 0);
+						break;
+				} 
+				
+				jscd = {
+					os: os,
+					osVersion: osVersion
+				};
+
+				var sys = navigator.userAgent;
+				var sysModel = navigator.userAgent.toUpperCase();
+				var sysStart = sys.indexOf('(')+1;
+				var sysEnd = sys.indexOf(')')-1;
+				var sysInfo = sys.substr(sysStart,sysEnd-sysStart+1).replace(/ /g,'');
+				var sysInfoSplitArr = sysInfo.split(';');
+				var sysOs = '';
+				var sysInfoText = '';
+				for(var i = 0;i<sysInfoSplitArr.length;i++){
+					sysInfoText = '';
+					sysInfoText = sysInfoSplitArr[i].toUpperCase();
+					sysInfoText = sysInfoText.replace(/ /g,'');
+					sysName = sysInfoText.substring(0,sysInfoText.indexOf("BUILD",0));
+				}
+				if(sysModel.indexOf("IPHONE") !=-1){
+					$(".model-name").text("iPhone");	
+				}else if(sysModel.indexOf("IPAD") !=-1){
+					$(".model-name").text("iPad");	
+				}else{
+					$(".model-name").text(sysName);
+				}
+				
+				$(".model-version").text(jscd.osVersion);
+				$(".model-os").text(jscd.os);
+
+
+				// 첨부 파일 확장자 검사 및 용량 체크
+				$(".onebyone input[type='file']").on("change", function() {	
+					var ext = $(this).val().split('.').pop().toLowerCase(); 
+					if($.inArray(ext, ['jpg','jpeg','gif','png','bmp']) == -1) {
+						window.alert('이미지 파일만 첨부 가능합니다.');
+						resetFormElement($(this));
+					}else{
+						if($.inArray(ext, ['jpg','jpeg','gif','png','bmp']) == -1){ // 문서파일일때
+							var fileSize =this.files[0].size;
+							var maxSize = 5 * 1024 * 1024;
+							if(fileSize > maxSize){
+								alert("파일용량 5MB를 초과했습니다.");
+								resetFormElement($(this));
+							}
+						}else if($.inArray(ext, ['hwp','doc','docx']) == -1){  //이미지 파일일때
+							var fileSize =this.files[0].size;
+							var maxSize = 2 * 1024 * 1024;
+							if(fileSize > maxSize){
+								alert("파일용량 2MB를 초과했습니다.");
+								resetFormElement($(this));
+							}
+						}
+					}
+				});
+				// 첨부파일 실패시 첨부파일 form 리셋
+				function resetFormElement(e) {
+					e.wrap('<form>').closest('form').get(0).reset(); 
+					e.unwrap(); 
+				}
+				
+				// 필수 입력 항목 체크
+				var _btn = $(".one-btn input");
+				_btn.on("click",function(){
+					var sel2Prev = $(".sel2 option:selected").text();
+					if(!$(".sel2").hasClass("on") || sel2Prev.match("2차 선택") || $(".required").val().length < 1 || $(".onebyone textarea").val().length < 1){
+						alert("필수 항목을 입력해 주세요.");
+						return false;
+					}
+				});
+				
+				
+
+			});
+		});
+	</script>
+</body>
+</html>

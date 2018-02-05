@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="title" content="e북포털 북큐브">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+<meta property="og:url" content="http://www.bookcube.com/book/m/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/images/icon/m.bookcube.png" />
+<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+<link rel="stylesheet" type="text/css" href="/js/lib/swipe/swiper.css" />
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/lib/requirejs.min.js"></script>
+<script>
+	requirejs.config({
+		baseUrl : "/js",
+		paths : {
+			"jquery" : "lib/jquery-1.11.0.min",
+			"swiper" : "lib/swipe/swiper-2.1.min"
+		},
+		shim : {
+			"cookie" : ["jquery"],
+			"swiper" : ["jquery"]
+		}
+	});
+
+	require(["m.bookcube"]);
+</script>
+<style type="text/css">
+.isloading-overlay{position:relative;text-align:center;}
+.isloading-overlay .isloading-wrapper{background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:10%;z-index:9000;}
+.icon-refresh{background-position:-240px -24px;}
+</style>
+</head>
+<body>
+ 	<header>
+		<div class="header-top">
+			<div class="top-left">
+				<ul>
+					<li><a href="javascript:;">MY PAGE</a></li>
+					<li class="alarm"><a href="#">알리미<span class="alarm-new">새로운 알리미</span></a></li>
+				</ul>
+			</div>
+			<h1><a href="#">북큐브</a></h1>
+			<div class="top-right">
+				<ul>
+					<li><a href="javascript:;">검색</a></li>
+					<li><a href="#">내서재</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-middle">
+			<h2 class="hide">장르</h2>
+			<ul>
+				<li><div><a href="#">서점</a><em>line</em></div></li>
+				<li><div><a href="#">웹소설</a></div></li>
+				<li><div><a href="#">웹툰</a></div></li>
+			</ul>
+		</div>
+		<div class="overlay"></div>
+		<div class="search">
+			<h2 class="hide">북큐브 작품 검색</h2>
+			<form>
+				<fieldset>
+					<legend>검색</legend>
+					<div class="search-inner">
+						<div>
+							<div>
+								<span></span>
+								<input type="text" name='' placeholder='제목, 작가명, 출판사명' />
+							</div>
+							<input type="submit" name='' />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="sideBar">
+			<h2 class="hide">북큐브 사이드 메뉴</h2>
+			<div class="bar-top">
+				<a href="javascript:;">close</a>
+				<div>
+					<a href="javascript:;" class="bookcube">로그인 아이콘</a>
+					<p>로그인하세요</p>
+					<div>
+						<a href="javascript:;">로그아웃</a>
+					</div>
+				</div>
+			</div>
+			<div class="bar-middle">
+				<ul>
+					<li><a href="#"><p>마이페이지</p></a></li>
+					<li><a href="#"><p>책바구니</p></a></li>
+					<li><a href="#"><p>선호작</p></a></li>
+				</ul>
+			</div>
+			<div class="bar-bottom">
+				<ul>
+					<li><a href="#">북캐시 충전</a></li>
+					<li><a href="#">이벤트</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+				<div>
+					<p>북큐브앱을 설치하시고 편리한 이용과 더 많은 혜택을 누리세요.</p>
+					<a href="#">북큐브앱 설치하기</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function(){
+				var fixHeader = $("header").height();
+				$("header").wrapInner("<div class='h-wrap'></div>");
+				$("header,.h-wrap").css("height",fixHeader);
+				$(window).scroll(function(){
+					var top = $(window).scrollTop();
+					$(".h-wrap").css("position","fixed");	
+					if(top === 0){
+						$(".h-wrap").css("position","static");	
+					}
+				});
+				$(".overlay, .bar-top > a").on("click",function(){
+					window.location.hash = "";
+					$("body").removeClass("on");
+				});
+
+				$(window).on("hashchange",function(){
+					var m= window.location.hash;
+					if(m != "#open"){
+						$(".overlay, .search").hide();
+						$(".sideBar").removeClass("on");
+						$("body").removeClass("on");
+					}
+				});
+				$(".top-left ul li:first a").on("click",function(){
+					window.location.hash = "open";
+					var sh = screen.height;
+					$(".overlay").show();
+					$("body").css("height",sh)
+					$("body,.sideBar").addClass("on");
+				});
+
+				$(".top-right ul li:first a").on("click",function(){
+					$(".overlay, .search").show();
+					$("body").addClass("on");
+					$(".search-inner input[type='text']").focus();
+				});
+
+				$(".overlay, .search div span").on("click",function(){
+					$(".overlay,.search").hide();
+					$("body").removeClass("on");
+					$(".search-inner input[type='text']").val("");
+				});
+			});
+		</script>
+	</header>
+	<section>
+		<div class="detail-wrap">
+			<div class="detail-title">
+				<h3>[세트] 너에게로 가는 길(전2권/완결)<span>천하의 무심녀 서윤재가 아끼는 건 친구 소아란.</span></h3>
+			</div>
+			<div class="detail-info">
+				<div>
+					<div class="box">
+						<span class="rm_br">
+							<img src="http://bookimg.bookcube.com/200/1707/170705164.jpg" alt="도서 이미지 - 밥먹고가라 1-...">
+						</span>
+						<span class="light"></span>
+					</div>
+					<a href="javascript:;">미리보기</a>
+					<a href="javascript:;">미리듣기</a>
+				</div>
+				<div>
+					<p>레어나르도 디카프리오</p>
+					<p><span class="list-star rank5"></span><em class="star-vote">(<span>1,405</span>명)</em></p>
+					<p class="all-volume end"><em>총</em>15권<span>완결</span></p> <!-- 완결 미완결 end 클래스 유무 차이 -->
+					<div class="pub-info">
+						<p class="publisher">도서출판 북큐브네트웍스</p>
+						<p class="pub-genre">로맨스 &gt; 로맨스 소설</p>
+						<p class="tts">듣기(TTS) 지원</p>
+						<div>
+							<p class="mini-review">서평(<span>21.0K</span>)</p>
+							<p class="share-btn" onClick="shareView()">공유</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="share">
+				<div>
+					<h3 class="hide">공유하기</h3>
+					<ul>
+						<li><a href="#"><p>카카오톡</p></a></li>
+						<li><a href="#"><p>페이스북</p></a></li>
+						<li><a href="#"><p>트위터</p></a></li>
+					</ul>
+					<a href="javscript:;" onClick="shareView()">닫기</a>
+				</div>
+			</div>
+			<div class="d-notice">
+				<h3 class="hide">공지 및 이벤트</h3>
+				<ul>
+					<li><a href="#"><span>공지</span>2017년 6월 1일 10년소장 판매중지 합니다. 합니다. 합니다.</a></li>
+					<li><a href="#"><span>이벤트</span>(~9/30) 초특가 대여관! 최대 50% 할인 합니다. 합니다. 합니다.</a></li>
+					<li><a href="#"><span>이벤트</span>(~9/30) 초특가 대여관! 최대 50% 할인 합니다. 합니다. 합니다.</a></li>
+					<li><a href="#"><span>이벤트</span>(~9/30) 초특가 대여관! 최대 50% 할인 합니다. 합니다. 합니다.</a></li>
+					<li><a href="#"><span>이벤트</span>(~9/30) 초특가 대여관! 최대 50% 할인 합니다. 합니다. 합니다.</a></li>
+				</ul>
+				<a href="javascript:;">더보기<span></span></a>
+			</div>
+			<div class="d-banner">
+				<a href="#"><img src="/book/images/m_book/d_banner/book_mobile_161005209.png" /></a>
+			</div>
+			<div class="d-keyword">
+				<div class="d-keyword-top">
+					<h3>이 책의 키워드</h3>
+					<a href="#">키워드관 바로가기<em>&gt;</em></a>
+				</div>
+				<!-- book - 일반, romance - 로맨스, bl - bl, fanmu -판무, manhwa - 만화-->
+				<ul class="romance">
+					<li>독일</li>
+					<li>호러공포</li>
+					<li>일상</li>
+					<li>국내드라마</li>
+					<li>유쾌</li>
+				</ul>
+			</div>
+			<div class="book-introduce">
+				<h3>책소개</h3>
+				<p>[독점/강추]***본 도서는 북큐브 세이렌 로맨스 공모전 은상 수상작입니다.***<br />응급실 당직은무를 서고 있던 레지던트 2년차 신비 어쩌고는 어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고
+				저쩌고어쩌고 저쩌고</p>
+				<a href="javascript:;">더보기<span></span></a>
+			</div>
+			<div class="book-introduce">
+				<h3>목차</h3>
+				<p>셜록홈즈의 사건집<br />1.마자랭의 보석<br />2.토르 브리지 사건.<br />3.국정원 알바 사건<br />4.비비큐 가격 상승 사건</p>
+				<a href="javascript:;">더보기<span></span></a>
+			</div>
+			<div class="detail-tab">
+				<ul class="scroll-tab">
+					<li><a href="javascript:;" class="on">시리즈<span>25</span></a></li>
+					<li><a href="javascript:;">연관시리즈<span>25</span></a></li>
+					<li><a href="javascript:;">저자소개</a></li>
+					<li><a href="javascript:;">서평<span>25</span></a></li>
+				</ul>
+			</div>
+			<div class="d-tab series">
+				<table>
+					<caption>시리즈 가격정보</caption>
+					<colgroup>
+						<col width="30%" />
+						<col width="70%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>장르정액권</th>
+							<td>
+								이용가능
+								<a href="#">장르정액권 구매 &gt;</a>
+							</td>
+						</tr>
+						<tr>
+							<th>전권구매</th>
+							<td><span>5,670원<em>(10%↓)</em></span><em class="save">3%적립</em></td>
+						</tr>
+						<tr>
+							<th>전권10년소장</th>
+							<td><span>5,670원<em>(10%↓)</em></span><em class="save">100%적립</em></td>
+						</tr>
+						<tr>
+							<th>전권대여</th>
+							<td>7일<em>|</em><span>5,670원<em>(10%↓)</em></span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-service">
+					<a href="#">10년소장 서비스 안내<em>&gt;</em></a>
+					<div class="three"> <!--  one, two, three -->
+						<div><a href="#">전권구매</a></div>
+						<div><a href="#">전권 10년소장</a></div>
+						<div><a href="#">전권 대여</a></div>
+					</div>
+				</div>
+				<div class="d-series">
+					<ul class="d-series-tab">
+						<li><a href="javascript:;" class="on">구매</a></li>
+						<li><a href="javascript:;">10년소장</a></li>
+						<li><a href="javascript:;">대여</a></li>
+					</ul>
+					<div class="fix-series-wrap">
+						<div class="fix-series">
+							<div><input type="checkbox" />선택</div>
+							<p>총 0권 0원</p>
+						</div>
+					</div>
+					<a href="#" class="series-array">최신순 정렬<span></span></a>
+					<ul class="d-series-list js-more">
+						<li>
+							<div><input type="checkbox" disabled /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash"><i>1일</i><em>|</em>2,800원<span>(100%↓)</span><del>3,200원</del><em>|</em><span class="save">100%적립</span></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div>구매전용</div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash"><i>2일</i><em>|</em>2,800원<span>(100%↓)</span><del>3,200원</del><em>|</em><span class="save">100%적립</span></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div>구매전용</div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash">2,800원<span>(100%↓)</span><del>3,200원</del></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div><a href="javascript:;">보기</a></div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>나의 짐승 같은 교수님(개정증보판)(전2권/완결)</p>
+								<div class="cash-des">
+									<p class="cash">2,800원<span>(100%↓)</span><del>3,200원</del></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div></div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash">2,800원<span>(100%↓)</span><del>3,200원</del></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div></div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash">2,800원<span>(100%↓)</span><del>3,200원</del></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div></div>
+						</li>
+						<li>
+							<div><input type="checkbox" /></div>
+							<div>
+								<p>삼국지 풍운을 삼키다 1</p>
+								<div class="cash-des">
+									<p class="cash">2,800원<span>(100%↓)</span><del>3,200원</del></p>
+									<p>2017.05.31<em>|</em>EPUB<em>|</em>1.29MB</p>
+								</div>
+							</div>
+							<div></div>
+						</li>
+					</ul>
+					<a href="javascript:;" class="d-more js-more-btn">더보기 (<span>25권</span>)<em></em></a>
+				</div>
+			</div>
+			<div class="d-tab relation">
+				<h3>이 책의 연관도서<em>|</em><span>세계문학전집</span></h3>
+				<ul class="js-more">
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+					<li><a href="#">삼국지 풍운을 삼키다1</a></li>
+				</ul>
+				<a href="javascript:;" class="d-more js-more-btn" >더보기 (<span>25권</span>)<em></em></a>
+			</div>
+			<div class="d-tab author">
+				<div class="author-title">
+					<h3>저자소개</h3>
+				</div>
+				<p>아동문학가와 시인으로 활동하였으며 한국 청소년 문학상 시 부문 심사위원 역임, 수필 부분 입상. 소설분야 작품으로는 ‘시크릿 맨’, ‘겨울의 기억’, ‘사랑한다 윤혜영’, ‘두 형사’. 현재 ‘바리스타’ 집필 중<br /><br />작가 블로그 주소) http://blog.naver.com/blue-lack
+				</p>
+			</div>
+			<div class="author-publish">
+				<h3>작가의 출간작</h3>
+				<script>
+					require(['jquery'],function($){
+						$(document).on("click",".modal",function(){
+							$(this).hide();
+							$(".arrayBox ul").hide();
+						});
+						$(document).on("click",".s-result",function(){
+							$(".modal").show();
+							$(this).next().show();
+						});
+						$(document).on("click",".arrayBox ul li a",function(){
+							var text = $(this).text();
+							$(".modal").hide();
+							$(this).parent().parent().find("li").find("a").removeClass("on");
+							$(this).parent().parent().hide();
+							$(this).addClass("on");
+							$(this).parent().parent().prev().text(text);
+						});
+					});
+				</script>
+				<div class="sunho-publisher">
+					<div class="swiper-container author">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a href="#" class="on">한국문화 편집국</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">풍몽룡</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">설민석</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">쑥쑥이</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">페로페로</a>
+							</li>
+						</ul>
+					</div>
+					<div class="pub-float">
+						<div class="select-area">
+							<div class="modal"></div>
+							<div class="arrayBox">
+								<p class="s-result">정확도순</p>
+								<ul>
+									<li><a href="javascript:;" data=''class="on">인기순</a><span></span></li>
+									<li><a href="javascript:;" data=''>최신순</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+						<a href="#">선호 작가 추가</a>
+					</div>
+					<div class="swiper-container md">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="box">
+									<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+									<span class="light"></span>
+								</div>
+								<div class="book-name">
+									<p>꽃같은 짐승</p>
+									<p>쑥쑥이</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="box">
+									<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+									<span class="light"></span>
+								</div>
+								<div class="book-name">
+									<p>꽃같은 짐승</p>
+									<p>쑥쑥이</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="box">
+									<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+									<span class="light"></span>
+								</div>
+								<div class="book-name">
+									<p>꽃같은 짐승</p>
+									<p>쑥쑥이</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="box">
+									<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+									<span class="light"></span>
+								</div>
+								<div class="book-name">
+									<p>꽃같은 짐승</p>
+									<p>쑥쑥이</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="box">
+									<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+									<span class="light"></span>
+								</div>
+								<div class="book-name">
+									<p>꽃같은 짐승</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-tab review">
+				<h3 class="hide">서평</h3>
+				<div class="my-rating">
+					<p class="my-vote">나의 별점 ( <span>3.0</span> )</p>
+					<div class="star-rating">
+						<div class="star-gogo">
+							<div data='1'><span>별점1</span></div>
+							<div data='2'><span>별점2</span></div>
+							<div data='3'><span>별점3</span></div>
+							<div data='4'><span>별점4</span></div>
+							<div data='5'><span>별점5</span></div>
+							<div data='6'><span>별점6</span></div>
+							<div data='7'><span>별점7</span></div>
+							<div data='8'><span>별점8</span></div>
+							<div data='9'><span>별점9</span></div>
+							<div data='10'><span>별점10</span></div>
+						</div>
+					</div>
+					<a href="#">내가 쓴 서평보기</a>
+				</div>
+				<script>
+					require(['jquery','swiper'],function($){
+						var star = {};
+						star = {
+							init : function(){
+								this.start();
+								this.move();
+								this.end();
+							},
+							st : {},
+							start : function(){
+								var _that = this;
+								$(".star-gogo > div").on("touchstart",function(e){
+									var idx = $(".star-gogo").children().index(this);
+									var event = e.originalEvent.touches[0];
+									var startX = event.pageX;
+									_that.st = startX;
+									for (var i = 0; i < 10; i++) {
+										if (i <= idx) {
+											$(".star-gogo > div").eq(i).addClass("on");
+										} else {
+											$(".star-gogo > div").eq(i).removeClass("on");
+										}
+									}
+								});
+							},
+							move : function(){
+								var _that = this;
+								$(".star-gogo > div").on("touchmove",function(e){
+									var idx = $(".star-gogo").children().index(this);
+									var event = e.originalEvent.touches[0];
+									var moveX = event.pageX;
+									var ss = moveX - _that.st;
+									var Drag = Math.floor(ss / 15);
+									var Dragmove = idx + Drag;
+									for (var i = 0; i < 10; i++) {
+										if (i <= Dragmove) {
+											$(".star-gogo > div").eq(i).addClass("on");
+										} else {
+											$(".star-gogo > div").eq(i).removeClass("on");
+										}
+									}
+									
+								});
+							},
+							end : function(){
+								$(".star-gogo > div").on("touchend",function(e){
+									var rating = $(".star-gogo").find(" > div.on").last();	
+									var data = rating.attr("data");
+									$(".my-vote span").text(data+".0");
+									if(data == null){
+										$(".star-gogo > div:first").addClass("on");
+										$(".my-vote span").text("1.0");
+									}
+								});
+							}
+						};
+						star.init();
+					});
+				</script>
+				<div class="review-box">
+					<div class="review-top">
+						<div class="review-array">
+							<div>
+								<div><a href="javascript:;" class="on">전체</a></div>
+								<div><a href="javascript:;">구매자</a></div>
+							</div>
+							<div><p>3.0</p></div>
+							<div>
+								<div><a href="javascript:;" class="on">좋아요</a></div>
+								<div><a href="javascript:;">최신</a></div>
+							</div>
+						</div>
+						<p>12명이 평가</p>
+						<script>
+								require(['jquery','swiper'],function($){
+									$(".review-top > div > div a").on("click",function(){
+										$(this).parent().parent().find("div").find("a").removeClass("on");
+										$(this).addClass("on");
+									});
+								});
+						</script>
+					</div>
+					<div id="comment">
+						<p class="no">회원님께서 첫 서평의 주인공이 되어주세요.</p>
+						<div class="comment">
+							<p class="comment-vote"><span class="list-star rank8"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+							<p class="comment-writer bookcube">별숲<span>(구매자)</span><em>|</em><span class="date">2017.07.06</span></p>
+							<div class="comment-content">
+								<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+								<a href="#" class="comment-more">더보기<span></span></a>
+							</div>
+							<div class="comment-btn">
+								<div><a href="#">신고</a></div>
+								<div>
+									<a href="javascript:;" class="heart-btn">좋아요</a>
+									<a href="#">댓글</a>
+								</div>
+							</div>
+						</div>
+						<div class="comment">
+							<p class="comment-vote"><span class="list-star rank7"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+							<p class="comment-writer facebook">당근<span>(구매자)</span><em>|</em><span class="date">2017.07.06</span></p>
+							<div class="comment-content">
+								<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. </span>
+								<a href="#" class="comment-more">더보기<span></span></a>
+								<div class="blur">
+									<div>
+										<p>스포일러가 있어요!</p>
+										<a href="javascript:;">그래도 볼래요 &gt;</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment-btn">
+								<div><a href="#">신고</a></div>
+								<div>
+									<a href="javascript:;" class="heart-btn">좋아요</a>
+									<a href="#">댓글</a>
+								</div>
+							</div>
+						</div>
+						<div class="comment">
+							<p class="comment-vote"><span class="list-star rank4"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+							<p class="comment-writer twitter">육계장<span>(구매자)</span><em>|</em><span class="date">2017.07.06</span></p>
+							<div class="comment-content">
+								<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+								<a href="#" class="comment-more">더보기<span></span></a>
+							</div>
+							<div class="comment-btn">
+								<div><a href="#">신고</a></div>
+								<div>
+									<a href="javascript:;" class="heart-btn">좋아요</a>
+									<a href="#">댓글</a>
+								</div>
+							</div>
+						</div>
+						<div class="comment-write reply-write">
+							<textarea name=''></textarea>
+							<p>
+								<span>0/500자</span>
+								<button name='' class=''>취소</button>
+								<button name='' class=''>등록</button>
+							</p>
+						</div>
+						<div class="comment">
+							<div class="reply-comment">
+								<p class="comment-writer twitter">육계장<span>(구매자)</span><em>|</em><span class="date">2017.07.06</span></p>
+								<div class="comment-content">
+									<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+								</div>
+								<div class="comment-btn">
+									<div><a href="#">신고</a></div>
+									<div>
+										<button name='' class=''>수정</button>
+										<button name='' class=''>삭제</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="comment">
+							<p class="comment-vote"><span class="list-star rank9"></span><em>|</em>좋아요 8<em>|</em>댓글 0</p>
+							<p class="comment-writer bookcube">별숲<span>(구매자)</span><em>|</em><span class="date">2017.07.06</span></p>
+							<div class="comment-content">
+								<span>짧아서 그런지 후딱 흘러가는 내용으로 마무리까지 금방끝나요. 삼각관계 키워드는 그리 맞지 않는거 같구요....아주 잠깐의 킬링타임용으로 읽기는 그럭저럭인듯해요</span>
+								<a href="#" class="comment-more">더보기<span></span></a>
+							</div>
+							<div class="comment-btn">
+								<div><a href="#">신고</a></div>
+								<div>
+									<a href="javascript:;" class="heart-btn">좋아요</a>
+									<a href="#">댓글</a>
+								</div>
+							</div>
+						</div>
+						<div class="comment-more">
+							<a href="#"><em>20</em>개 더보기<span></span></a>
+						</div>
+					</div>
+					<script>
+						require(['jquery','swiper'],function($){
+							$(".comment-content .blur").each(function(){
+								var height = $(this).parent().height();
+								$(this).css("height",height);
+							});
+							$(".comment-content .blur a").on("click",function(){
+								$(this).parent().parent().fadeOut(300);
+							});
+						});
+					</script>
+				</div>
+			</div>
+
+			<div class="fix-pay">
+				<ul>
+					<li><a href="javascript:;">책바구니</a></li>
+					<li><a href="javascript:;">선물하기</a></li>
+					<li>
+						<a href="javascript:;"><span>0원 (0권)</span><br />선택 구매하기</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="md-wrapper">
+				<h3 class="title"><em>이 분야의 베스트</em><span></span></h3>
+				<div class="swiper-container md">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="md-wrapper">
+				<h3 class="title"><em>이번 주 주인공은 나야!</em><span></span></h3>
+				<div class="swiper-container md">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703769.jpg" alt="도서 이미지 - 역대 최강의 검..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1609/160902788.jpg" alt="도서 이미지 - 협잠행기 2"></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170703362.jpg" alt="도서 이미지 - 스페이스 히어로..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1701/170109187.jpg" alt="도서 이미지 - 이 멋진 세계에..."></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+								<p>쑥쑥이</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box">
+								<a href="#"><span class="rm_br"><img src="http://bookimg.bookcube.com/200/1707/170705379.jpg" alt="도서 이미지 - 환생좌 2부 1"></span></a>
+								<span class="light"></span>
+							</div>
+							<div class="book-name">
+								<p>꽃같은 짐승</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 서평 좋아요 누를시 나오는 애니메이션 -->
+		<div class="ani">
+			<div class="heart-wrapper">  
+				<div class="heart">
+					<div class="tl"></div>    
+					<div class="tr"></div>    
+					<div class="bl"></div>    
+					<div class="br"></div>  
+				</div>  
+				<div class="ring"></div>  
+				<div class="circles"></div>
+			</div>
+		</div>
+		<script>
+			require(['jquery'],function($){
+				$(".heart-btn").on("click",function(){
+					if($(this).hasClass("on")){
+						$(this).removeClass("on");
+					}else{
+						$(".ani").show();
+						$(this).addClass("on");
+						$(".heart-wrapper").addClass("active").delay(800).queue(function(){
+							$(this).removeClass("active").dequeue();	
+							$(".ani").hide();
+						});	
+					}
+					return false;
+				});
+			});
+		</script>
+	</section>
+	<footer>
+		<div class="notice-box">
+			<p class="notice">[공지]</p>
+			<div class="notice-view">
+				<ul class="notice-list">
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice-text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore-box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">책바구니</a></p></li>
+				<li><p><a href="#">고객센터</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#">전자도서관</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div><img src="/book/images/m_book/clean.png" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+
+
+			$(".swiper-container").each(function(){
+				$(this).swiper({slidesPerView: 'auto'});
+			});
+
+
+			//공지사항
+			var list = $(".notice-list");
+			$(".notice-text:last").prependTo(list);
+			$(list).css("margin-top","-29px");
+
+			setInterval(function(){
+				$(list).animate({
+					marginTop:parseInt($(".notice-list:not(:animated)").css("margin-top"))+29+"px"
+				},400,"linear",function(){
+					$(list).css("margin-top","-29px");
+					$(".notice-text:last").prependTo(list);
+				});
+			},3000);
+
+
+			var fix = {};
+			fix = {
+				init : function(){
+					this.scroll();
+					this.animate();
+				},
+				el :{
+					footer : $("footer"), // 밑에 따라 다니는 구매버튼 사라지는 위치
+					payFix : $(".fix-series"), // 시리즈 리스트 위 가격 정보
+					payFixWrap : $(".fix-series-wrap"), // 시리즈 리스트 위 가격 정보 높이값 고정해주는 박스
+					tab : $(".scroll-tab"),
+					seriesTab : $(".d-series-tab"), // 선택 구매하기 버튼 클릭시 체크박스 체크 0 일때 가야 하는 위치
+					tabLen : $(".scroll-tab li").length,
+					tabLi : $(".scroll-tab li"),
+					fixHeight : $(".detail-tab").outerHeight()
+				},
+				top : {
+					// top 객체에 각 탭의 갯수 만큼 key,value 생성과 각종 위치값 들어갑니다.
+				},
+				scroll : function(){
+						var _that = this;
+						var step = 0;
+						$(window).scroll(function(){
+							var scrollTop = $(window).scrollTop();
+							for(var i = 1; i<=_that.el.tabLen;i++){
+								_that.top["tab"+i] = $(".d-tab").eq(i-1).offset().top - _that.el.fixHeight;
+							}
+							_that.top["footer"] = _that.el.footer.offset().top;
+
+							if(_that.top.tab1 <= scrollTop){
+								_that.el.tab.css({"position":"fixed","left":0,"top":0});
+							}else{
+								_that.el.tab.css("position","static");
+							}
+							// 헤더 영역 화면밖으로..
+							var hNum = _that.top.tab1 - 91;
+							if(hNum <= scrollTop){
+								$(".h-wrap").css("top",-(scrollTop - hNum));
+							}else{
+								$(".h-wrap").css("top", 0);
+							}
+							// 헤더 영역 화면밖으로.. 두번째 효과
+							//var hNum = _that.top.tab1 - 182;
+							//if(hNum <= scrollTop){
+							//	$(".h-wrap").css("top",-((scrollTop - hNum)/2));
+							//}else{
+							//	$(".h-wrap").css("top", 0);
+							//}
+
+							if(_that.el.tabLen > 3){ // 탭이 3개보다 크면 시리즈 리스트가 있음.
+								_that.top["fix"] = _that.el.payFixWrap.offset().top - _that.el.fixHeight;
+								_that.top["seriesTab"] = _that.el.seriesTab.offset().top - _that.el.fixHeight;
+								if(_that.top.fix <=scrollTop){
+									_that.el.payFix.css({"position":"fixed","left":0,"top":_that.el.fixHeight - 4,"border-bottom":"1px solid #f3f3f4"}).addClass("on");
+								}else{
+									_that.el.payFix.css({"position":"static","border-bottom":"none"}).removeClass("on");
+								}
+
+								if(_that.top.tab1 + (_that.top.tab2 - _that.top.tab1) - 10 <=scrollTop){
+									_that.el.payFix.fadeOut(300);
+								}else{
+									_that.el.payFix.fadeIn(300);
+								}
+							}
+
+							if(_that.top.footer - screen.height <= scrollTop){
+								$(".fix-pay").fadeOut(300);
+							}else{
+								$(".fix-pay").fadeIn(300);
+							}
+
+
+							for(var len = 1; len <=_that.el.tabLen; len++){
+								if(eval("_that.top.tab"+len)<=scrollTop+1){
+									_that.el.tabLi.find("a").removeClass("on");
+									_that.el.tabLi.eq(len-1).find("a").addClass("on");
+								}else{
+									_that.el.tabLi.eq(len-1).find("a").removeClass("on");
+								}
+							}
+							if(eval("_that.top.tab"+1)>=scrollTop+1){
+								_that.el.tabLi.eq(0).find("a").addClass("on");
+							}
+						});
+				},
+				animate : function(){
+						var _that = this;
+						_that.el.tabLi.find("a").on("click",function(){
+							var scrollTop = $(window).scrollTop();
+							var idx = $(this).parent().index()+1;
+							for(var i = 1; i<=_that.el.tabLen;i++){
+								_that.top["tab"+i] = $(".d-tab").eq(i-1).offset().top - _that.el.fixHeight;
+							}
+							$('html, body').animate({scrollTop: eval("_that.top.tab"+idx)}, 0);
+						});
+				}
+			};
+
+			fix.init();
+
+			$(document).on("click",".fix-pay li:last a",function(){
+				if($(".d-series-list input[type=checkbox]").is(":checked") === false){
+					alert("도서를 선택해 주시기 바랍니다.");
+					$('html, body').animate({scrollTop:fix.top.seriesTab}, 300);
+				}
+			});
+
+
+			$(".js-more").each(function(){
+				var len = $(this).find("li").length;
+				if(len >= 5){
+					$(this).find("li").hide();
+					$(".js-more-btn").css("display","block");
+					for(var i = 0; i < 5; i++){
+						$(this).find("li").eq(i).show();
+					}
+				}
+			});
+
+			$(".js-more-btn").on("click",function(){
+				$(this).parent().find("li").show();
+				$(this).hide();
+			});
+
+
+
+
+		});
+
+		function shareView(){
+			$(".share").not().animate({
+				height : "toggle"
+			},300)
+		}
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

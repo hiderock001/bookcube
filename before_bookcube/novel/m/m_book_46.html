@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>웹소설</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="title" content="">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="books.book">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[스토리큐브]">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="http://www.bookcube.com/novel/m/main.asp">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/novel/css/m_nStory.css?1608241" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/novel/js/lib/requirejs.min.js"></script>
+	<script src="/novel/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/novel/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"slick" : "lib/slick.min",
+				"mainroll" : "mainroll.min",
+				"weeklist" : "todayserial.min.js?1604191",
+				"novel" : "m.novel.min.js?160926",
+				"category" : "category.min",
+				"detail_split" : "split_list.min.js?160926",
+				"member_serial_split" : "member_serial_split_list.min.js?1",
+				"comment" : "comment.min.js?160926",
+				"prefer" : "prefer.min",
+				"bookmark" : "bookmark.min",
+				"share" : "share.min",
+				"message" : "message.min",
+				"cart" : "cart.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"]
+			}
+		});
+
+		require(["novel"]);
+	</script>
+</head>
+<body>
+	<!-- [ HEADER ] -->
+	<header>
+		<h1 class="hide">북큐브</h1>
+		<nav>
+			<ul class="gnb">
+				<li><a href="#app" class="js_app">내서재</a></li>
+				<li><a href="http://www.bookcube.com/book/m/main.asp">서점</a></li>
+				<li><a href="http://www.bookcube.com/novel/m/main.asp">웹소설</a></li>
+				<li><a href="http://www.bookcube.com/toon/main.asp">웹툰</a></li>
+				<li><a href="#library" class="js_library">도서관</a></li>
+			</ul>
+		</nav>
+		<div class="headerMiddle">
+			<h2 class="logo"><a href="http://www.bookcube.com/novel/m/main.asp">스토리큐브</a></h2>
+			<div class="snb">
+				<ul>
+					<li><a href="http://www.bookcube.com/book/m/alarm.asp" class="js_alarm">알리미</a></li>
+					<li><a href="http://www.bookcube.com/novel/m/prefer/prefer.asp">선호작</a></li>
+					<li><a href="http://www.bookcube.com/novel/m/search.asp">검색</a></li>
+					<li><a href="#" class="js_slidemenu">슬라이드메뉴</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="slideOverlay"></div>
+		<div class="slideMenu">
+			<ul>
+				<li><a href="#" data-site="storycube" class="js_logout backColor">로그아웃</a></li>
+				<li><a href="http://www.bookcube.com/book/m/mypage/mypage.asp?site=novel" class="backColor">마이페이지</a></li>
+				<li><a href="http://www.bookcube.com/novel/m/prefer/prefer.asp?site_type=serial" class="backColor">나의선호작</a></li>
+				<li><a href="http://www.bookcube.com/book/m/alarm.asp" class="backColor">알리미</a></li>
+				<li><a href="https://www.bookcube.com/book/m/order/bookcash.asp">북캐시충전</a></li>
+				<li><a href="http://www.bookcube.com/book/m/event.asp?event_class=sc">이벤트</a></li>
+				<li><a href="http://www.bookcube.com/novel/m/customer/notice.asp">공지 및 이용안내</a></li>
+				<li><a href="http://www.bookcube.com/book/m/my1vs1.asp">고객센터</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="title">
+			<p>결제 완료</p>
+		</div>
+		<div class="cash-result">
+			<p>총 결제 금액 : 24,400원</p>
+			<span>지급 적립금 : 285원</span>
+		</div>
+		<div class="title-bar">
+			<p>결제수단</p>
+			<p class="cash-way">북캐시 + 적립금</p>
+		</div>
+		<div class="order-end">
+			<p>감사합니다.<br />결제가 성공적으로 완료되었습니다.</p>
+			<a href="#">다시 내려 받기</a>
+			<a href="#">상세페이지</a>
+		</div>
+	</section>
+	<footer>
+		<div class="notice_box">
+			<p class="notice">[공지]</p>
+			<div class="notice_view">
+				<ul class="notice_list">
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정입니다</a></li>
+					<li class="notice_text"><a href="#">웹소설 전 회차 구매/대여 목록 수정</a></li>
+				</ul>
+			</div>
+			<div class="nmore_box">
+				<a href="#" class="js_page_top">맨위로</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><p><a href="#">북캐시충전</a></p></li>
+				<li><p><a href="#">마이페이지</a></p></li>
+				<li><p><a href="#">북마크</a></p></li>
+				<li><p><a href="#">이용안내</a></p></li>
+			</ul>
+		</nav>
+		<div class="fMenuBox">
+			<div class="fMenu">
+				<ul>
+					<li><a href="#">쿠폰/상품권 등록</a></li>
+					<li><a href="#">기프트 카드 등록</a></li>
+					<li><a href="#">1:1 문의</a></li>
+					<li><a href="#" class="js_appinstall"><img src="/book/images/m_book/main/fMenu.png" alt="북큐브앱" />북큐브 앱 설치</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fInfo">
+			<p class="pList"><a href="#">이용약관</a><em>|</em><a href="#">개인정보취급방침</a><em>|</em><a href="mailTo:webmaster@bookcube.com">이메일 문의</a><em>|</em>1588-1925</p>
+			<ul>
+				<li>(주)북큐브네트웍스</li>
+				<li>서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li>대표자 : 유철종<em>|</em>사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+				<li>Web development & design by 전윤성, 허진선</li>
+				<li>COPYRIGHT ⓒ 2016 By BOOKCUBENETWORKS CO.LTD.,</li>
+				<li>ALL RIGHTS RESERVED</li>
+			</ul>
+			<div style="text-align:center"><img src="/book/images/m_book/main/clean.png" style="width:115px;height:34px;display:inline-block;margin-top:10px" alt="클린사이트 로고" /></div>
+		</div>
+	</footer>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

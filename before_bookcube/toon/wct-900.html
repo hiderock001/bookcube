@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="title" content="위즈덤하우스 신간 10% 할인전">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430"/>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script>
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+</head>
+<body>
+<div class="body_wrap">
+	<div class="container">
+		<!-- header -->
+		<div class="global">
+			<div class="fl">
+				<a href="http://www.bookcube.com/main.asp"><img src="/images/storycube/global_menu1_bookcube.gif" alt="북큐브 서점"/></a>
+				<a href="http://www.bookcube.com/storycube/main.asp"><img src="/images/storycube/global_menu2_storycube.gif" alt="스토리큐브"/></a>
+				<a href="http://www.bookcube.com/webtoon/main.asp"><img src="/images/storycube/global_menu2_webtoon.gif" alt="웹툰"/></a>
+				<a href="http://www.bookcube.com/b2b.asp"><img src="/images/storycube/global_menu4_library.gif" alt="전자도서관"/></a>
+			</div>
+			<div class="fr">
+				<img src="/images/icon/ico_new.gif"><a href="javascript:;" class="on" style="color:#f45e00" onclick="check_alarm_view();">알리미</a><em class="divider">|</em>
+				<!--a href="http://www.bookcube.com/mypage/mypage.asp">마이페이지</a><em class="divider">|</em-->
+				<a href="http://www.bookcube.com/mypage.asp">마이페이지</a><em class="divider">|</em>
+				<a href="https://www.bookcube.com/action/logout_process.asp" class="on login">로그아웃</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/customer.asp">고객센터</a><em class="divider">|</em>
+				<a href="http://www.bookcube.com/event.asp?page=nm">이벤트</a>
+			</div>
+		</div>
+		<!-- 팝업레이어 :: Alarm 안내-->
+		<div class="alarm_layer_box common" style="display:none;">
+			<div class="alarm_layer_head_top">
+				<img src="/images/board/sns_bt.gif">
+			</div>
+			<div id="" class="border_type_box2">
+				<iframe src="" width="492" height="359" frameborder="0" name="alarm_view" id="alarm_view" scrolling="no">
+				</iframe>
+			</div>
+		</div>
+		<!-- //header -->
+		<!-- contents_container -->
+		<div class="contents_container">
+			<div class="top_title">
+				<h2><img src="/images/renewal/event.gif" alt="이벤트"/></h2>
+			</div>
+			<!-- contents_wrap -->
+			<div class="contents_wrap">
+				<!-- content_top_list -->
+				<div class="content_top_sns_list">
+					<div class="title_area border_type">
+						<h2>이벤트</h2>
+						<p class="fr">
+							<a href="/event.asp?mode=&page=&pageNum=1" class="btn white">목록</a>
+						</p>
+					</div>
+				</div>
+				<!-- //content_top_list -->
+				<!-- content_top_list -->
+				<div class="content_top_list">
+					<div class="title_area border_type">
+						<p class="fr top5">
+							<a href="javascript:;" onclick="facebook('http://www.bookcube.com/event_detail.asp?mode=&event_num=2204');" title="새 창으로 열림" class="sns fb"><span class="hide">FaceBook</span></a>
+							<a href="javascript:;" onclick="twitter('http://www.bookcube.com/event_detail.asp?mode=&event_num=2204','위즈덤하우스 신간 10% 할인전\n[북큐브 이벤트]');" title="새 창으로 열림" class="sns tw"><span class="hide">Twitter</span></a>
+						</p>
+						<p class="fr">
+							북큐브 이벤트를 친구에게도 알려주세요!
+						</p>
+					</div>
+				</div>
+				<!-- //content_top_list -->
+				<div class="ad_area">
+					<img src="http://up.bookcube.com/bookcube/upload/event/2204/e2204_img.jpg" alt="위즈덤하우스 신간 10% 할인전"/>
+				</div>
+				<!-- 이벤트 리스트 -->
+				<div class="list_tab_menu_sub event_top">
+					<div class="fl">
+						<h2><span class="orange">EVENT 1.</span>위즈덤하우스 신간 10% 할인전</h2>
+					</div>
+				</div>		
+				<div class="contents">
+					<ul class="rbList eventList">
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb1.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb1.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="rmdImg">
+									<span class="im_br">
+										<img src="/toon/images/toon/thum/rb2.jpg" alt="" />
+									</span>
+									<span class="toonNew">NEW</span>
+									<span class="toonUp">UP</span>
+									<span class="toonAdult">성인</span>
+								</div>
+								<div class="rmdInfo">
+									<p>이제는 정말 나를 위해서만 위해서만위해서만</p>
+									<p>유인경</p>
+									<p>10년소장</p>
+									<p><del>500원</del><span>250원(50% 할인)</span></p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="list_tab_menu_sub event_top">
+					<div class="fl">
+						<h2><span class="orange">EVENT 1.</span>위즈덤하우스 신간 10% 할인전</h2>
+					</div>
+				</div>		
+				<div class="contents">
+					<ul class="dayList_book">
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>		
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>		
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>		
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>		
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/rb3.jpg" alt="" />
+							</span>
+							<span class="toonNew">NEW</span>
+							<span class="toonUp">UP</span>
+							<span class="toonAdult">성인</span>
+						</a>
+						<p class="title">이제는 정말 나를 위해서만 위해서만위해서만</p>
+						<p>유인경</p>
+						<p>10년소장</p>
+						<p><del>500원</del><span>250원(50% 할인)</span></p>
+					</li>		
+				</ul>
+				</div>
+				<!-- //contents -->
+			
+			
+			
+			
+			</div>
+			<!-- //contents_wrap -->
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+	<br/><br/>
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE"/></h4>
+				<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleanSite.png" alt="클린사이트"/></a>
+				<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/goodContents.png" alt="kodb"/></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+					<li><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보취급방침</a></li>
+					<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+					<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)08380 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 : 제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">
+					COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED
+				</p>
+			</div>
+		</div>
+	</div>
+	<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}		
+	</script>
+	<!-- //footer -->
+</div>
+</body>
+</html>
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}	
+</script>

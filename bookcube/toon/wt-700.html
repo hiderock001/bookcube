@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=904">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/toon/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="/toon/css/page.css" />
+<link type="text/css" rel="stylesheet" href="/toon/css/toon.css" />
+<script src="/toon/js/lib/jquery-1.11.0.min.js"></script>
+<script src="/toon/js/lib/jquery.jcarousel.min.js"></script>
+<script src="/toon/js/lib/requirejs.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<!--<div class="head_banner">
+			<div class="h_banner_inner">
+				<img src="http://up.bookcube.com/bookcube/upload/event/2290/ts2290_img.jpg" usemap="#teaser_2290">
+				<img src="/images/main/bannerClose.png" alt="배너닫기" class="bannerClose" />
+			</div>
+		</div>
+		<map name="teaser_2290"><area shape="rect" coords="0,0,450,80" href="http://www.bookcube.com/event_detail.asp?event_num=2288&amp;event_type=cm&amp;pageNum=1"><area shape="rect" coords="450,0,900,80" href="http://www.bookcube.com/event_detail.asp?event_num=2247&amp;event_type=cm&amp;pageNum=1"></map> -->
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li><a href="#"><img src="/toon/images/page/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="/toon/images/page/lnb2.jpg" alt="웹소설" /></a></li>
+						<li class="on"><a href="#"><img src="/toon/images/page/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/toon/images/page/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li><a href="#">알리미</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">회원정보수정</a></li>
+						<li><a href="#" class="on">로그아웃</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="h_middle_inner">
+					<h1 class="bookcube"><a href="#"><img src="/toon/images/toon/comicube.png" alt="코믹큐브" /></a></h1>
+					<div class="h_search_box">
+						<ul class="tab webtoon">
+							<li><h2><a href="#">웹툰</a></h2></li>
+							<li><h2><a href="#">코믹스</a></h2></li>
+						</ul>
+						<form>
+							<fieldset>
+								<legend class="hide">웹툰 검색</legend>
+								<div class="search_box">
+									<div class="select">
+										<p>전체</p>
+										<img src="/toon/images/toon/select_arrow.png" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+										<ul class="selectList">
+											<li data="all">전체</li>
+											<li data="title">제목</li>
+											<li data="author">저자</li>										
+										</ul>
+									</div>
+									<label for="" class="hide">검색박스</label>
+									<input type="text" name="" class="search_input" value="" />
+								</div>
+								<input type="button" class="select_submit" value="검색" />
+							</fieldset>
+						</form>	
+						<script>
+							$(function(){
+								$(".select").click(function(){
+									$(".selectList").toggle();	
+								});
+								$(".selectList li").click(function(){
+									var sText = $(".select > p");
+									var $data_val = $(this).attr('data') ;
+									$(sText).text($(this).text());
+									$("#searchOption").val($data_val);
+								});	
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="header_bottom">
+				<div class="h_bottom_inner">
+					<h2 class="hide">메인메뉴</h2>
+					<ul class="main-snb">
+						<li><a href="#"><img src="/toon/images/toon/gnb1.png" alt="요일" /></a></li>
+						<li><a href="#"><img src="/toon/images/toon/gnb2.png" alt="신간" /></a></li>
+						<li><a href="#"><img src="/toon/images/toon/gnb3.png" alt="완결" /></a></li>
+						<li><a href="#"><img src="/toon/images/toon/gnb4.png" alt="TOP50" /></a></li>
+						<li><a href="#"><img src="/toon/images/toon/gnb5.png" alt="장르" /></a></li>
+						<li><a href="#"><img src="/toon/images/toon/gnb6_on.png" alt="테마" /></a></li>
+					</ul>
+					<div class="lnb">
+						<ul>
+							<li><a href="#"><img src="/toon/images/toon/lnb1.png" alt="북캐시 충전" /></a></li>
+							<li><a href="#"><img src="/toon/images/toon/lnb2.png" alt="행운쿠키" /></a></li>
+							<li><a href="#"><img src="/toon/images/toon/lnb3.png" alt="선호작" /></a></li>
+							<li><a href="#" class="on">성인모드</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentsWrap">
+		<div class="contents">
+			<div class="theme-list">
+				<ul>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/theme.jpg" />
+							</span>
+						</a>
+						<div>
+							<p><span>완결 웹툰 [정주행] 이벤트!</span></p>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/theme2.jpg" />
+							</span>
+						</a>
+						<div>
+							<p><span>완결 웹툰 [정주행] 이벤트!</span></p>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/theme.jpg" />
+							</span>
+						</a>
+						<div>
+							<p><span>그토록 기다리던 무료 공개!<br />30% 리워드로 지금 바로 즐겨보세요!</span></p>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/theme2.jpg" />
+							</span>
+						</a>
+						<div>
+							<p><span>핫 이슈! 그라운드 제로 웹툰!<br />30% 리워드</span></p>
+						</div>
+					</li>
+					<li>
+						<a href="#">
+							<span class="im_br">
+								<img src="/toon/images/toon/thum/theme.jpg" />
+							</span>
+						</a>
+						<div>
+							<p><span>완결 웹툰 [정주행] 이벤트!</span></p>
+						</div>
+					</li>
+				</ul>
+				<div class="paging">
+					<a href="#" class="arr first">처음으로</a>
+					<a href="#" class="arr prev">이전으로</a>
+					<a href="#" class="on one">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">66666</a>
+					<a href="#" class="arr next">다음으로</a>
+					<a href="#" class="arr last">마지막으로</a>
+				</div>
+			</div>
+			<h3 class="nanumTitle">이벤트</h3>
+			<div class="event_box">
+				<div class="event_slide">
+					<div class="e_slide">
+						<ul class="event">
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2301"><img src="http://up.bookcube.com/bookcube/upload/event/2301/e2301_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2289"><img src="http://up.bookcube.com/bookcube/upload/event/2289/e2289_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2284"><img src="http://up.bookcube.com/bookcube/upload/event/2284/e2284_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2253"><img src="http://up.bookcube.com/bookcube/upload/event/2253/e2253_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2252"><img src="http://up.bookcube.com/bookcube/upload/event/2252/e2252_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2248"><img src="http://up.bookcube.com/bookcube/upload/event/2248/e2248_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2247"><img src="http://up.bookcube.com/bookcube/upload/event/2247/e2247_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/customer.asp?page=pc"><img src="http://up.bookcube.com/bookcube/upload/event/2209/e2209_pc_banner.jpg" alt=""></a></li>
+							<li class="event_page"><a href="http://www.bookcube.com/event_detail.asp?event_num=2144"><img src="http://up.bookcube.com/bookcube/upload/event/2144/e2144_pc_banner.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					<span class="prev_btn">이전</span>
+					<span class="next_btn">다음</span>
+				</div>
+				<a href="#" class="more">더보기</a>
+			</div>
+		</div>	
+	</div>
+	<div class="mainBottom">
+		<div class="mainBottom_inner">
+			<div class="cs">
+				<div class="csLeft">
+					<div>
+						<ul class="csList">
+							<li><a href="#"><img src="/images/page/cs1.png" alt="쿠폰등록" class="csLine" /></a></li>
+							<li><a href="#"><img src="/images/page/cs2.png" alt="상품권등록" class="csLine" /></a></li>
+							<li><a href="#"><img src="/images/page/cs3.png" alt="앱 다운로드" /></a></li>
+							<li><a href="#"><img src="/images/page/cs4.png" alt="기기 관리" /></a></li>
+						</ul>
+					</div>
+					<div class="csBoard">
+						<ul>
+							<li><a href="#">[공지]SNS 공유 시 무료도서 지급기준 변경 안내</a></li>
+							<li><a href="#">[공지]로그인 5회 오류 시 접속제한 적용 관련 공지</a></li>
+						</ul>
+						<a href="#">더보기</a>
+					</div>
+				</div>
+				<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+			</div>
+			<img src="/images/page/mainBottom_img.jpg" alt="20만권의 전자책, 웹소설 그리고 프리미엄 웹툰!! PC와 모바일에서 동시에 즐기세요." class="mainBottom_banner" usemap="#mainBottom_banner" />
+			<map name="mainBottom_banner">
+				<area shape="rect" coords="3,128,140,173" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" target="_blank" alt="google play" />
+				<area shape="rect" coords="154,128,291,173" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" target="_blank" alt="app store" />
+			</map>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h3 class="f_logo">북큐브네트웍스</h3>
+				<a href="#" target="_blank"><img src="/novel/images/page/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="/novel/images/page/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb large">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+	<script>
+			$(function(){
+				var page_section = $(".js_page_section").data("page");
+				if(page_section == "bl" || page_section == "romance"){
+					$(".js_jcarousel").find("li").eq(-1).addClass("last");
+				}
+
+				$(".js_jcarousel").jcarousel();
+				$(".js_jcarousel").each(function(){
+					if($(this).jcarousel("items").length <= 5){
+						$(this).find(".jcarousel-prev").hide().end().find(".jcarousel-next").hide();
+					}
+				});
+				$('.jcarousel-prev').on('jcarouselcontrol:active', function() {
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function() {
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '-=1'});
+
+				$('.jcarousel-next').on('jcarouselcontrol:active', function(){
+					$(this).removeClass("inactive").show();
+				}).on('jcarouselcontrol:inactive', function(){
+					$(this).addClass("inactive").hide();
+				}).jcarouselControl({target: '+=1'});
+
+
+				// 전체카테고리
+				$(".main_category a").on("click",function(){
+					$(".all-category").toggle();
+				});
+				
+
+				//이벤트 슬라이드		
+				var event = $(".event");
+				var maLeft = "margin-left";
+				if($(".event li").length > 3){
+					$(".eventPage:last").prependTo(event);
+					$(event).css("margin-left","-279px");
+				}
+				$(".prev_btn").click(function(){
+					$(event).animate({
+						marginLeft:parseInt($(".event:not(:animated)").css(maLeft))+279+"px"	
+					},200,function(){
+						$(event).css(maLeft,"-279px");
+						$(".event_page:last").prependTo(event);	
+					});	
+				});
+				$(".next_btn").click(function(){
+					$(event).animate({
+						marginLeft:parseInt($(".event:not(:animated)").css(maLeft))-279+"px"	
+					},200,function(){
+						$(event).css(maLeft,"-279px");
+						$(".event_page:first").appendTo(event);	
+					});	
+				});	
+
+
+		    });
+		
+	</script>
+</body>
+</html>

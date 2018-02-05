@@ -1,0 +1,1246 @@
+@charset "utf-8";
+/*****************************************************************************************************************************************************************************************************************************/
+/*****************************************************************************************************************************************************************************************************************************/
+
+/**************************************************************************************************2016년 코믹큐브 개편*******************     퍼블리셔 차남일    ************************************************************/
+
+/*****************************************************************************************************************************************************************************************************************************/
+/*****************************************************************************************************************************************************************************************************************************/
+
+* {-webkit-text-size-adjust:none;}
+
+body, input, button, select, textarea, sub,input{font-family:dotum,sans-serif !important;color:#666}
+body{background:#fff;}
+a,input[type="text"], input[type="password"], input[type="submit"], input[type="search"],input[type="button"], textarea { -webkit-appearance:none; }
+input[type="checkbox"]{width:16px;height:16px;}
+
+/* 헤더 
+header{}
+.h-wrap{width:100%;z-index:20000;background:#fff;}
+.header-top{position:relative;height:50px;padding:11px 0 14px 0;box-sizing:border-box;}
+.header-top:after{content:"";display:block;clear:both;}
+.header-top > div{height:25px;box-sizing:border-box;}
+.header-top div ul:after{content:"";display:block;clear:both;}
+.header-top > div ul li{float:left;width:50%;height:25px;}
+.header-top > div ul li a{display:block;width:100%;height:100%;text-indent:-9999px;}
+.header-top > div.top-left{float:left;width:80px;padding-left:8px;}
+.header-top > div.top-right{float:right;width:90px;padding-right:8px;}
+.header-top > div.top-left ul li:nth-child(1) a{background:url(/book/images/m_book/mypage-icon.png) no-repeat center center;background-size:21px 22px;}
+.header-top > div.top-left ul li:nth-child(2) a{background:url(/book/images/m_book/alarm-icon.png) no-repeat center center;background-size:18px 18px;}
+.header-top > div.top-right ul li:nth-child(1) a{background:url(/book/images/m_book/search-icon.png) no-repeat center center;background-size:18px 17px;}
+.header-top > div.top-right ul li:nth-child(2) a{text-indent:0;font-size:15px;line-height:25px;color:#888;letter-spacing:-1px;font-weight:bold;}
+.header-top h1{position:absolute;width:111px;height:25px;left:50%;top:11px;margin-left:-56px;}
+.header-top h1 a{text-indent:-9999px;display:block;width:100%;height:100%;background:url(/book/images/m_book/bookcube.png) no-repeat center center;background-size:111px 18px;}
+
+.alarm a{width:18px !important;margin:0 auto;position:relative;}
+.alarm .alarm-new{position:absolute;right:0px;top:-2px;width:14px;height:14px;display:block;background:url(/book/images/m_book/new-icon.png) no-repeat left center;background-size:14px 14px;}
+
+.header-middle{padding:0 10px;height:34px;border-bottom:1px solid #ececec;}
+.header-middle ul:after{content:"";display:block;clear:both;}
+.header-middle ul li{float:left;width:33.3%;height:33px;}
+.header-middle ul li div{width:60px;margin:0 auto;height:33px;position:relative;}
+.header-middle ul li a{display:block;line-height:33px;font-size:16px;color:#666;text-align:center;font-weight:bold;}
+.header-middle ul li:nth-child(3) a{color:#cb0202;}
+.header-middle ul li em{width:100%;display:block;height:3px;background:#cb0202;position:absolute;left:0;bottom:-2px;text-indent:-9999px;}
+.overlay{left:0;top:0;display:none;width:100%;min-height:110%;height:100%;position:fixed;background:rgba(0,0,0,.6);z-index:9000;}
+
+.search{display:none;width:100%;position:absolute;left:0;top:0;background:rgba(0,0,0,.6);z-index:9000;}
+.search-inner{=position:fixed;left:0;top:0;width:100%;padding:5px 0;border-bottom:1px solid #ececec;height:51px;box-sizing:border-box;background:#fff;z-index:9999;}
+.search-inner > div{position:relative;padding-left:39px;padding-right:42px;}
+.search-inner > div div{width:100%;}
+.search-inner > div div span{cursor:pointer;position:absolute;left:13px;top:0;width:14px;height:42px;display:block;background:url(/book/images/m_book/search-prev.png) no-repeat left center;background-size:7px 12px;}
+.search-inner > div div input{width:100%;background:#ececec;line-height:40px;padding:0 10px;box-sizing:border-box;font-size:14px;color:#909090;border:none;}
+.search-inner > div input[type='submit']{width:42px;height:42px;display:block;position:absolute;right:0;top:0;background:url(/book/images/m_book/search-icon.png) no-repeat center center;background-size:18px 17px;border:none;text-indent:-9999px;}
+
+.search.result{display:block;position:static;}
+.sideBar{position:fixed;left:0;top:0;width:266px;min-height:100%;height:100%;box-sizing:border-box;z-index:9100;background:#fff;overflow-y:auto;transform:translateX(-266px);transition:.3s;}
+.sideBar.on{transform:translateX(0);}
+.bar-top{position:relative;padding:25px 0 23px 0;background:#f3f3f5;}
+.bar-top > a{display:block;position:absolute;right:6px;top:6px;width:19px;height:19px;background:url(/book/images/m_book/sidebar-close.png) no-repeat center center;background-size:19px 19px;text-indent:-9999px;}
+.bar-top > div{width:220px;margin:0 auto;}
+.bar-top > div > a{display:block;width:60px;height:60px;margin:0 auto;text-indent:-9999px;background:url(/book/images/m_book/icon.png) no-repeat left center;background-size:320px 450px;background-position:-11px -63px;}
+.bar-top > div > a.naver{background:url(/book/images/m_book/icon.png) no-repeat center center;background-size:320px 450px;background-position:-258px -1px;}
+.bar-top > div > a.twitter{background:url(/book/images/m_book/icon.png) no-repeat center center;background-size:320px 450px;background-position:-196px -1px;}
+.bar-top > div > a.kakao{background:url(/book/images/m_book/icon.png) no-repeat center center;background-size:320px 450px;background-position:-134px -1px;}
+.bar-top > div > a.facebook{background:url(/book/images/m_book/icon.png) no-repeat center center;background-size:320px 450px;background-position:-72px -1px;}
+.bar-top > div > a.bookcube{background:url(/book/images/m_book/icon.png) no-repeat center center;background-size:320px 450px;background-position:-11px -1px;}
+.bar-top > div > a.payco{background:url(/book/images/m_book/share-payco.png) no-repeat center center;background-size:60px 60px;}
+.bar-top > div > p{margin-top:10px;text-align:center;font-size:16px;color:#666;}
+.bar-top > div div{margin:14px auto 0;width:96px;height:32px;box-sizing:border-box;border-radius:4px;border-bottom:2px solid #e7e7e8;overflow:hidden;}
+.bar-top > div div a{display:block;background:#fff;text-align:center;line-height:30px;border:1px solid #c1c1c1;color:#333;font-size:14px;border-radius:4px;box-sizing:border-box;height:30px;}
+.bar-middle{}
+.bar-middle ul:after{content:"";display:block;clear:both;}
+.bar-middle ul li{float:left;border-bottom:1px solid #f3f3f4;border-left:1px solid #f3f3f4;width:33.33%;box-sizing:border-box;height:89px;}
+.bar-middle ul li:first-child{border-left:none;}
+.bar-middle ul li a{display:block;padding:48px 0 21px 0;height:100%;box-sizing:border-box;}
+.bar-middle ul li a p{text-align:center;margin-top:7px;color:#333;font-size:13px;font-weight:bold;}
+.bar-middle ul li:nth-child(1) a{background:url(/book/images/m_book/sidebar-mypage.png) no-repeat center 21px;background-size:26px 27px;}
+.bar-middle ul li:nth-child(2) a{background:url(/book/images/m_book/sidebar-cart.png) no-repeat center 21px;background-size:30px 28px;}
+.bar-middle ul li:nth-child(3) a{background:url(/book/images/m_book/sidebar-favo.png) no-repeat center 21px;background-size:30px 27px;}
+.bar-bottom{margin-top:10px;}
+.bar-bottom ul{padding-bottom:10px;border-bottom:1px solid #f3f3f4;}
+.bar-bottom li a{display:block;padding:10px 0 10px 20px;font-size:16px;color:#333;font-weight:bold;}
+.bar-bottom div{padding:20px;}
+.bar-bottom div p{font-size:14px;color:#999;line-height:18px;}
+.bar-bottom div a{margin-top:10px;display:block;width:100%;padding:7px 0;text-align:center;color:#fff;font-size:14px;border:1px solid #e25927;background:#f26532;box-shadow:0 2px #fdd4e4;border-radius:4px;font-weight:bold;}
+
+section{}
+.field{padding:0 10px 0 70px;height:41px;box-sizing:border-box;border-bottom:1px solid #ececec;position:relative;}
+.field > p{position:absolute;left:20px;top:0;color:#888;font-size:16px;font-weight:bold;}
+.field > p a{display:block;padding-right:18px;background:url(/book/images/m_book/more-down.png) no-repeat right 13px;background-size:14px 16px;line-height:40px;}
+.field > p a.on{color:#f26532;}
+.field ul:after{content:"";display:block;clear:both;}
+.field ul li{float:left;width:20%;}
+.field ul li a{display:block;line-height:40px;font-weight:bold;font-size:16px;text-align:center;}
+.field ul li:nth-child(1) a.on{color:#f26532;}
+.field ul li:nth-child(2) a.on{color:#da4585;}
+.field ul li:nth-child(3) a.on{color:#dc6c60;}
+.field ul li:nth-child(4) a.on{color:#6574c0;}
+.field ul li:nth-child(5) a.on{color:#4cb3dc;}
+*/
+
+header{width:100%;position:fixed;left:0;top:0; z-index:2000;}
+header nav{border-bottom:2px solid #e81816;
+background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(41,43,45) 100%);
+background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(41,43,45) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(41,43,45) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(41,43,45) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(41,43,45) 100%);
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(0,0,0)),color-stop(1, rgb(41,43,45)));}
+header.ios ul.gnb{width:100%;background:url(/toon/images/m_toon/ios_webtoon_x2.png) no-repeat left center;background-size:259px 44px;overflow:hidden;height:44px;}
+header ul.gnb{width:100%;background:url(/toon/images/m_toon/webtoon_x2.png) no-repeat left center;background-size:320px 44px;overflow:hidden;height:44px;}
+header ul.gnb:after{content:"";display:block;clear:both;}
+header ul.gnb li{float:left;margin-top:10px;width:61px;text-indent:-9999px;}
+header ul.gnb li a{display:block;height:34px;}
+header > .headerMiddle{padding:9px;border-bottom:1px solid #8f0100;background: #e81818;
+background: -moz-linear-gradient(top, #e81818 0%, #cc0202 100%);
+background: -webkit-linear-gradient(top, #e81818 0%,#cc0202 100%);
+background: linear-gradient(to bottom, #e81818 0%,#cc0202 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81818', endColorstr='#cc0202',GradientType=0 );}
+header > .headerMiddle:after{content:"";display:block;clear:both;}
+header > .headerMiddle .tab{float:left;margin-left:5px;}
+header > .headerMiddle .tab:after{content:"";display:block;clear:both;}
+header > .headerMiddle .tab li{float:left;background:url(/toon/images/m_toon/tab-dot.jpg) no-repeat left center;background-size:1px 12px;padding:0 10px;}
+header > .headerMiddle .tab li a{display:block;font-size:14px;color:#fa807f;font-weight:600;line-height:20px;}
+header > .headerMiddle .tab li:first-child{background:none;}
+header > .headerMiddle .tab li a.on{color:#fff;border-bottom:2px solid #fff;}
+.logo{float:left;margin-top:7px;width:70px;height:11px;background:url(/toon/images/m_toon/logo_toon.png) no-repeat left center;background-size:70px 11px;}
+.logo a{display:block;height:100%;text-indent:-9999px;}
+.snb{float:right;}
+.snb:after{content:"";display:block;clear:both;}
+.snb ul{}
+.snb ul:after{content:"";display:block;clear:both;}
+.snb ul li{float:left;position:relative;margin-left:20px;}
+.snb ul li:first-child{margin-left:0;}
+.snb ul li span.alarm-new{position:absolute;left:6px;top:-8px;width:17px;height:18px;display:block;background:url(/novel/images/m_novel/alarm_new.png) no-repeat;background-size:17px 18px;)}
+.snb ul li a{display:block;text-indent:-9999px;background:url(/toon/images/m_toon/m_toon.png) no-repeat;background-size:250px 250px;box-sizing:border-box;}
+.snb ul li:nth-child(1) a{margin-top:1px;width:22px;height:22px;background-position:-38px -6px;}
+.snb ul li:nth-child(1) a.on{background-position:-63px -6px;}
+.snb ul li:nth-child(2) a{margin-top:3px;width:18px;height:22px;background-position:-90px -8px;}
+.snb ul li:nth-child(3) a{margin-top:6px;width:18px;height:12px;background-position:-137px -9px;}
+
+/* 슬라이드 메뉴 */
+.slideOverlay{display:none;width:100%;height:100%;background:/*url(/book/images/m_book/snow1.png), url(/book/images/m_book/snow2.png), url(/book/images/m_book/snow3.png)*/ rgba(0,0,0,0.6);animation: snow 10s linear infinite;position:fixed;left:0;top:0;z-index:2000;}
+/*
+@keyframes snow{0%{background-position:0px 0px,0px 0px,0px 0px}50%{background-position:300px 500px,300px 200px,-100px 200px}100%{background-position:400px 1000px,200px 400px,100px 300px}}
+@-moz-keyframes snow{0%{background-position:0px 0px,0px 0px,0px 0px}50%{background-position:300px 500px,300px 200px,-100px 200px}100%{background-position:400px 800px,200px 400px,100px 300px}}
+@-webkit-keyframes snow{0%{background-position:0px 0px,0px 0px,0px 0px}50%{background-position:300px 500px,300px 200px,-100px 200px}100%{background-position:400px 1000px,200px 400px,100px 300px}}
+@-ms-keyframes snow{0%{background-position:0px 0px,0px 0px,0px 0px}50%{background-position:300px 500px,300px 200px,-100px 200px}100%{background-position:400px 800px,200px 400px,100px 300px}}
+@-o-keyframes snow{0%{background-position:0px 0px,0px 0px,0px 0px}50%{background-position:300px 500px,300px 200px,-100px 200px}100%{background-position:400px 800px,200px 400px,100px 300px}}
+*/
+.slideMenu{position:fixed;height:100%;right:-100%;top:0;z-index:3000;background:#3d4148;overflow-y:scroll;}
+.slideMenu li{width:212px;color:#fff;background:#3d4148;border-bottom:1px solid #4b4e56;}
+.slideMenu li a{display:block;padding:18px 0 17px 15px;color:#fff;font-weight:600;font-size:15px;}
+.slideMenu li a.backColor{background:#26282e;}
+.slideMenu li:last-child{margin-bottom:100px;}
+section{padding-top:88px;}
+
+
+
+
+
+
+
+
+
+.tabMenu{padding:12px 6px 11px 6px;height:41px;border-bottom:1px solid #d5d5d5;box-sizing:border-box;}
+.tabMenu:after{content:"";display:block;clear:both;}
+.tabMenu ul{}
+.tabMenu ul:after{content:"";display:block;clear:both;}
+.tabMenu ul li{float:left;width:16.6%;text-align:center;}
+.tabMenu ul li a{display:block;font-size:16px;font-weight:bold;color:#000;}
+.tabMenu ul li a.on{color:#ec302e;}
+/* 메인 슬라이드 */
+.le_wrap.mobile{position:relative;border-top:1px solid #000;}
+.le_wrap.mobile ul{}
+.le_wrap.mobile ul:after{content:"";display:block;clear:both;}
+.le_wrap.mobile ul li{position:relative;float:left;width:50%;height:100%;box-sizing:border-box;border-right:1px solid #000;border-bottom:1px solid #000;overflow:hidden;}
+.le_wrap.mobile ul li a{display:block;position:relative;}
+.le_wrap.mobile ul li > div{height:50%;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;-webkit-box-sizing:border-box;}
+.le_wrap.mobile ul li > div:first-child{border-bottom:1px solid #000;}
+.le_wrap.mobile ul li img{width:100%;height:inherit;}
+.le_wrap.mobile .pos7{width:100% !important;}
+.le_wrap.mobile .slick-prev{display:none !important;}
+.le_wrap.mobile .slick-next{display:none !important;}
+.le_wrap.mobile ul li a div{width:80%;}
+.le_wrap.mobile ul li a div p{width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+#mainRoll .slick-slide{overflow:hidden;}
+/*.le_wrap.pc{margin-top:10px;margin-bottom:30px;} */
+.le_wrap.pc{width:100%;margin:0 auto 30px;}
+.le_wrap.pc ul{width:100%;border-top:1px solid #000;border-left:1px solid #000;box-sizing:border-box;}
+.le_wrap.pc ul:after{content:"";display:block;clear:both;}
+.le_wrap.pc ul li{float:left;border-bottom:1px solid #000;border-right:1px solid #000;box-sizing:border-box;}
+.le_wrap.pc ul li div{height:25%;box-sizing:border-box;overflow:hidden;}
+.le_wrap.pc ul li div:first-child{height:25%;border-bottom:1px solid #000;}
+.le_wrap.pc ul li a{display:block;}
+.le_wrap.pc ul li img{display:inline-block;width:100%;}
+.le_wrap.pc .pos1,.pos2,.pos3,.pos4,.pos5,.pos6{width:25%;}
+.le_wrap.pc .pos7{width:50%;}
+/* footer */
+footer{}
+.notice_box{border-top:1px solid #cdced1;background:#f3f3f4;padding:5px 9px 5px 15px;}
+.notice_box:after{content:"";display:block;clear:both;}
+.notice{float:left;;line-height:29px;color:#f36334;font-size:12px;}
+.notice_view{width:63%;float:left;margin-left:5px;height:29px;overflow:hidden;}
+.notice_list{}
+.notice_list li{width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:29px;}
+.notice_list li a{line-height:29px;color:#666;font-size:12px;}
+.nmore_box{float:right;border:1px solid #c1c1c1;border-radius:4px;background:#fff;box-shadow:0px 2px #e7e7e8;}
+.nmore_box a{display:inline-block;width:54px;text-align:center;line-height:26px;color:#333;}
+footer nav{padding:21px 0;border-top:2px solid #666;}
+footer nav ul:after{content:"";display:block;clear:both;}
+footer nav ul li{float:left;width:25%;height:40px;}
+footer nav ul li:nth-child(1){background:url(/novel/images/m_novel/f_nav1.png) no-repeat center center;background-size:57px 39px;}
+footer nav ul li:nth-child(2){background:url(/toon/images/m_toon/f_nav2.png) no-repeat center center;background-size:53px 38px;}
+footer nav ul li:nth-child(3){background:url(/toon/images/m_toon/f_nav3.png) no-repeat center center;background-size:36px 40px;}
+footer nav ul li:nth-child(4){background:url(/novel/images/m_novel/f_nav4.png) no-repeat center center;background-size:42px 39px;}
+footer nav ul li p{height:100%;background:url(/novel/images/m_novel/f_navDot.gif) no-repeat right center;background-size:1px 39px;}
+footer nav ul li:last-child p{background:none;}
+footer nav ul li p a{text-indent:-9999px;display:block;width:100%;height:100%;}
+.fMenuBox{border-top:1px solid #cdced1;padding:10px 7px;background:#f3f3f4;}
+.fMenu{border:1px solid #c1c1c1;border-bottom:none;border-radius:5px;overflow:hidden;background:#f3f3f4;box-shadow:0px 2px #e7e7e8;-webkit-box-shadow:0px 2px #e7e7e8;}
+.fMenu ul:after{content:"";display:block;clear:both;}
+.fMenu ul li{float:left;width:50%;box-sizing:border-box;border-bottom:1px solid #c1c1c1;}
+.fMenu ul li:nth-child(2n-1){border-right:1px solid #c1c1c1;}
+.fMenu ul li a{display:block;line-height:31px;text-align:center;font-size:13px;}
+.fMenu ul li a img{width:20px;display:inline-block;margin-right:6px;}
+.fInfo{padding:20px 0;background:#e5e6e8;border-top:1px solid #cdced1;}
+.pList{color:#666;text-align:center;}
+.pList a{font-size:12px;color:#666;}
+.pList em{display:inline-block;margin:0 6px;color:#c1c1c1;}
+.fInfo ul{margin-top:10px;width:100%;}
+.fInfo ul li{line-height:18px;font-size:11px;text-align:center;color:#868686;}
+/* 라벨 */
+span.toonNew{position:absolute;left:0;top:0;display:block;width:26px;height:13px;text-align:center;background:rgba(204,51,102,0.7);color:#fff;font-size:10px;line-height:13px;}
+span.toonUp{position:absolute;right:0;bottom:0;display:block;width:17px;height:13px;text-align:center;background:rgba(238,82,0,0.7);color:#fff;font-size:10px;line-height:13px;}
+span.toonAdult{position:absolute;right:0;top:0;display:block;width:15px;height:13px;text-align:center;background:rgba(194,0,0,0.7);color:#fff;font-size:10px;line-height:13px;}
+
+
+
+/*.titleBox.minus{margin-top:-3px;*}*/
+.mi{/*margin-top:-3px;*/}
+.titleBox{position:relative;padding-top:12px;padding-left:12px;background:#f3f3f4;}
+[data-viewer-type="comics"] .titleBox{border-top:1px solid #cdced1;}
+.titleBox:after{content:"";display:block;clear:both;}
+.more{position:absolute;right:0;bottom:0;margin-right:12px;padding-right:12px;line-height:29px;background:url(/novel/images/m_novel/moreBg.png) no-repeat right 10px;background-size:8px 8px;}
+.titleBox h3{display:inline-block;font-weight:bold;font-size:16px;color:#333;line-height:29px;}
+.titleBox p{font-size:13px;padding-bottom:5px;}
+.topBox{background:#f3f3f4;}
+.topBox ul.ranking > li{display:inline-block;width:247px;margin-left:12px;background:#fff;}
+.topBox ul.ranking > li:last-child{margin-right:12px;}
+ul.rankingSub li{border:1px solid #cdced1;border-top:none;}
+ul.rankingSub li a:after{content:"";display:block;clear:both;}
+ul.rankingSub li:first-child{border-top:1px solid #cdced1;}
+ul.rankingSub li a{display:block;height:75px;overflow:hidden;padding:12px 15px;}
+ul.rankingSub li:after{content:"";display:block;clear:both;}	
+ul.rankingSub li .rankingThum{float:left;position:relative;width:75px;height:75px;}
+ul.rankingSub li .rankingThum img{display:block;width:75px;height:75px;}
+.rankingInfo{float:left;width:55%;margin-left:15px;}
+.rankingInfo h5{margin-bottom:3px;font-size:14px;color:#333;line-height:22px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.rankingInfo p{line-height:16px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.rankingInfo .rankingPub{padding-top:5px;}
+.rankingTitle{padding:0 14px;border:1px solid #cdced1;border-bottom:none;background:#fff;}
+.rankingTitle:after{content:"";display:block;clear:both;}
+.rankingTitle h4{float:left;line-height:40px;color:#ed3130;font-weight:bold;font-size:14px;}
+.rankingTitle a{display:block;float:right;line-height:40px;padding-right:12px;background:url(/novel/images/m_novel/moreBg.png) no-repeat right center;background-size:8px 8px;}
+.theme{position:relative;padding:11px;border-top:1px solid #cdced1;border-bottom:1px solid #cdced1;}
+.theme ul:after{content:"";display:block;clear:both;}
+.theme ul li{float:left;width:48.8%;border:1px solid #dedfdf;margin-bottom:4px;text-align:center;}
+.theme ul li:nth-child(2n-1){margin-right:1%;}
+.theme ul li img{width:100%;height:auto;display:block;}
+/*
+.theme ul li:nth-last-child(1){display:none;}
+.theme ul li:nth-last-child(2){display:none;}
+*/
+.mainEvent{border-top:1px solid #cdced1;padding:11px 0;width:100%;height:87px;}
+.mainEvent .swiper-wrapper{margin-left:5px;}
+.mainEvent a{display:block;position:relative;width:210px;height:87px;}
+.mainEvent a img{width:210px;height:87px;}
+.mainEvent .swiper-slide{padding-right:5px;text-align:left;}
+.boTop{border-top:1px solid #cdced1;}
+.dayWrap{position:relative;}
+.dayList{width:100%;height:40px;background:#fff;border-top:1px solid #cdced1;border-bottom:1px solid #cdced1;}
+.dayList:after{content:"";display:block;clear:both;}
+.dayList li{float:left;width:12.5%;height:40px;}
+.dayList li a{display:block;line-height:40px;text-align:center;font-weight:bold;color:#333;font-size:14px;}
+.dayList li a.on{background:#ff6b6b;color:#fff;}
+.cate-p{padding:14px 0;text-align:center;border-bottom:1px solid #cdced1;}
+.cate-p a{display:inline-block;padding:0 10px;font-size:14px;}
+.cate-p a.on{color:#f26532;}
+.cate-p em{display:inline-block;color:#ccc;}
+.cate-list{background:#fff;}
+.cate-list li{border-bottom:1px solid #cdced1;}
+.cate-list li a:after{content:"";display:block;clear:both;}
+.cate-list li a{display:block;padding:15px 10px 15px 15px;}
+.cate-list li a > div{float:left;}
+.cate-list li a > div.thumBox{width:100px;height:100px;position:relative;}
+.cate-list li a > div img{width:100px;height:100px;display:block;}
+.cate-list li a > div:last-child{margin-left:15px;width:60%;}
+.cate-list li a > div:last-child h4{margin-bottom:9px;font-size:14px;color:#333;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cate-list li a > div:last-child p{margin-bottom:3px;line-height:15px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cate-list li a > div:last-child p.icon{margin-top:10px;color:#f26532;font-size:13px;line-height:17px;}
+.prefer{padding-left:19px;min-width:35px;display:inline-block;background:url(/novel/images/m_novel/prefer.png) no-repeat left center;background-size:15px 14px;}
+.sweet{margin-left:10px;padding-left:19px;min-width:50px;display:inline-block;background:url(/novel/images/m_novel/sweet.png) no-repeat left center;background-size:16px 13px;}
+.cate-list li.second a > div.thumBox{width:80px;height:112px;}
+.cate-list li.second a > div img{width:80px;height:112px;}
+.cate-list li.second a > div:last-child{width:65%;}
+
+
+/* 페이징 */
+.paging{padding:20px 15px;text-align:center;border-bottom:1px solid #cdced1;background:#f3f3f4;}
+.paging.nobo{border-bottom:none;}
+.paging a{display:inline-block;line-height:28px;text-align:center;border:1px solid #d5d5d5;font-size:13px;min-width:28px;background:#f6f6f6;}
+.paging a.on{background:#75a5ef;color:#fff;border:1px solid #75a5ef;}
+.paging .prev,.paging .next{width:50px;border-radius:3px;box-shadow:0 2px #e7e7e8;}
+.paging .prev{margin-right:7px;}
+.paging .next{margin-left:7px;}
+.paging p{margin-top:10px;font-size:14px;}
+
+.new-box{border-bottom:1px solid #d5d5d5;padding:20px 16px 10px;background:#f3f3f5;}
+.new-box ul{}
+.new-box ul:after{content:"";display:block;clear:both;}
+.new-box ul li{float:left;margin-bottom:10px;border:1px solid #e5e5e5;background:#fff;padding:5px;box-sizing:border-box;width:49%;}
+.new-box ul li:nth-child(odd){margin-right:1%;margin-left:0;}
+.new-box ul li:nth-child(even){margin-left:1%;margin-right:0;}
+.new-box ul li a{position:relative;display:block;margin-bottom:10px;width:100%;}
+.new-box ul li a img{display:block;width:100%;}
+.new-box ul li h4{padding-left:5px;margin-bottom:5px;font-size:14px;color:#333;box-sizing:border-box;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;line-height:16px;}
+.new-box ul li p{padding-left:5px;box-sizing:border-box;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;line-height:15px;}
+.cate-slide{border-top:1px solid #cdced1;border-bottom:1px solid #cdced1;height:40px;}
+.cate-slide .swiper-slide a{display:block;padding:0 14px;line-height:40px;height:40px;text-align:center;color:#333;font-weight:bold;font-size:14px;}
+.cate-slide .swiper-slide a.on{background:#ff6b6b;color:#fff;}
+
+
+.top50{border-top:1px solid #cdced1;border-bottom:1px solid #cdced1;}
+.top50-list{padding:20px 12px;background:#f3f3f4;}
+.top50-list:after{content:"";display:block;clear:both;}
+.top50-list li{float:left;margin:0 0.5% 3px;border:1px solid #e5e5e5;background:#fff;padding:5px;box-sizing:border-box;width:32.3%;}
+.top50-list li a{position:relative;display:block;margin-bottom:10px;width:100%;}
+.top50-list li a img{display:block;width:100%;}
+.top50-list li h4{padding-left:5px;margin-bottom:5px;font-size:14px;color:#333;box-sizing:border-box;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;line-height:16px;}
+.top50-list li p{padding-left:5px;box-sizing:border-box;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;line-height:15px;}
+
+.label-red{position:absolute;left:-8px;top:-8px;width:27px;height:27px;display:block;border-radius:27px;text-align:center;color:#fff;font-weight:bold;font-size:15px;line-height:27px;
+background: #f54200;
+background: -moz-linear-gradient(-45deg, #f54200 1%, #d61100 100%);
+background: -webkit-linear-gradient(-45deg, #f54200 1%,#d61100 100%);
+background: linear-gradient(135deg, #f54200 1%,#d61100 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f54200', endColorstr='#d61100',GradientType=1 );}
+.label-gray{position:absolute;left:-8px;top:-8px;width:27px;height:27px;display:block;border-radius:27px;text-align:center;color:#fff;font-weight:bold;font-size:15px;line-height:27px;
+background: #67768d;
+background: -moz-linear-gradient(-45deg, #67768d 0%, #3a465b 100%);
+background: -webkit-linear-gradient(-45deg, #67768d 0%,#3a465b 100%);
+background: linear-gradient(135deg, #67768d 0%,#3a465b 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67768d', endColorstr='#3a465b',GradientType=1 );
+}
+p.label{display:inline-block;position:absolute;left:0;bottom:0;padding-left:0 !important;}
+p.label:after{content:"";display:block;clear:both;}
+.label .toonNew{position:static;float:left;}
+.label .toonUp{position:static;float:left;}
+.theme-page ul{padding-top:10px;background:#f3f3f4;}
+.theme-page ul:after{content:"";display:block;clear:both;}
+.theme-page ul li{margin-top:10px;}
+.theme-page ul li:first-child{margin-top:0;}
+.theme-page ul li a{position:relative;display:block;width:100%;height:100%;}
+.theme-page ul li a img{display:block;width:100%;}
+
+/* 테마관 상세 */
+.theme-detail{}
+.theme-banner{background:#f3f4f4;}
+.theme-banner > img{display:block;width:100%;}
+.theme-banner > img.pad{display:none;}
+.theme-info{margin-bottom:10px;padding:16px 22px;border-bottom:1px solid #e6e6e6;background:#fff;}
+.theme-info p{line-height:20px;font-size:14px;}
+.theme-detail-list{border-top:1px solid #e6e6e6;}
+
+
+/* 상세페이지 */
+.detail-info-box > img{display:block;width:100%;}
+.detail-info{padding-top:20px;border-bottom:7px solid #f3f3f4;border-top:1px solid #f3f3f4;}
+.detail-info h3{margin-left:11px;margin-bottom:4px;font-size:17px;color:#333;}
+.detail-info em{display:inline-block;color:#ccc;margin:0 8px;}
+.detail-info > p{margin-left:11px;line-height:18px;}
+.detail-info-btn{padding-left:11px;margin-top:16px;padding-bottom:20px;}
+.detail-info-btn .sunho{display:inline-block;width:108px;height:34px;background:url(/toon/images/m_toon/m_toon.png) no-repeat left center;text-indent:-9999px;background-size:250px 250px;background-position:-3px -76px;}
+.detail-info-btn .sunho.on{background-position:-3px -114px;}
+.detail-info-btn .firstLook{margin-left:2px;display:inline-block;width:95px;height:34px;background:url(/toon/images/m_toon/m_toon.png) no-repeat left center;text-indent:-9999px;background-size:250px 250px;background-position:-3px -38px;}
+.detail-info-btn .replyBtn{margin-left:28px;display:inline-block;width:60px;height:34px;background:url(/novel/images/m_novel/replyBtn.png) no-repeat left center;text-indent:-9999px;background-size:60px 23px;}
+.book-hit{padding:10px 0;text-align:center;border-top:1px solid #e5e6e7;border-bottom:1px solid #e5e6e7;}
+.book-hit:after{content:"";display:block;clear:both;}
+.book-hit p{float:left;width:50%;box-sizing:border-box;color:#333;font-size:14px;}
+.book-hit p span{color:#f26532;}
+.book-hit p:first-child{border-right:1px solid #e5e6e7;}
+.book-hit p em{font-weight:bold;margin-bottom:3px;display:inline-block;height:18px;padding-left:20px;color:#333;}
+.book-hit p:first-child em.ani{line-height:18px;background:url(/novel/images/m_novel/hit.png) no-repeat left top;background-size:15px 18px;}
+.book-hit p:first-child em{line-height:13px;background:url(/novel/images/m_novel/sweet.png) no-repeat left top;background-size:16px 13px;}
+.book-hit p:last-child em{line-height:14px;background:url(/novel/images/m_novel/prefer.png) no-repeat left top;background-size:15px 14px;}
+.bgBox{height:7px;background:#f3f3f4;}
+.book-intro{border-top:1px solid #e5e6e7;border-bottom:7px solid #f3f3f4;}
+.book-intro h3{padding:13px 11px;border-bottom:1px solid #e5e6e7;font-size:14px;background:url(/novel/images/m_novel/moreArrow_on.png) no-repeat 97% center;background-size:13px 7px;}
+.book-intro h3.on{background:url(/novel/images/m_novel/moreArrow.png) no-repeat 97% center;background-size:13px 7px;}
+.book-intro p{height:0;line-height:18px;overflow:hidden;}
+.book-intro p.on{border-bottom:1px solid #e5e6e7;height:auto;padding:17px 11px;}
+
+.payTop{padding:6px 11px;}
+.payTop:after{content:"";display:block;clear:both;}
+.payTop > div:nth-child(1){float:left;margin-top:5px;}
+.payTop > div:nth-child(1) input[type='checkbox']{width:17px;height:17px;}
+.payTop > div:nth-child(1) label{font-weight:bold;font-size:14px;color:#333;}
+.payTop > div:nth-child(2){float:right;}
+.payTop > div:nth-child(2) a{font-weight:bold;margin-left:11px;display:inline-block;width:63px;line-height:28px;text-align:center;color:#333;border:1px solid #c1c1c1;border-radius:3px;box-shadow:0 2px #f2f2f2;}
+
+
+.array{height:40px;border-top:1px solid #788292;background:#8a93a1;}
+.array a{display:inline-block;line-height:40px;width:49%;color:#c4cad4;text-align:center;font-size:16px;font-weight:bold;}
+.array a.on{color:#fff;}
+.array em{display:inline-block;width:2%;color:#d5d5d5;}
+.selectListBox{}
+.selectListBox ul{overflow:hidden;}
+.selectListBox ul li{padding:12px;border-bottom:1px solid #e5e6e7;}
+.selectListBox ul li input[type='checkbox']{width:19px;height:19px;margin:0;padding:0;}
+.selectListBox ul li label{display:block;height:20px;margin-bottom:5px;font-size:15px;color:#333;font-weight:bold;}
+.selectListBox ul li label span{display:inline-block;width:19px;margin-right:3px;}
+.selectListBox ul .detail-wrap{border:1px solid #e5e5e5;box-sizing:border-box;}
+.selectListBox ul .detail-thum{position:relative;width:100%;}
+.selectListBox ul .detail-thum img{display:block;width:100%;}
+.selectListBox ul .sub-detail{border-top:1px solid #e5e5e5;;padding:7px 9px;box-sizing:border-box;width:100%;}
+.selectListBox ul .sub-detail:after{content:"";display:block;clear:both;}
+.selectListBox ul .sub-detail div{float:left;width:50%;}
+.selectListBox ul .sub-detail div:first-child p{font-size:12px;color:#333;line-height:17px;font-weight:bold;}
+.selectListBox ul .sub-detail div p span{display:inline-block;margin-left:4px;color:#f26532;}
+.selectListBox ul .sub-detail div:last-child p{font-size:14px;line-height:33px;color:#f26532;text-align:right;font-weight:bold;}
+.selectListBox ul .sub-detail div:last-child p del{color:#666;margin-right:4px;}
+.nfree{display:block;line-height:28px;font-size:12px;color:#fff;background:url(/toon/images/m_toon/lock.png) no-repeat left center #ff3300;padding-left:28px;
+padding-right:5px;position:absolute;left:0;top:0;background-size:28px 28px;}
+.bgm{display:block;position:absolute;right:0;top:0;background:url(/toon/images/m_toon/bgm.png) no-repeat left center;background-size:44px 28px;
+width:44px !important;height:28px !important;z-index:100;text-indent:-9999px;}
+.lock{display:block;position:absolute;left:0;top:0;background:url(/toon/images/m_toon/lock.png) no-repeat left center;background-size:28px 28px;
+width:28px !important;height:28px !important;z-index:100;text-indent:-9999px;}
+.free{display:block;position:absolute;left:0;top:0;background:url(/toon/images/m_toon/free.png) no-repeat left center;background-size:36px 28px;
+width:36px !important;height:28px !important;z-index:100;text-indent:-9999px;}
+.used{display:block;position:absolute;left:6px;top:0;background:url(/toon/images/m_toon/used.png) no-repeat left center;background-size:23px 47px;
+width:23px !important;height:47px !important;z-index:100;text-indent:-9999px;}
+.snsBox{padding:12px;border-bottom:1px solid #e5e6e7;border-top:1px solid #e5e6e7;}
+.snsBox p{font-size:13px;}
+.snsBox a{display:inline-block;margin:10px 1px 15px;width:34px;height:34px;text-indent:-9999px;}
+.bg{background:url(/novel/images/m_novel/m_nstory.png) no-repeat;background-size:200px 200px;}
+.kakaostory{background-position:-1px -1px;}
+.facebook{background-position:-36px -1px;}
+.twitter{background-position:-72px -1px;}
+.kakaotalk{background-position:-108px -1px;}
+.snsBottom:after{content:"";display:block;clear:both;}
+.snsBottom p{margin-left:5px;padding-left:13px;float:left;background:url(/novel/images/m_novel/snsDot.png) no-repeat left center;background-size:8px 8px;}
+.snsBottom span{display:block;padding-right:18px;float:right;font-size:13px;background:url(/novel/images/m_novel/snsMore.png) no-repeat right center;background-size:13px 7px;}
+.snsBottom span.on{background:url(/novel/images/m_novel/snsMore_on.png) no-repeat right center;background-size:13px 7px;}
+.snsPs{display:none;overflow:hidden;}
+.snspd{padding:12px;}
+.snsPs p{font-size:16px;text-align:center;color:#333;}
+.snsPs ul{margin-top:15px;padding-left:15px;}
+.snsPs ul li{list-style-type:disc;line-height:18px;}
+.toon-ps-wrap{border-bottom:7px solid #f3f3f4;}
+.toon-ps{padding:12px;border-bottom:1px solid #e5e6e7;}
+.toon-ps h4{margin-bottom:10px;font-size:14px;color:#666;}
+.toon-ps p{font-size:14px;color:#666;line-height:20px;}
+.toon-ps p span{color:#333;}
+.alarm-new{display:inline-block;margin-left:3px;width:17px;height:19px;background:url(/toon/images/m_toon/alram_new.png) no-repeat center center;background-size:17px 19px;text-indent:-9999px;}
+
+/* 댓글 */
+.reply-title{border-top:7px solid #f3f3f4;}
+.reply-title h3{border-top:1px solid #e5e6e7;border-bottom:1px solid #e5e6e7;line-height:40px;padding-left:12px;font-size:14px;}
+.reply-title h3 span{color:#f26532;}
+.ly_comment_write{}
+.comment_write{padding:10px 12px;border-bottom:1px solid #e5e6e7;}
+.comment_write.reply_write{padding-left:27px;background:url(/novel/images/m_novel/replyBg.png) no-repeat 12px 40px;background-size:12px 12px;}
+.comment_write p{margin-top:10px;}
+.comment_write p:after{content:"";display:block;clear:both;}
+.comment_write textarea{box-sizing:border-box;width:100%;height:70px;border:1px solid #e5e6e7;background:#f3f3f4;resize:none;}
+.comment_write p span{float:left;display:inline-block;line-height:30px;}
+.comment_write button{font-weight:600;margin:0 2px;float:right;border:1px solid #c1c1c1;width:50px;line-height:28px;color:#333;text-align:center;box-shadow:0 2px #f2f2f2;border-radius:3px;background:#fff;}
+.comment{padding:12px;border-bottom:1px solid #e5e6e7;}
+.ly_comment p.user{margin-bottom:10px;}
+.ly_comment p.user span{float:none;line-height:inherit;color:#333;font-size:14px;display:inline-block;margin:0;font-weight:bold;}
+.ly_comment p em{display:inline-block;margin:0 5px;}
+.comment span{display:block;margin:10px 0;font-size:13px;}
+.comment button{margin:0 2px;border:1px solid #c1c1c1;width:50px;line-height:28px;color:#333;text-align:center;box-shadow:0 2px #f2f2f2;border-radius:3px;background:#fff;}
+.comment a{margin:0 auto;display:block;border:1px solid #c1c1c1;width:50px;line-height:28px;color:#333;text-align:center;box-shadow:0 2px #f2f2f2;border-radius:3px;background:#fff;}
+.reply_comment{padding-left:15px;background:url(/novel/images/m_novel/replyBg.png) no-repeat left top;background-size:12px 12px;}
+
+.list-category{position:relative;border-bottom:7px solid #f3f3f4;}
+.searchForm{padding:5px 67px 5px 79px;border-bottom:1px solid #cdced1;}
+.list-category input[type='text']{height:30px;width:100%;box-sizing:border-box;border:1px solid #ccc;border-radius:0;-webkit-appearance:none;}
+.list-category input[type='submit']{margin:5px 10px 5px 10px;position:absolute;right:0;top:0;line-height:28px;height:30px;width:50px;border:1px solid #c1c1c1;text-align:center;color:#333;font-size:13px;border-radius:3px;box-shadow:0 2px #f2f2f2;background:#fff;-webkit-appearance:none;}
+.search-cate select{width:60px;height:32px;font-size:14px;line-height:30px;border:none;background:#fff;-webkit-appearance:none;}
+.search-cate:after{content:"";display:block;clear:both;}
+.search-cate{position:absolute;left:0;top:0;margin:5px 12px;}
+.select-design{position:relative;}
+.select-design span{position:absolute;right:0;top:0;display:block;height:32px;width:22px;background:url(/novel/images/m_novel/snsMore.png) no-repeat center center #fff;background-size:13px 7px;}
+.select-design select{padding-right:22px;height:32px;font-size:14px;line-height:30px;border:none;background:#fff;-webkit-appearance:none;}
+
+.genre-tab{border-top:2px solid #333;}
+.genre-tab ul{height:45px;border-bottom:1px solid #cdced1;}
+.genre-tab ul:after{content:"";display:block;clear:both;}
+.genre-tab ul li{float:left;box-sizing:border-box;width:50%;height:45px;border-right:1px solid #cdced1;}
+.genre-tab ul li:last-child{border-right:none;}
+.genre-tab ul li a{display:block;text-align:center;font-size:16px;font-weight:bold;padding-top:5px;height:40px;line-height:18px;background:#f6f6f6;color:#8a93a1;}
+.genre-tab ul li a.on{height:41px;background:#fff;color:#333;}
+.genre-tab ul li a span{color:#f26432;}
+
+.banner{position:fixed;bottom:0;left:50%;margin-left:-145px;border-radius:4px;width:291px;z-index:10000;}
+.banner.jpg{overflow:hidden;height:100px;}
+.banner .banner-link{position:relative;}
+.banner a{display:block;}
+.banner img{display:block;width:100%;}
+.banner .banner-link span{position:absolute;right:0;top:0;display:block;width:23px;height:23px;text-indent:-9999px;z-index:15000;}
+
+/* 결제 페이지 */
+.pay-info{border-bottom:7px solid #f3f3f4;}
+.pay-info p{padding:0 12px;line-height:40px;border-bottom:1px solid #cdced1;font-size:14px;font-weight:600;color:#333;box-sizing:border-box;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pay-info p span{display:inline-block;min-width:53px;}
+.pay-info p em{display:inline-block;margin:0 7px;font-weight:normal;color:#ccc;}
+.pay-info p:first-child{border-top:1px solid #cdced1;}
+.pay-box{border-bottom:7px solid #f3f3f4;border-top:1px solid #cdced1;}
+.pay-box h4{padding:0 12px;font-size:14px;line-height:40px;font-weight:600;color:#333;border-bottom:1px solid #cdced1;}
+.pay-box h4 em{display:inline-block;margin:0 7px;color:#ccc;font-weight:normal;}
+.pay-box h4 span{color:#f26532;}
+.pay-coupon{padding:18px 11px 10px 11px;border-bottom:1px solid #cdced1;}
+.pay-coupon ul{margin-bottom:17px;margin-left:11px;list-style-type:disc;}
+.pay-coupon ul li{margin-bottom:3px;line-height:16px;}
+.selectWrap{position:relative;}
+.selectWrap select{background:#f3f3f4 !important;-webkit-appearance:none;box-sizing:border-box;width:100%;padding-right:22px;height:40px;font-size:14px;line-height:36px;border:none;border:1px solid #e5e6e7;color:#333;}
+.selectWrap span{position:absolute;right:16px;top:5px;display:block;height:32px;width:22px;background:url(/novel/images/m_novel/snsMore.png) no-repeat center center #f3f3f4;background-size:13px 7px;}
+.pay-coupon p{padding-top:10px;font-size:16px;color:#333;text-align:center;font-weight:600;}
+.pay-coupon p span{color:#f26532;}
+.pay-list{padding:10px;border-bottom:1px solid #cdced1;}
+.pay-list li{padding:6px 0;font-weight:600;font-size:14px;line-height:28px;}
+.pay-list li p{color:#666;}
+.pay-list li p span{color:#f26532;font-weight:normal;}
+.pay-list li .charge{position:relative;padding-right:85px;}
+.pay-list li .charge.save{padding:0;}
+.pay-list li .charge a{position:absolute;right:0;top:0;display:block;border:1px solid #c1c1c1;color:#333;font-size:14px;text-align:center;box-shadow:0 2px #f3f3f4;border-radius:3px;width:80px;line-height:28px;}
+.pay-list li input[type='text']{margin-top:6px;display:block;width:100%;border:1px solid #c1c1c1;color:#333;padding:0 10px;box-sizing:border-box;line-height:28px;border-radius:2px;}
+.pay-list li label{display:inline-block;height:30px;color:#666;font-size:14px;font-weight:600;}
+.pay-list li:after{content:"";display:block;clear:both;}
+.pay-list li em{display:inline-block;margin:0 7px;color:#ccc;font-weight:normal;}
+.pay-list li a{display:block;float:right;border:1px solid #c1c1c1;color:#333;font-size:14px;text-align:center;box-shadow:0 2px #f3f3f4;border-radius:3px;width:80px;line-height:28px;}
+.radio_on{margin-top:2px;margin-right:5px;vertical-align:middle;padding-bottom:5px;background:url(/novel/images/m_novel/radio_on.png) no-repeat;background-size:16px 16px;display: inline-block;width:16px;height:16px;}
+.radio_off{margin-top:2px;margin-right:5px;vertical-align:middle;padding-bottom:5px;background:url(/novel/images/m_novel/radio_off.png) no-repeat;background-size:16px 16px;display: inline-block;width:16px;height:16px;}
+.result-payment{background:#f3f3f4;padding:20px 0;}
+.result-payment p{line-height:40px;text-align:center;color:#333;font-size:16px;font-weight:600;}
+.result-payment p span{color:#f26532;}
+.result-btn{padding:12px 0;border-top:1px solid #cdced1;text-align:center;border-bottom:1px solid #cdced1;}
+.result-btn p{margin-bottom:10px;}
+.result-btn input{display:inline-block;margin:0 2px;width:50px;height:28px;border-radius:3px;}
+.result-btn input[type='submit']{border:1px solid #df5c2d;text-align:center;color:#fff;box-shadow:0 2px #fde8e0;background:#f26532;}
+.result-btn input[type='button']{border:1px solid #c1c1c1;text-align:center;color:#333;box-shadow:0 2px #f2f2f2;background:#fff;}
+.nobo{border-bottom:none;}
+.mdSwiper{height:180px;padding:20px 0;box-sizing:border-box;border-bottom:1px solid #cdced1;border-top:1px solid #cdced1;}
+.mdSwiper.second{height:185px;padding:20px 0;box-sizing:border-box;border-bottom:1px solid #cdced1;border-top:1px solid #cdced1;}
+.mdSwiper.second a{display:block;position:relative;margin-bottom:5px;display:block;}
+.mdSwiper h4{font-size:14px;color:#333;line-height:22px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;}
+.mdSwiper p{line-height:18px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px;}
+.mdSwiper.second .swiper-slide{padding-left:7px;width:78px;height:110px;}
+.mdSwiper.second .swiper-slide a{display:block;position:relative;width:78px;height:110px;}
+.mdSwiper.second .swiper-slide img{display:block;width:78px;height:110px;}
+.mdSwiper .swiper-slide:last-child{padding-right:10px;}
+.mdSwiper .swiper-slide{padding-left:5px;width:110px;height:110px;}
+.mdSwiper .swiper-slide a{position:relative;display:block;width:110px;height:110px;}
+.mdSwiper .swiper-slide img{display:block;width:110px;height:110px;}
+
+
+
+
+.topBox{height:559px;}
+.topBox .swiper-slide{width:247px;padding-left:12px;}
+.topBox .swiper-slide:last-child{padding-right:12px;}
+.topBox .rankingSub{background:#fff;}
+
+.topBox.comic{height:468px;}
+.topBox.comic .rankingSub li a{height:65px;padding:12px 15px 0 15px;}
+.topBox.comic .rankingSub li:first-child a{height:89px;padding:12px 15px !important;}
+.topBox.comic .rankingSub li .rankingThum{width:64px;height:89px;}
+.topBox.comic .rankingSub li .rankingThum img{width:64px;height:89px;}
+.topBox.comic .rankingSub li:first-child .rankingInfo{margin-top:10px;}
+.topBox.comic .rankingInfo{width:60%;}
+
+/* 하단 배너 */
+.banner{position:fixed;left:50%;margin-left:-145px;bottom:0;width:291px;z-index:1500;}
+.banner.jpg{border-radius:4px;overflow:hidden;height:100px;}
+.banner .banner-link{position:relative;}
+.banner a{display:block;width:100%;}
+.banner img{display:block;width:100%;}
+.banner .banner-link span{position:absolute;right:0;top:0;display:block;width:30px;height:30px;font-size:0;z-index:15000;cursor:pointer;}
+.link_br{color:#6f6f6f !important;}
+.link_br:after{display:block;position:absolute;top:0px;right:0px;bottom:0px;left:0px;z-index:10;content:"";}
+
+/* 뷰어 */
+.wtCopy{width:100% !important;text-align:center;}
+.wtCopy img{display:inline-block;width:100%;}
+.md_heart{padding:0 20px 30px;}
+.md_heart p{font-size:13px;color:#909090;line-height:18px;text-align:center;}
+.heart_Box{margin:0 auto;border:3px solid #85aced;background:#fff;height:46px;border-radius:5px;width:80%;}
+.heart_Box p a{display:inline-block;position:relative;line-height:46px;color:#6f6f6f;text-align:center;font-size:14px;text-decoration:none !important;}
+.heart_Box p a img{display:inline-block;margin-right:9px;width:25px !important;height:21px !important;vertical-align:middle;margin-top:-2px;}
+.heart_Box p span{color:#f75e00;font-weight:bold;font-size:16px;line-height:21px;}
+.heart_Box p em{color:#b3b3b5;padding:0 5px;}
+
+/* 공지 */
+.list-category{position:relative;border-bottom:7px solid #f3f3f4;}
+.list-cate{padding:5px 12px;border-bottom:1px solid #cdced1;}
+.list-cate h3{text-align:center;line-height:30px;font-size:16px;color:#333;}
+.list-cate:after{content:"";display:block;clear:both;}
+.list-cate p{float:left;font-size:15px;color:#333;line-height:30px;}
+.list-cate p span{display:inline-block;line-height:30px;}
+.list-cate p span a.on{background:url(/novel/images/m_novel/cate_on.png) no-repeat right center !important;background-size:14px 16px !important;}
+.list-cate > a{float:right;line-height:28px;text-align:center;width:42px;color:#333;font-size:13px;border:1px solid #c1c1c1;border-radius:3px;box-shadow:0 2px #f2f2f2;}
+.tab50{border-top:2px solid #333;}
+.tab50 ul{border-bottom:1px solid #cdced1;}
+.tab50 ul:after{content:"";display:block;clear:both;}
+.tab50 ul li{float:left;height:40px;width:50%;box-sizing:border-box;border-left: 1px solid #cdced1;}
+.tab50 ul li:first-child{border-left:none;}
+.tab50 ul li a{line-height:40px;display:block;background:#f6f6f6;color:#8a93a1;text-align:center;font-size:16px;font-weight:600;}
+.tab50 ul li a.on{color:#333;height:41px;background:#fff;}
+.bbslist dl dt:first-child{border-top:none;}
+.bbslist dl dt{padding:15px;font-size:14px;font-weight:600;border-top:1px solid #cdced1;}
+.bbslist dl dt span{display:inline-block;margin-right:5px;color:#e48904;}
+.bbslist dl dd{display:none;padding:15px;border-top:1px solid #cdced1;}
+.bbslist dl dd h3{font-size:14px;font-weight:600;}
+.bbslist dl dd h4{margin-top:15px;font-size:13px;font-weight:600;}
+.bbslist dl dd ul{margin-top:8px;}
+.bbslist dl dd ul li{list-style-type:disc;margin-left:15px;line-height:18px;}
+.bookmark{padding-left:12px;line-height:40px;font-weight:600;color:#333;border-bottom:1px solid #cdced1;font-size:14px;}
+.notice-list{}
+.notice-list li{border-bottom:1px solid #cdced1;}
+.notice-list li a{display:block;padding:10px 12px;}
+.notice-list li a p:nth-child(1){margin-bottom:5px;font-size:14px;color:#333;font-weight:600;}
+.notice-list li a p:nth-child(2){font-size:12px;color:#909090;}
+.notice-list li a p em{display:inline-block;margin:0 8px;color:#ccc;}
+.notice-list li a p span.re{margin-left:5px;color:#bf65eb;}
+.notice-title{padding:15px 11px;border-bottom:1px solid #cdced1;}
+.notice-title h4{margin-bottom:5px;font-size:17px;color:#333;font-weight:600;}
+.notice-title p{font-size:12px;color:#909090;}
+.noticeWrap div:nth-child(2){padding:15px 11px;border-bottom:1px solid #cdced1;}
+.noticeWrap div:nth-child(2) p{font-size:14px;color:#333;line-height:20px;}
+.notice-btn{padding:5px 11px;text-align:right;}
+.notice-btn a{margin:0 1px;display:inline-block;line-height:28px;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;text-align:center;color:#333;font-size:13px;border-radius:3px;width:50px;}
+.theme-detail-list > h4{font-size:16px;padding:10px 15px;color:#333;border-bottom:1px solid #e6e6e6;background:#fff;}
+.theme-detail-list > h3{font-size:16px;padding:10px 15px;color:#333;border-bottom:1px solid #e6e6e6;background:#fff;}
+.adult-mode img{display: block;width:100%;}
+
+/* 뷰어 */
+.viewer{padding:20px 0;border-top:1px solid #cdced1;border-bottom:1px solid #cdced1;}
+.viewer:after{content:"";display:block;clear:both;}
+.viewer li{float:left;}
+.viewer li a{display:block;width:80px;margin:0 auto;}
+.viewer li a img{display:block;width:80px;height:110px;}
+.viewer-info{position:relative;width:80px;height:110px;}
+[data-viewer-type="comics"] .viewer-info{height:auto !important;}
+.viewer li h4{margin-top:5px;font-size:14px;color:#333;line-height:22px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;}
+.viewer li p{line-height:18px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px;}
+
+
+
+.noBook{padding:100px 0;text-align:center;font-size:14px;color:#333;border:1px solid #cdced1;border-left:none;border-right:none;}
+/* 쿠폰 및 상품권 */
+.tab50{border-top:2px solid #333;}
+.tab50 ul{border-bottom:1px solid #cdced1;}
+.tab50 ul:after{content:"";display:block;clear:both;}
+.tab50 ul li{float:left;height:40px;width:50%;box-sizing:border-box;border-left: 1px solid #cdced1;}
+.tab50 ul li:first-child{border-left:none;}
+.tab50 ul li a{line-height:40px;display:block;background:#f6f6f6;color:#8a93a1;text-align:center;font-size:16px;font-weight:600;}
+.tab50 ul li a.on{color:#333;height:41px;background:#fff;}
+.giftcard{padding:20px 0;border-bottom:1px solid #cdced1;}
+.giftcard span{margin:0 auto;width:300px;background:url(/book/images/m_book/gift-img.png) no-repeat center center;background-size:300px 210px;display:block;height:210px;text-indent:-9999px;}
+.gift-input{}
+.gift-info{padding:20px 12px;}
+.gift-input p{text-align:center;font-size:13px;line-height:18px;color:#333;}
+.gift-input input[type="text"]{margin-top:20px;box-sizing:border-box;width:100%;border-radius:3px;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;height:30px;line-height:30px;font-size:13px;color:#333;padding-left:10px;}
+.inputBtn{border-top:1px solid #cdced1;background:#f3f3f4;padding:15px 0;text-align:center;}
+.inputBtn input[type="submit"]{display:inline-block;line-height:28px;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;border-radius:3px;padding:0 30px;color:#333;font-size:14px;text-align:center;background:#fff;}
+.couponcard{padding:20px;}
+.couponPs{border-top:1px solid #cdced1;padding:14px 12px;}
+.couponPs > li{margin-bottom:10px;font-size:14px;line-height:32px;color:#333;}
+.couponPs-text{margin-left:30px;}
+.couponPs-text li{list-style-type:disc;font-size:13px;line-height:18px;color:#666;}
+
+
+
+/* 결제페이지 추가 */
+.sub-title{background:#f6f6f6;border-top:1px solid #fff;padding:8px 12px 8px 6px;border-bottom:1px solid #ccc;height:23px;color:#333;font-size:16px;text-align:center;line-height:23px;}
+.title-bar{border-top:1px solid #fff;border-bottom:1px solid #ccc;padding:5px 7px 5px 10px;}
+.title-bar:after{content:"";display:Block;clear:both;}
+.title-bar p{padding-left:8px;float:left;background:url(/book/images/m_book/main/title-bar.png) no-repeat left center;background-size:5px 9px;color:#333;font-size:15px;font-weight:600;line-height:29px;}
+.title-bar a{float:right;display:inline-block;border:1px solid #c1c1c1;border-radius:2px;background:#fff;box-shadow:0 2px #e7e7e8;padding:0 10px;text-align:center;line-height:26px;color:#333;}
+.title-bar span{color:#f26532;}
+.title-bar span.gray{color:#666;font-weight:normal;}
+.title-bar em{display:block;font-size:12px;color:#666;}
+.payment{}
+.payment-list li{width:100%;padding:13px 18px;border-bottom:1px solid #ccc;border-top:1px solid #fff;box-sizing:border-box;displaY:none;}
+.payment-list li:nth-child(1){display:table;}
+.payment-list li:nth-child(2){display:table;}
+.payment-list li:nth-child(3){display:table;}
+.payment-list li:nth-child(4){display:table;}
+.payment-list li:nth-child(5){display:table;}
+.payment-list.on li{display:table;}
+.payment-list li div{display:table-row;}
+.payment-list li div span{display:table-cell;vertical-align:middle;}
+.payment-list li div span:first-child{width:75%;color:#666;font-size:15px;font-weight:600;}
+.payment-list li div span:last-child{text-align:right;color:#333;font-size:15px;}
+.btn-center.payment{margin-top:0;border-top:none;padding:10px 15px;}
+.btn-center.payment > a{box-sizing:border-box;margin:0 auto;text-indent:-9999px;height:28px;width:100%;border:1px solid #ccc;border-radius:2px;box-shadow:1px 1px #eaeaea;display:block;background:url(/book/images/m_book/event-open.png) no-repeat center center #fff;background-size:47px 12px;}
+.btn-center.payment > a.on{height:28px;width:100%;background:url(/book/images/m_book/event-close.png) no-repeat center center #fff;background-size:35px 12px;}
+.cash-before{padding:13px 18px;border-bottom:1px solid #ccc;}
+.cash-before:after{content:"";display:block;clear:both;}
+.cash-before p{float:left;font-size:15px;color:#666;font-weight:600;}
+.cash-before span{float:right;display:block;font-size:15px;color:#f26532;font-weight:600;}
+.payment-coupon{border-bottom:1px solid #ccc;padding:20px 15px 15px 15px;}
+.payment-coupon ul{margin-left:15px;}
+.payment-coupon ul li{list-style-type:disc;margin-left:5px;margin-bottom:5px;color:#868686;}
+.payment-coupon .kSelectArea{border-bottom:none;padding:15px 0;}
+.payment-coupon p{font-size:15px;color:#666;text-align:center;font-weight:600;}
+.payment-cash ul li{border-bottom:1px solid #ccc;padding:14px 11px;}
+.payment-cash ul li p{margin-bottom:6px;font-size:15px;color:#333;font-weight:600;}
+.payment-cash ul li p em{color:#666;display:inline-block;margin:0 3px;font-weight:normal;}
+.payment-cash ul li p span{color:#666;font-weight:normal;}
+.payment-cash ul li div.charge{padding-right:87px;position:relative;}
+.payment-cash ul li div input{width:100%;border:1px solid #ccc;height:28px;line-height:28px;background:#fff;border-radius:2px;color:#989898;padding-left:5px;box-sizing:border-box;}
+.payment-cash ul li div a{position:absolute;right:0;top:0;display:block;background:#fff;line-height:26px;height:26px;border:1px solid #ccc;box-shadow:1px 1px #eaeaea;border-radius:2px;color:#333;text-align:center;width:82px;}
+.cash-result{padding:25px 0;border-bottom:1px solid #ccc;background:#e5e6e8;text-align:center;}
+.cash-result p{font-size:16px;color:#f26432;font-weight:600;}
+.cash-result span{display:block;margin-top:10px;font-size:12px;color:#666;}
+.payment-way ul{padding:6px;border-bottom:1px solid #ccc;}
+.payment-way ul li{background:#fff;}
+.payment-way ul li label{display:block;text-align:center;color:#666;}
+.payment-way ul li label span{position:relative;display:block;line-height:40px;height:40px;}
+.payment_on{margin-top:-1px;color:#f26532;font-size:14px;font-weight:600;border:1px solid #f26532;z-index:100;}
+.payment_off{margin-top:-1px;color:#666;font-size:14px;font-weight:600;border:1px solid #dbdbdb;}
+.cash_on{margin-top:-1px;color:#f26532;font-size:14px;font-weight:600;border:1px solid #f26532;z-index:100;}
+.cash_off{margin-top:-1px;color:#666;font-size:14px;font-weight:600;border:1px solid #dbdbdb;}
+.payment-btn{padding:15px 0;text-align:center;border-bottom:1px solid #ccc;background:#e5e6e8;}
+.payment-btn a{display:inline-block;padding:0 11px;margin:0 2px;border:1px solid #ccc;background:#fff;height:26px;line-height:26px;color:#333;border-radius:2px;font-size:13px;}
+.payment-btn a:first-child{border:1px solid #dc4510;background:#f26432;color:#fff;}
+.payment-way > div{padding:6px;border-bottom:1px solid #ccc;text-align:center;}
+.payment-way > div > div{padding:23px 0;background:#fff;}
+.payment-way > div > div p{margin-bottom:13px;font-size:14px;color:#666;}
+.payment-way > div > div a{display:inline-block;border:1px solid #ccc;background:#fff;line-height:28px;height:26px;text-align:center;color:#333;box-shadow:1px 1px #eaeaea;border-radius:2px;padding:0 10px;}
+.charge-ps{padding:18px 15px 13px 15px;border-bottom:1px solid #ccc;}
+.charge-ps ul{margin-left:10px;}
+.charge-ps li{margin-left:5px;list-style-type:disc;margin-bottom:5px;line-height:18px;}
+.cash-saving{padding:24px 6px;border-bottom:1px solid #ccc;}
+.cash-saving > p{margin-bottom:12px;font-size:15px;color:#333;text-align:center;font-weight:600;}
+.cash-saving table{width:100%;border-top:1px solid #ccc;border-left:1px solid #ccc;}
+.cash-saving table thead th{background:#efefef;color:#666;}
+.cash-saving table tbody td{color:#666;}
+.cash-saving table tbody tr td:nth-child(2){color:#f26532;}
+.cash-saving table thead th,.cash-saving table tbody td{padding:6px 0;font-size:14px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;text-align:center;}
+.charge-select{padding:6px;border-bottom:1px solid #ccc;}
+.charge-select ul{background:#fff;}
+.charge-select ul:after{content:"";display:block;clear:both;}
+.charge-select ul li{float:left;width:50%;box-sizing:border-box;}
+.charge-select ul li label{display:block;text-align:center;}
+.charge-select ul li:nth-child(2n){margin-left:-1px;}
+.charge-select ul li label span{position:relative;display:block;line-height:40px;height:40px;}
+.charge-select p{margin:12px 10px;/*background:url(/book/images/m_book/charge-dot.png) no-repeat left 2px;*/padding-left:10px;background-size:8px 8px;color:#868686;}
+.cash-result .payment-btn{border-bottom:none;padding-bottom:0;}
+.join-modify{padding:22px 10px;border-top:1px solid #fff;}
+.join-modify h3{margin-bottom:22px;font-size:16px;color:#666;text-align:center;}
+.join-saving{border:1px solid #ccc;text-indent:-9999px;}
+.join-saving img{display:block;width:100%;}
+.join-certify{padding:20px 0;border-bottom:1px solid #ccc;}
+.join-certify a{display:block;width:100%;height:58px;line-height:60px;border:1px solid #dc4510;background:#f26432;color:#fff;text-align:center;font-weight:600;font-size:20px;border-radius:2px;box-shadow:1px 1px #eaeaea;}
+.join-modify .join-wrap{padding:0 0 21px 0;}
+.noma{margin-top:0;}
+.btn-center{padding:10px 0;text-align:center;text-align:center;background:#e5e6e8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;margin-top:10px;}
+.btn-center a{display:inline-block;padding:0 11px;margin:0 2px;border:1px solid #ccc;background:#fff;height:26px;line-height:26px;color:#333;border-radius:2px;font-size:13px;}
+.btn-center.payment{margin-top:0;border-top:none;padding:10px 15px;}
+.btn-center.payment > a{box-sizing:border-box;margin:0 auto;text-indent:-9999px;height:28px;width:100%;border:1px solid #ccc;border-radius:2px;box-shadow:1px 1px #eaeaea;display:block;background:url(/book/images/m_book/event-open.png) no-repeat center center #fff;background-size:47px 12px;}
+.btn-center.payment > a.on{height:28px;width:100%;background:url(/book/images/m_book/event-close.png) no-repeat center center #fff;background-size:35px 12px;}
+.payment-coupon .kSelectArea{border-bottom:none;padding:15px 0;}
+.fSelect{position:relative;background:#e5e6e8;border-radius:5px;overflow:hidden;}
+.fSelect select{padding-left:10px;width:100%;border:none;background:transparent;height:28px;color:#333;}
+.fSelect span{position:absolute;top:1px;right:0px;}
+.fSelect span img{width:20px;height:26px;border-top-right-radius:5px;border-bottom-right-radius:5px;}
+
+
+
+/* 앱 메뉴 추가 */
+.slideMenu ul li:first-child{height:111px;}
+.slideMenu ul li:first-child a{padding:15px;}
+.m-app-top:after{content:"";display:block;clear:both;}
+.m-app-top span{float:left;width:44px;height:44px;display:block;background:url(/book/images/m_book/app-icon.png) no-repeat left center;background-size:44px 44px;text-indent:-9999px;}
+.m-app-top p{float:left;margin-left:15px;font-size:12px;width:118px;line-height:15px;word-break:keep-all;}
+.slideMenu ul li:first-child .menu-app > p{margin-top:8px;width:100%;height:28px;border:1px solid #dc4510;box-sizing:border-box;color:#fff;background:#f26432;text-align:center;line-height:28px;border-radius:5px;font-weight:600;}
+.pop{width:100%;height:100%;position:relative;left:0;top:0;}
+.pop-bg{width:100%;height:100%;position:fixed;background:#000;z-index:3000;opacity:0.6;left:0;top:0;}
+.app-down{position:fixed;width:240px;height:184px;left:50%;margin-left:-120px;top:50%;margin-top:-92px;z-index:4000;}
+.app-install{width:100%;height:150px;background:#fff;padding:20px;box-sizing:border-box;border-radius:5px;}
+.install-top:after{content:"";display:block;clear:both;}
+.install-top span{float:left;display:block;width:60px;height:60px;background:url(/book/images/m_book/app-icon.png) no-repeat left center;background-size:60px 60px;text-indent:-9999px;}
+.install-top p{float:left;margin-left:10px;width:124px;overflow:hidden;height:60px;font-size:14px;color:#333;line-height:21px;letter-spacing:-1px;word-break:keep-all;}
+.app-install a{margin-top:10px;display:block;width:100%;height:40px;box-sizing:border-box;border:1px solid #dc4510;border-radius:5px;background:#f26432;color:#fff;text-align:center;font-weight:600;font-size:16px;line-height:40px;}
+.app-install a span{margin-left:8px;text-indent:-9999px;display:inline-block;width:7px;height:40px;background:url(/book/images/m_book/app-dot.png) no-repeat left center;background-size:7px 10px;}
+.re-install{padding-top:14px;height:34px;text-align:center;box-sizing:border-box;}
+.re-install a{padding-top:14px;display:inline-block;color:#fff;font-size:12px;text-decoration:underline;}
+
+
+/* ios */
+header.ios .logo{width:108px;height:24px;background:url(/toon/images/m_toon/comicube_logo.png) no-repeat left center;background-size:108px 24px;}
+header.ios .snb ul li:nth-child(2) a{margin-top:3px;background-position:-114px -9px !important;}
+.ios-titleBox{height:41px;text-align:center;background:#2a2b30;border-bottom:1px solid #000;}
+.ios-titleBox h1{line-height:41px;color:#fff;}
+.ios-titleBox h1 a{color:#fff !important;font-size:16px;}
+.ios-main > div img{padding-top:20px;display:block;width:100%;}
+.adult_li{background:#fff;padding:20px 10px;border-bottom:1px solid #cdced1;}
+.adult_li p{font-size:14px;font-weight:bold;text-align:center;line-height:18px;}
+.adult_li ul li{padding-left:7px;color:#333;font-size:13px;line-height:20px;background:url(/toon/images/m_toon/adult_dot.gif) no-repeat left 9px;font-weight:bold;}
+.adult_li ul li:nth-child(4){color:#f00;background:url(/toon/images/m_toon/adult_dot_red.gif) no-repeat left 9px;}
+.mysearch{position:relative;height:30px;padding:5px 52px 5px 135px;background:#fff;}
+.mysearch > p{position:absolute;left:0;top:3px;width:135px;padding:0 15px;box-sizing:border-box;}
+.mysearch a{margin-top:7px;display:inline-block;font-size:16px;color:#9a9a9a;font-weight:bold;}
+.mysearch a.on{color:#5a8ad6;border-bottom:2px solid #5a8ad6;}
+.mysearch em{display:inline-block;margin:0 8px;color:#cccccc;}
+.mysearch  input[type='text']{width:100%;padding-left:10px;height:30px;background:#fff;border:1px solid #d5d5d5 !important;line-height:28px;box-sizing:border-box;border-radius:5px;}
+.mysearch  input[type='button']{position:absolute;top:5px;right:5px;margin-left:5px;max-width:44px;height:30px;border:1px solid #d5d5d5;line-height:28px;color:#666;background:#fff;font-size:13px;box-sizing:border-box;border-radius:5px;text-align:center;padding:0 10px;}
+.mysearch  input[type='submit']{position:absolute;top:5px;right:5px;margin-left:5px;max-width:44px;height:30px;border:1px solid #d5d5d5;line-height:28px;color:#666;background:#fff;font-size:13px;box-sizing:border-box;border-radius:5px;text-align:center;padding:0 10px;}
+.comic_list{background:#fff;border-top:1px solid #cdced1;}
+.comic_list li{border-bottom:1px solid #cdced1;}
+.comic_list li:last-child{border-bottom:none;}
+.comic_list li > a{display:block;padding:12px 10px;}
+.comic_list li > a:after{content:"";display:block;clear:both;}
+.comic_list li.webtoon .thumbox{float:left;position:relative;width:100px;height:100px;}
+.comic_list li.webtoon .thumbox img{display:block;width:100px;height:100px;}
+.comicText{float:left;width:67%;margin-left:12px;}
+.comicText p{line-height:18px;color:#8f8f8f;}
+.comic_list .comicText{width:62%;}
+.comic_list li.comic .thumbox{float:left;position:relative;width:80px;height:112px;}
+.comic_list li.comic .thumbox img{display:block;width:80px;height:112px;}
+.thumTitle{margin:5px 0;font-size:14px !important;color:#333 !important;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%;font-weight:666;}
+
+
+.payment-ios li{padding:12px;border-bottom:1px solid #e5e6e7;}
+.payment-ios li a{display:block;}
+.payment-ios .payment-title{margin-bottom:3px;font-weight:bold;font-size:14px;line-height:18px;color:#333;}
+.payment-ios li input[type='checkbox']{width:19px;height:19px;margin:0;padding:0;}
+.payment-ios li label{display:block;height:20px;margin-bottom:5px;font-size:15px;color:#333;font-weight:bold;}
+.payment-ios li label span{display:inline-block;width:19px;margin-right:3px;}
+.payment-ios .detail-wrap{border:1px solid #e5e5e5;box-sizing:border-box;}
+.payment-ios .detail-thum{position:relative;width:100%;}
+.payment-ios .detail-thum img{display:block;width:100%;}
+.payment-ios .sub-detail{border-top:1px solid #e5e5e5;;padding:7px 9px;box-sizing:border-box;width:100%;}
+.payment-ios .sub-detail:after{content:"";display:block;clear:both;}
+.payment-ios .sub-detail div{float:left;}
+.payment-ios .sub-detail div:first-child p{font-size:12px;color:#333;line-height:17px;font-weight:bold;}
+.payment-ios .sub-detail div p span{display:inline-block;margin-left:4px;color:#f26532;}
+/*.payment-list .sub-detail div:last-child p{font-size:14px;line-height:33px;color:#f26532;text-align:right;font-weight:bold;}
+.payment-list .sub-detail div:last-child p del{color:#666;margin-right:4px;}*/
+.payment-ios li div p{font-size:12px !important;color:#333 !important;line-height:17px !important;text-align:left !important;}
+.pagingWrap{padding:20px 0 10px 0;background:#ededef;}
+.pagingBox{width:320px;margin:0 auto;text-align:center;}
+.pagingBox > a{display:inline-block;line-height:28px;min-width:28px;border:1px solid #d5d5d5;text-align:center;color:#737373;font-size:13px;background:#fff;}
+.pagingBox > a.pagingPrev{width:50px;}
+.pagingBox > a.pagingNext{width:50px;}
+.pagingBox > a.on{background:#7ca6e6;border:1px solid #7ca6e6;color:#fff;}
+.pagingBottom{margin-top:11px;width:100%;}
+.pagingBottom p{color:#707070;font-size:13px;line-height:20px;}
+
+
+/* 인증 적립 고정 배너 */
+.fix-banner{position:relative;margin-top:-3px;padding:9px 5px 0;background:#f4f3f1;border-top:1px solid #000;}
+.fix-banner p{background:#424249;}
+.fix-banner p a{margin:0 auto;display:block;width:310px;height:40px;background:url(/book/images/m_book/benefit_banner.png) no-repeat center center;background-size:310px 40px;text-indent:-9999px;}
+.m-banner{border-top:none;}
+.dokJeomTitle{border-top:none;}
+
+
+/* 2017-04-06 */
+.modify-tbl a.payco{display:block;width:68px;height:28px;line-height:28px;color:#fff;border:1px solid #af0e11;background:#e5292c;text-align:center;border-radius:2px;}
+.simple-login-btn span.payco{background:url(/book/images/m_book/payco.png) no-repeat left center;background-size:24px 24px;}
+.review-list li p.r-writer.s-payco{padding:2px 0px 2px 25px;background:url(/book/images/m_book/s-payco.png) no-repeat left center;background-size:19px 19px;}
+
+/* 2017-04-27 웹툰 패키지 */
+.mdSwiper.package{height:88px;padding:11px 0;box-sizing:border-box;border-bottom:1px solid #cdced1;border-top:1px solid #ceced1;}
+.mdSwiper.package .swiper-slide{padding-left:5px;width:147px;height:66px;}
+.mdSwiper.package .swiper-slide a{display:block;position:relative;width:147px;height:66px;}
+.mdSwiper.package .swiper-slide img{display:block;width:147px;height:66px;}
+.detail-pack{border-top:1px solid #e6e6e6;padding:11px 14px;}
+.detail-pack ul{max-height:40px;overflow:hidden;}
+.detail-pack ul li{margin-top:4px;background:url(/toon/images/m_toon/pack.png) no-repeat left center;height:18px;background-size:44px 18px;padding-left:48px;}
+.detail-pack ul li:first-child{margin-top:0;}
+.detail-pack ul li a{display:block;color:#909090;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:18px;}
+.detail-pack > a{display:block;width:66px;height:26px;margin:10px auto 0;background:url(/toon/images/m_toon/pack-plus.png) no-repeat center center;background-size:66px 26px;text-indent:-9999px;}
+.detail-pack > a.on{background:url(/toon/images/m_toon/pack-minus.png) no-repeat center center;background-size:66px 26px;}
+.all-pay{border-bottom:7px solid #f3f3f4;border-top:1px solid #e5e6e7;}
+.all-pay > div{border-bottom:1px solid #e5e6e7;padding:21px 12px;}
+.all-pay ul{}
+.all-pay ul li{color:#666;font-size:14px;line-height:20px;}
+.all-pay ul li span{color:#f26532;}
+.all-pay ul li span span{color:#666;}
+.all-pay ul li span span em{color:#f26532;}
+.all-pay div > a{margin-top:10px;font-weight:600;display:block;width:100%;height:34px;box-sizing:border-box;border:1px solid #cc1311;background:#e31313;color:#fff;line-height:34px;text-align:center;font-size:15px;box-shadow:0 2px #f8d0d1;border-radius:3px;}
+.payment{/*border-top:1px solid #e5e6e7;*/}
+.theme-info p.theme-pack{font-size:13px;line-height:18px;}
+.wt-pack{padding:15px 12px;background:#fff;border-bottom:1px solid #e6e6e6;}
+.wt-pack p{line-height:18px;color:#666;}
+.wt-pack a{display:block;margin-top:16px;font-weight:600;width:100%;border:1px solid #e6d03c;background:#ffeb62;color:#4b4b4b;font-size:15px;text-align:center;height:32px;line-height:32px;border-radius:5px;}
+.titleBox.pack{padding-left:0px;}
+.titleBox.pack h3{padding-left:15px;width:100%;border-bottom:1px solid #e6e6e6;}
+.titleBox.pack p{padding-bottom:0;}
+
+/* 2017-05-16 */
+.toon-btn{text-align:center;}
+.toon-btn a{box-shadow:0 2px #f2e2e3;border-radius:5px;display:block;width:75%;box-sizing:border-box;text-align:center;color:#fff;font-size:14px;background:#f13534;border:1px solid #d61c1d;margin:0 auto;padding:10px 0;}
+
+
+/* 2017-06-20 테마 패키지 상세페이지 추가 */
+.theme-package{padding:20px 12px 5px 12px;position:relative;background:#f3f3f5;}
+.theme-package:after{content:"";display:block;clear:both;}
+.theme-package p{float:left;font-size:16px;color:#000;font-weight:600;}
+.theme-package p span{display:block;color:#777;font-size:12px;}
+.theme-package a{position:absolute;right:12px;bottom:6px;display:block;border:1px solid #c4c4c4;border-radius:4px;line-height:28px;text-align:center;background:#fff;padding:0 12px;box-shadow:0 2px #e7e7e7;}
+
+
+/* 2017-07-06 상세페이지 더보기 추가 */
+.select-more{margin-bottom:20px;display:none;background:#e3e3e3;border:1px solid #cccdcf;border-top:none;}
+.select-more a{display:block;line-height:38px;text-align:center;font-size:14px;color:#333;}
+.select-more em{margin-left:7px;display:inline-block;width:13px;height:14px;background:url(/novel/images/m_novel/snsMore.png) no-repeat left center;background-size:13px 7px;}
+/* 탑버튼 */
+.topBtn{position:fixed;right:12px;bottom:15px;width:40px;height:40px;background:url(/book/images/m_book/topBtn.png) no-repeat left center;background-size:40px 40px;text-indent:-9999px;z-index:100;}
+.topBtn a{display:block;width:40px;height:40px;}
+
+.detail-tab{margin-bottom:10px;border-top:2px solid #8a93a1;background:#f6f6f6;}
+.detail-tab ul{/*border-bottom:1px solid #d5d5d5;*/}
+.detail-tab ul:after{content:"";display:block;clear:both;}
+.detail-tab ul li{float:left;width:50%;box-sizing:border-box;height:40px;text-align:center;}
+.detail-tab ul li:first-child{border-right:1px solid #d5d5d5;}
+.detail-tab ul li a{display:block;width:100%;line-height:40px;font-size:16px;color:#8a93a1;background:#f6f6f6;height:40px;box-sizing:border-box;border-bottom:1px solid #d5d5d5;}
+.detail-tab ul li a.on{background:#fff;height:40px;color:#333;border-bottom:none;}
+
+
+.allPay table{width:100%;border-top:1px solid #e5e6e7;}
+.allPay table th,td{text-align:center;font-size:13px;}
+.allPay table th{border-bottom:1px solid #e5e6e7;background:#fafafa;color:#333;}
+.allPay table td{border-bottom:1px solid #e5e6e7;border-left:1px solid #e5e6e7;height:30px;}
+.allPay table td:last-child{padding-left:11px;text-align:left;}
+.allPay table td span.orange{color:#f26532;}
+.allPay table td span.red{color:#ff0000;}
+.paymentBtn{padding:15px 0 20px 0;text-align:center;}
+.paymentBtn a{margin:0 2px;display:inline-block;width:143px;height:32px;line-height:32px;text-align:center;font-size:15px;border-radius:3px;font-weight:bold;
+background:#e31313;border:1px solid #cc1311;color:#fff;box-shadow:0 2px #f3e2e4;
+}
+.paymentBtn a:nth-child(2){color:#e31313;background:#fff;border:1px solid #c1c1c1;}
+
+
+/* 무료 이용권 */
+.free-pass .overlay{position:absolute;left:0;top:0;background:rgba(0,0,0,0.5);width:100%;height:100%;z-index:10000;}
+.free-box{position:fixed;left:50%;top:50%;margin-top:-150px;margin-left:-150px;border-radius:6px;width:300px;z-index:11000;overflow:hidden;}
+.free-box div:nth-child(1){background:#e5e6e8;padding:14px 15px;border-bottom:1px solid #cdced1;}
+.free-box div:nth-child(1):after{content:"";display:block;clear:both;}
+.free-box div:nth-child(1) p{float:left;font-size:18px;color:#333;font-weight:600;line-height:23px;}
+.free-box div:nth-child(1) a{float:right;display:block;width:23px;height:23px;background:url(/novel/images/m_novel/free-close.png) no-repeat left center;background-size:23px 23px;text-indent:-9999px;}
+.free-box div:nth-child(2){padding:22px 10px;background:#fff;}
+.free-box div:nth-child(2) > p:nth-child(1){text-align:center;color:#666;font-size:16px;font-weight:600;}
+.free-box > div:nth-child(2) > p:nth-child(1) span{display:inline-block;color:#f26532;font-size:14px;vertical-align:top;}
+.free-box > div:nth-child(2) > p:nth-child(1) em{display:inline-block;font-size:14px;vertical-align:top;}
+.free-box > div:nth-child(2) > p:nth-child(2){text-align:center;font-size:14px;color:#666;margin-top:3px;}
+.free-box > div:nth-child(2) table{margin-top:20px;width:100%;border:1px solid #cdced1;border-bottom:none;}
+.free-box > div:nth-child(2) table th{border-right:1px solid #cdced1;line-height:30px;background:#fafafa;color:#666;border-bottom:1px solid #cdced1;font-size:14px;font-weight:600;}
+.free-box > div:nth-child(2) table td{padding-left:10px;line-height:30px;color:#f26532;border-bottom:1px solid #cdced1;text-align:left;font-size:14px;font-weight:600;}
+.free-box > div:nth-child(3){background:#fff;padding-bottom:24px;}
+.free-box > div:nth-child(3) a{display:block;width:250px;box-sizing:border-box;margin:0 auto 5px;line-height:40px;border-radius:4px;text-align:center;font-weight:600;}
+.free-box > div:nth-child(3) a:nth-child(1){background:#f47a34;color:#fff;border:1px solid #d76203;box-shadow:0 2px #fde4d6;}
+.free-box > div:nth-child(3) a:nth-child(2){background:#fff;color:#666;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;}
+
+
+/* 2017-08-17 */
+.fInfo > div img{width:132px !important;}
+
+/* 성인 마크 추가 */
+.adult{position:absolute;right:0;top:0;display:block;width:15px;height:13px;text-align:center;background:rgba(194,0,0,0.7);color:#fff;font-size:10px;line-height:13px;}
+
+
+
+
+
+/* 2017-11-09 결제하기 부분 추가 
+.payment{padding-top:10px;}
+.sub-list{}
+.sub-title{padding:15px;height:50px;box-sizing:border-box;background:#f3f3f4;position:relative;text-align:center;}
+.sub-title > a{position:absolute;left:15px;top:15px;display:block;width:10px;height:18px;background:url(/book/images/m_book/arrow-left.png) no-repeat left 1px;background-size:10px 18px;text-indent:-9999px; }
+.sub-title .arrayBox{display:inline-block;}
+.sub-title .arrayBox .s-result{padding:0;padding-right:20px;font-size:18px;color:#333;background:url(/book/images/m_book/select-icon.png) no-repeat right center;background-size:13px 7px;}
+.sub-list .search-tab ul li{width:25%;height:40px;}
+.sub-list .search-tab ul li a{height:40px;padding-top:0;line-height:40px;}
+.sub-list .search-tab ul li a.on{color:#f26532;}
+.h-title{position:relative;padding:15px;height:50px;background:#f3f3f4;text-align:center;box-sizing:border-box;}
+.h-title > a{position:absolute;left:15px;top:15px;display:block;width:10px;height:18px;background:url(/book/images/m_book/arrow-left.png) no-repeat left 1px;background-size:10px 18px;text-indent:-9999px; }
+.h-title h1{height:20px;line-height:19px;display:inline-block;color:#333;font-size:18px;font-weight:bold;}
+.h-title h2{height:20px;line-height:19px;display:inline-block;color:#333;font-size:18px;font-weight:bold;}
+.h-title h3{height:20px;line-height:19px;display:inline-block;color:#333;font-size:18px;font-weight:bold;}
+.h-title h3.series-title{width:86%;margin:0 auto;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.h-title h3 a{height:20px;line-height:19px;display:inline-block;color:#333;font-size:18px;font-weight:bold;}
+.h-title > p{position:absolute;right:15px;top:15px;}
+.h-title > p a{margin-top:-4px;display:inline-block;background:#fff;text-align:center;padding:5px 8px;color:#333;font-size:14px;font-weight:bold;box-shadow:0 2px #f2f2f2;border:1px solid #ccc;border-radius:4px;}
+.h-title:after{content:"";display:block;clear:both;}
+.h-title div{position:absolute;right:15px;top:15px;}
+.h-title div:after{content:"";display:block;clear:both;}
+.h-title div a{float:left;margin-left:15px;display:block;line-height:19px;font-weight:bold;font-size:16px;color:#f26532;}
+.h-title div a:nth-child(1){margin-left:0;}
+.payment h4{padding:0 20px;line-height:50px;font-size:18px;color:#333;border-bottom:1px solid #f3f3f4;}
+.payment h4 em{display:inline-block;color:#909090;margin:0 6px;font-weight:normal;}
+.payment h4 span{font-size:14px;color:#909090;}
+.payment h4 i{float:right;font-style:normal;font-size:14px;}
+.payment h4:after{content:"";display:block;clear:both;}
+.payment-list-wrap > a{display:block;font-size:14px;color:#666;font-weight:bold;line-height:50px;text-align:center;border-top:1px solid #f3f3f4;}
+.payment-list-wrap > a span{display:inline-block;vertical-align:middle;margin-left:8px;margin-top:-3px;width:12px;height:18px;background:url(/book/images/m_book/arrow-down.png) no-repeat left center;background-size:12px 7px;}
+.payment-list{}
+.payment-list li{display:table;width:100%;padding:13px 18px;border-top:1px solid #f3f3f4;box-sizing:border-box;font-weight:bold;}
+.payment-list li:first-child{border-top:none;}
+.payment-list li span{display:table-cell;vertical-align:middle;color:#909090;font-size:14px;text-align:center;}
+.payment-list li span:nth-child(1){width:75%;color:#333;text-align:left;}
+.early-payment{border-bottom:6px solid #f3f3f4;padding:13px 18px;border-top:1px solid #f3f3f4;display:table;width:100%;box-sizing:border-box;text-align:center;}
+.early-payment span{color:#f26532;font-size:16px;font-weight:bold;display:table-cell;}
+.early-payment span:nth-child(1){width:75%;color:#333;text-align:left;font-size:14px;}
+.payment-coupon{padding:15px 20px;border-bottom:6px solid #f3f3f4;}
+.payment-coupon > ul{margin-left:15px;}
+.payment-coupon > ul > li{list-style-type:disc;margin-left:5px;margin-bottom:5px;font-size:14px;color:#909090;line-height:20px;}
+.payment .arrayBox{margin-top:10px;}
+.payment .arrayBox .s-result{padding:8px 0;width:100%;padding-left:10px;background:url(/book/images/m_book/select-icon.png) no-repeat 95% center #ececec;background-size:13px 7px;box-sizing:border-box;}
+.payment .arrayBox ul{width:240px;margin-left:-120px;}
+.modal{display:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:30000;background:rgba(0,0,0,0.5);cursor:pointer;}
+.s-result{cursor:pointer;display:inline-block;color:#333;font-size:14px;font-weight:bold;padding:12px 0;padding-right:20px;background:url(/book/images/m_book/select-icon.png) no-repeat right center #fff;background-size:13px 7px;}
+.arrayBox ul{display:none;position:fixed;left:50%;top:70px;width:180px;margin-left:-90px;background:#fff;border-radius:3px;z-index:31000;overflow:hidden;text-align:left;}
+.arrayBox ul li a{padding-left:20px;display:block;line-height:40px;border-top:1px solid #f3f3f4;font-size:16px;box-sizing:border-box;font-weight:bold;}
+.arrayBox ul li a.on{color:#f26532;}
+.payment-coupon > p{font-size:18px;color:#333;font-weight:bold;text-align:center;padding:28px 0 13px;}
+.payment-cash{border-bottom:6px solid #f3f3f4;}
+.payment-cash li{border-top:1px solid #f3f3f4;padding:14px 20px;}
+.payment-cash li:nth-child(1){border-top:none;}
+.payment-cash li p{margin-bottom:6px;font-size:16px;color:#333;font-weight:bold;}
+.payment-cash li p em{color:#909090;display:inline-block;margin:0 6px;font-weight:normal;}
+.payment-cash li p span{color:#909090;font-size:14px;}
+.payment-cash li .charge{padding-right:87px;position:relative;}
+.payment-cash li div input{font-size:14px;width:100%;height:30px;border:none;line-height:30px;border-radius:2px;color:#333;padding-left:5px;box-sizing:border-box;background:#ececec;}
+.payment-cash li div a{position:absolute;right:0;top:0;display:block;background:#fff;padding:7px 0;border:1px solid #ccc;box-shadow:0px 2px #f2f2f2;border-radius:2px;color:#333;text-align:center;width:82px;box-sizing:border-box;font-weight:bold;}
+.cash-result{border-bottom:6px solid #f3f3f4;padding:28px 0;text-align:center;}
+.cash-result p{font-weight:bold;font-size:18px;color:#f26532;margin-bottom:10px;}
+.cash-result span{font-weight:bold;font-size:14px;color:#909090;display:block;}
+.payment-btn{padding:30px 0;text-align:center;}
+.payment-btn input{width:90%;display:inline-block;padding:8px 0;color:#fff;font-size:18px;font-weight:bold;text-align:center;background:#f26532;border:1px solid #e25927;border-radius:4px;box-shadow:0 2px #fdd4e4;}
+.payment-btn a{width:90%;display:inline-block;padding:8px 0;color:#fff;font-size:18px;font-weight:bold;text-align:center;background:#f26532;border:1px solid #e25927;border-radius:4px;box-shadow:0 2px #fdd4e4;}
+.payment-series-thanks{padding:28px 0;text-align:center;border-top:1px solid #f3f3f4;}
+.payment-series-thanks.gift{border-bottom:6px solid #f3f3f4;}
+.payment-series-thanks p{font-weight:bold;font-size:14px;color:#666;line-height:18px;}
+.payment-series-thanks a{margin:10px 1px 0;display:inline-block;background:#fff;padding:7px 0;border:1px solid #ccc;box-shadow:0px 2px #f2f2f2;border-radius:2px;color:#333;text-align:center;width:82px;box-sizing:border-box;font-weight:bold;}
+*/
+
+
+/* 2017-12-01 웹툰 애니메이션 추가 */
+.detail-banner{padding-bottom:7px;border-bottom:1px solid #e5e6e7;}
+.detail-banner a{display:block;}
+.detail-banner a img{display:block;width:100%;}
+.animation-wrap{}
+.bookcube-ani{padding:17px 0;}
+.bookcube-ani p{background:url(/toon/images/m_toon/bookcube-ani.jpg) no-repeat left center;width:111px;height:18px;background-size:111px 18px;margin:0 auto;text-indent:-9999px;}
+.animation{margin-bottom:7px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;}
+.animation video{position:absolute;top:0;left:0;width:100%;height:100%;}
+.ani-banner img{width:100%;display:block;}
+.ani-share{padding-top:20px;}
+.ani-share ul{width:260px;margin:0 auto;}
+.ani-share ul:after{content:"";display:block;clear:both;}
+.ani-share ul li{float:left;width:33.33%;}
+.ani-share ul li a{display:block;margin:0 auto;width:45px;height:45px;text-indent:-9999px;}
+.ani-share ul li.kakaotalk a{background:url(/toon/images/m_toon/share-kakao.png) no-repeat left center;background-size:45px 45px;}
+.ani-share ul li.facebook a{background:url(/toon/images/m_toon/share-facebook.png) no-repeat left center;background-size:45px 45px;}
+.ani-share ul li.twitter a{background:url(/toon/images/m_toon/share-twitter.png) no-repeat left center;background-size:45px 45px;}
+.ani-share p{margin-top:18px;font-size:14px;color:#666;text-align:Center;}
+
+/* 2018-01-10 웹툰 뷰어 버튼 추가 */
+.e-btn{display:table;text-align:center;margin:0 auto 30px;width:80%;height:66px;border:1px solid #e94d14;background:#f26532;box-sizing:border-box;border-radius:4px;box-shadow:0 2px #ffe6df;}
+.e-btn a{display:table-cell;vertical-align:middle;color:#fff;font-size:13px;font-weight:bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 미디어 쿼리 */
+@media screen and (max-width:320px){
+.viewer li{width:33.3%;}
+.viewer li:nth-child(4){display:none;}
+.viewer li:nth-child(5){display:none;}
+.viewer li:nth-child(6){display:none;}
+.le_wrap.mobile ul li a div{position:absolute;left:8px;bottom:6px;}
+.le_wrap.mobile ul li a div p{color:#666;font-weight:bold;}
+.le_wrap.mobile ul li a div p:nth-child(1){font-size:12px;line-height:18px;}
+.le_wrap.mobile ul li a div p:nth-child(2){font-size:10px;}
+}
+@media screen and (min-width:320px) and (max-width:359px){
+.viewer li{width:33.3%;}
+.viewer li:nth-child(4){display:none;}
+.viewer li:nth-child(5){display:none;}
+.viewer li:nth-child(6){display:none;}
+}
+@media screen and (min-width:360px){
+.viewer li{width:25%;}
+.viewer li:nth-child(4){display:block;}
+.viewer li:nth-child(5){display:none;}
+.viewer li:nth-child(6){display:none;}
+header > .headerMiddle .tab li a{font-size:18px;line-height:23px;}
+.le_wrap.mobile ul li a div{position:absolute;left:10px;bottom:10px;}
+.le_wrap.mobile ul li a div p{color:#666;font-weight:bold;}
+.le_wrap.mobile ul li a div p:nth-child(1){font-size:15px;line-height:18px;}
+.le_wrap.mobile ul li a div p:nth-child(2){font-size:10px;}
+
+}
+@media screen and (min-width :375px){
+.le_wrap.mobile ul li a div{position:absolute;left:11px;bottom:10px;}
+.le_wrap.mobile ul li a div p{color:#666;font-weight:bold;}
+.le_wrap.mobile ul li a div p:nth-child(1){font-size:15px;line-height:22px;}
+.le_wrap.mobile ul li a div p:nth-child(2){font-size:11px;}
+
+}
+@media screen and (min-width:568px){
+.viewer li{width:20%;}
+.viewer li:nth-child(4){display:block;}
+.viewer li:nth-child(5){display:block;}
+.viewer li:nth-child(6){display:none;}
+}
+
+@media screen and (min-width:768px) {
+header.ios ul.gnb{background:url(/toon/images/m_toon/ios_webtoon_x2_pad.png) no-repeat left center;background-size:397px 44px;}
+header ul.gnb{background:url(/toon/images/m_toon/webtoon_x2_pad.png) no-repeat left center;background-size:492px 44px;height:44px;}
+header ul.gnb li{width:95px;}
+/* md영역 */
+.mdSwiper.second{height:254px;}
+.mdSwiper.second .swiper-slide{padding-left:14px;width:120px;height:168px;}
+.mdSwiper.second .swiper-slide a{width:120px;height:168px;}
+.mdSwiper.second .swiper-slide img{display:block;width:120px;height:168px;}
+.mdSwiper{height:220px;}
+.mdSwiper .swiper-slide{padding-left:14px;width:130px;}
+.mdSwiper .swiper-slide a{display:block;position:relative;width:130px;height:130px;}
+.mdSwiper .swiper-slide a img{display:block;width:130px;height:130px;}
+
+.theme ul:after{content:"";display:block;clear:both;}
+.theme ul li{width:32.5%;margin-left:1%;box-sizing:border-box;}
+.theme ul li:first-child{margin-left:0%;}
+.theme ul li:nth-child(4){margin-left:0;}
+.theme ul li:nth-child(5){margin-left:1%;}
+.theme ul li:nth-child(2n-1){margin-right:0%;}
+.theme ul li:nth-last-child(1){display:block;}
+.theme ul li:nth-last-child(2){display:block;}
+.theme-page{border-bottom:1px solid #d5d5d5;}
+.theme-page ul{padding:20px 15px 10px;}
+.theme-page ul li{float:left;width:49%;margin:0 0.5% 8px;}
+
+.cate-list.search{padding-top:15px;}
+.cate-list.search li:nth-child(1){border-top:1px solid #ceced1 !important;}
+.cate-list.search li:nth-child(2){border-top:1px solid #ceced1 !important;}
+.cate-list:after{content:"";display:block;clear:both;}
+.cate-list li{float:left;width:50%;box-sizing:border-box;border-top:none !important;}
+.cate-list li:nth-child(1){border-top:none;}
+.cate-list li:nth-child(2){border-top:none;}
+.cate-list li:nth-child(odd){border-bottom:1px solid #cdced1;border-right:1px solid #ceced1;}
+.cate-list li:nth-child(even){border-bottom:1px solid #cdced1;}
+/* 테마관 상세페이지 */
+.theme-banner > img.pad{display:block;}
+.theme-banner > img.mobile{display:none;}
+/* 상세페이지 */
+.selectListBox ul:after{content:"";display:block;clear:both;}
+.selectListBox ul li{float:left;width:50%;box-sizing:border-box;}
+/* 신간 */
+.new-box ul li{width:24%;margin:0px 0.5% 10px !important;}
+
+.banner{position:fixed;bottom:0;left:50%;margin-left:-291px;width:582px;border-radius:4px;z-index:2000;}
+.banner.jpg{overflow:hidden;height:200px;}
+.banner .banner-link span{width:50px;height:50px;z-index:15000;}
+
+.top50-list li{width:19%;}
+
+.banner{position:fixed;bottom:0;left:50%;margin-left:-291px;width:582px;z-index:10000;}
+.banner.jpg{overflow:hidden;height:200px;}
+.banner .banner-link span{width:50px;height:50px;z-index:15000;}
+.wtCopy{width:640px !important;margin:0 auto;}
+.heart_Box{width:250px;}
+
+.giftcard span{background:url(/novel/images/m_novel/pad_coupon.png) no-repeat center center;background-size:464px 313px;display:block;height:313px;text-indent:-9999px;}
+.gift-input input[type="text"]{display:block;margin:20px auto 0;box-sizing:border-box;width:565px;border-radius:3px;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;height:34px;line-height:34px;font-size:15px;color:#333;padding-left:10px;}
+.inputBtn input[type="submit"]{display:inline-block;line-height:34px;border:1px solid #c1c1c1;box-shadow:0 2px #f2f2f2;border-radius:3px;padding:0 30px;color:#333;font-size:16px;text-align:center;background:#fff;}
+.adult-mode img{display: block;width:640px;margin:0 auto;}
+.viewer li a{display:block;width:120px;margin:0 auto;}
+.viewer li a img{display:block;width:120px;height:168px;}
+.viewer-info{position:relative;width:120px;height:168px;}
+.viewer li:nth-child(6){display:none !important;}
+[data-viewer-type="comics"] .viewer li:nth-child(4){display:none;}
+[data-viewer-type="comics"] .viewer li:nth-child(5){display:none;}
+[data-viewer-type="comics"] .viewer li:nth-child(6){display:none;}
+
+/* ios */
+.payment-ios:after{content:"";display:block;clear:both;}
+.payment-ios li{float:left;width:50%;box-sizing:border-box;}
+.fix-banner p a{padding:0 200px;}
+
+}
+
+@media screen and (min-width:1000px) {
+.topBox{padding:0 15px;}
+.topBox .swiper-slide{box-sizing:border-box;width:33.3%;float:left;padding:0 2px;}
+.viewer li{width:16.666%;}
+.viewer li:nth-child(6){display:block !important;}
+[data-viewer-type="comics"] .md_heart{padding:80px 20px 30px;}
+[data-viewer-type="comics"] .viewer li:nth-child(4){display:none;}
+[data-viewer-type="comics"] .viewer li:nth-child(5){display:none;}
+[data-viewer-type="comics"] .viewer li:nth-child(6){display:none !important;}
+.fix-banner p a{padding:0 300px;}
+
+}

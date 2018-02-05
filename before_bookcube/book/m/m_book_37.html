@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+	<meta name="title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="[e북포털 북큐브]">
+	<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+	<meta property="og:url" content="http://www.bookcube.com/mobile/web/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/mobile/images/icon/bookcube.png" />
+	<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+	<link rel="stylesheet" type="text/css" href="/book/js/lib/swipe/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/book/css/popBanner.css?v=141118" />
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="/book/js/lib/requirejs.min.js"></script>
+	<script src="/book/js/m.bookplayer.min.js?1604201"></script>
+	<script>
+		requirejs.config({
+			baseUrl : "/book/js",
+			paths : {
+				"jquery" : "lib/jquery-1.11.0.min",
+				"cookie" : "lib/jquery.cookie",
+				"rating" : "lib/jquery.rating",
+				"bookcube" : "df_bookcube.min.js?1604211",
+				"swiper" : "lib/swipe/swiper-2.1.min",
+				"share" : "share.min",
+				"m.bookcube" : "m.bookcube.min",
+				"cart" : "cart.min",
+				"series_book" : "series_book_list.min.js?1606221",
+				"review" : "review.min",
+				"teaser" : "teaser.min"
+			},
+			shim : {
+				"cookie" : ["jquery"],
+				"swiper" : ["jquery"],
+				"rating" : ["jquery"]
+			}
+		});
+
+		require(["book"]);
+	</script>
+</head>
+<body>
+	<header class="common">
+		<h1 class="hide">북큐브 서점 모바일</h1>
+		<nav>
+			<ul>
+				<li><a href="#">내 서재</a></li>
+				<li><a href="#">서점</a></li>
+				<li><a href="#">웹소설</a></li>
+				<li><a href="#">웹툰</a></li>
+				<li><a href="#">도서관</a></li>
+			</ul> 
+		</nav>
+		<div class="header">
+			<h2 class="h-title">회원가입</h2>
+		</div>
+	</header>
+	<section class="common">
+		<form>
+			<fieldset>
+				<legend>회원가입</legend>
+				<div class="join-wrap">
+					<h3>간편 회원가입</h3>
+					<!-- 경고창 대신 input 다음의 p 태그에 해당 경고문이 들어갑니다 -->
+					<div class="join-info">
+						<div class="js-join">
+							<input type="text" name="" id="" placeholder="아이디" maxlength="20" class="strId" />
+							<p class="check"></p>
+						</div>
+						<div class="js-join">
+							<input type="password" name="" placeholder="비밀번호" class="strPass" />
+							<p class="check"></p>
+						</div>
+						<div class="js-join">
+							<input type="password" name="" id="" placeholder="비밀번호 확인" class="rePass" />
+							<p class="check"></p>
+						</div>
+					</div>
+					<div class="join-info">
+						<div class="js-join">
+							<input type="text" name="" id="" placeholder="이름" class="strName" />
+							<p class="check"></p>
+						</div>
+						<div class="js-join">
+							<input type="text" name="" id="" placeholder="이메일" class="strMail" />
+							<p class="check"></p>
+						</div>
+					</div>
+					<div class="join-check">
+						<label><span><input type="checkbox" name="" id="" />전체 동의</span></label>
+						<label><span><input type="checkbox" name="" id="" />이용약관 동의</span><a href="#">자세히보기</a></label>
+						<label><span><input type="checkbox" name="" id="" />개인정보 취급 방침 동의</span><a href="#">자세히보기</a></label>
+						<label><span><input type="checkbox" name="" id="" />이메일 수신 동의</span></label>
+					</div>
+					<input type="submit" name="" id="" value="가입하기" />
+				</div>
+				<script>
+					require(['jquery'],function($){
+						$(function(){
+							$(".join-info input[type='text']:first").focus();
+							$(".js-join input").on("focus",function(){
+								$(".js-join p.check").hide();
+								if($(this).hasClass("strId")){
+									$(this).attr("placeholder","6~20자 영문, 숫자");
+								}
+								if($(this).hasClass("strPass")){
+									$(this).attr("placeholder","최소 6자 이상");
+									with(form){
+										init();
+										id();
+									}
+								}else if($(this).hasClass("rePass")){
+									with(form){
+										init();
+										id();
+										pass();
+									}
+								}else if($(this).hasClass("strName")){
+									with(form){
+										init();
+										id();
+										pass();
+										repass();
+									}
+								}else if($(this).hasClass("strMail")){
+									with(form){
+										init();
+										id();
+										pass();
+										repass();
+										name();
+									}
+								}
+								$(this).css("border","1px solid #dc4510");
+							});
+							$(".js-join input").on("blur",function(){
+								if($(this).hasClass("strId")){
+									$(this).attr("placeholder","아이디");
+								}
+								if($(this).hasClass("strPass")){
+									$(this).attr("placeholder","비밀번호");
+								}
+								$(this).css("border","1px solid #ccc");
+							});
+							$("body").on("click",function(){
+								with(form){
+									init();
+									id();
+									pass();
+									repass();
+									name();
+									mail();
+								}
+							});
+							$(".js-join input").on("click",function(event){
+								event.stopPropagation();
+							});
+						});
+						
+						var form = {
+							init : function(){
+								this._idval = $(".strId").val();
+								this._passval = $(".strPass").val();
+								this._repassval = $(".rePass").val();
+								this._strName = $(".strName").val();
+								this._strMail = $(".strMail").val();
+								this.idCheck =  /^[a-z][a-z0-9_-]{5,19}$/;
+								this.passCheck = /^[A-Za-z0-9_-]{6,18}$/;
+								this.mailCheck = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+								this.phoneCheck = /^\d{3}\d{3,4}\d{4}$/;
+							},
+							id : function(){
+								if(!form.idCheck.test(form._idval)){
+									$(".strId").next().text("6~20자의 영문 및 숫자로만 가능합니다.").show();
+									if(!form._idval){
+										$(".strId").next().text("필수 정보입니다.").show();
+									}
+									return false;					
+								}
+							},
+							pass : function(){
+								if(!form.passCheck.test(form._passval)){
+									$(".strPass").next().text("6자 이상만 입력 가능합니다.").show();
+									if(!form._passval){
+										$(".strPass").next().text("필수 정보입니다.").show();
+									}
+									return false;	
+								}
+							},
+							repass : function(){
+								if(form._passval != form._repassval){
+									$(".rePass").next().text("비밀번호가 일치하지 않습니다.").show();
+									if(!form._repassval){
+										$(".rePass").next().text("필수 정보입니다.").show();
+									}
+									return false;
+								}
+							},
+							name : function(){
+								if(!form._strName){
+									$(".strName").next().text("필수 정보입니다.").show();
+									return false;
+								}
+								
+							},
+							mail : function(){
+								if(!form.mailCheck.test(form._strMail)){
+									$(".strMail").next().text("잘못된 이메일 주소입니다.").show();
+									if(!form._strMail){
+										$(".strMail").next().text("필수 정보입니다.").show();
+									}
+									return false;
+								}
+								
+							}
+						}
+
+					});
+
+				</script>
+			</fieldset>
+		</form>
+	</section>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(function(){
+				$(".js_slideMenu").on("click",function(){
+					$(".slideOverlay").show();
+					window.location.hash="#open";
+					$(".slideMenu").animate({
+						right : 0	
+					},200,"swing",function(){
+						$(".slideOverlay").on("click",function(){
+							$(".slideOverlay").hide();
+							$(".slideMenu").animate({
+								right : -100+"%"	
+							},200,"swing");
+						});		
+					});
+				});	
+				$(window).on("hashchange",function(){
+					var m=window.location.hash;
+					if(m != "#open"){
+						$(".slideOverlay").hide();
+						$(".slideMenu").animate({
+							right : -100+"%"	
+						},200,"swing");
+					}	
+				});
+				
+				$(".swiper-container").each(function(){
+					$(this).swiper({slidesPerView: 'auto'});
+				});
+				
+				//공지사항
+				var list = $(".notice_list");
+				$(".notice_text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+				
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice_list:not(:animated)").css("margin-top"))+29+"px"	
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice_text:last").prependTo(list);
+					});
+				},3000);
+				
+			});	
+		});
+	</script>
+</body>
+</html>

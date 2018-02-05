@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://bookimg.bookcube.com/200/1504/150402022.jpg">
+<meta property="og:url" content="http://dev.bookcube.com/detail.asp?book_num=150402022&um=">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="/css/style.css?v=0430" />
+<!--[if lte IE 7]>
+<link rel="stylesheet"  type="text/css" href="/css/ie7.css" />
+<![endif]-->
+<style type="text/css">
+	#bc_page_loading {background: url('/images/icon/page_loading.gif') no-repeat left center;position:absolute;top:0px;left:0px;width:200px;height:200px;z-index:9999;padding:5px;text-align:right;line-height:4em;display:none;}
+</style>
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39432665-1', 'bookcube.com');
+ga('send', 'pageview');
+
+</script>
+<!-- naver-->
+
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "75bf1248432b84"; wcs_do(); </script>
+<!-- naver-->
+<style>
+	
+</style>
+</head>
+<body>
+	<div class="header">
+	<!-- header -->
+	
+<script>
+	$(document).ready(function(){		
+		$('#SearchString').keypress(function(e){
+			if(e.keyCode==13){
+				frmSearchSubmit();
+			}
+		});
+	});
+
+	function frmSearchSubmit(){		
+		
+		var objFrm = $("#searchFrm") ;
+
+		if ($("input[name=SearchString]").val() == ''){
+			alert('검색어를 검색해주세요.');
+			$("input[name=SearchString]").focus();			
+			return ;
+		}else{
+			objFrm.attr("method","get");
+			objFrm.attr("action","/search.asp");
+			objFrm.submit();
+		}		
+	}
+
+</script>
+
+
+
+<div class="header_contents">
+	<div class="header_top">
+		<div class="h_top_inner">
+			<ul class="lnb_left">
+				<li class="lnb_on"><a href="http://dev.bookcube.com/main.asp"><img src="/images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+				<li><a href="http://dev.bookcube.com/storycube/main.asp"><img src="/images/main/lnb2.jpg" alt="웹소설" /></a></li>
+				<!--li><a href="#"><img src="/images/main/lnb3.jpg" alt="웹툰" /></a></li-->
+				<li><a href="http://dev.bookcube.com/b2b.asp"><img src="/images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+			</ul>
+			<ul class="lnb_right">
+				<li><a href="https://dev.bookcube.com/login.asp?return_url=http://dev.bookcube.com%2Fdetail%2Easp%3Fbook%5Fnum%3D150402022">로그인</a></li>
+				<li><a href="https://dev.bookcube.com/member/register_step1.asp">회원가입</a></li>
+				<li><a href="http://dev.bookcube.com/customer.asp">고객센터</a></li>
+			</ul>
+
+			<!-- 팝업레이어 :: Alarm 안내-->
+			<div class="alarm_layer_box" style="display:none;">
+				<div class="alarm_layer_head_top"><img src="/images/board/sns_bt.gif"></div>
+				<div id="" class="border_type_box2">
+				<iframe src="" width="492" height="359" frameborder="0"  name="alarm_view" id="alarm_view" scrolling="no"></iframe>
+				</div>
+			</div>
+		</div>	
+
+	</div>
+	<div class="header_middle">
+		<div class="h_middle_inner">
+			<h1 class="bookcube"><a href="http://dev.bookcube.com/main.asp"><img src="/images/main/bookcube_logo.png" alt="bookcube" /></a></h1>
+			<div class="h_search_box">
+				<form name="searchFrm" id="searchFrm">
+				<input type="hidden" name="searchOption" id="searchOption" value="" />
+				<input type="hidden" name="searchpage" value="normal" />
+				<input type="hidden" name="page" value="">
+					<fieldset>
+						<legend class="hide">북큐브 검색</legend>
+						<div class="search_box">
+							<div class="select">
+								<p>전체</p>
+								<img src="/images/main/select_arrow.jpg" alt="셀렉트박스 화살표 이미지"  class="select_arrow" />
+								<ul class="selectList">
+									<li data="">전체</li>
+									<li data="title">제목</li>
+									<li data="author">저자</li>
+									<li data="publisher">출판사</li>
+									<li data="bookinfo">책정보</li>
+									<li data="flat_fee">정액가능</li>
+									<li data="rental">대여가능</li>
+									<li data="rent_long">10년소장</li>
+								</ul>
+							</div>
+							<label for="" class="hide">검색박스</label>
+							<input type="text" name="SearchString" id="SearchString" class="search_input" value="" />
+						</div>
+						<input type="button" onclick="frmSearchSubmit()" class="select_submit"  />
+						<a href="https://dev.bookcube.com/order/order_bookcash.asp"><img src="/images/main/bookcash.jpg" alt="북캐시충전" class="bookcash" /></a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="mainGnb_wrap">
+		<div class="mainGnb_inner">
+			<h2 class="hide">메인메뉴</h2>
+			<p class="all_category"><img src="/images/main/all_category.jpg" alt="전체 카테고리" /></p>
+			<div class="allCate_view">
+	<div class="allCate_box">
+		<p class="allCate_title">일반도서</p>
+		<ul class="allCate_list"><li class="all_red"><a href="http://dev.bookcube.com/category.asp?branch=26">리얼장르</a></li><li class="all_red"><a href="http://dev.bookcube.com/category.asp?branch=2806">관능로맨스</a></li><li class="all_red"><a href="http://dev.bookcube.com/category.asp?branch=27">오디오북</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=28">로맨스</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=29">무협/판타지</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=00">문학</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=07">자기계발</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=06">경제/경영</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=09">외국어/언어</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=04">역사/문화</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=03">인문</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=02">인물</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=05">사회</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=19">만화</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=20">잡지</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=08">컴퓨터/인터넷</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=15">자연과 과학</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=16">건강/스포츠/취미</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=13">종교</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=18">여행</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=17">가정/생활/요리</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=10">유아</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=11">어린이</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=12">청소년</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=14">예술/대중문화</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=21">교재</a></li><li><a href="http://dev.bookcube.com/category.asp?branch=99">성인</a></li><li></li><li></li><li></li>
+		</ul>
+		<p class="allCate_title ma_top">커뮤니티/테마관</p>
+		<ul class="allCate_list">
+			<li class="all_green"><a href="http://dev.bookcube.com/rent.asp">장르대여관</a></li>
+			<li class="all_green"><a href="http://dev.bookcube.com/rent.asp?mainclass_num=19">만화대여관</a></li>
+			<li class="all_blue"><a href="http://dev.bookcube.com/free_center.asp">장르정액관</a></li>
+			<li class="all_blue"><a href="http://dev.bookcube.com/s_free_center.asp?mainclass_num=19">만화정액관</a></li>
+			<li class="all_green2"><a href="http://dev.bookcube.com/monopoly.asp?page=rm">독점선출간</a></li>
+		</ul>
+		<img src="/images/main/all_close.png"  alt="카테고리 뷰 페이지 닫기"  class="all_close" />
+	</div>
+</div>
+			<ul class="gnb_list">
+				<li><a href="/main.asp?page=nm"><img src="/images/main/general.jpg" alt="일반도서" /></a></li> 
+				<li><a href="/main.asp?page=rm"><img src="/images/main/romance.jpg" alt="로맨스" /></a></li>
+				<li><a href="/main.asp?page=mf"><img src="/images/main/fantasy.jpg" alt="무협/판타지" /></a></li>
+				<li><a href="/main.asp?page=cm"><img src="/images/main/toon.jpg" alt="만화" /></a></li>
+				<li><a href="/main.asp?page=real"><img src="/images/main/real.jpg" alt="리얼장르" /></a></li>
+			</ul>
+			<ul class="sub_list">
+				<li><a href="/best.asp?page=nm"><img src="/images/main/sub_best.jpg" alt="베스트" /></a></li>
+				<li><a href="/new.asp?page=nm"><img src="/images/main/sub_new.jpg" alt="신간" /></a></li>
+				<li><a href="/free.asp?page=nm"><img src="/images/main/sub_free.jpg" alt="무료" /></a></li>
+				<li><a href="/event.asp?page=nm"><img src="/images/main/sub_event.jpg" alt="이벤트" /></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	<!-- //header -->
+	</div>
+	<div class="sub_contents">
+		<div class="main_inner">			
+			<div class="location">
+				<p><strong>HOME</strong> &gt; 
+					<select style="width:125px" id="select_mainclass">
+<option value="00" >문학</option><option value="02" >인물</option><option value="03" >인문</option><option value="04" >역사/문화</option><option value="05" >사회</option><option value="06" >경제/경영</option><option value="07" >자기계발</option><option value="08" >컴퓨터/인터넷</option><option value="09" >외국어/언어</option><option value="10" >유아</option><option value="11" >어린이</option><option value="12" >청소년</option><option value="13" >종교</option><option value="14" >예술/대중문화</option><option value="15" selected>자연과 과학</option><option value="16" >건강/스포츠/취미</option><option value="17" >가정/생활/요리</option><option value="18" >여행</option><option value="19" >만화</option><option value="20" >잡지</option><option value="21" >교재</option><option value="24" >이럴 땐 이런 책</option><option value="26" >리얼장르</option><option value="27" >오디오북</option><option value="28" >로맨스</option><option value="29" >무협/판타지</option><option value="99" >성인</option>
+					</select> &gt; 
+					<select style="width:125px" id="select_subclass">
+<option value="00" selected>과학</option><option value="01" >수학</option><option value="02" >물리학</option><option value="03" >화학</option><option value="04" >생명과학/뇌과학</option><option value="05" >천문학</option><option value="06" >지구과학</option>
+					</select>
+				</p>
+			</div>
+			
+			<!-- contents_wrap -->
+			<div class="contents_wrap">				
+				<div class="list_tab_menu">
+					<!-- [Dev Comment] :: 선택된 탭메뉴에 클래스 on 이 추가됩니다
+						!주의 :: 맨 처음 메뉴에는 항상 클래스 first를 추가해주고 
+						        맨 마지막 메뉴에는 마지막메뉴가 5번째 일때만 클래스 last를 넣어줍니다. 4개 미만은 해당사항 없음. -->
+					<a href="/detail.asp?book_num=150402022" class="first on"><span>구매</span></a>
+				</div>
+				<!-- 도서상세페이지 컨텐츠 -->
+				<div class="contents bdr_btm">
+					<div class="book_detail_contents">
+						
+						<h2><span class="icon ebook"><em class="hide">eBook</em></span>[강추] 사라진 스푼</h2>
+						<!-- book_info_main -->
+
+<div class="book_info_main">
+	<div class="book_img">
+		<img src="http://bookimg.bookcube.com/150/1703/170302602.jpg" alt="책 이미지 - [강추] 사라진 스푼" />
+		<div class="book_preview"><div class="btn_area"><a href="javascript:;" onClick="book_down('150402022')" class="btn bg9">미리보기</a>&nbsp;</div></div>
+	</div>
+	<div class="book_details">
+		<p>저자 : <a href="/search.asp?searchOption=author&SearchString=%EC%83%98+%ED%82%A8">샘 킨</a><em class="divider">|</em>출판사 : <a href="/search.asp?searchOption=publisher&SearchString=%ED%95%B4%EB%82%98%EB%AC%B4">해나무</a><em class="divider">|</em>2015.04.21</p>
+		<div class="score_star">
+			<div class="fl">
+				
+				<!-- [Dev Comment] 별점의 종류
+				<span class="rank_star">별점0</span>
+				<span class="rank_star star1">별점1</span>
+				<span class="rank_star star2">별점2</span>
+				<span class="rank_star star3">별점3</span>
+				<span class="rank_star star4">별점4</span>
+				<span class="rank_star star5">별점5</span>
+				-->
+				<span class="rank_star star0">별점0</span> 0명
+			</div>	
+		</div>
+		<div class="sns_area bt">
+			
+			<p class="top5">
+				<a href="javascript:;" title="새 창으로 열림" class="sns fb mem_facebook_chk" rel="#pop_facebook_login_check"><span class="hide">FaceBook</span></a>
+				<a href="javascript:;" title="새 창으로 열림" class="sns tw mem_twitter_chk"  rel="#pop_twitter_login_check"><span class="hide">Twitter</span></a></p>
+			
+				<!--a href="#" target="_blank" title="새 창으로 열림" class="sns mt"><span class="hide">MeToday</span></a-->
+		</div>
+
+		<div class="price line1"><strong class="f16">전자책정가&nbsp;&nbsp;:<ins class="red">14,000 원</ins></strong><br /> <strong class="f16">단권판매가&nbsp;&nbsp;:<ins class="red">14,000 원</ins></strong>| 5% 적립
+			<span class="cBtn_small"><a href="javascript:;" rel="#pop_cBtn_check" class="mem_cBtn_chk"><img src="/images/main/cBtn_small.png" alt="쿠폰받기" /></a></span>
+		</div>
+		<div class="format">
+			<p>파일크기 : 3.04MB (Epub)</p>
+			<div class="with_tooltip">지원단말기 : 아이폰 / 아이패드 / 안드로이드&amp;태블릿 / PC <a href="#" class="btn view_tooltip"><span class="hide">이용 기기 안내 보기</span></a>
+				<div class="layer_tooltip tooltip1" style="display:none">
+					<p class="title"><strong>이용 가능 단말기</strong><a href="#" class="btn close_x"><span class="hide">닫기</span></a></p>
+					<div class="tooltip_contents">
+						<p class="top10"><strong>스마트기기</strong> (이용시 최대 3대 사용)</p>
+						<div class="border_type">
+							<ul>
+							<li>- IOS 5.0 이상</li>
+							<li>- Android 2.2 이상</li>
+							</ul>
+						</div>
+						<p class="top10"><strong>PC</strong> (이용시 최대 3대 사용)</p>
+						<div class="border_type">
+							<ul class="top5">
+							<li>- Windows OS 지원</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p>eBook 이용안내 <a href="javascript:;" onClick="scrollLink($('.detail_use_info'))" class="btn view_tooltip"><span class="hide">eBook 이용안내 보기</span></a></p>			
+				
+			<div class="book_btn"><div class="btn_area"><a href="javascript:;" onClick="Cart.instant('buy','150402022')" class="btn bg2">즉시구매</a>&nbsp;<a href="javascript:;" onClick="Cart.add('cart', '150402022')" class="btn bg1 red">책바구니</a></div></div>
+		</div>	
+	</div>	
+</div>
+						<!-- //book_info_main -->
+
+						<div class="border_type2">
+							<div>
+							<ul id="text_event_rolling" class="jcarousel-skin-text1">
+
+								<li><a href="http://dev.bookcube.com/event_detail.asp?event_num=1274"><위즈덤하우스> 신간 10%할인 이벤트</a></li>
+
+								<li><a href="http://dev.bookcube.com/event_detail.asp?event_num=1203"><인물과 사상사> 하루 5분, 무료 인문학!!</a></li>
+
+								<li><a href="http://dev.bookcube.com/event_detail.asp?event_num=1161">애니고고학 특가전</a></li>
+
+								<li><a href="http://dev.bookcube.com/event_detail.asp?event_num=1147">북큐브 우수회원 혜택 안내</a></li>
+
+								<li><a href="http://dev.bookcube.com/event_detail.asp?event_num=1075">일반도서 HIT 콜렉션 할인 + 적립 혜택 이벤트!</a></li>
+
+							</ul>
+							</div>
+						</div>
+
+						<script type="text/javascript">
+						var ry=Math.floor((Math.random()*8)+1);
+
+						$(function() {
+							$('#text_event_rolling').jcarousel({
+								wrap: 'circular',
+								vertical:true,
+								auto : 2,
+								animation : 'slow',
+								scroll: 1,
+								start : ry,
+								initCallback : mycarousel_initCallback
+							});
+						});
+
+
+
+						function mycarousel_initCallback(carousel)
+						{
+						    // Disable autoscrolling if the user clicks the prev or next button.
+						    carousel.buttonNext.bind('click', function() {
+							carousel.startAuto(0);
+						    });
+
+						    carousel.buttonPrev.bind('click', function() {
+							carousel.startAuto(0);
+						    });
+
+						    // Pause autoscrolling if the user moves with the cursor over the clip.
+						    carousel.clip.hover(function() {
+							carousel.stopAuto();
+						    }, function() {
+							carousel.startAuto();
+						    });
+						};
+
+						</script>
+
+						<!-- 탭 메뉴-->
+						<div class="book_info_tab">
+							<!-- 활성화된 탭메뉴에 클래스 on 이 추가됨 -->
+							<a href="#event_ticker" class="tabSeries">시리즈 전체보기</a><a href="#event_ticker" class="tabBookInfo">책소개</a><a href="#event_ticker" class="tabContent">목차</a><a href="#event_ticker" class="tabAuthorExplain">저자소개</a>
+							<a href="#event_ticker" class="tabReview">서평</a>
+						</div>
+
+						<!-- 탭 컨텐츠 :: 01 시리즈 전체보기 -->
+						<div class="tab_contents" id="detail_series">
+	<div class="btn_area select_btn">
+		<input type="hidden" name="total_fixed_price" value="">
+		<input type="checkbox" name="all_chk" id="check_all" class="input_chk" />
+<a href="javascript:;" onClick="Cart.adds('buy', 'book_chk');" class="btn bg7">선택구매</a>
+		<a href="javascript:;" onClick="Cart.adds('cart', 'book_chk');" class="btn bg7 red">책바구니</a>
+		<span id="total_price" class="fr bold red">총 <span class="total_series_check_count">0</span>권 <span class="total_series_check_price">0</span>원</span>
+	</div>
+
+	<!-- 도서 시리즈 리스트 -->
+	<div id="detail_series_list"></div>
+
+<div class="btn_area select_btn" style="margin-top:10px;">
+		<input type="checkbox" name="all_chk" id="check_all2" class="input_chk" />
+<a href="javascript:;" onClick="Cart.adds('buy', 'book_chk');" class="btn bg7">선택구매</a>
+		<a href="javascript:;" onClick="Cart.adds('cart', 'book_chk');" class="btn bg7 red">책바구니</a>
+		<span id="total_price" class="fr bold red">총 <span class="total_series_check_count">0</span>권 <span class="total_series_check_price">0</span>원</span>
+	</div>
+</div>
+						<!-- //탭 컨텐츠 :: 01 시리즈 전체보기 -->
+
+						<!-- 탭 컨텐츠 :: 02 책소개 -->
+						<div class="tab_contents" id="detail_explain">
+							<div class="tab_contents_in">
+								<h3>[ 책 소개 ]</h3>
+								<div class="info_txt"><b>2010년 아마존 사이언스 Top 10 Books! <br>뉴욕 타임스 베스트셀러! <br><br>“샘 킨은 빌 브라이슨처럼 즐거운 웃음을 선사한다.” _뉴 사이언티스트 </b><br><br>“이 이야기는 단순히 재미있는 이야기를 들려주는 것에 그치지 않고, 교과서나 교과용 지도서에는 절대로 나오지 않는 방식으로 주기율표를 이해하는 방법을 들려줄 것이다. 우리는 주기율표의 원소들을 먹고 숨 쉰다. 사람들은 주기율표의 원소들에 거액의 돈을 걸고 잃는다. 철학자들은 주기율표를 사용해 과학의 의미를 찾는다. 주기율표는 사람들을 중독시키고, 전쟁을 낳는다. 맨 위 왼쪽 끝에 있는 수소와 아래쪽에 있는 인공 원소들 사이에서 여러분은 거품과 폭탄, 돈, 연금술, 정치, 역사, 독, 범죄, 사랑을 만날 것이다. 그리고 심지어 약간의 과학도 접할 수 있다.” _머리말 중에서 <br><br><br><b>주기율표와 정치, 역사, 돈, 연금술, 독, 범죄, 사랑, 과학</b> <br><br> 간디는 왜 요오드(아이오딘)를 싫어했을까? 일본인은 고질라를 죽일 때 왜 하필 카드뮴 미사일을 사용했을까? 텔루르(텔루륨)는 어떻게 역사상 가장 기묘한 골드러시를 일으켰을까? <br>주기율표의 모든 원소는 각자 나름의 흥미롭고 기묘하고 섬뜩한 이야기를 지닌다. 샘 킨의 『사라진 스푼』(원제 : The Disappearing Spoon : And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements)은 주기율표에 나오는 원소를 일일이 추적하면서 원소에 얽힌 이야기를 재기발랄한 입담으로 풀어놓은 책이다. 2010년에 혜성처럼 등장한 젊은 이야기꾼 샘 킨의 원소 이야기 속에는 원소 발견의 역사, 탐욕과 모험의 역사, 과학자들의 일화가 흥미진진하게 녹아 있다. 이 세상의 모든 것이 원소로 이루어졌듯, 이 책에는 역사, 경제, 신화, 전쟁, 예술, 의학, 과학 이야기가 흘러넘치는 것이 특징이다. 부글부글 끓어오르는 거품처럼 끝없이 이어지는 원소 이야기 속에는 열정, 모험, 배신, 탐욕이 뒤엉켜 있다. <br>‘수은’이라는 원소 하나에서 역사, 어원학, 연금술, 신화, 문학, 독극물 법의학, 심리학을 발견하는 저자에게 주기율표는 “흥미진진한 이야기책”이다. 주기율표는 나름의 문법을 지니고 있으며, 행간을 잘 살피면 아주 놀랍고 새로운 이야기를 읽을 수 있기 때문이다. 이야기의 무대는 아주 작은 원자에서부터 우주와 은하계로 넘어가기도 하며, 대륙을 종횡무진하면서 한 개인의 일생뿐 아니라 수백 억년에 이르는 지구의 역사를 아우른다. 아마도 많은 독자들이 평면적인 주기율표에 생기를 불어넣는 저자의 글 솜씨에 홀려서 화학이 어렵고 딱딱하다는 편견을 바꿀지도 모른다. <br>주기율표는 우주에 존재하는 모든 원소를 실어놓은 목록이다. 저자는 동쪽에서 출발해서 서쪽으로 가면서 원소들을 살펴보거나, 위에서 출발해 아래로 내려가면서 원소들을 읽어내려가면서 흥미로운 이야기들을 찾아낸다. 가령, 상온에서 고체인 갈륨으로 스푼을 만들어 뜨거운 찻잔에 담그면 녹는점이 낮아 스푼이 사라진다. 파우스트 같은 프리츠 하버는 질소로 인공 비료를 만들어 수백 만명을 구했지만 브롬(브로민)과 염소를 이용한 독가스를 개발해 수십 만 명을 살상하게 했다. 스타니스와프 마르친 울람은 카드 게임을 하면서 시간을 보내다가 수소폭탄 발명의 기초가 되는 몬테카를로 방법을 개발했다. 이는 원자폭탄을 만들 때 많은 과학자들의 아내들 무작위적인 수를 연필로 계산한 값을 이용한 방법과 유사하다. 은의 살균 효과를 광신한 미국 상원 의원 후보자는 은피증에 걸려 피부가 파랗게 변했다. 마치 할로윈데이 변장을 한 것처럼. <br>드라마틱한 원소 이야기들도 많다. 자신의 아들이 제임스 왓슨과 프랜시스 크릭과 연구실에 같이 있지 않았다면 아마도 라이너스 폴링은 DNA의 이중나선 구조를 먼저 밝혀 세 번째 노벨상을 수상했을 것이고, 화학자로서 뉴턴과 아인슈타인처럼 위대한 과학자 대열에 끼었을 것이다. 노벨상 수상자인 엔리코 페르미는 달콤하지만 독성을 지닌 베릴륨 가루를 실험 도중 너무 많이 들이마셔 53세 때에 폐가 갈기갈기 찢어졌다. 뛰어난 여성 물리학자 리제 마이트너의 경우는 핵분열 반응을 최초로 발견한 과학자였지만 노벨상위원회의 어이없는 무지와 몰지각함으로 노벨상을 받지 못했다. 빌헬름 뢴트겐은 손바닥 속의 뼈가 보이는 X선을 발견한 후 자신이 미쳤을지도 모른다며 오랫동안 속앓이를 하다가, 아내도 마찬가지로 X선을 볼 수 있다는 데에 자신감을 회복했다. 저온 핵융합 반응을 주장함으로써 희대의 협잡꾼이 된 과학자 스탠리 폰스와 마틴 플라이시먼의 과학 사기극은 황당하기까지 하다. <br>이처럼 샘 킨의 원소 이야기들은 주기율표가 지루한 과학 교과서에만 나오는 게 아니라는 걸 알려준다. 그에 따르면, 인류의 위대한 지적 재산인 주기율표는 고등학교 교실 벽에나 붙어 있는 도표가 아니다. 충분히 상상력만 발휘한다면 누구나 주기율표를 즐길 수 있을 것이다. <br><br> * 원소 이름은 1987년 맞춤법 및 외래어 표기법 개정 이후 초·중·고등학교 과학 교과서에 널리 사용된 명칭으로 표기했으며, 최근 대한화학회가 새 이름으로 바꾸기를 제안한 원소 이름은 괄호 안에 병기했다. <br><br><br><b>책 속에 담긴 흥미로운 원소 이야기 사례 </b><br><br>- 몰리브덴(몰리브데넘)과 탐욕스런 전쟁 : 몰리브덴은 강철을 강화함으로써 무기를 만드는 데 효과적인 원소이다. 몰리브덴의 유일한 공급처는 미국 콜로라도 주 바틀렛 산에 있는 광산이었는데, 제1차 세계대전 당시 오티스 킹이라는 혈기왕성한 은행가가 소유하고 있었다. 몰리브덴의 중요성을 깨달은 독일의 메탈게젤샤프트 사는 콜로라도 주의 최고 책임자 막스 쇼트Max Schott에게 바틀렛 산을 손에 넣으라고 지시했다. 이에 쇼트는 난폭한 해결사를 보내 광부들의 아내와 자녀를 위헙하고, 오티스 킹을 칼과 곡갱이로 공격했으며, 가파른 낭떠러지에서 떨어뜨렸다. 막스 쇼트는 킹을 방해하기 위해 노골적인 살인을 빼놓고는 수단과 방법을 가리지 않았다. 킹은 가까스로 살아났지만 막스 쇼트의 집요한 공격과 괴롭힘을 견디지 못하고 결국 4만 달러라는 헐값에 광산을 쇼트에게 팔아넘겼다. <br>- 텅스텐과 포르투갈의 이중성 : 나치 독일은 미사일을 만드는 데 텅스텐이 많이 필요했다. 제2차 세계대전 당시 독일에 텅스텐을 공급한 나라는 어디였을까? 다름 아닌, 겉으로 중립을 지키던 포르투갈이었다. 포르투갈의 독재자 안토니우드 올리베이라 살라자르는 추축국과 연합국 모두에게 텅스텐을 수출해 막대한 폭리를 취했다. 텅스텐은 에스파냐를 통해 운반되었고, 나치가 유대인에게서 빼앗은 금 중 상당량은 리스본과 스위스의 은행들에서 세탁되었다. 강경한 영국조차 자국 병사들을 죽이는 데 사용되는 텅스텐 거래에 간섭하지 않다가, 미국의 공세적인 압력에 못 이겨 마침내 철권 독재자 살라자르에게 강경한 자세를 취했다. <br>- 탄탈(탄탈럼)·니오브(나이오븀)와 콩고의 비극 : 콩고에서 많이 생산되는 탄탈과 니오브는 소형 휴대 전화에 중요하게 쓰인다. 탄탈과 니오브의 채취로 콩고에 현금이 유입되자, 10여 년에 걸쳐 누적된 종족 분쟁을 돌이킬 수 없게 만들었다. 제대로 된 정부가 없는 나라에 돈이 쏟아져 들어오는 것보다 나쁜 것도 없다. 무자비한 자본주의가 판을 쳐서 생명을 포함해 모든 것을 돈으로 사고팔 수 있게 되었다. 노예처럼 살아가는 매춘부들을 수용하는 거대한 캠프들이 곳곳에 들어섰고, 피비린내 나는 살인을 위해 막대한 금액이 지불되었다. 1990년대 중반 이후 콩고에서 사망한 사람은 500만 명 이상에 이르러 제2차 세계대전 이래 최대의 인명 손실을 기록했다. <br>- 탈륨과 독살의 역사 : 81번 원소 탈륨은 주기율표에서 가장 치명적인 원소이다. 탈륨은 일단 몸속으로 침투하면, 칼륨의 가면을 벗어던지고 단백질이 제 기능을 하지 못하게 한다. 그리고 몽골 기병처럼 몸속을 이리저리 돌아다님으로써, 원자 하나가 광범위한 피해를 초래할 수 있다. 이 탈륨은 첩자, 고아, 돈 많은 고모할머니를 죽이는 데 사용된 살벌한 역사를 지니고 있다. 실패로 끝났지만, CIA는 쿠바의 피델 카스트로를 암살을 시도하기 위해 탈륨을 사용하기도 했다. 양말에 탈륨이 섞인 탤컴 파우더를 뿌려서 카스트로를 죽이려고 했던 것이다. <br>- 질소와 나사 본부 기술자들의 기묘한 죽음 : 1981년, 질소로 가득 채운 격실에 나사 본부 기술자 5명이 들어간 후, 마치 발레를 하는 것처럼 동시에 쓰러지고 말았다. 그리고 이중 3명은 세상을 떠났다. 질소는 뉴런과 심장 세포가 신선한 산소를 흡수하는 걸 방해했을 뿐만 아니라, 비상시에 대비해 세포에 저장돼 있던 소량의 산소마저 밀어냄으로써 기술자들의 죽음을 앞당겼다. 기술자들은 산소 부족에도 발버둥치지 않았다. 이유는 우리 몸이 탄소에는 민감하지만, 질소에는 민감하지 않기 때문이다. 질소는 냄새도 색깔도 없으며, 혈관 속에서 산을 만들지도 않는다. 우리는 질소를 쉽게 들이마시고 내보내는데, 폐도 아무런 이상을 느끼지 않으며, 질소는 우리의 어떤 심리적 인계철선도 건드리지 않고 자유롭게 드나든다. 질소는 체내의 보안 시스템을 무사통과해 돌아다니면서 우리를 “자비롭게 죽인다.” <br>- 요오드(아이오딘)와 간디의 불화 : 1930년 간디는 영국 정부가 부과한 소금세에 항의하기 위해 소금 행진에 나섰다. 당시 인도인들은 바닷물을 모아 증발시킨 뒤 말라붙은 소금을 그냥 자루에 담아 거리에서 팔기만 하면 되었었다. 그런데 영국 정부가 탐욕스럽게도 생산된 모든 소금에 8.2퍼센트의 세금을 부과했던 것이다. 동시에 영국 정부는 소금에 요오드를 첨가하라고 했다. 요오드를 첨가하면 수백 만 명의 어린이가 선천성 결함을 갖고 태어나는 걸 막을 수 있었기 때문이다. 그러나 서양이 인도에 강요한 요오드 첨가 소금은 식민주의의 잔재라는 인식이 널리 퍼져, 요오드가 첨가되지 않은 소금이 유통됨에 따라 선천성 결함이 증가했다. <br>- 텔루르(텔루륨)와 기묘한 골드러시 : 호주의 ‘해넌스파인드’(현 명칭은 캘굴리)에 금이 무더기로 발견되자 사람들이 우르르 몰려들어 갔다. 채굴 도중에 노란색 광채를 띤 텔루르 화합물 캘러버라이트도 같이 나왔는데, 모두들 쓸모없는 돌이라 생각해, 버리거나 벽돌로 이용했다. 그러던 차에 이 암석이 녹으면, 화합물에서 금이 나온다는 것이 알려졌다. 그러자 더 많은 사람들이 해넌스파인드로 몰려갔다. 1896년 5월 29일에 마침내 대혼란이 발생했다. 사람들은 쓰레기더미로 달려가 버린 암석들 사이에서 캘러버라이트를 찾았고, 구덩이를 덮은 포장도로를 뜯어갔으며, 인도도 죄다 뜯어갔다. 새집을 짓기 위해 금과 텔루르가 섞인 벽돌로 굴뚝과 벽난로를 세웠던 광부는 망설이지 않고 집을 부쉈다. <br>- 리튬과 잃어버린 영감 : 로버트 로웰은 기행을 일삼는 시인이었다. 주변 사람들은 로웰의 기행을 시적 영감이 광기로 분출된 것이라 생각했다. 그러나 의사는 로웰이 화학 물질의 불균형으로 인한 조울증(양극성 장애)을 앓고 있다고 진단하고는, 리튬을 처방했다. 리튬은 생체 시계를 제어하는 단백질을 조절함으로써, 조증이 상승하거나 울증이 심해지는 것을 막는다. 이후 주위 사람들은 로웰의 리튬이 건강을 선사한 대신 예술을 위축시키고, 광기 어린 천재를 평범한 인간으로 만들었다고 생각했다. <br></div>
+							</div>						
+						</div>
+						<!-- //탭 컨텐츠 :: 02 책소개 -->
+
+						<!-- 탭 컨텐츠 :: 03 목차 -->
+						<div class="tab_contents">
+							<div class="tab_contents_in">
+								<h3>[ 목차 ]</h3>
+								<div class="info_txt">머리말 <br><br>1장 주기율표의 구조와 탄생 <br> 지리적 위치가 곧 운명 <br> 쌍둥이처럼 비슷한 원소들과 검은 양 : 원소들의 계보 <br> 주기율표의 갈라파고스 제도 <br><br>2장 원자 창조와 원자 분해 <br> 원자는 어디서 왔을까 : “우리는 모두 별의 물질로 만들어졌다” <br>전쟁에 쓰인 원소들 <br> 폭발과 함께 완성된 주기율표 <br> 주기율표의 확대와 냉전의 확산 <br><br>3장 주기율표를 둘러싼 혼란 : 복잡성의 출현 <br> 물리학에서 생물학으로 <br> 독성 원소들의 복도 : “아야, 아야” <br>기적의 의약품을 낳은 원소들 <br> 원소들의 속임수 <br><br>4장 인간의 성격을 지닌 원소들 <br> 정치적 원소들 <br> 돈으로 쓰이는 원소들 <br> 예술적인 원소들 <br> 광기의 원소 <br><br>5장 현재와 미래의 원소 과학 <br> 극저온에서 원소들이 나타내는 기묘한 행동 <br> 영광의 구 : 거품의 과학 <br> 터무니없을 정도로 정밀한 도구 <br> 주기율표를 넘어서 <br><br> 노트 <br> 참고 문헌 <br> 감사의 말 <br> 옮긴이의 말 <br> 찾아보기 <br> 원소 주기율표</div>
+							</div>						
+						</div>
+						<!-- //탭 컨텐츠 :: 02 책소개 -->
+
+						<!-- 탭 컨텐츠 :: 04 저자소개 -->
+						<div class="tab_contents">
+							<div class="tab_contents_in">
+								<h3>[ 저자소개 ]</h3>
+								<div class="info_txt"><b>샘 킨 </b><br>  <br>저자 샘 킨은 어린 시절에 종종 깨진 온도계에서 수은을 모으곤 했다. 지금은 워싱턴 D. C에서 작가로 일하고 있다. 〈뉴욕 타임스 매거진〉, 〈멘털 플로스〉, 〈슬레이트〉, 〈에어 & 스페이스 스미소니언〉, 〈뉴 사이언티스트〉에 글을 썼다. 2009년에는 미국과학작가협회에서 30세 이하의 최고 과학 작가에게 수여하는 에너크 클라크/세프 페인 상 부분에 후보로 올라 아깝게 2위에 그쳐 본상을 받지 못했지만 특별상을 받았다. 지금은 〈사이언스〉에 글을 쓰고 있으며, 2009~2010 미들버리 환경 저널리즘 펠로로 활동 중이다. <br>  <br><br><b> 이충호 </b><br>  <br>서울대학교 사범대학 화학과를 졸업하고, 영문학을 부전공했다. 현재 과학 전문 번역가로 활동하고 있으며, 2001년 우수 과학 도서 번역상과 제20회 한국 과학 기술 도서 번역상을 받았다. 지은 책으로는 '블랙홀 여행', '과학의 슈퍼스타 20'이 있으며 옮긴 책으로는 '말랑하고 쫀득한 과학 이야기', '말랑하고 쫀득한 세계사 이야기', '물리가 뭐야?', '화학이 뭐야?', '신의 괴물', '이야기 파라독스', '와인 전쟁' 외 다수가 있다.</div>
+							</div>	
+						</div>
+						<!-- //탭 컨텐츠 :: 04 저자소개 -->
+
+						<!-- 탭 컨텐츠 :: 05 서평 -->
+
+						
+<div class="tab_contents">
+	<!-- 서평 목록 없을 때 -->
+	<!--
+	<div class="book_review" id="btn_review_area" style="display: block">
+		<div class="book_review_top btn_area">
+			<a href="#event_ticker" class="btn bg1" id="write_review">서평쓰기</a>
+			<span>구매자에게 100원 적립금을 드립니다. (한글 50자 이상, 1일 최대 3회)</span>
+		</div>
+		<ul class="nodata">
+		<li>회원님께서 첫 서평의 주인공이 되어주세요.</li>
+		</ul>
+		<div class="pagenate">
+			<a href="#" class="arr first"><span class="hide">첫 페이지</span></a><a href="#" class="arr prev"><span class="hide">이전페이지</span></a>
+			<a href="#" class="btn on">1</a><a href="#" class="btn">2</a><a href="#" class="btn">3</a><a href="#" class="btn">4</a><a href="#" class="btn">5</a><a href="#" class="btn">6</a><a href="#" class="btn">7</a><a href="#" class="btn">8</a><a href="#" class="btn">9</a><a href="#" class="btn">10</a>
+			<a href="#" class="arr next"><span class="hide">다음페이지</span></a><a href="#" class="arr last"><span class="hide">마지막 페이지</span></a>
+		</div>
+	</div>
+	-->
+		
+	<!-- 서평 목록 있을 때 -->
+	<div class="book_review">
+
+		<div class="book_review_top btn_area">
+			<a href="#event_ticker" class="btn bg1" id="write_review">서평쓰기</a>
+			<span>도서 구매 후 서평 등록 시 100원의 적립금을 드립니다. 단, 만화 및 대여/정액 이용 시에는 지급되지 않습니다.</span>
+		</div>
+
+		<!-- 서평 쓰기 -->
+		<div class="border_type3 write_review_wrap" style="display: block">
+			<form method="post" action="" onsubmit="">
+				<input type="hidden" name="num" value="" />
+				<input type="hidden" name="book_num" value="150402022" />
+				<input type="hidden" name="series_num" value="" />
+				<input type="hidden" id="review_point" name="review_point" value="" />
+				<fieldset>
+				<legend>서평쓰기</legend>
+				<label for="write_book_review" class="hide">서평쓰기</label>
+				<div class="star_wrap">
+					<div class="review_star">	
+						<p>별점주기</p>
+					</div>
+					<ul class="s_star">
+						<li>
+							<p class="detail_star star1" data="1"><span class="hide">별점1</span></p>
+						</li>
+						<li>
+							<p class="detail_star star2" data="2"><span class="hide">별점2</span></p>
+						</li>
+						<li>
+							<p class="detail_star star3" data="3"><span class="hide">별점3</span></p>
+						</li>
+						<li>
+							<p class="detail_star star4" data="4"><span class="hide">별점4</span></p>
+						</li>
+						<li>
+							<p class="detail_star star5" data="5"><span class="hide">별점5</span></p>
+						</li>
+					</ul>
+				</div>
+				<textarea id="write_book_review" name="write_book_review" cols="5" rows="10"></textarea>
+				<p class="btn_area">
+					<a href="javascript:;" onClick="Review.write('.write_review_wrap');" class="btn_submit">등록</a>&nbsp;&nbsp;<a href="/detail.asp?book_num=150402022&page=buy" class="btn_cancel btn_submit">취소</a>
+					<noscript>
+						<input type="submit" name="" value="등록" class="btn_submit" /> &nbsp;
+						<input type="button" name="" value="취소" class="btn_submit" />
+					</noscript>
+				</p>
+				</fieldset>
+			</form>
+		</div>
+
+		<div id="detailReviewList"></div>
+
+		<div class="pagenate">
+			<a href="#" class="arr first"><span class="hide">첫 페이지</span></a><a href="#" class="arr prev"><span class="hide">이전페이지</span></a>
+			<a href="#" class="btn on">1</a><a href="#" class="btn">2</a><a href="#" class="btn">3</a><a href="#" class="btn">4</a><a href="#" class="btn">5</a><a href="#" class="btn">6</a><a href="#" class="btn">7</a><a href="#" class="btn">8</a><a href="#" class="btn">9</a><a href="#" class="btn">10</a>
+			<a href="#" class="arr next"><span class="hide">다음페이지</span></a><a href="#" class="arr last"><span class="hide">마지막 페이지</span></a>
+		</div>
+	</div>
+</div>
+
+						<!-- //탭 컨텐츠 :: 05 서평 -->
+					</div>
+					<!-- //book_detail_contents -->
+				</div>
+				<!-- //도서상세페이지 컨텐츠 -->
+
+				<!-- 분야 베스트 -->
+				<div class="list_tab_menu_sub top10">
+	<div class="fl">
+		<h2>과학 분야 베스트</h2>
+	</div>
+	<div class="fr">
+		<a href="/category.asp?branch=1500" class="bold f11">더보기<span class="btn icon_more"><em class="hide">→</em></span></a>
+	</div>
+</div>
+
+<div class="contents bdr_btm">
+	<ul class="list_topic">
+
+	<li>
+		<p class="thumbnail"><a href="/detail.asp?book_num=150302420" class="thumb"><img src='http://bookimg.bookcube.com/120/1503/150302420.jpg' alt='도서 이미지' /></a></p>
+		<p class="title"><a href="/detail.asp?book_num=150302420">난류론</a></p>
+		<p class="author"><a href="/search.asp?searchOption=author&SearchString=%EB%85%B8%EC%9D%98%EA%B7%BC">노의근</a> 저</p>
+		<p class="price"><ins>6,500원</ins></p>					
+	</li>
+
+	<li>
+		<p class="thumbnail"><a href="/detail.asp?book_num=140403533" class="thumb"><img src='http://bookimg.bookcube.com/120/1404/140403533.jpg' alt='도서 이미지' /></a></p>
+		<p class="title"><a href="/detail.asp?book_num=140403533">2014년 ICT산업과 유망기술 개발전략, 지원정책 동향</a></p>
+		<p class="author"><a href="/search.asp?searchOption=author&SearchString=BIR+Research+Group">BIR Research Group</a> 저</p>
+		<p class="price"><ins>279,000원</ins></p>					
+	</li>
+
+	<li>
+		<p class="thumbnail"><a href="/detail.asp?book_num=110900929" class="thumb"><img src='http://bookimg.bookcube.com/120/1109/110900929.jpg' alt='도서 이미지' /></a></p>
+		<p class="title"><a href="/detail.asp?book_num=110900929">사이언티픽 아메리칸 발명ㆍ발견 대사전</a></p>
+		<p class="author"><a href="/search.asp?searchOption=author&SearchString=%EB%A1%9C%EB%93%9C%EB%8B%88+P%2E+%EC%B9%BC%EB%9D%BC%EC%9D%BC">로드니 P. 칼라일</a> 저</p>
+		<p class="price"><ins>21,000원</ins></p>					
+	</li>
+
+	<li>
+		<p class="thumbnail"><a href="/detail.asp?book_num=141004919" class="thumb"><img src='http://bookimg.bookcube.com/120/1410/141004919.jpg' alt='도서 이미지' /></a></p>
+		<p class="title"><a href="/detail.asp?book_num=141004919">지도로 보는 세계 과학사</a></p>
+		<p class="author"><a href="/search.asp?searchOption=author&SearchString=%EC%91%A8%EC%9E%90%EC%98%A4%EB%A5%B8">쑨자오른</a> 저</p>
+		<p class="price"><ins>15,000원</ins></p>					
+	</li>
+
+	<li>
+		<p class="thumbnail"><a href="/detail.asp?book_num=140114015" class="thumb"><img src='http://bookimg.bookcube.com/120/1401/140114015.jpg' alt='도서 이미지' /></a></p>
+		<p class="title"><a href="/detail.asp?book_num=140114015">과학철학</a></p>
+		<p class="author"><a href="/search.asp?searchOption=author&SearchString=%EA%B0%95%EC%8B%A0%EC%9D%B5%2C+%EA%B3%A0%EC%9D%B8%EC%84%9D%2C+%EA%B9%80%EA%B5%AD%ED%83%9C%2C+%EA%B9%80%EC%9C%A0%EC%8B%A0%2C+%EB%B0%95%EC%98%81%ED%83%9C%2C+%EB%B0%95%EC%9D%80%EC%A7%84+%EC%99%B8">강신익, 고인석, 김국태, 김유신, 박영태, 박은진 외</a> 저</p>
+		<p class="price"><ins>22,400원</ins></p>					
+	</li>
+
+	</ul>						
+</div>
+
+
+				<!-- //분야 베스트 -->
+
+				<!-- ebook 이용안내 -->
+				<div class="list_tab_menu_sub top10 detail_use_info">
+					<div class="fl">
+						<h2>ebook 이용안내</h2>
+					</div>
+				</div>
+				<div class="contents bdr_btm">
+					<ul class="list_guide">
+					<li>- 구매 후 <strong>배송이 필요 없이</strong> 다운로드를 통해 이용 가능한 전자책 상품입니다. </li>
+					<li>- 전자책 1회 구매로 PC, 스마트폰, 태블릿PC, eBook 전용 단말기 등에서 이용하실 수 있습니다.<br />&nbsp;&nbsp;&nbsp;(도서 특성에 따라 이용 가능한 기기의 제한이 있을 수 있습니다.)</li>
+					<li>- 책파일 내 판권정보 정가와 북큐브 사이트 정가 표시가 다를 수 있으며, 실제 정가는 사이트에 표시된 정가를 기준으로 합니다.</li>
+					<li>- 적립금 지급은 적립금 및 북큐브 상품권으로 결제한 금액을 뺀 나머지가 적립금으로 지급됩니다.<br />&nbsp;&nbsp;&nbsp;(적립금 유효기간은 마이페이지>북캐시/적립금/상품권>적립금 적립내역에서 확인 가능합니다.)</li>
+					<li>- 저작권 보호를 위해 인쇄/출력 기능은 지원하지 않습니다. </li>
+					<li>- 구매하신 전자책은 마이페이지 > 전자책 다운로드에서 다운로드를 할 수 있습니다. </li>
+					<li>- 스마트폰, 태블릿PC의 경우 북큐브 어플리케이션을 설치하여 이용할 수 있습니다. <a href="/appDown.asp"><strong class="red">(모바일 페이지 바로가기)</strong></a></li>
+					<li>- PC에서 이용하실 경우 전자책 전용 프로그램, <a href="/appDown.asp"><strong class="red">북플레이어</strong></a>를 통해 이용하실 수 있습니다. </li>
+					<li>- PC에서의 다운로드는 서로 다른 3대의 PC에서 횟수 제한 없이 이용하실 수 있습니다.</li>
+					</ul>						
+				</div>
+				<!-- //ebook 이용안내 -->
+
+			</div>
+			<!-- //contents_wrap -->
+
+		</div>
+		<!-- //contents_container -->
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<div class="footer">
+	<div class="foot_inner">
+		<div class="foot_left">
+			<h4 class="f_logo"><img src="/images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+			<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+			<img src="/images/main/goodContents.jpg" alt="클린사이트" />
+		</div>
+		<div class="foot_right">
+			<ul class="f_lnb">
+				<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+				<li><a href="http://dev.bookcube.com/customer.asp?page=notice&page2=view&num=24007&pageNum=1">이용약관</a></li>
+				<li><a href="http://dev.bookcube.com/customer.asp?page=notice&page2=view&num=24264&pageNum=1">개인정보보호정책</a></li>
+				<li><a href="http://dev.bookcube.com/partner.asp">제휴문의</a></li>
+				<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+			</ul>
+			<h4 class="hide">북큐브 주소 및 정보</h4>
+			<ul class="f_lnb">
+				<li>상호 : 주식회사 북큐브네트웍스</li>
+				<li>대표이사 : 유철종</li>
+				<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+				<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+				<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+				<li>개인정보 관리 책임자 : 남지원</li>
+				<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+				<li>전화 1588-1925</li>
+			</ul>
+			<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+		</div>	
+	</div>
+</div>
+
+<script>
+	function b815(){
+		window.open("/b815.asp", "b815", "width=800,height=630,left=50,top=50,location=no,scrollbars=no,toolbar=no");
+	}	
+</script>
+	<!-- //footer -->
+</body>
+</html>
+<script type="text/javascript">
+$(function(){
+	Detail.init('150402022', '','buy');
+	//SeriesList.list('150402022');
+	//Review.list('150402022');
+});
+
+function sns_book_rent(book_num){
+	if (confirm("현재까지 누적된 전체 도서에 대한 공유수가 리셋되며 한 달에 한 권의\n도서만 대여 가능합니다. 무료 대여하시겠습니까?"))
+	{
+		$.ajax({
+			url : '/include/detail/_sns_book_receive.asp',
+			type : 'post',
+			dataType : 'json',
+			data : {
+				book_num : book_num,
+				rental_yn : 1
+			},
+			headers : {'cache-control' : "no-cache"},
+			cache : false,
+			success : function(data){
+				if(data.success){
+					location.href = '/mypage/mypage.asp?sub_list=rental';
+				}else{
+					alert(data.message);
+				}
+			},
+			error: function(){}
+		});
+	}
+}
+
+function sns_book_receive(book_num){
+	if (confirm("현재까지 누적된 전체 도서에 대한 공유수가 리셋되며 한 달에 한 권의\n도서만 소장 가능합니다. 무료 소장하시겠습니까?"))
+	{
+		$.ajax({
+			url : '/include/detail/_sns_book_receive.asp',
+			type : 'post',
+			dataType : 'json',
+			data : {
+				book_num : book_num,
+				rental_yn : 0
+			},
+			headers : {'cache-control' : "no-cache"},
+			cache : false,
+			success : function(data){
+				if(data.success){
+					location.href = '/mypage/mypage.asp?sub_list=buy';
+				}else{
+					alert(data.message);
+				}
+			},
+			error: function(){}
+		});
+	}
+}
+</script>
+<!-- 팝업레이어 :: facebook 로그인 확인-->
+<div id="pop_facebook_login_check" class="layer_popup border_type_box sns_pop" style="display:none">
+	<fieldset>
+	<legend>SNS 공유 안내</legend>										
+	<div class="layer_head">
+		<h2>SNS 공유 안내</h2>
+		<a href="javascript:;" class="btn_layer_x" onclick='check_facebook_close();'><span class="hide">닫기</span></a>
+	</div>
+	<div class="layer_content">										
+		<p class="ac"><strong class="f13"><label for="check_id">로그인 후 SNS 공유하시면 공유 포인트 적립을 통해<br />무료로 도서 이용이 가능합니다.</label></strong></p>
+		<p class="top50 btn_area ac">
+			<input type="button" onclick="location.href('https://dev.bookcube.com/login.asp?return_url=http://dev.bookcube.com%2Fdetail%2Easp%3Fbook%5Fnum%3D150402022');" class="btn bg1" title="검색" value="로그인하기" />
+			<input type="button" onclick="facebook('http://dev.bookcube.com/detail.asp?book_num=150402022&um=');check_facebook_close();" class="btn bg10" title="검색" value="적립없이 공유하기" />
+		</p>
+	</div>									
+	</fieldset>
+</div>
+<!-- //팝업레이어 :: facebook 로그인 확인-->
+
+<!-- 팝업레이어 :: twitter 로그인 확인-->
+<div id="pop_twitter_login_check" class="layer_popup border_type_box sns_pop" style="display:none">
+	<fieldset>
+	<legend>SNS 공유 안내</legend>										
+	<div class="layer_head">
+		<h2>SNS 공유 안내</h2>
+		<a href="javascript:;" class="btn_layer_x" onclick='check_twitter_close();'><span class="hide">닫기</span></a>
+	</div>
+	<div class="layer_content">										
+		<p class="ac"><strong class="f13"><label for="check_id">로그인 후 SNS 공유하시면 공유 포인트 적립을 통해<br />한달에 한 번 무료로 도서 이용이 가능합니다.</label></strong></p>
+		<p class="top50 btn_area ac">
+			<input type="button" onclick="location.href('https://dev.bookcube.com/login.asp?return_url=http://dev.bookcube.com%2Fdetail%2Easp%3Fbook%5Fnum%3D150402022');" class="btn bg1" title="검색" value="로그인하기" />
+			<input type="button" onclick="twitter('http://dev.bookcube.com/detail.asp?book_num=150402022&um=','[북큐브][강추] 사라진 스푼 | 샘 킨');check_twitter_close();" class="btn bg10" title="검색" value="적립없이 공유하기" />
+		</p>
+	</div>									
+	</fieldset>
+</div>
+<!-- //팝업레이어 :: twitter 로그인 확인-->
+
+<!-- 팝업레이어 :: SNS 공유 안내-->
+<div id="pop_sns_check" class="layer_popup border_type_box" style="display:none">
+	<fieldset>
+	<legend>SNS 친구 공유 후 도서를 무료 지급 받는 방법</legend>										
+	<div class="layer_head">
+		<h2>SNS 친구 공유 후 도서를 무료 지급 받는 방법</h2>
+		<a href="javascript:;" class="btn_layer_x" onclick='check_sns_close();'><span class="hide">닫기</span></a>
+	</div>
+	<div class="layer_content">										
+		<p class="lh18"><strong class="f13">주의사항</strong><br />
+		1) 본인인증 된 회원에게만 무료도서가 지급됩니다.<br />
+		2) SNS 친구 공유를 통한 무료 도서 지급 및 대여는 1달에 1권만 가능합니다.<br />
+		3) 무료로 도서를 소장 or 대여하시거나 매 월 1일이 되면 해당 달에 SNS 공유한 횟수는 자동으로 리셋됩니다.<br /><br /></p>
+		<p class="lh18"><strong class="f13">SNS 공유하고 도서 무료 지급 받자</strong><br />
+		1) 페이스북/트위터를 이용하여 해당 도서의 링크 주소를 공유 합니다.<br />
+		2) SNS를 통해 공유 된 링크 주소를 친구 또는 지인분들께서 터치 또는 클릭할 경우 SNS 공유횟수로 카운팅 됩니다.<br />
+		3) 공유 횟수가 정해진 기준을 충족할 경우 도서를 무료로 소장할 수 있습니다.<br />
+		4) 공유 횟수가 정해진 기준의 50% 이상 충족할 경우 무료로 대여할 수 있습니다.<br />
+		5) 무료로 소장한 도서는 마이페이지>전자책 다운로드 메뉴에서 확인 가능합니다.</p>
+	</div>									
+	</fieldset>
+</div>
+<!-- //팝업레이어 :: twitter 로그인 확인-->
+
+
+
+
+<!-- 팝업레이어 :: 쿠폰목록 -->
+<div id="pop_cBtn_check" class="coupon_pop" style="display:none;"> 
+	<form>
+		<fieldset>
+			<legend>쿠폰선택</legend>
+			<div class="coupon_title_box">
+				<h4>쿠폰 목록</h4>
+				<img src="/images/main/coupon_pop_close.png" class="coupon_pop_close" alt="쿠폰 팝업창 닫기" onClick="cBtn_close();" />
+			</div>
+			<div class="tbl_box">
+				<table summary="쿠폰 선택" cellspacing="0" class="coupon_tbl">
+					<colgroup>
+						<col width="8%" />
+						<col width="*" />
+						<col width="10%" />
+						<col width="35%" />
+						<col width="20%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">선택</th>
+							<th scope="col">쿠폰명</th>
+							<th scope="col">할인액(율)</th>
+							<th scope="col">내용</th>
+							<th scope="col">사용기간</th>
+						</tr>
+					<thead>
+					<tbody>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" checked="checked" />
+							</td>
+							<td class="tbl_font">무협 1,000원 할인쿠폰</td>
+							<td>1,000원</td>
+							<td class="tbl_align">적용분야 : 무협/판타지 > 무협 카테고리<br />서비스 유형 : 구매<br />쿠폰 적용 금액 : 10,000원 이상</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" />
+							</td>
+							<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+							<td>100원</td>
+							<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" checked="checked" />
+							</td>
+							<td class="tbl_font">무협 1,000원 할인쿠폰</td>
+							<td>1,000원</td>
+							<td class="tbl_align">적용분야 : 무협/판타지 > 무협 카테고리<br />서비스 유형 : 구매<br />쿠폰 적용 금액 : 10,000원 이상</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" />
+							</td>
+							<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+							<td>100원</td>
+							<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" checked="checked" />
+							</td>
+							<td class="tbl_font">무협 1,000원 할인쿠폰</td>
+							<td>1,000원</td>
+							<td class="tbl_align">적용분야 : 무협/판타지 > 무협 카테고리<br />서비스 유형 : 구매<br />쿠폰 적용 금액 : 10,000원 이상</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								<label for="" class="hide">쿠폰 선택</label>
+								<input type="radio" name="couponSelect" id="" class="c_radio" />
+							</td>
+							<td class="tbl_font">[패왕전설] 구매 할인쿠폰</td>
+							<td>100원</td>
+							<td class="tbl_align">적용분야 : 패왕전설 6권(완결)<br />서비스 유형 : 구매</td>
+							<td>~ 2014. 10. 16 23:59</td>
+						</tr>			
+					</tbody>
+				</table>
+				<label for="" class="hide">선택 쿠폰 적용</label>
+				<a href="#"><img src="/images/main/go_coupon.jpg" alt="나의쿠폰 바로가기" /></a>
+				<input type="button" name="" id="" class="couponApply" value="선택한 쿠폰 적용" />
+			</div>
+			<div class="coupon_ps_box">
+				<div class="coupon_ps">
+					<ul>
+						<li>- 이미 받은 쿠폰은 선택이 불가하며, <span>[마이페이지 > 나의쿠폰]</span>에서 확인 가능합니다.</li>
+						<li>- 사용기간이 지난 쿠폰은 자동 소멸됩니다.</li>
+					</ul>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

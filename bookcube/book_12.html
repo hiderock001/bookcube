@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#" class="on">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="header-bottom-inner">
+					<div class="h-bottom-left">
+						<p class="all-category"><a href="#"><img src="/images/main/all-category.png" alt='전체카테고리' /></a></p>
+						<ul class="snb-left">
+							<li><a href="#" class="on">일반도서</a></li>
+							<li><a href="#">로맨스</a></li>
+							<li><a href="#">BL</a></li>
+							<li><a href="#">무협/판타지</a></li>
+							<li><a href="#">만화</a></li>
+						</ul>
+					</div>
+					<div class="h-bottom-right">
+						<ul class="snb-right">
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">신간</a></li>
+							<li><a href="#">무료</a></li>
+							<li><a href="#">이벤트</a></li>
+						</ul>
+					</div>
+					<div class="m-category">
+						<div class="category-inner">
+							<div>
+								<p>장르도서</p>
+								<ul class="">
+									<li><a href="#">로맨스</a></li>	
+									<li><a href="#">BL</a></li>	
+									<li><a href="#">무협/판타지</a></li>	
+									<li><a href="#">만화</a></li>	
+									<li><a href="#">리얼장르</a></li>		
+								</ul>
+							</div>
+							<div>
+								<p>일반도서</p>
+								<ul class="">
+									<li><a href="#">오디오북</a></li>	
+									<li><a href="#">문학</a></li>	
+									<li><a href="#">자기계발</a></li>	
+									<li><a href="#">경제/경영</a></li>	
+									<li><a href="#">외국어/언어</a></li>
+									<li><a href="#">역사/문학</a></li>	
+									<li><a href="#">인문</a></li>	
+									<li><a href="#">인물</a></li>	
+									<li><a href="#">사회</a></li>	
+									<li><a href="#">잡지</a></li>
+									<li><a href="#">컴퓨터/인터넷</a></li>	
+									<li><a href="#">자연과 과학</a></li>	
+									<li><a href="#">건강/스포츠/취미</a></li>	
+									<li><a href="#">종교</a></li>	
+									<li><a href="#">여행</a></li>
+									<li><a href="#">가정/생활/요리</a></li>	
+									<li><a href="#">유아</a></li>	
+									<li><a href="#">어린이</a></li>	
+									<li><a href="#">청소년</a></li>	
+									<li><a href="#">예술/대중문화</a></li>
+								</ul>
+							</div>
+							<div>
+								<p>테마관</p>
+								<ul class="">
+									<li><a href="#">독점선출간관</a></li>	
+									<li><a href="#">장르대여관</a></li>	
+									<li><a href="#">만화대여관</a></li>	
+									<li><a href="#">장르정액관</a></li>	
+									<li><a href="#">만화정액관</a></li>		
+								</ul>
+							</div>
+							<a href="javascript:;" class="category-close">close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="category-nav">
+				<div class="category-nav-inner">
+					<p>HOME > 테마관</p>
+				</div>
+			</div>
+			<div class="contents-wrap">
+				<div class="detail-inner">
+					<div class="best-result">	
+						<div class="key-select nobo">
+							<h3>테마관</h3>
+							<div>
+								<a href="#" class="btn genre-btn">테마관 목록 &gt;</a>
+							</div>
+						</div>
+						<div class="theme-image">
+							<img src="http://up.bookcube.com/bookcube/upload/event/4728/e4728_img.jpg" alt='심쿵 또 심쿵, 꿀 떨어지는 로맨스' />
+						</div>
+						<div class="key-select">
+							<h3>꽁냥꽁냥 로맨스 총집합</h3>
+						</div>
+						<div class="list-page">
+							<div class="thum">
+								<ul class="book-list">
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result end">완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한 특별한특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result end">완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="figure">
+											<a href="#">
+												<span class="rm_br">
+													<img src="http://bookimg.bookcube.com/150/1710/171000645.jpg">	
+												</span>
+												<span class="light"></span>
+											</a>
+										</div>
+										<div class="hot-info">
+											<p class="hot-title">사소 하고도 특별한</p>
+											<p class="hot-author">레오 저<em>|</em>북큐브네트웍스</p>
+											<div class="hot-score">
+												<p><span class="list-star rank4"></span><i>(<em>1,405</em>명)</i><em>|</em>총 13권<em class="end-result">미완결</em></p> <!--end 클래스 유무 -->
+											</div>
+											<div class="hot-desc">
+												<p>인간×이계의 왕 인간 세상과 멀리 떨어진 여관에서 일하는 아마노. 이곳은 인간이 경영하며, 이세계의 '사람이 아닌자'들이 이용하는 신비한 여관…</p>
+											</div>
+											<div class="hot-cash">
+												<p>구매 <span>5,670원</span></p>
+												<p>10년소장 <span>5,670원</span></p>
+												<p>대여 <span>5,670원</span></p>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="paging">
+									<a href="#" class="arr"><img src="/images/p-first.png"><span class="hide">처음페이지</span></a>
+									<a href="#" class="arr prev"><img src="/images/p-prev.png"><span class="hide">이전페이지</span></a>
+									<a href="#" class="fir on">1</a> 
+									<a href="#">2</a> 
+									<a href="#">3</a> 
+									<a href="#">4</a> 
+									<a href="#">5</a> 
+									<a href="#">6</a> 
+									<a href="#">7</a> 
+									<a href="#">8</a> 
+									<a href="#">9</a> 
+									<a href="#">10</a> 
+									<a href="#" class="arr next"><img src="/images/p-next.png"><span class="hide">다음페이지</span></a>
+									<a href="#" class="arr"><img src="/images/p-last.png"><span class="hide">마지막페이지</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+
+					
+			});	
+		</script>
+	</div>	
+</body>
+</html>

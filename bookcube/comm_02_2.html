@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="category-nav">
+				<div class="category-nav-inner">
+					<p>HOME > 회원정보수정</p>
+				</div>
+			</div>
+			<div class="contents-wrap">
+				<div class="user-modify">
+					<h3>회원정보수정</h3>
+					<form action='' method=''>
+						<fieldset>
+							<legend>회원정보수정 입력</legend>
+							<div class="register-title"><p>필수입력항목</p></div>
+							<table>
+								<caption>회원정보수정</caption>
+								<colgroup>
+									<col width="150px" />
+									<col width="*" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>북큐브 ID</th>
+										<td>luk27</td>
+									</tr>
+									<tr>
+										<th>카카오계정</th>
+										<td><a href="#" class="kakaotalk">연동끊기</a><span class="on">계정 연동중!</span></td>
+									</tr>
+									<tr>
+										<th>네이버계정</th>
+										<td><a href="#" class="naver">연동하기</a><span>네이버 계정으로 북큐브를 이용해 보세요!</span></td>
+									</tr>
+									<tr>
+										<th>페이스북계정</th>
+										<td><a href="#" class="facebook">연동하기</a><span>페이스북 계정으로 북큐브를 이용해 보세요!</span></td>
+									</tr>
+									<tr>
+										<th>페이코계정</th>
+										<td><a href="#" class="payco">연동하기</a><span>페이코 계정으로 북큐브를 이용해 보세요!</span></td>
+									</tr>
+									<tr>
+										<th><label for='register_pwd'>변경 비밀번호</label></th>
+										<td><input type='password' name='' id='register_pwd' placeholder='변경비밀번호' /></td>
+									</tr>
+									<tr>
+										<th><label for='register_repwd'>변경 비밀번호 확인</label></th>
+										<td><input type='password' name='' id='register_repwd' placeholder='변경비밀번호 확인' /></td>
+									</tr>
+									<tr>
+										<th><label for='register_name'>이름</label></th>
+										<td><input type='text' name='' id='register_name' value='전윤성' /></td>
+									</tr>
+									<tr>
+										<th><label for='register_nickname'>닉네임</label></th>
+										<td><input type='text' name='' id='register_nickname' value='루크' maxlength='20' /><span>닉네임은 한글, 영문 및 숫자 20자까지 입력 가능</span></td>
+									</tr>
+									<tr>
+										<th><label for='register_email_id'>e-Mail</label></th>
+										<td>
+											<div>
+												<label><input type='text' name='' id='register_email_id' value='ysjeon' /></label>
+												<strong>@</strong>
+												<label><input type='text' name='' id='register_email_domain' value='bookcube.com' /></label>
+												<div class="arrayBox">
+													<a href="javasript:;" class="s-result">직접입력</a>
+													<ul>
+														<li><a href="#" data="" class="on" class='register_email_domain_val'>직접입력</a></li>
+														<li><a href="#" data="daum.net" class='register_email_domain_val'>daum.net</a></li>
+														<li><a href="#" data="naver.com" class='register_email_domain_val'>naver.com</a></li>
+														<li><a href="#" data="nate.com" class='register_email_domain_val'>nate.com</a></li>
+														<li><a href="#" data="daumwiz.com" class='register_email_domain_val'>dreamwiz.com</a></li>
+														<li><a href="#" data="empas.com" class='register_email_domain_val'>empas.com</a></li>
+														<li><a href="#" data="yahoo.co.kr" class='register_email_domain_val'>yahoo.co.kr</a></li>
+														<li><a href="#" data="yahoo.com" class='register_email_domain_val'>yahoo.com</a></li>
+														<li><a href="#" data="freechal.com" class='register_email_domain_val'>freechal.com</a></li>
+														<li><a href="#" data="chol.com" class='register_email_domain_val'>chol.com</a></li>
+														<li><a href="#" data="paran.com" class='register_email_domain_val'>paran.com</a></li>
+														<li><a href="#" data="empal.com" class='register_email_domain_val'>empal.com</a></li>
+														<li><a href="#" data="gmail.com" class='register_email_domain_val'>gmail.com</a></li>
+														<li><a href="#" data="hanafos.com" class='register_email_domain_val'>hanafos.com</a></li>
+														<li><a href="#" data="hanmir.com" class='register_email_domain_val'>hanmir.com</a></li>
+														<li><a href="#" data="korea.com" class='register_email_domain_val'>korea.com</a></li>
+														<li><a href="#" data="lycos.co.kr" class='register_email_domain_val'>lycos.co.kr</a></li>
+														<li><a href="#" data="netian.com" class='register_email_domain_val'>netian.com</a></li>
+													</ul>
+													<script>
+														$(function(){
+															$(".s-result").on("click focus",function(){
+																$(this).next().show();
+															});
+															$(document).on("click",".arrayBox ul li a",function(){
+																var text = $(this).text();
+																$(this).parent().parent().find("li a").removeClass("on");
+																$(this).parent().parent().hide();
+																$(this).addClass("on");
+																$(this).parent().parent().prev().text(text);
+																return false;
+															});
+															$(".register_email_domain_val").click(function(e){
+																e.preventDefault();
+																var register_email_domain_val = $(this).attr("data");
+																$("#register_email_domain").val(register_email_domain_val);
+																if (register_email_domain_val == ""){$("#register_email_domain").focus();}
+															});
+														});
+												</script>
+												</div>
+												<input type='button' name='' value='중복체크' />
+											</div>
+											<p>아이디, 비밀번호 확인을 위해 필요합니다.</p>
+											<div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" value="">
+														<span><i></i></span>
+													</label>
+													북큐브 뉴스레터를 통해 신간도서, 베스트셀러, 이벤트 소식 등 유익한 정보를 전해드립니다.
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="register-title"><p>선택입력항목</p></div>
+							<table class='radio-tbl'>
+								<caption>선택입력항목</caption>
+								<colgroup>
+									<col width="150px" />
+									<col width="*" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for='register_zipcode'>우편번호</label></th>
+										<td><input type='text' name='' id='register_zipcode' value='' /></td>
+									</tr>
+									<tr>
+										<th><label for='register_address'>상세주소</label></th>
+										<td><input type='text' name='' id='register_address' class="register_address" value='' /></td>
+									</tr>
+									<tr>
+										<th>전화번호</label></th>
+										<td>
+											<div class="option">
+												<label><input type="text" name="" value="" maxlength="3"></label>
+												<strong>-</strong>
+												<label><input type="text" name="" value="" title='전화번호 앞자리' maxlength="4"></label>
+												<strong>-</strong>
+												<label><input type="text" name="" value="" title='전화번호 뒷자리'  maxlength="4"></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>휴대폰 번호</label></th>
+										<td>
+											<div class="option">
+												<div class="arrayBox">
+													<a href="javasript:;" class="s-result">010</a>
+													<ul>
+														<li><a href="#" data="010" class="on">010</a></li>
+														<li><a href="#" data="011">011</a></li>
+														<li><a href="#" data="016">016</a></li>
+														<li><a href="#" data="017">017</a></li>
+														<li><a href="#" data="018">018</a></li>
+														<li><a href="#" data="019">019</a></li>
+													</ul>
+												</div>
+												<strong>-</strong>
+												<label><input type="text" name="" value="" title='전화번호 앞자리' maxlength="4"></label>
+												<strong>-</strong>
+												<label><input type="text" name="" value="" title='전화번호 뒷자리'  maxlength="4"></label>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="register-btn">
+								<input type='button' name='' value='수정' />
+								<a href="#" class="btn">취소</a>
+							</div>
+						</fieldset>
+					</form>
+					<table class="certify-tbl">
+						<caption>본인인증 여부</caption>
+						<colgroup>
+							<col width="150px" />
+							<col width="*" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>본인인증</th>
+								<td>
+									<div>
+										<img src="/images/certify-banner.png" alt='적립금 2000원, 북캐시 30% 즉시적립, 전종 10% 할인쿠폰' />
+										<div>
+											<a href="#" class="btn">아이핀 인증</a>
+											<a href="#" class="btn">휴대폰 인증</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="user-leave">
+						<p>회원 탈퇴를 원하실 경우 우측의 회원 탈퇴 버튼을 클릭하세요.</p>
+						<a href="#" class="btn">회원탈퇴</a>
+					</div>
+				</div>		
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+	
+			});	
+		</script>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="title" content="e북포털 북큐브">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+<meta property="og:url" content="http://www.bookcube.com/book/m/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/images/icon/m.bookcube.png" />
+<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+<link rel="stylesheet" type="text/css" href="/js/lib/swipe/swiper.css" />
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/lib/requirejs.min.js"></script>
+<script>
+	requirejs.config({
+		baseUrl : "/js",
+		paths : {
+			"jquery" : "lib/jquery-1.11.0.min",
+			"swiper" : "lib/swipe/swiper-2.1.min"
+		},
+		shim : {
+			"cookie" : ["jquery"],
+			"swiper" : ["jquery"]
+		}
+	});
+
+	require(["m.bookcube"]);
+</script>
+<style type="text/css">
+.isloading-overlay{position:relative;text-align:center;}
+.isloading-overlay .isloading-wrapper{background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:10%;z-index:9000;}
+.icon-refresh{background-position:-240px -24px;}
+</style>
+</head>
+<body>
+	<section>
+		<div class="h-title">
+			<a href="#">이전</a>
+			<h1>작품 공지</h1>
+		</div>
+		<div class="book-notice">
+			<ul>
+				<li>
+					<p>2017.07.06</p>
+					<p>오탈자 수정 안내</p>
+					<p>안녕하세요. 북큐브 관리자입니다.<br />오타로 지적해주셨던 부분 수정하였으며, 구매하신<br />도서를 삭제 후 재다운로드 받아주시기 바랍니다.<br />항상 독자님에게 관심에 감사하며, 구매가치가 있는
+						도서가 될 수 있도록 노력하는 북큐브가 되겠습니다.
+						감사합니다. (_ _ )
+					</p>
+				</li>
+				<li>
+					<p>2017.07.06</p>
+					<p>오탈자 수정 안내</p>
+					<p>안녕하세요. 북큐브 관리자입니다.<br />오타로 지적해주셨던 부분 수정하였으며, 구매하신<br />도서를 삭제 후 재다운로드 받아주시기 바랍니다.<br />항상 독자님에게 관심에 감사하며, 구매가치가 있는
+						도서가 될 수 있도록 노력하는 북큐브가 되겠습니다.
+						감사합니다. (_ _ )
+					</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<script>
+		require(['jquery','swiper'],function($){
+			$(".swiper-container").each(function(){
+				$(this).swiper({slidesPerView: 'auto'});
+			});
+
+			//공지사항
+				var list = $(".notice-list");
+				$(".notice-text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice-list:not(:animated)").css("margin-top"))+29+"px"
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice-text:last").prependTo(list);
+					});
+				},3000);
+
+		});
+
+
+
+	</script>
+</body>
+</html>

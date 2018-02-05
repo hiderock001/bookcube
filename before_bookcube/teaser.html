@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="/js/html5.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="/js/bookcube.js"></script>
+<script type="text/javascript" src="/js/jquery-easing.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			function list(){
+				$.ajax({
+					url: "/webtoon/list.json",
+					type:"get",
+					dataType:"json",
+					success:function(json){
+						var list = json.list.item;
+						for(var i = 0; i<list.length; i++){
+							var img = list[i].img;
+							var title = list[i].title;
+							var anchor = list[i].anchor;
+							
+							var li = $("<li>")
+							var ima = $("<img>").attr("src",img);
+							var div = $("<div>").addClass("teaser_div");
+							var p1 = $("<p>").addClass("thum_title").html(title);
+							var p2 = $("<p>").html(anchor);
+							var a = $("<a href='#webtoon'>프롤로그 보기</a>").addClass("prologue");
+							
+							var result = li.append(ima).append(div.append(p1).append(p2).append(a));
+
+							$(".teaser_list").append(result);
+						}
+					}
+				});
+			}
+			list();
+			
+		});
+		$(document).on("click",".prologue",function(){
+			var currentPage = 1;
+			var aa = $(this).parent().parent().index();
+			$.ajax({
+				url: "/mobile/webtoon/prologue.html",
+				dataType:"html",
+				success:function(data){
+					$("section").html(data);
+					$(window).scrollTop(0);
+					for(var k=0;k<3;k++){
+						for(var z=0;z<=9;z++){
+							var wImg = $("<img>").attr("src","http://localhost/mobile/images/webtoon/teaser/"+aa+"/"+k+z+".jpg");
+							$(".webtoon_view").append(wImg);
+						}
+					}
+					$(".webtoon_view img").error(function(){
+						$(this).attr("src","http://localhost/mobile/images/webtoon/teaser/blank.gif").hide();	
+					});
+				}
+			
+			});
+		});
+		var default_content="";
+		$(document).ready(function(){
+			checkURL();
+			$('.prologue').click(function(e){
+				checkURL(this.hash);
+			});
+			
+			default_content = $("body").html();
+			setInterval("checkURL()",250);
+		});
+		var lasturl="";
+		function checkURL(hash){
+			if(!hash) hash=window.location.hash;
+			if(hash != lasturl){
+				lasturl=hash;
+				if(hash=="")
+					$("body").html(default_content);
+					$.ajax({
+						url: "/mobile/webtoon/list.json",
+						type:"get",
+						dataType:"json",
+						success:function(json){
+							var list = json.list.item;
+							for(var i = 0; i<list.length; i++){
+								var img = list[i].img;
+								var title = list[i].title;
+								var anchor = list[i].anchor;
+								
+								var li = $("<li>")
+								var ima = $("<img>").attr("src",img);
+								var div = $("<div>").addClass("teaser_div");
+								var p1 = $("<p>").addClass("thum_title").html(title);
+								var p2 = $("<p>").html(anchor);
+								var a = $("<a href='#webtoon'>프롤로그 보기</a>").addClass("prologue");
+								
+								var result = li.append(ima).append(div.append(p1).append(p2).append(a));
+
+								$(".teaser_list").append(result);
+							}
+						}
+					});
+			}
+		}
+
+
+</script>
+</head>
+<body>
+	<div class="header webtoon">
+		<div class="header_contents">
+			<div class="header_top">
+				<div class="h_top_inner">
+					<ul class="lnb_left">
+						<li><a href="http://dev.bookcube.com/main.asp"><img src="/images/main/lnb1.jpg" alt="북큐브 서점" /></a></li>
+						<li><a href="http://dev.bookcube.com/storycube/main.asp"><img src="/images/main/lnb2.jpg" alt="웹소설" /></a></li>
+						<li class="lnb_on"><a href="#"><img src="/images/main/lnb3.jpg" alt="웹툰" /></a></li>
+						<li><a href="http://dev.bookcube.com/b2b.asp"><img src="/images/main/lnb4.jpg" alt="전자도서관" /></a></li>
+					</ul>
+					<ul class="lnb_right">
+						<li class="webtoon_teaser"><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- main_contents START!! -->
+	<div class="main_contents">
+		<div class="main_inner">
+			<div class="sns_box">
+				<p>웹툰 티저페이지를 SNS로 공유 해주세요!!</p>
+				<div class="sns_btn">
+					<a href="javascript:;" onclick="facebook();" class="sns fb"><span class="hide">FaceBook</span></a>
+					<a href="javascript:;" onclick="twitter();" class="sns tw"><span class="hide">Twitter</span></a>
+				</div>
+			</div>
+			<img src="/images/webtoon/teaser/webtoon_img1.jpg" alt="" class="webtoon_img" />
+			<ul class="teaser_list">
+			</ul>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="foot_inner">
+			<div class="foot_left">
+				<h4 class="f_logo"><img src="images/main/f_logo.png" alt="BOOKCUBE" /></h4>
+				<a href="#" target="_blank"><img src="images/main/cleansite.jpg" alt="클린사이트" /></a>&nbsp;
+				<a href="#" target="_blank"><img src="images/main/goodContents.jpg" alt="클린사이트" /></a>
+			</div>
+			<div class="foot_right">
+				<ul class="f_lnb">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#"><strong>작가/출판사 전용메뉴</strong></a></li>
+				</ul>
+				<h4 class="hide">북큐브 주소 및 정보</h4>
+				<ul class="f_lnb">
+					<li>상호 : 주식회사 북큐브네트웍스</li>
+					<li>대표이사 : 유철종</li>
+					<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+					<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+					<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+					<li>개인정보 관리 책임자 : 남지원</li>
+					<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+					<li>전화 1588-1925</li>
+				</ul>
+				<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

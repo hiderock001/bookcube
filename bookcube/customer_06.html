@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="e북포털 북큐브">
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<script type="text/javascript" src="/js/lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/lib/slick.min.js"></script>
+<script type="text/javascript" src="/js/cni-slider.min.js"></script>
+<script type="text/javascript" src="/js/slimScroll.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="header-top">
+				<div class="header-top-inner">
+					<div class="h-top">
+						<form action='' method='' onsubmit="return false" autocomplete="off">
+							<fieldset>
+								<legend>검색</legend>
+								<h1 class="logo"><a href="#">북큐브서점</a></h1>
+								<div class="search">
+									<input type='text' name='' />
+									<input type='button' name='' />
+								</div>
+								<ul class="my-lnb">
+									<li><a href="#">로그아웃</a></li>
+									<li><a href="#">MY</a></li>
+									<li><a href="#">책바구니</a></li>
+									<li class="alarm"><a href="#">알리미</a></li>
+								</ul>
+							</fieldset>
+						</form>
+
+						<div class="fastSearch">
+							<div class="fastRight">
+								<ul class="fastUl">
+									<li>
+										<a href="http://www.naver.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1601/160108111.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말던지</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://www.daum.net">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1207/120702507.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말까요</p><p>
+												</p><p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="http://bookcube.com" class="">
+											<div class="fsThum">
+												<span class="im_br">
+													<img src="http://bookimg.bookcube.com/70/1206/120600625.jpg" alt="">
+												</span>
+											</div>
+											<div class="fsInfo">
+												<p class="fsTitle">스텔라는 어떻게 농장을 구하던지 말자마자</p>
+												<p class="fsAuthor">유인경 저<em>|</em>로크미디어</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="auto-complete">
+								<p style="display: none;">자동완성 기능이 꺼져 있습니다.</p>
+								<p><a href="javascript:;" class="">자동완성 끄기</a></p>
+							</div>
+						</div>
+						<script>
+							$(function(){
+								// 총알검색창 display 조정
+								$(".search input").on("focus",function(){
+									var input = $(this);
+									var display = function(){
+									var len = input.val().length;
+										if(len > 0){
+											$(".fastSearch").css("display","block");
+										$(".selectList").hide();
+										}else{
+											$(".fastSearch").css("display","none");	
+										}
+									}
+									 input.on('input paste change click', function() {
+										setTimeout(display, 0);
+									});
+								});
+
+								// 검색창 닫기	
+								$("body").click(function(){
+									$(".fastSearch").fadeOut(100);
+								});
+								$(".fastSearch").on("click",function(event){
+									event.stopPropagation();
+								});
+
+								//키보드 기능 추가
+								
+								function keyup(e){
+									var i = 0;
+									var frsFlag = true;
+									var ie11Flag = false;
+									
+									$(".search input").on("keyup",function(e){
+										var a  = $(".fastUl li a");
+										var aLen = $(".fastUl li a").length -1;
+										var address = $(".fastUl li a.on").attr("href");
+										var valText = $(a).find(".fsTitle").text();
+										var agent = navigator.userAgent.toLowerCase();
+										if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1){
+											ie11Flag = true;
+										}
+										if(e.keyCode == 40){
+											if(i>aLen){
+												i = 0;	
+											}
+											if(ie11Flag){
+												if( e.keyCode == 40 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 39 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											i++;
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+						
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+											
+										}else if(e.keyCode == 38){
+											i--;
+											if(i<1){
+												i=aLen+1;
+											}
+											if(ie11Flag){
+												if( e.keyCode == 38 && frsFlag){
+													var ev = jQuery.Event( "keyup", { keyCode: 40 } );
+													jQuery(this).trigger(ev);
+													frsFlag = false;
+													return;
+												}
+											}
+											$(a).removeClass("on");
+											$(a).eq(i-1).addClass("on");
+										//	$(this).val($(a).eq(i-1).find(".fsTitle").text());
+												
+										}else if(e.keyCode == 13){
+											if($(a).hasClass("on")){
+												location.href=address;
+											}else{
+												frmSearchSubmit();
+											}		
+										}else if(e.keyCode == 39){
+											return
+										}else{
+											$(a).removeClass("on");
+											i=0;
+										}		
+									});	
+								}
+								
+								setTimeout(keyup,0);
+
+								$(".auto-complete a").on("click",function(){
+									if($(this).hasClass("off")){
+										$(this).removeClass("off");
+										$(this).text("자동완성 끄기");
+										$(".fastRight").show();
+										$(".auto-complete p:first").hide();
+									}else{
+										$(this).addClass("off");
+										$(this).text("자동완성 켜기");
+										$(".fastRight").hide();
+										$(".auto-complete p").show();
+									}								
+								});
+							});
+						</script>
+					</div> 
+					<div class="h-top-bottom">
+						<h2 class="hide">메인메뉴</h2>
+						<ul class="gnb">
+							<li><a href="#">서점</a></li>
+							<li><a href="#">웹소설</a></li>
+							<li><a href="#">웹툰</a></li>
+						</ul>
+						<ul class="lnb">
+							<li><a href="#">캐시충전</a>
+							<li><a href="#">고객센터</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="sub">
+			<div class="category-nav">
+				<div class="category-nav-inner">
+					<p>HOME > 고객센터</p>
+				</div>
+			</div>
+			<div class="contents-wrap">
+				<div class="customer">
+					<h3 class="coTitle">고객센터</h3>
+					<div class="customer-top-menu">
+						<ul>
+							<li><a href="#"><em>FAQ</em></a></li>
+							<li><a href="#"><em>공지사항</em></a></li>
+							<li><a href="#"><em>뷰어 이용안내</em></a></li>
+							<li><a href="#"><em>서비스 안내</em></a></li>
+							<li><a href="#" class="on"><em>:1문의</em></a></li>
+						</ul>
+					</div>
+					<div class="customer-contents">
+						<div class="customer-inner">
+							<div class="customer-contents">
+								<div class="customer-use-wrap">
+									<ul class="customer-s-menu one">
+										<li><a href="javascript:;" class="on">1:1 문의하기</a></li>
+										<li><a href="javascript:;" class="">문의 내역 확인</a></li>
+									</ul>	
+									<div class="one-ps">
+										<p>* 항목은 필수 입력 항목입니다.</p>
+									</div>
+									<form method="" action="">
+										<fieldset>
+											<legend>1:1 문의하기</legend>
+											<table class="onebyone" summary="1:1 문의">
+												<caption>1:1 문의하기</caption>
+												<colgroup>
+													<col width="100px">
+													<col width="*">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th><span>*</span>문의유형</th>
+														<td>
+															<div class="select-wrap">
+																<div class="one-sel">
+																	<p class="one-select">오류 문의</p>
+																	<ul class="one-list sel1" style="display: none;">
+																		<li data="">오류 문의</li>
+																		<li data="">작품관련 문의</li>
+																		<li data="">이벤트관련 문의</li>
+																		<li data="">이용관련 문의</li>
+																		<li data="">취소/환불/현금영수증 발급</li>
+																		<li data="">원고투고/제휴문의</li>
+																	</ul>
+																</div>
+																<div class="one-sel">
+																	<p class="one-select">2차 선택</p>
+																	<ul class="one-list sel2 on"><li data="">전자책 다운로드 오류</li><li data="">결제오류</li><li data="">앱오류</li><li data="">도서 파일 오류</li><li data="">기타 오류</li></ul>
+																</div>
+															</div>
+															<div class="select-ps"></div>
+														</td>
+													</tr>
+													<tr>
+														<th><span>*</span>문의제목</th>
+														<td><input type="text" name="" class="q-title required"></td>
+													</tr>
+													<tr>
+														<th><span>*</span>문의내용</th>
+														<td>
+															<textarea cols="5" rows="8"></textarea>
+														</td>
+													</tr>
+													<tr>
+														<th>파일첨부</th>
+														<td>
+															<div class="one-file">
+																<p><input type="text" name="" readonly="readonly" id="fileName" class="file_name"></p>
+																<p class="file-btn">찾아보기<input type="file" name="" value="찾아보기"></p>
+															</div>
+															<p class="one-s-ps">*2MB 이하의 이미지 파일 및 5MB  이하의 *hwp, *doc, *docx 확장자만 첨부 가능합니다.</p>
+														</td>
+													</tr>
+													<tr>
+														<th>답변알림</th>
+														<td>
+															<div class="one-reply-alram">
+																<input type="text" name="" class="q-reply">
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" value="">
+																		<span><i></i></span>
+																	</label>
+																	<p>답변 알림 받기</p>
+																</div>	
+															</div>
+															<p class="one-s-ps">*메일 주소 작성 시 답변 완료 내용을 발송해드립니다.</p>
+														</td>
+													</tr>
+													<tr>
+														<th>기기정보</th>
+														<td class="q-device">PC</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="one-btn">
+												<input type="button" name="" class="" value="등록하기">
+											</div>
+										</fieldset>
+									</form>
+									<script>
+										$(function(){
+											$(".one-select").on("click",function(){
+												if($(this).hasClass("on")){
+													$(this).removeClass("on");
+													$(this).next().hide();
+												}else{
+													$(this).addClass("on");
+													$(this).next().show();
+												}
+													
+											});
+											$(document).on("click",".one-list li",function(){
+												var text = $(this).text();
+												$(this).parent().prev().text(text).removeClass("on");
+												$(this).parent().hide();	
+											});
+
+											//문의 유형 뎁스 분류
+											var select0 = '',select1 = '',select2 = '',select3 = '',select4 = '',select5 = '';
+											select0 +=
+											"<li data=''>전자책 다운로드 오류</li>"+
+											"<li data=''>결제 오류</li>"+
+											"<li data=''>앱오류</li>"+
+											"<li data=''>도서 파일 오류</li>"+
+											"<li data=''>기타 오류</li>";
+											select1 +=
+											"<li data=''>작품 출간일정 문의</li>"+
+											"<li data=''>오탈자 문의</li>"+
+											"<li data=''>기타 작품 문의</li>";
+											select2 +=
+											"<li data=''>이벤트 적립금 미지급</li>"+
+											"<li data=''>기타 이벤트 문의</li>";
+											select3 +=
+											"<li data=''>가입/탈퇴/로그인</li>"+
+											"<li data=''>본인/성인인증</li>"+
+											"<li data=''>서비스 이용문의</li>"+
+											"<li data=''>전자도서관</li>"+
+											"<li data=''>제안 및 개선 사항</li>"+
+											"<li data=''>쿠폰/상품권 문의</li>"+
+											"<li data=''>기타 문의</li>";
+											select4 +=
+											"<li data=''>주문 취소</li>"+
+											"<li data=''>북캐시 환불 요청</li>"+
+											"<li data=''>현금영수증 발급신청</li>";
+											select5 +=
+											"<li data=''>개인저자 투고문의</li>"+
+											"<li data=''>출판사 제휴문의</li>";
+
+											// 문의유형 사전 안내 문구
+											var ps0 = '',ps1 = '',ps2 = '',ps3 = '',ps4 = '',ps5 = '',ps6 = '',ps7 = '',ps8 = '',ps9 = '',ps10 = '';
+											ps0 += 
+											"<p><span class='one-dot'>*</span>다운로드 오류시 먼저 '내서재'에서 도서 삭제 후 '구매내역'에서 재다운로드 해보세요.</p>"+
+											"<p><span class='one-dot'>*</span>북큐브 앱이 최신 버전인지 확인 해보세요.[북큐브앱>내서재>설정>하단 '최신 버전 업데이트']</p>";
+											ps1 += 
+											"<p><span class='one-dot'>*</span>북큐브 앱이 최신 버전인지 확인 해보세요.[북큐브앱>내서재>설정>하단 '최신 버전 업데이트']</p>";
+											ps2 += 
+											"<p><span class='one-dot'>*</span>북큐브 앱이 최신 버전인지 확인 해보세요.[북큐브앱>내서재>설정>하단 '최신 버전 업데이트']</p>";
+											ps3 += 
+											"<p><잠깐 확인!>*혹시 적립금으로 결제하셨나요?추가적립 이벤트는 '적립금'으로 결제시 혜택을 받을 수 없습니다.(이벤트 유의사항 참고) 결제방법을 '북캐시'로 변경 후 이벤트 추가적립금을 받고 싶으신 경우, '북캐시'가 충전되어 있는지 확인 후 문의 남겨 주세요.</p>";
+											ps4 += 
+											"<p><span class='one-dot'>*</span>탈퇴는 pc에서 가능합니다.[PC 북큐브 접속 > 로그인 > 마이페이지 > 회원정보 수정 > 하단 탈퇴 버튼 클릭]</p>";
+											ps5 +=
+											"<p><span class='one-dot'>*</span>해외에서 직접 본인/성인인증이 어려운 경우 신분증 사진을 첨부해 주십시오. (이름 및 생년월일을 제외한 개인정보 및 얼굴사진을 가리고 첨부해주세요.)</p>"
+											ps6 += 
+											"<p><span class='one-dot'>*</span>전자도서관 문의는 이용하시는 도서관 기관명, 아이디와 함께 아래의 메일주소로 문의 주시면 더욱 빠른 처리가 가능합니다. 1588-1925 (내선 2번) library@bookcube.com</p>";
+											ps7 += 
+											"<p><span class='one-dot'>*</span>다운로드를 받지 않은 전자책에 대해서는 직접 취소하실 수 있습니다.[마이페이지 > 주문내역 확인 > 전자책 선택 > 주문취소 요청]</p>";
+											ps8 += 
+											"<p><span class='one-dot'>*</span>북캐시 환불은 화요일까지 접수해주신 분에 한하여, 매주 수요일 일괄 처리됩니다.</p>"+
+											"<p><span class='one-dot'>*</span>환불을 신청하는 회원과 예금주의 성함이 일치해야 합니다.</p>"+
+											"<p><span class='one-dot'>*</span>환불금액은 고객님의 계좌로 입금되며, 회원약관에 명시된 바와 같이 환불 수수료 (10%와 1,000원 중 큰 금액)을 공제합니다.</p>"+
+											"<p><span class='one-dot'>*</span>북캐시 구매시 추가로 적립된 적립금을 사용하셨다면, 그 금액을 제외하고 환불됩니다.</p>";
+											ps9 += 
+											"<p><span class='one-dot'>*</span>메일주소를 입력하지 않으시면 회원가입시 등록하신 이메일로 발송이 됩니다.</p>";
+											ps10 += 
+											"<p><span class='one-dot'>*</span>원고투고 및 계약 관련 기본적인 안내는 [PC > 북큐브 서점 > 하단 '제휴/투고문의']를 확인 해주세요.</p>";
+						
+											
+
+											var selectPs = $(".select-ps");
+											$(".sel1 li").on("click",function(){
+												var idx = $(this).index();
+												var textContent = $(".onebyone textarea");
+												textContent.text("");
+												selectPs.html("");
+												if($(".sel2").hasClass("on")){
+													$(".sel2").prev().text("2차 선택");
+													$(".sel2").removeClass("on");
+													$(".sel2").addClass("on");
+													$(".sel2").html(eval("select"+idx));
+												}else{
+													$(".sel2").html(eval("select"+idx)).addClass("on");		
+												}
+											});
+											//텍스트 아레아
+											var textarea =[
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*오류시간 : \n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*도서명 및 연재회차 : \n\n*오류발생 상황(자세한 설명) : \nex.내서재에서 세트도서를 보는 도중 2권 파일이 열리지 않아요.\n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*결제 오류시간 : \n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*도서명 및 연재회차/북캐시 : \n\n*결제수단 : \n\n*오류발생 상황(자세한 설명) : \nex.연재소설 이어보기 결제하려는데 충전한 북캐시가 안보여요\n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*기기버전(안드로이드버전,IOS버전) : \n\n*북큐브 앱 버전 : \n[북큐브 앱 > 설정 > 버전정보]\n\n*오류 발생 상황(자세한 설명) : \n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n*오류 시간: \n\n*사용환경(PC,IOS,안드로이드 등) : \n\n*오류 도서명 및 연재회차 : \n\n*오류 발생 지점(도서 % 또는 문제가 있는 문장 문구): \n\n*오류발생 상황(자세한 설명) : \nex. 내서재에서 세트도서를 보는 도중 2권 파일이 열리지 않아요. \n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*오류시간 : \n\n*사용환경(PC,IOS,안드로이드등) : \n\n*도서명 및 연재회차 : \n\n*오류 발생 상황(자세한 설명) : \n\n*오류메세지가 뜨는 경우 해당 화면을 캡쳐하여 꼭 첨부해주세요.',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*문의 작품 유형(일반도서/로맨스/BL/웹툰) : \n*문의 작품 : ',
+
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*문의 작품 유형(일반도서/로맨스/BL/웹툰) : \n*문의 작품 : \n*오탈자 내용 : ',
+
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*이벤트 도서 : \n\n*문의 내용 : ',
+											
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*이벤트 명 : \n\n*이벤트 도서 : \n\n*문의 및 불편내용',
+
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*쿠폰,상품권 명(또는 받은 경로) : \n*문의 내용 : ',
+
+											'*결제일 : \n\n*결제수단 : \n\n*환불금액 : \n\n*은행 : \n\n*계좌번호 : \n\n*예금주명 : \n\n*환불사유 : ',
+
+											'*구매일시 : \n\n*성함 : \n\n*휴대폰번호 : \n\n*메일주소 : \n\n*구매한 상품 이름(전자책 또는 북캐시) : \n\n전자책의 경우 반드시 전자책 이름, 주문 번호에 대한 정보를 주셔야 합니다.[마이페이지 > 주문내역 확인에서 조회가능]\n\n*결제수단 : ',
+
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*투고 장르 : \n*문의 내용 : ',
+
+											'정확한 확인을 위하여 입력 양식을 작성해주세요.\n\n*출판 장르 : \n*문의 내용 : '
+			
+											
+											]
+											
+
+											$(document).on("click",".sel2 li",function(){
+												var textContent = $(".onebyone textarea");
+												var text =$(this).text();
+												selectPs.html("");
+												switch(text){
+													case "전자책 다운로드 오류" : textContent.text(textarea[0]); selectPs.html(ps0);
+													break;
+													case "결제 오류" : textContent.text(textarea[1]);
+													break;
+													case "앱오류" : textContent.text(textarea[2]); selectPs.html(ps1);
+													break;
+													case "도서 파일 오류" : textContent.text(textarea[3]);
+													break;
+													case "기타 오류" : textContent.text(textarea[4]); selectPs.html(ps2);
+													break;
+													case "작품 출간일정 문의" : textContent.text(textarea[5]);
+													break;
+													case "오탈자 문의" : textContent.text(textarea[6]);
+													break;
+													case "기타 작품 문의" : textContent.text(textarea[5]);
+													break;
+													case "이벤트 적립금 미지급" : textContent.text(textarea[7]); selectPs.html(ps3);
+													break;
+													case "기타 이벤트 문의" : textContent.text(textarea[8]);
+													break;
+													case "가입/탈퇴/로그인" : selectPs.html(ps4);
+													break;
+													case "본인/성인인증" : selectPs.html(ps5);
+													break;
+													case "전자도서관" : selectPs.html(ps6);
+													break;
+													case "쿠폰/상품권 문의" : textContent.text(textarea[9]);
+													break;
+													case "주문 취소" :   selectPs.html(ps7);
+													break;
+													case "북캐시 환불 요청" : textContent.text(textarea[10]); selectPs.html(ps8);
+													break;
+													case "현금영수증 발급신청" : textContent.text(textarea[11]); selectPs.html(ps9);
+													break;
+													case "개인저자 투고문의" : textContent.text(textarea[12]); selectPs.html(ps10);
+													break;
+													case "출판사 제휴문의" : textContent.text(textarea[13]); selectPs.html(ps10);
+													break;
+													default : textContent.text(""); 
+												}
+											});
+
+											// 첨부 파일 확장자 검사 및 용량 체크
+											$(".onebyone input[type='file']").on("change", function() {	
+												var ext = $(this).val().split('.').pop().toLowerCase(); 
+												if($.inArray(ext, ['jpg','jpeg','gif','png','bmp','hwp', 'doc', 'docx']) == -1) {
+													window.alert('이미지 파일과 hwp,doc,docx 확장자 파일만 첨부 가능합니다.');
+													resetFormElement($(this));
+												}else{
+													if($.inArray(ext, ['jpg','jpeg','gif','png','bmp']) == -1){ // 문서파일일때
+														var fileSize =this.files[0].size;
+														var maxSize = 5 * 1024 * 1024;
+														if(fileSize > maxSize){
+															alert("파일용량 5MB를 초과했습니다.");
+															resetFormElement($(this));
+														}
+													}else if($.inArray(ext, ['hwp','doc','docx']) == -1){  //이미지 파일일때
+														var fileSize =this.files[0].size;
+														var maxSize = 2 * 1024 * 1024;
+														if(fileSize > maxSize){
+															alert("파일용량 2MB를 초과했습니다.");
+															resetFormElement($(this));
+														}
+													}
+												}
+											});
+											// 첨부파일 실패시 첨부파일 form 리셋
+											function resetFormElement(e) {
+												e.wrap('<form>').closest('form').get(0).reset(); 
+												e.unwrap(); 
+											}
+											
+											
+											// 필수 입력 항목 체크
+											var _btn = $(".one-btn input[type='submit']");
+											_btn.on("click",function(){
+												var sel2Prev = $(".sel2").prev().text();
+												if(!$(".sel2").hasClass("on") || sel2Prev.match("2차 선택") || $(".required").val().length < 1 || $(".onebyone textarea").val().length < 1){
+													alert("필수 항목을 입력해 주세요.");
+													return false;
+												}
+											});
+											
+											
+
+										});
+
+
+									</script>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="main-bottom">
+				<div class="main-bottom-inner">
+					<div class="cs">
+						<div class="csLeft">
+							<div>
+								<ul class="csList">
+									<li><a href="#">쿠폰등록</a></li>
+									<li><a href="#">전자도서관</a></li>
+									<li><a href="#">앱 다운로드</a></li>
+									<li><a href="#">기기관리</a></li>
+								</ul>
+							</div>
+							<div class="csBoard">
+								<ul>
+									<li><a href="#">[공지] 안드로이드 북큐브 앱(v2.0.14) 업데이트 공지</a></li>
+									<li><a href="#">[공지] 북큐브 전용 단말기(B-612, B-815) 서비스 종료 및 보상 공지</a></li>	
+								</ul>
+								<a href="#" class="more">더보기</a>
+							</div>
+						</div>
+						<div class="csRight"><span>고객센터 전화상담 1588-1925</span></div>
+					</div>
+					<div style="text-align:center;">
+						<img src="/images/main/f_banner.png" usemap="#f_banner" border="0">
+						<map name="f_banner">
+							<area shape="RECT" coords="0,40,186,85" href="https://play.google.com/store/apps/details?id=com.bookcube.bookplayer" title="구글스토어" target="_blank">
+							<area shape="RECT" coords="192,40,379,84" href="https://itunes.apple.com/kr/app/bugkyubeu-naeseojae/id576288015?mt=8" title="앱스토어" target="_blank">
+							<area shape="RECT" coords="749,40,794,85" href="http://blog.naver.com/bookcube_" title="네이버 블로그" target="_blank">
+							<area shape="RECT" coords="802,39,848,85" href="https://www.facebook.com/bookcube/?ref=bookmarks" title="페이스북" target="_blank">
+							<area shape="RECT" coords="854,39,899,86" href="https://twitter.com/Bookcube" title="트위터" target="_blank">
+						</map>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-inner">
+				<div class="foot_left">
+					<h3 class="f_logo">북큐브네트웍스</h3>
+					<a href="http://www.cleansite.org/" target="_blank" title="새창으로 열림"><img src="/images/main/cleansite.jpg" alt="클린사이트"></a>
+					<a href="http://www.cleansite.org/" target="_blank"><img src="/images/main/goodContents.png" alt="클린사이트"></a>
+					<a href="javascript:;"><img src="/images/main/kisa.png" alt="클린사이트"></a>
+				</div>
+				<div class="foot_right">
+					<ul class="f_lnb large">
+						<li><a href="http://www.bookcubenetworks.co.kr/">회사소개</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24007&amp;pageNum=10">이용약관</a></li>
+						<li><a href="http://www.bookcube.com/customer.asp?page=notice_view&amp;num=24264&amp;pageNum=10">개인정보보호정책</a></li>
+						<li><a href="http://www.bookcube.com/partner.asp">제휴문의</a></li>
+						<li><a href="http://scm.bookcubenetworks.com"><strong>작가/출판사 전용메뉴</strong></a></li>
+					</ul>
+					<h4 class="hide">북큐브 주소 및 정보</h4>
+					<ul class="f_lnb">
+						<li>상호 : 주식회사 북큐브네트웍스</li>
+						<li>대표이사 : 유철종</li>
+						<li>주소 : 우)152-743 서울 구로구 디지털로 33길 27, 삼성IT밸리 514호</li>
+						<li class="no_ba">사업자 등록번호 : 113-86-24199</li>
+						<li>통신판매업 신고번호 :  제 2008-서울구로-0747호</li>
+						<li>개인정보 관리 책임자 : 남지원</li>
+						<li class="no_ba">E-mail : <a href="mailto:webmaster＠bookcube.com">webmaster@bookcube.com</a></li>
+						<li>전화 1588-1925</li>
+					</ul>
+					<p class="copyright">COPYRIGHT © 2013 By BOOKCUBENETWORKS CO,LTD., ALL RIGHTS RESERVED</p>
+				</div>	
+			</div>
+		</footer>
+
+		<script>
+			$(function(){
+				$(".mds").slick({slidesToShow: 5,slidesToScroll: 1,	infinite: true});
+				
+				$(".all-category a").on("click",function(){
+					$(".m-category").fadeIn();	
+				});
+				$(".category-close").on("click",function(){
+					$(".m-category").fadeOut();		
+				});
+				//알리미
+				var timer = 0;
+				$(".alarm").on("mouseenter",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(".alarm-wrap").fadeIn();
+					}
+				});
+				$(".alarm-wrap").on("mouseleave",function(){
+					var speed = Math.abs(timer-$.now());
+					if(speed > 300) {
+						timer = $.now();
+						$(this).fadeOut();
+					}
+				});
+
+				$('.radio').click(function(){
+					$(this).parent().find('span').removeClass('radio_on').addClass('radio_off');
+					$(this).find('span').removeClass('radio_off').addClass('radio_on');
+					$('#'+$(this).attr('for')).attr('checked','checked');
+				});
+	
+			});	
+		</script>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="title" content="">
+<meta property="og:type" content="books.book">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta name="viewport" content="width=900">
+<title>[e북포털 북큐브]새로운 독서의 시작, 북큐브 전자책</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon/bookcube_ci.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib.ListAJAX.js"></script>
+<script type="text/javascript" src="js/bookcube.js"></script>
+<script type="text/javascript" src="js/jquery-easing.js"></script> <!-- 추가 되었습니다 -->
+</head>
+<body id="common">
+	<div class="common-wrap">
+		<h1 class="hide">북큐브 회원가입 페이지</h1>
+		<div class="c-header">
+			<div class="header-top">
+				<div class="h-top-inner">
+					<ul class="c-gnb">
+						<li><a href="#"><img src="/images/common/global_menu1_bookcube.gif" alt="북큐브 서점" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu2_storycube.gif" alt="웹소설" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu2_webtoon.gif" alt="웹툰" /></a></li>
+						<li><a href="#"><img src="/images/common/global_menu4_library.gif" alt="전자도서관" /></a></li>
+					</ul>
+					<div>
+						<ul>
+							<li class="bold"><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">이용안내</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-contents">
+			<div class="title-box">
+				<h2><img src="/images/login/title-join.png" alt="회원가입" /></h2>
+			</div>
+			<div class="c-inner">
+				<form>
+					<fieldset>
+						<legend>회원가입</legend>
+						<div class="join-wrap">
+							<!-- 경고창 대신 input 다음의 p 태그에 해당 경고문이 들어갑니다 -->
+							<div class="join-info">
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="아이디" maxlength="20" class="strId" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="password" name="" placeholder="비밀번호" class="strPass" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="password" name="" id="" placeholder="비밀번호 확인" class="rePass" />
+									<p class="check"></p>
+								</div>
+							</div>
+							<div class="join-info mt20">
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="이름" class="strName" />
+									<p class="check"></p>
+								</div>
+								<div class="js-join">
+									<input type="text" name="" id="" placeholder="이메일" class="strMail" />
+									<p class="check"></p>
+								</div>
+							</div>
+							<div class="join-check">
+								<label><span><input type="checkbox" name="" id="" />전체 동의</span></label>
+								<label><span><input type="checkbox" name="" id="" />이용약관 동의</span><a href="#">자세히보기</a></label>
+								<label><span><input type="checkbox" name="" id="" />개인정보 취급 방침 동의</span><a href="#">자세히보기</a></label>
+								<label><span><input type="checkbox" name="" id="" />이메일 수신 동의</span></label>
+							</div>
+							<input type="submit" name="" id="" value="가입 하기" />
+						</div>
+					</fieldset>
+				</form>
+				<script>				
+					$(function(){
+						$(".join-info input[type='text']:first").focus().css("border","1px solid #dc4510");;
+						$(".js-join input").on("focus",function(){
+							$(".js-join p.check").hide();
+							if($(this).hasClass("strId")){
+								$(this).attr("placeholder","6~20자 영문, 숫자");
+							}
+							if($(this).hasClass("strPass")){
+								$(this).attr("placeholder","최소 6자 이상");
+								with(form){
+									init();
+									id();
+								}
+							}else if($(this).hasClass("rePass")){
+								with(form){
+									init();
+									id();
+									pass();
+								}
+							}else if($(this).hasClass("strName")){
+								with(form){
+									init();
+									id();
+									pass();
+									repass();
+								}
+							}else if($(this).hasClass("strMail")){
+								with(form){
+									init();
+									id();
+									pass();
+									repass();
+									name();
+								}
+							}
+							$(this).css("border","1px solid #dc4510");
+						});
+						$(".js-join input").on("blur",function(){
+							if($(this).hasClass("strId")){
+								$(this).attr("placeholder","아이디");
+							}
+							if($(this).hasClass("strPass")){
+								$(this).attr("placeholder","비밀번호");
+							}
+							$(this).css("border","1px solid #ccc");
+						});
+					});
+					
+					var form = {
+						init : function(){
+							this._idval = $(".strId").val();
+							this._passval = $(".strPass").val();
+							this._repassval = $(".rePass").val();
+							this._strName = $(".strName").val();
+							this._strMail = $(".strMail").val();
+							this.idCheck =  /^[a-z][a-z0-9_-]{5,19}$/;
+							this.passCheck = /^[A-Za-z0-9_-]{6,18}$/;
+							this.mailCheck = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+							this.phoneCheck = /^\d{3}\d{3,4}\d{4}$/;
+						},
+						id : function(){
+							if(!form.idCheck.test(form._idval)){
+								$(".strId").next().text("6~20자의 영문 및 숫자로만 가능합니다.").show();
+								if(!form._idval){
+									$(".strId").next().text("필수 정보입니다.").show();
+								}
+								return false;					
+							}
+						},
+						pass : function(){
+							if(!form.passCheck.test(form._passval)){
+								$(".strPass").next().text("6자 이상만 입력 가능합니다.").show();
+								if(!form._passval){
+									$(".strPass").next().text("필수 정보입니다.").show();
+								}
+								return false;	
+							}
+						},
+						repass : function(){
+							if(form._passval != form._repassval){
+								$(".rePass").next().text("비밀번호가 일치하지 않습니다.").show();
+								if(!form._repassval){
+									$(".rePass").next().text("필수 정보입니다.").show();
+								}
+								return false;
+							}
+						},
+						name : function(){
+							if(!form._strName){
+								$(".strName").next().text("필수 정보입니다.").show();
+								return false;
+							}
+							
+						},
+						mail : function(){
+							if(!form.mailCheck.test(form._strMail)){
+								$(".strMail").next().text("잘못된 이메일 주소입니다.").show();
+								if(!form._strMail){
+									$(".strMail").next().text("필수 정보입니다.").show();
+								}
+								return false;
+							}
+							
+						}
+					}
+				</script>
+			</div>
+		</div>
+	</div>	
+
+	<div id="login" class="login-pop simple-login" style="display:block;">
+		<div class="login-bg"></div>
+		<div class="pop">	
+			<div class="pop-top">
+				<a href="javascript:;" class="close">close</a>
+			</div>
+			<div class="join-wrap">
+				<p class="join-title">북큐브 간편 가입하기</p>
+				<label class="fourteen"><input type="checkbox" name='' /> 만 14세 미만입니다.</label>
+				<div class="login-btn book-cube">
+					<a href="javascript:;">회원가입</a>
+				</div>
+			</div>
+			<div class="join-wrap">
+				<p class="join-title second">SNS 간편 가입하기</p>
+				<div class="pil-dok">
+					<p class="pil-top">SNS 간편 가입의 경우 기존 북큐브 계정과 별도의 계정이 생성 됩니다.</p>
+					<div class="pil-link">
+						<p><a href="https://www.bookcube.com/member/id_search.asp">북큐브 가입 계정 확인 &gt;</a></p>
+						<em>|</em>
+						<p><a href="http://www.bookcube.com/customer.asp?page=notice&page2=view&num=65079&pageNum=1">북큐브 계정과 연동하기 &gt;</a></p>
+					</div>
+				</div>
+				<div class="simple-login-btn">
+					<div class="login-btn">
+						<a href="javascript:;"><p class="register"><span class="kakaotalk">카카오톡</span>카카오로 회원가입</p></a>
+					</div>
+					<div class="login-btn">
+						<a href="javascript:;"><p class="register"><span class="naver">네이버</span>네이버로 회원가입</p></a>
+					</div>
+					<div class="login-btn">
+						<a href="javascript:;"><p class="register"><span class="facebook">페이스북</span>페이스북으로 회원가입</p></a>
+					</div>
+					<div class="login-btn">
+						<a href="javascript:;"><p class="register"><span class="twitter">트위터</span>트위터로 회원가입</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="simple-login" class="login-pop" style="display:none;">
+		<div class="login-bg"></div>
+		<div class="pop">
+			<form>
+				<fieldset>
+					<legend>로그인</legend>
+					<div class="pop-top">
+						<a href="javascript:;" class="close">close</a>
+					</div>
+					<div class="join-wrap">
+						<div class="join-info">
+							<div class="js-join">
+								<input type="text" name="" id="" placeholder="아이디" maxlength="20" class="strId" />
+								<p class="check">fff</p>
+							</div>
+							<div class="js-join">
+								<input type="password" name="" placeholder="비밀번호" class="strPass" />
+								<p class="check"></p>
+							</div>
+						</div>
+						<div class="m-login">
+							<label><input type="checkbox" name="" id="" />로그인 유지</label>
+							<p><a href="javascript:;" class="find-id">아이디 찾기</a><em>|</em><a href="javascript:;" class="find-pwd">비밀번호 찾기</a></p>
+						</div>
+						<div class="simple-login-btn">
+							<p class="now-start"><span>지금 시작하세요!</span><a href="#">북큐브 회원가입 〉</a></p>
+							<input type="submit" name="" id="" value="로그인" />
+						</div>
+						<div class="simple-login-btn or">
+							<p class="or">또는</p>
+							<div class="login-btn">
+								<a href="javascript:;"><span class="kakaotalk">카카오톡</span>카카오로 로그인</a>
+							</div>
+							<div class="login-btn">
+								<a href="javascript:;"><span class="naver">네이버</span>네이버로 로그인</a>
+							</div>
+							<div class="login-btn">
+								<a href="javascript:;"><span class="facebook">페이스북</span>페이스북으로 로그인</a>
+							</div>
+							<div class="login-btn">
+								<a href="javascript:;"><span class="twitter">트위터</span>트위터로 로그인</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			// 닫기
+			$(".pop-top .close").on("click",function(){
+				$(this).parents().find(".login-pop").hide();	
+			});
+			$(".login-bg").on("click",function(){
+				$(".login-pop").fadeOut(100);
+			});				
+			$(".join-info input[type='text']:first").focus().css("border","1px solid #dc4510");
+			
+			$(".js-join input").on("focus",function(){
+				$(".js-join p.check").hide();
+				$(this).css("border","1px solid #dc4510");
+			});
+			$(".js-join input").on("blur",function(){
+				$(this).css("border","1px solid #ccc");
+			});
+			var _bookBtn = $(".book-cube");
+			_bookBtn.on("click",function(){
+				$(this).parents().find(".login-pop").hide();		
+			});
+			var _simpleBtn = $(".simple-login-btn a");
+			_simpleBtn.on("click",function(){
+				$(".login-pop").hide();
+				$("#simple-login").show();			
+			});
+
+
+		});
+	</script>
+</body>
+</html>

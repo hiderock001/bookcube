@@ -1,0 +1,51 @@
+#view-footer .bar .button.btn-fullscreen {
+	display:none !important;
+}
+[data-platform=desktop] #view-header .bar .title {
+	top:2px;
+}
+[data-platform=desktop] #view-footer .btn-group .btn-group-line {
+	display:inline-block;
+	margin-top:6px;
+	width:16px;
+	text-align:center;
+}
+[data-platform=desktop] #view-header .share .info {
+	height:50px;
+	overflow:hidden;
+	line-height:56px;
+}
+[data-platform=desktop] #view-footer .bar .btn-screen2 {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .bar .btn-screen3 {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .bar .ui-left .btn-one-page {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .bar .ui-left .btn-two-page {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .bar .ui-right .btn-one-page {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .bar .ui-right .btn-two-page {
+	padding-bottom:6px;
+}
+[data-platform=desktop] #view-footer .button.btn-prev {
+	font-size:12px;
+}
+[data-platform=desktop] #view-footer .button.btn-next {
+	font-size:12px;
+}
+[data-platform=desktop][data-direction=left] #view-footer .button.btn-prev {
+	font-size:12px;
+}
+[data-platform=desktop][data-direction=left] #view-footer .button.btn-next {
+	font-size:12px;
+}
+
+#view-footer #volume_desktop {
+	top:16px;
+}

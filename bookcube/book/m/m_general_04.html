@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="title" content="e북포털 북큐브">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta name="keyword" content="북큐브,bookcube,책,전자책,ebook,스토리큐브,북큐브웹툰,서점,웹소설,웹툰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[e북포털 북큐브] 새로운 독서의 시작, 북큐브 전자책">
+<meta property="og:description" content="새로운 독서의 시작, 전자책 서점,웹소설,웹툰을 지금 바로 만나보세요.">
+<meta property="og:site_name" content="[e북포털 북큐브]">
+<meta property="og:image" content="http://www.bookcube.com/images/common/logo_foot.gif">
+<meta property="og:url" content="http://www.bookcube.com/book/m/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="apple-touch-icon-precomposed" href="http://www.bookcube.com/images/icon/m.bookcube.png" />
+<link rel="stylesheet" type="text/css" href="/book/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/book/css/m_book.css" />
+<link rel="stylesheet" type="text/css" href="/js/lib/swipe/swiper.css" />
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/lib/requirejs.min.js"></script>
+<script>
+	requirejs.config({
+		baseUrl : "/js",
+		paths : {
+			"jquery" : "lib/jquery-1.11.0.min",
+			"swiper" : "lib/swipe/swiper-2.1.min"
+		},
+		shim : {
+			"cookie" : ["jquery"],
+			"swiper" : ["jquery"]
+		}
+	});
+
+	require(["m.bookcube"]);
+</script>
+<style type="text/css">
+.isloading-overlay{position:relative;text-align:center;}
+.isloading-overlay .isloading-wrapper{background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:10%;z-index:9000;}
+.icon-refresh{background-position:-240px -24px;}
+</style>
+</head>
+<body>
+	<section>
+		<form action='' method=''>
+			<fieldset>
+				<div class="h-title">
+					<a href="#">이전</a>
+					<h1>서평쓰기</h1>
+					<div>
+						<button>수정</button>
+						<button>삭제</button>
+					</div>
+				</div>
+				<div class="rating">
+					<div class="my-rating">
+						<p class="my-vote">나의 별점 (<span>3.0</span>)</p>
+						<div class="star-rating">
+							<div class="star-gogo">
+								<div data='1'><span>별점1</span></div>
+								<div data='2'><span>별점2</span></div>
+								<div data='3'><span>별점3</span></div>
+								<div data='4'><span>별점4</span></div>
+								<div data='5'><span>별점5</span></div>
+								<div data='6'><span>별점6</span></div>
+								<div data='7'><span>별점7</span></div>
+								<div data='8'><span>별점8</span></div>
+								<div data='9'><span>별점9</span></div>
+								<div data='10'><span>별점10</span></div>
+							</div>
+						</div>
+						<p class="spoiler"><input type="checkbox" id='spoiler' /><label for='spoiler'>스포일러가 포함되어 있습니다.</label></p>
+					</div>
+					<script>
+						require(['jquery','swiper'],function($){
+							var star = {};
+							star = {
+								init : function(){
+									this.start();
+									this.move();
+									this.end();
+								},
+								st : {},
+								start : function(){
+									var _that = this;
+									$(".star-gogo > div").on("touchstart",function(e){
+										var idx = $(".star-gogo").children().index(this);
+										var event = e.originalEvent.touches[0];
+										var startX = event.pageX;
+										_that.st = startX;
+										for (var i = 0; i < 10; i++) {
+											if (i <= idx) {
+												$(".star-gogo > div").eq(i).addClass("on");
+											} else {
+												$(".star-gogo > div").eq(i).removeClass("on");
+											}
+										}
+									});
+								},
+								move : function(){
+									var _that = this;
+									$(".star-gogo > div").on("touchmove",function(e){
+										var idx = $(".star-gogo").children().index(this);
+										var event = e.originalEvent.touches[0];
+										var moveX = event.pageX;
+										var ss = moveX - _that.st;
+										var Drag = Math.floor(ss / 15);
+										var Dragmove = idx + Drag;
+										for (var i = 0; i < 10; i++) {
+											if (i <= Dragmove) {
+												$(".star-gogo > div").eq(i).addClass("on");
+											} else {
+												$(".star-gogo > div").eq(i).removeClass("on");
+											}
+										}
+										
+									});
+								},
+								end : function(){
+									$(".star-gogo > div").on("touchend",function(e){
+										var rating = $(".star-gogo").find(" > div.on").last();	
+										var data = rating.attr("data");
+										$(".my-vote span").text(data+".0");
+										if(data == null){
+											$(".star-gogo > div:first").addClass("on");
+											$(".my-vote span").text("1.0");
+										}
+									});
+								}
+							};
+							star.init();
+						});
+					</script>
+					<textarea>서평을 작성해 주세요.</textarea>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+	<script>
+		require(['jquery','swiper'],function($){
+
+			$(".rating textarea").focus();
+
+			$(".swiper-container").each(function(){
+				$(this).swiper({slidesPerView: 'auto'});
+			});
+
+			//공지사항
+				var list = $(".notice-list");
+				$(".notice-text:last").prependTo(list);
+				$(list).css("margin-top","-29px");
+
+				setInterval(function(){
+					$(list).animate({
+						marginTop:parseInt($(".notice-list:not(:animated)").css("margin-top"))+29+"px"
+					},400,"linear",function(){
+						$(list).css("margin-top","-29px");
+						$(".notice-text:last").prependTo(list);
+					});
+				},3000);
+
+		});
+
+
+
+	</script>
+</body>
+</html>

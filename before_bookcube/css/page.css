@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* header */
+body{position:relative;background-color:#fff !important;}
+.hide{position:absolute;left:-9999px;width:0;height:0;font-size:0;line-height:0;}
+a:hover{text-decoration:none;}
+.header{width:100%;border-bottom:1px solid #CDCED1;}
+.head_banner{height:80px;background:#fcd111;}
+.h_banner_inner{position:relative;margin:0 auto;width:900px;}
+.bannerClose{position:absolute;top:24px;right:-66px;cursor:pointer;}
+.header_top{width:100%;height:32px;background:#f6f6f6;border-bottom:1px solid #cecdd2;}
+.h_top_inner{position:relative;margin:0 auto;width:904px;*zoom:1;}
+.h_top_inner:after{content:"";display:block;clear:both;}
+.lnb_left{float:left;*zoom:1;}
+.lnb_left:after{content:"";display:block;clear:both;}
+.lnb_left li{float:left;height:33px;}
+.lnb_left li a{display:inline-block;width:108px;height:33px;overflow:hidden;margin-right:-1px;}
+.lnb_on img{margin-top:-35px;}
+.lnb_right{float:right;*zoom:1;}
+.lnb_right:after{content:"";display:block;clear:both;}
+.lnb_right li{float:left;padding:0 7px;background:url(/images/main/lnb_line.jpg) no-repeat left center;}
+.lnb_right li:first-child{background:none;}
+.lnb_right li a{font-size:11px;line-height:32px;}
+.lnb_right li:first-child a{color:#f2652f;font-weight:bold;}
+.lnb_right li.bold a{font-weight:bold;}
+.lnb_right li:hover a{text-decoration:underline;}
+/* header middle */
+.header_middle{border-bottom:1px solid #cecdd2;}
+.h_middle_inner{position:relative;margin:0 auto;padding:28px 0;width:904px;*zoom:1;}
+.h_middle_inner:after{content:"";display:block;clear:both;}
+.bookcube{float:left;margin-left:21px;height:44px;width:173px;}
+.h_search_box{float:left;padding:3px 0;*zoom:1;}
+.h_search_box:after{content:"";display:block;clear:both;}
+.search_box{float:left;margin-left:50px;padding:4px 0;width:339px;height:24px;border:3px solid #f56334;*zoom:1;}
+.h_search_box.storycube .search_box{border:3px solid #7d5cc5;}
+.search_box:after{content:"";display:block;clear:both;}
+.select{float:left;position:relative;width:72px;height:24px;line-height:24px;padding-left:7px;border-right:1px solid #d5d7d2;cursor:pointer;}
+.select_arrow{position:absolute;left:63px;top:9px;}
+.selectList{padding:5px 0;position:absolute;width:72px;left:-3px;top:28px;border:3px solid #f56334;border-top:none;background:#fff;z-index:2000;display:none;}
+.storycube .selectList{border:3px solid #7d5dc5;border-top:none;}
+.selectList li{padding-left:9px;line-height:19px;}
+.selectList li:hover{color:#000;}
+.search_input{float:left;width:248px;height:23px;border:none;padding-left:10px;line-height:23px;}
+.select_submit{float:left;margin-left:6px;border:none;background:url(/images/main/select_btn.jpg) no-repeat left center;width:53px;height:38px;cursor:pointer;text-indent:-9999px;}
+.storycube .select_submit{background: url(/images/storycube/select_btn.jpg) no-repeat left center;}
+.bookcash{float:left;margin-left:6px;}
+/* header bottom */
+.header_bottom{padding:11px 12px 0 12px;width:880px;height:29px;margin:0 auto;}
+.header_bottom:after{content:"";display:block;clear:both;}
+.main_category{float:left;margin-top:2px;}
+.header_bottom ul{margin-left:10px;float:left;}
+.header_bottom ul:after{content:"";display:block;clear:both;}
+.header_bottom ul li{float:left;}
+.header_bottom ul li a{display:block;padding:0 11px;text-align:center;}
+
+/* contents */
+.contentsWrap{width:100%;}
+.contents{width:904px;margin:0 auto;}
+/* mainBottom */
+.mainBottom{padding-top:10px;border-top:1px solid #e5e6e7;width:100%;background:#f6f6f6;}
+.mainBottom_inner{width:904px;margin:0 auto;}
+.cs{border:1px solid #e5e6e7;border-top:1px solid #cdced1;background:#fff;}
+.cs:after{content:"";display:block;clear:both;}
+.csLeft{float:left;width:719px;}
+.csLeft div:first-child{border-top:none;padding:24px 0;}
+.csLeft div{border-top:1px solid #e5e6e7;}
+.csLeft div ul:after{content:"";display:block;clear:both;}
+.csLeft div ul.csList li{width:180px;height:45px;float:left;text-align:center;background:url(/images/page/csBg.gif) no-repeat left center;}
+.csLeft div ul.csList li:first-child{width:179px;background:none;}
+.csLeft div ul li a{display:block;}
+.csBoard{position:relative;padding:21px  0 21px 29px;}
+.csBoard li{padding-left:13px;background:url(/images/page/csDot.gif) no-repeat left center;}
+.csBoard li a{line-height:18px;}
+.csBoard > a{display:block;position:absolute;top:32px;right:34px;width:40px;height:12px;background:url(/images/page/moreDot.gif) no-repeat right 3px;}
+.csLine{margin-top:8px;}
+.csRight{float:left;border-left:1px solid #e5e6e7;width:182px;height:170px;}
+.csRight span{display:block;width:113px;margin:22px auto 0;height:120px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-10px -372px;}
+.mainBottom_banner{display:block;margin:36px auto 0;}
+
+/* footer */
+.footer{width:100%;height:184px;border-top:1px solid #d6d6d6;background:#e5e6e7;}
+.foot_inner{margin:0 auto;padding-top:24px;width:900px;*zoom:1;}
+.foot_inner:after{content:"";display:block;clear:both;}
+.foot_left{float:left;padding-left:18px;width:152px;}
+.foot_left h3{width:142px;height:30px;margin-bottom:30px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-134px -372px;}
+.foot_right{float:left;width:625px;padding-left:26px;}
+.f_lnb{margin-bottom:15px;*zoom:1;}
+.f_lnb:after{content:"";display:block;clear:both;}
+.f_lnb li{float:left;padding:0 12px;background:url(/images/page/footerDot.gif) no-repeat left center;font-size:11px;line-height:18px;color:#9d9d9d;}
+.f_lnb.large li{float:left;padding:0 8px;background:url(/images/page/footerDot.gif) no-repeat left center;font-size:11px;line-height:18px;color:#9d9d9d;}
+.f_lnb li:first-child{padding-left:0;background:none;}
+.f_lnb li a{font-size:14px;color:#666;}
+.f_lnb li a strong{color:#333;}
+.f_lnb li:hover a{text-decoration:underline;}
+.f_lnb li.no_ba{background:none;padding-left:0;}
+.copyright{font-size:11px;color:#9d9d9d;}
+.nStoryNew{position:absolute;left:0;bottom:0;display:block;width:36px;height:20px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-303px -238px;}
+.nStoryUp{position:absolute;left:0;top:0;display:block;width:25px;height:20px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-349px -238px;}
+.nStoryAdult{position:absolute;right:0;bottom:0;display:block;width:25px;height:20px;background:url(/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;background-position:-384px -238px;}
+/* 페이징 */
+.paging{padding:15px 0;text-align:center;}
+.paging a{display:inline-block;font-size:15px;vertical-align:middle;padding:0 13px;border-left:1px solid #ccc;}
+.paging a.one{border-left:none;}
+.paging a.on{color:#f26532;}
+.paging .arr{border-left:none;padding:0;margin:0 3px;background:url(/novel/images/novel/nstoryBg.png) no-repeat left center;text-indent:-9999px;}
+.paging .arr.first{width:34px;height:26px;background-position:-608px -242px;}
+.paging .arr.prev{width:26px;height:26px;background-position:-645px -242px;}
+.paging .arr.next{width:26px;height:26px;background-position:-674px -242px;}
+.paging .arr.last{width:34px;height:26px;background-position:-703px -242px;}
